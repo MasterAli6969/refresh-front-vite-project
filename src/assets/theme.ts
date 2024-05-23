@@ -10,9 +10,17 @@ const theme = createTheme({
   components: {
     MuiTypography: {
       styleOverrides: {
+        h1: {
+          fontSize: "1.5rem",
+          lineHeight: "1.8125rem",
+        },
+        h2: {
+          fontSize: "0.9rem",
+          lineHeight: "1.125rem",
+        },
         h3: {
-          fontSize: "1.3rem",
-          lineHeight: "1.62rem",
+          fontSize: "0.8rem",
+          lineHeight: "1rem",
         },
       },
     },
@@ -27,6 +35,9 @@ const theme = createTheme({
     MuiListItemButton: {
       styleOverrides: {
         root: {
+          borderRadius: "8px",
+          padding: "1rem 0.5rem 1rem 0.5rem",
+          marginBottom: "0.5rem",
           "&.Mui-selected": {
             backgroundColor: "rgba(255, 255, 255, 0.1)",
           },
@@ -36,6 +47,13 @@ const theme = createTheme({
           "&:hover": {
             backgroundColor: "rgba(255, 255, 255, 0.04)",
           },
+        },
+      },
+    },
+    MuiListItemIcon: {
+      styleOverrides: {
+        root: {
+          minWidth: "30px",
         },
       },
     },

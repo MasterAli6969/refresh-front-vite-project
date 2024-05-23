@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Grid } from "@mui/material";
-import LeftSidebar from "../components/LeftSidebar";
-import Header from "../components/Header";
-import CentralHeader from "../components/CentralHeader";
-import RightSidebar from "../components/RightSidebar";
+import LeftSidebar from "../components/left-sidebar/LeftSidebar";
+import Header from "../components/header/Header";
+import CentralHeader from "../components/central-header/CentralHeader";
+import RightSidebar from "../components/right-sidebar/RightSidebar";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ interface LayoutProps {
 const GeneralLayout: FC<LayoutProps> = ({ children }) => {
   return (
     <Grid container>
-      <Grid item md={2}>
+      <Grid item md={3}>
         <LeftSidebar />
       </Grid>
       <Grid item md={10}>
