@@ -1,4 +1,6 @@
-export default function IconMonitor() {
+import { FC } from "react";
+
+const IconLineChart: FC = () => {
   return (
     <>
       <svg
@@ -11,11 +13,12 @@ export default function IconMonitor() {
         <path
           d="M3 17L9 10.5L13 16.5L21 7"
           stroke="#6C7275"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </>
   );
-}
+};
+export default IconLineChart;

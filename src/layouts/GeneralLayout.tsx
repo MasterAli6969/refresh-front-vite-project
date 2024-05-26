@@ -4,6 +4,7 @@ import LeftSidebar from "../components/left-sidebar/LeftSidebar";
 import Header from "../components/header/Header";
 import CentralHeader from "../components/central-header/CentralHeader";
 import RightSidebar from "../components/right-sidebar/RightSidebar";
+import { leftSidebarData } from "../components/left-sidebar/data";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,9 +14,9 @@ const GeneralLayout: FC<LayoutProps> = ({ children }) => {
   return (
     <Grid container>
       <Grid item md={3}>
-        <LeftSidebar />
+        <LeftSidebar leftSidebarData={leftSidebarData} />
       </Grid>
-      <Grid item md={10}>
+      <Grid item md={9}>
         <Header />
         <Grid container>
           <Grid item md={12}>

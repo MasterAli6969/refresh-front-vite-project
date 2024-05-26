@@ -9,3 +9,8 @@ export const logoBoxStyle = {
     marginRight: "1rem",
   },
 };
+
+export const boxListStyle = {
+  width: "100%",
+  maxWidth: 360,
+};

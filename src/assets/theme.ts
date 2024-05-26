@@ -6,6 +6,9 @@ const theme = createTheme({
       main: "#141718",
       contrastText: "#fff",
     },
+    secondary: {
+      main: "#2F3233",
+    },
   },
   components: {
     MuiTypography: {
@@ -54,6 +57,23 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           minWidth: "30px",
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: "white",
+          "&.Mui-focused": {
+            color: "white",
+          },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          color: "white", // изменить цвет текста ввода
         },
       },
     },

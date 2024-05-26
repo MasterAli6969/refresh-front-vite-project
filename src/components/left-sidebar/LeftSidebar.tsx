@@ -1,25 +1,26 @@
 import { FC, useState, MouseEvent } from "react";
-import { useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/Inbox";
 import RefreshLogo from "../../assets/img/RefreshLogo.png";
-import { boxGlobal, logoBoxStyle } from "./leftSidebarStyleSX";
+import {
+  leftSidebarDataType,
+  leftSidebarDataTypeProps,
+} from "./leftSidebarType.interface";
+import { boxGlobal, logoBoxStyle, boxListStyle } from "./leftSidebarStyleSX";
 
-const LeftSidebar: FC = () => {
-  const theme = useTheme();
-  const [selectedIndex, setSelectedIndex] = useState(1);
+const LeftSidebar: FC<leftSidebarDataTypeProps> = ({ leftSidebarData }) => {
+  const [selectedIndex, setSelectedIndex] = useState<string>("1");
+
   const handleListItemClick = (
     _event: MouseEvent<HTMLDivElement>,
-    index: number
+    index: string
   ) => {
     setSelectedIndex(index);
   };
-
   return (
     <>
       <Box sx={boxGlobal}>
@@ -29,17 +30,27 @@ const LeftSidebar: FC = () => {
             REFRESH
           </Typography>
         </Box>
-        <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+        <Box sx={boxListStyle}>
           <List component="nav" aria-label="main mailbox folders">
-            <ListItemButton
-              selected={selectedIndex === 0}
-              onClick={(event) => handleListItemClick(event, 0)}
-            >
-              <ListItemIcon>
-                <InboxIcon sx={{ color: theme.palette.primary.contrastText }} />
-              </ListItemIcon>
-              <ListItemText primary="Панель управления ПК" />
-            </ListItemButton>
+            {!leftSidebarData || leftSidebarData.length === 0 ? (
+              <p>Oops, server error...</p>
+            ) : (
+              leftSidebarData.map((item: leftSidebarDataType) => {
+                const IconComponent = item.icon;
+                return (
+                  <ListItemButton
+                    key={item.id}
+                    selected={selectedIndex === item.id}
+                    onClick={(event) => handleListItemClick(event, item.id)}
+                  >
+                    <ListItemIcon>
+                      <IconComponent />
+                    </ListItemIcon>
+                    <ListItemText primary={item.text} />
+                  </ListItemButton>
+                );
+              })
+            )}
           </List>
         </Box>
       </Box>
