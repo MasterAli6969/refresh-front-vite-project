@@ -1,0 +1,31 @@
+@import "/src/variables.scss";
+
+.div {
+  .subdiv_logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    > img {
+      margin-right: 1rem;
+    }
+  }
+  .subdiv_list {
+    > li {
+      display: flex;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      > div {
+        margin-right: 1rem;
+      }
+    }
+    .active {
+      background: linear-gradient(
+        to right,
+        rgba(42, 133, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+      );
+    }
+  }
+}

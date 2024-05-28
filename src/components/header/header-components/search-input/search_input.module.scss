@@ -1,0 +1,18 @@
+@import "/src/variables.scss";
+.div {
+  width: 25.1rem;
+  display: flex;
+  background-color: $primary-color;
+  border-radius: 10px;
+  border: 1px solid $tertiary-color;
+  padding: 0.75rem 1.25rem;
+  > img {
+    margin-right: 0.5rem;
+  }
+  > input {
+    width: 100%;
+    background-color: transparent;
+    color: $light-color;
+    border: none;
+  }
+}

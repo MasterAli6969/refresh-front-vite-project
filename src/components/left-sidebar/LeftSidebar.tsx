@@ -1,60 +1,52 @@
-import { FC, useState, MouseEvent } from "react";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import List from "@mui/material/List";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import RefreshLogo from "../../assets/img/RefreshLogo.png";
+import { FC, useState, useEffect } from "react";
 import {
-  leftSidebarDataType,
   leftSidebarDataTypeProps,
-} from "./leftSidebarType.interface";
-import { boxGlobal, logoBoxStyle, boxListStyle } from "./leftSidebarStyleSX";
+  leftSidebarDataType,
+} from "../../pages/ControlPanel.interface";
+import RefreshLogo from "../../assets/img/RefreshLogo.png";
+import styles from "./left_sidebar.module.scss";
 
 const LeftSidebar: FC<leftSidebarDataTypeProps> = ({ leftSidebarData }) => {
-  const [selectedIndex, setSelectedIndex] = useState<string>("1");
+  const [activeItemId, setActiveItemId] = useState<number | null>(null);
 
-  const handleListItemClick = (
-    _event: MouseEvent<HTMLDivElement>,
-    index: string
-  ) => {
-    setSelectedIndex(index);
+  const handleLiClick = (itemId: number) => {
+    setActiveItemId(itemId);
   };
+
+  useEffect(() => {
+    if (leftSidebarData.length > 0 && activeItemId === null) {
+      setActiveItemId(leftSidebarData[0].id);
+    }
+  }, [leftSidebarData, activeItemId]);
+
   return (
-    <>
-      <Box sx={boxGlobal}>
-        <Box sx={logoBoxStyle}>
-          <img src={RefreshLogo} />
-          <Typography variant="h1" component="h1">
-            REFRESH
-          </Typography>
-        </Box>
-        <Box sx={boxListStyle}>
-          <List component="nav" aria-label="main mailbox folders">
-            {!leftSidebarData || leftSidebarData.length === 0 ? (
-              <p>Oops, server error...</p>
-            ) : (
-              leftSidebarData.map((item: leftSidebarDataType) => {
-                const IconComponent = item.icon;
-                return (
-                  <ListItemButton
-                    key={item.id}
-                    selected={selectedIndex === item.id}
-                    onClick={(event) => handleListItemClick(event, item.id)}
-                  >
-                    <ListItemIcon>
-                      <IconComponent />
-                    </ListItemIcon>
-                    <ListItemText primary={item.text} />
-                  </ListItemButton>
-                );
-              })
-            )}
-          </List>
-        </Box>
-      </Box>
-    </>
+    <div className={styles.div}>
+      <div className={styles.subdiv_logo}>
+        <img src={RefreshLogo} />
+        <h1>REFRESH</h1>
+      </div>
+      <ul className={styles.subdiv_list}>
+        {!leftSidebarData || leftSidebarData.length === 0 ? (
+          <h1>Ooops, server error, please wait...</h1>
+        ) : (
+          leftSidebarData.map((item: leftSidebarDataType) => {
+            const Icon = item.icon;
+            return (
+              <li
+                key={item.id}
+                className={activeItemId === item.id ? styles.active : ""}
+                onClick={() => handleLiClick(item.id)}
+              >
+                <div>
+                  <Icon />
+                </div>
+                {item.text}
+              </li>
+            );
+          })
+        )}
+      </ul>
+    </div>
   );
 };
 

@@ -7,10 +7,7 @@ const PanelRotes: FC = () => {
   return (
     <GeneralLayout>
       <Routes>
-        <Route
-          path="refresh-front-vite-project/control"
-          element={<ControlPanel />}
-        />
+        <Route path="/" element={<ControlPanel />} />
       </Routes>
     </GeneralLayout>
   );

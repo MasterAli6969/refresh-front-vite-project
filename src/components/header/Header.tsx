@@ -1,20 +1,20 @@
 import { FC } from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import SearchComponent from "./header-components/search-component/SearchComponent";
-import UserMenu from "./header-components/user-menu/UserMenu";
+import SearchInput from "./header-components/search-input/SearchInput";
+import NoticesButton from "./header-components/notices-button/NoticesButton";
+import MessageButton from "./header-components/message-button/MessageButton";
+import UserPanel from "./header-components/user-panel/UserPanel";
+import styles from "./header.module.scss";
 
 const Header: FC = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <SearchComponent />
-          <UserMenu />
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <div className={styles.div}>
+      <SearchInput />
+      <div className={styles.subdiv}>
+        <MessageButton />
+        <NoticesButton />
+        <UserPanel />
+      </div>
+    </div>
   );
 };
 

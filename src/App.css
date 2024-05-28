@@ -3,7 +3,136 @@
   color: white;
 }
 
+/* Reset для базовых стилей */
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Установка базового размера шрифта */
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: #0a0c0c;
+}
+
+/* Убираем стили для маркированных списков */
+ul {
+  list-style: none;
+}
+
+/* Убираем подчеркивание у ссылок и сохраняем цвет текста */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Общие стили для тела    документа */
+
+/* Убираем контур у элементов, получающих фокус */
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
+}
+h2 {
+  font-size: 0.9rem;
+  line-height: 1.125rem;
+}
+h3 {
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+
 p {
-  font-size: "0.75rem";
+  font-size: 0.75rem;
   line-height: 0.9rem;
 }

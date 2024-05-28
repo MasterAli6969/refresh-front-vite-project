@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 export type leftSidebarDataType = {
-  id: string;
+  id: number;
   url: string;
   icon: FC;
   text: string;

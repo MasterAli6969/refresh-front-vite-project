@@ -1,10 +1,9 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
 import LeftSidebar from "../components/left-sidebar/LeftSidebar";
 import Header from "../components/header/Header";
 import CentralHeader from "../components/central-header/CentralHeader";
 import RightSidebar from "../components/right-sidebar/RightSidebar";
-import { leftSidebarData } from "../components/left-sidebar/data";
+import { leftSidebarData } from "../pages/data";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,25 +11,23 @@ interface LayoutProps {
 
 const GeneralLayout: FC<LayoutProps> = ({ children }) => {
   return (
-    <Grid container>
-      <Grid item md={3}>
+    <div className="row p-0">
+      <div className="col-md-2 p-0">
         <LeftSidebar leftSidebarData={leftSidebarData} />
-      </Grid>
-      <Grid item md={9}>
+      </div>
+      <div className="col-md-10 p-0">
         <Header />
-        <Grid container>
-          <Grid item md={12}>
+        <div className="row p-0">
+          <div className="col-md-12 p-0">
             <CentralHeader />
-          </Grid>
-          <Grid item md={9}>
-            {children}
-          </Grid>
-          <Grid item md={3}>
+          </div>
+          <div className="col-md-9 p-0">{children}</div>
+          <div className="col-md-3 p-0">
             <RightSidebar />
-          </Grid>
-        </Grid>
-      </Grid>
-    </Grid>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
