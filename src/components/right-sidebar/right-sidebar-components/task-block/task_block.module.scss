@@ -1,0 +1,12 @@
+@import "/src/variables.scss";
+
+.div {
+  .subdiv_head {
+    > h3 {
+      color: $dark-color;
+    }
+    > button {
+      @include divStyle($primary-color, $tertiary-color);
+    }
+  }
+}

@@ -1,12 +1,10 @@
 import { FC, useState, useEffect } from "react";
-import {
-  leftSidebarDataTypeProps,
-  leftSidebarDataType,
-} from "../../pages/ControlPanel.interface";
+import { leftSidebarDataType } from "./leftSidebar.interface";
 import RefreshLogo from "../../assets/img/RefreshLogo.png";
+import { leftSidebarData } from "./data";
 import styles from "./left_sidebar.module.scss";
 
-const LeftSidebar: FC<leftSidebarDataTypeProps> = ({ leftSidebarData }) => {
+const LeftSidebar: FC = () => {
   const [activeItemId, setActiveItemId] = useState<number | null>(null);
 
   const handleLiClick = (itemId: number) => {

@@ -1,16 +1,5 @@
 @import "/src/variables.scss";
 
 .div {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $primary-color;
-  border-radius: 12px;
-  cursor: pointer;
-  margin-right: 1rem;
-}
-.div:hover {
-  background-color: $tertiary-color;
+  @include divStyle($primary-color, $tertiary-color);
 }

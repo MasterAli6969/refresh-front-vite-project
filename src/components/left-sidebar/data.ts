@@ -1,12 +1,12 @@
-import IconMonitor from "../assets/icons-svg-components/IconMonitor";
-import IconStore from "../assets/icons-svg-components/IconStore";
-import Iconlighting from "../assets/icons-svg-components/Iconlighting";
-import IconCube from "../assets/icons-svg-components/IconCube";
-import IconUserGroup from "../assets/icons-svg-components/IconUserGroup";
-import IconCalendarPlus from "../assets/icons-svg-components/IconCalendarPlus";
-import IconLoader from "../assets/icons-svg-components/IconLoader";
-import IconLineChart from "../assets/icons-svg-components/IconLineChart";
-import IconNut from "../assets/icons-svg-components/IconNut";
+import IconMonitor from "../../assets/icons-svg-components/IconMonitor";
+import IconStore from "../../assets/icons-svg-components/IconStore";
+import Iconlighting from "../../assets/icons-svg-components/Iconlighting";
+import IconCube from "../../assets/icons-svg-components/IconCube";
+import IconUserGroup from "../../assets/icons-svg-components/IconUserGroup";
+import IconCalendarPlus from "../../assets/icons-svg-components/IconCalendarPlus";
+import IconLoader from "../../assets/icons-svg-components/IconLoader";
+import IconLineChart from "../../assets/icons-svg-components/IconLineChart";
+import IconNut from "../../assets/icons-svg-components/IconNut";
 
 export const leftSidebarData = [
   {

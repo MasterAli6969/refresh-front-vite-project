@@ -6,7 +6,3 @@ export type leftSidebarDataType = {
   icon: FC;
   text: string;
 };
-
-export interface leftSidebarDataTypeProps {
-  leftSidebarData: leftSidebarDataType[];
-}
