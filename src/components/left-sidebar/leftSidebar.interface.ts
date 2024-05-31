@@ -1,8 +1,8 @@
 import { FC } from "react";
 
-export type leftSidebarDataType = {
+export interface leftSidebarDataType {
   id: number;
   url: string;
   icon: FC;
   text: string;
-};
+}
