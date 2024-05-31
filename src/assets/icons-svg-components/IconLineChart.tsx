@@ -1,6 +1,7 @@
 import { FC } from "react";
+import { PropsIcon } from "./props.interface";
 
-const IconLineChart: FC = () => {
+const IconLineChart: FC<PropsIcon> = ({ color }) => {
   return (
     <>
       <svg
@@ -12,7 +13,7 @@ const IconLineChart: FC = () => {
       >
         <path
           d="M3 17L9 10.5L13 16.5L21 7"
-          stroke="#6C7275"
+          stroke={color}
           strokeWidth="1.4"
           strokeLinecap="round"
           strokeLinejoin="round"

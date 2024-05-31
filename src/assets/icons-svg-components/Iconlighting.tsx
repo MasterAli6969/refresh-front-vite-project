@@ -1,6 +1,7 @@
 import { FC } from "react";
+import { PropsIcon } from "./props.interface";
 
-const Iconlighting: FC = () => {
+const Iconlighting: FC<PropsIcon> = ({ color }) => {
   return (
     <>
       <svg
@@ -12,7 +13,7 @@ const Iconlighting: FC = () => {
       >
         <path
           d="M9 22.999L10.5 15.499L4.5 13.249L15 1.99902L13.5 9.49902L19.5 11.749L9 22.999Z"
-          stroke="#6C7275"
+          stroke={color}
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"

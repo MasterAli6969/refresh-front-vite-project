@@ -14,14 +14,21 @@
     }
   }
   .subdiv_list {
-    > li {
+    position: relative;
+    .main_list {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
       border-radius: 10px;
       cursor: pointer;
       margin-bottom: 1rem;
       padding: 0.8rem;
-      > div {
-        margin-right: 1rem;
+      > div:first-child {
+        display: flex;
+        align-items: center;
+        > div {
+          margin-right: 1rem;
+        }
       }
     }
     .active {
@@ -31,5 +38,12 @@
         rgba(255, 255, 255, 0.1)
       );
     }
+  }
+  .right_list {
+    position: absolute;
+    top: 0;
+    right: -295px;
+    height: 100%;
+    width: 280px;
   }
 }

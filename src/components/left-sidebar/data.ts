@@ -64,3 +64,24 @@ export const leftSidebarData = [
     text: "Настройки",
   },
 ];
+
+export const customListStaticData = [
+  {
+    id: 1,
+    url: "#",
+    title: "Инвентаризация",
+  },
+  {
+    id: 2,
+    url: "#",
+    title: "Прочие операции",
+  },
+];
+
+export const customListDropData = [
+  {
+    id: 1,
+    titele: "",
+    dropItem: "",
+  },
+];
