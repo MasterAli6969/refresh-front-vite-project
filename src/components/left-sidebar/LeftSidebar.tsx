@@ -8,7 +8,11 @@ import RefreshLogo from "../../assets/img/RefreshLogo.png";
 import ArrowChekRight from "../../assets/icons/ArrowChekRight.svg";
 
 import CustomList from "../../common/custom-list/CustomList";
-import { leftSidebarData } from "./data";
+import {
+  leftSidebarData,
+  customListStaticData,
+  customListDropData,
+} from "./data";
 
 import styles from "./left_sidebar.module.scss";
 
@@ -16,7 +20,7 @@ const LeftSidebar: FC = () => {
   const [activeItemId, setActiveItemId] = useState<number | null>(null);
 
   const handleLiClick = (itemId: number) => {
-    setActiveItemId(itemId);
+    setActiveItemId((prevItemId) => (prevItemId === itemId ? null : itemId));
   };
 
   useEffect(() => {
@@ -63,7 +67,12 @@ const LeftSidebar: FC = () => {
           })
         )}
         <li className={styles.right_list}>
-          {activeItemId === 7 && <CustomList />}
+          {activeItemId === 7 && (
+            <CustomList customListStaticData={customListStaticData} />
+          )}
+          {activeItemId === 9 && (
+            <CustomList customListDropData={customListDropData} />
+          )}
         </li>
       </ul>
     </div>

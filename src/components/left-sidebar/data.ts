@@ -81,7 +81,91 @@ export const customListStaticData = [
 export const customListDropData = [
   {
     id: 1,
-    titele: "",
-    dropItem: "",
+    title: "Веб-администратор",
+    customListDropItem: [
+      {
+        id: 1,
+        url: "#",
+        title: "Общие настройки",
+      },
+      {
+        id: 2,
+        url: "#",
+        title: "Конфигурация отчетов",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Клиент",
+    customListDropItem: [
+      {
+        id: 1,
+        url: "#",
+        title: "Конфигурация клиента",
+      },
+      {
+        id: 2,
+        url: "#",
+        title: "Дизайн",
+      },
+      {
+        id: 3,
+        url: "#",
+        title: "Консоли",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Операции с контентом",
+    customListDropItem: [
+      {
+        id: 1,
+        url: "#",
+        title: "Игры и приложения",
+      },
+      {
+        id: 2,
+        url: "#",
+        title: "Акканты центра",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Системы лояльности",
+    customListDropItem: [
+      {
+        id: 1,
+        url: "#",
+        title: "Рейтинг участников",
+      },
+      {
+        id: 2,
+        url: "#",
+        title: "Достижения",
+      },
+      {
+        id: 3,
+        url: "#",
+        title: "Ежедневные награды",
+      },
+    ],
+  },
+  {
+    id: 5,
+    url: "#",
+    title: "Сотрудники и роли",
+  },
+  {
+    id: 6,
+    url: "#",
+    title: "Касса",
+  },
+  {
+    id: 7,
+    url: "#",
+    title: "Продукты и подписки",
   },
 ];
