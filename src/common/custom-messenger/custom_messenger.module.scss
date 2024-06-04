@@ -1,0 +1,54 @@
+@import "/src/variables.scss";
+
+.div {
+  .subdiv_message_window {
+    overflow-y: auto;
+    height: 30rem;
+    .incoming_message,
+    .outgoing_message {
+      > div:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 0 0.5rem 0;
+      }
+      > div:last-child {
+        padding: 1rem;
+      }
+    }
+    .incoming_message {
+      > div:last-child {
+        background-color: $primary-color;
+        border-radius: 0px 12px 12px 12px;
+      }
+    }
+    .outgoing_message {
+      > div:last-child {
+        background-color: $active-color;
+        border-radius: 12px 12px 0px 12px;
+      }
+    }
+  }
+  .subdiv_input_message {
+    height: 2.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-color;
+    border: $border-style;
+    border-radius: 12px;
+    padding: 0.5rem;
+    > input {
+      background-color: transparent;
+      color: $light-color;
+      border: none;
+    }
+    > button {
+      background-color: $active-color;
+      color: $light-color;
+      border: none;
+      border-radius: 12px;
+      padding: 0.5rem;
+    }
+  }
+}

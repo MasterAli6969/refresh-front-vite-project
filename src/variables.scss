@@ -12,6 +12,7 @@ $error-color: #ff0000;
 
 //стили для мини кнопок с синей иконкой
 @mixin divStyle($bg-color, $hover-color) {
+  cursor: pointer;
   width: 2.5rem;
   height: 2.5rem;
   display: flex;
@@ -25,3 +26,6 @@ $error-color: #ff0000;
     border: 1px solid $active-color;
   }
 }
+
+//стили для границ
+$border-style: 1px solid $tertiary-color;

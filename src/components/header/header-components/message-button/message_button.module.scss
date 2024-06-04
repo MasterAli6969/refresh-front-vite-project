@@ -1,6 +1,0 @@
-@import "/src/variables.scss";
-
-.div {
-  @include divStyle($primary-color, $tertiary-color);
-  margin-right: 1rem;
-}

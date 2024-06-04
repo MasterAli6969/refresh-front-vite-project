@@ -8,5 +8,8 @@
   padding: 2rem;
   .subdiv {
     display: flex;
+    > div {
+      margin-right: 1rem;
+    }
   }
 }

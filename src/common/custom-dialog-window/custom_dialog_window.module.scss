@@ -1,0 +1,19 @@
+.div {
+  .subdiv {
+    padding: 1rem 0;
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      > div {
+        display: flex;
+        > img {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+  ._active {
+  }
+}
