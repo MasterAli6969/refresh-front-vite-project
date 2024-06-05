@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import NoticesIcons from "../../../../assets/icons/NoticesIcons.svg";
 import CustomModalButton from "../../../../common/custom-modal-button/CustomModalButton";
-import CustomNotice from "../../../../common/custom-notice/CustomNotice";
+import CustomNotice from "../custom-notice/CustomNotice";
 
 const NoticeButton: FC = () => {
   return (

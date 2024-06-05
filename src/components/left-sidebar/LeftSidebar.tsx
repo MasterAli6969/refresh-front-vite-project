@@ -7,11 +7,11 @@ import { leftSidebarDataType } from "./leftSidebar.interface";
 import RefreshLogo from "../../assets/img/RefreshLogo.png";
 import ArrowChekRight from "../../assets/icons/ArrowChekRight.svg";
 
-import CustomList from "../../common/custom-list/CustomList";
+import LeftDropList from "./left-sidebar-components/left-drop-list/LeftDropList";
 import {
   leftSidebarData,
-  customListStaticData,
-  customListDropData,
+  leftDropListStaticData,
+  LeftDropListDropMenuData,
 } from "./data";
 
 import styles from "./left_sidebar.module.scss";
@@ -68,10 +68,10 @@ const LeftSidebar: FC = () => {
         )}
         <li className={styles.right_list}>
           {activeItemId === 7 && (
-            <CustomList customListStaticData={customListStaticData} />
+            <LeftDropList leftDropListStaticData={leftDropListStaticData} />
           )}
           {activeItemId === 9 && (
-            <CustomList customListDropData={customListDropData} />
+            <LeftDropList leftDropListDropData={LeftDropListDropMenuData} />
           )}
         </li>
       </ul>

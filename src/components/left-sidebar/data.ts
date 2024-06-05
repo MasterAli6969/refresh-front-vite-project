@@ -65,7 +65,7 @@ export const leftSidebarData = [
   },
 ];
 
-export const customListStaticData = [
+export const leftDropListStaticData = [
   {
     id: 1,
     url: "#",
@@ -78,7 +78,7 @@ export const customListStaticData = [
   },
 ];
 
-export const customListDropData = [
+export const LeftDropListDropMenuData = [
   {
     id: 1,
     title: "Веб-администратор",

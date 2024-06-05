@@ -9,16 +9,16 @@ export interface leftSidebarDataType {
   text: string;
 }
 
-export interface CustomListStaticDataType extends ListLinkType {}
+export interface LeftDropListStaticDataType extends ListLinkType {}
 
-export interface CustomListDropDataType {
+export interface LeftDropListDropMenuDataType {
   id: number;
   title: string;
-  customListDropItem?: ListLinkType[];
+  leftDropListDropItem?: ListLinkType[];
   url?: string;
 }
 
-export interface CustomListDataProps {
-  customListStaticData?: CustomListStaticDataType[];
-  customListDropData?: CustomListDropDataType[];
+export interface LeftDropListDataProps {
+  leftDropListStaticData?: LeftDropListStaticDataType[];
+  leftDropListDropData?: LeftDropListDropMenuDataType[];
 }

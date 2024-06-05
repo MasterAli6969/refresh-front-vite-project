@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import OnlineIcon from "../../assets/icons/OnlineIcon.svg";
+import OnlineIcon from "../../../../assets/icons/OnlineIcon.svg";
 
 import styles from "./custom_dialog_window.module.scss";
 

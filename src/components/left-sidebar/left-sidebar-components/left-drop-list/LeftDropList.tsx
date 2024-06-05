@@ -1,21 +1,22 @@
 import { FC } from "react";
-import ArrowChekRight from "../../assets/icons/ArrowChekUp.svg";
+import ArrowChekRight from "../../../../assets/icons/ArrowChekRight.svg";
+import { ListLinkType } from "../../../../commonTypes.interface";
 import {
-  CustomListDataProps,
-  CustomListStaticDataType,
-  CustomListDropDataType,
-} from "../../components/left-sidebar/leftSidebar.interface";
+  LeftDropListDataProps,
+  LeftDropListStaticDataType,
+  LeftDropListDropMenuDataType,
+} from "../../leftSidebar.interface";
 import styles from "./custom_list.module.scss";
 
-const CustomList: FC<CustomListDataProps> = ({
-  customListStaticData,
-  customListDropData,
+const LeftDropList: FC<LeftDropListDataProps> = ({
+  leftDropListStaticData,
+  leftDropListDropData,
 }) => {
   return (
     <ul className={styles.ul}>
-      {customListStaticData &&
-        customListStaticData.length != 0 &&
-        customListStaticData.map((item: CustomListStaticDataType) => {
+      {leftDropListStaticData &&
+        leftDropListStaticData.length != 0 &&
+        leftDropListStaticData.map((item: LeftDropListStaticDataType) => {
           return (
             <li key={item.id} className={styles.li_statik}>
               <a href={item.url}>
@@ -24,13 +25,13 @@ const CustomList: FC<CustomListDataProps> = ({
             </li>
           );
         })}
-      {customListDropData &&
-        customListDropData.length != 0 &&
-        customListDropData.map((item) => {
+      {leftDropListDropData &&
+        leftDropListDropData.length != 0 &&
+        leftDropListDropData.map((item: LeftDropListDropMenuDataType) => {
           return (
             <li key={item.id} className={styles.li_dropdown}>
-              {!item.customListDropItem ||
-              item.customListDropItem.length === 0 ? (
+              {!item.leftDropListDropItem ||
+              item.leftDropListDropItem.length === 0 ? (
                 <a href={item.url}>
                   <h4>{item.title}</h4>
                 </a>
@@ -49,17 +50,15 @@ const CustomList: FC<CustomListDataProps> = ({
                     className="collapse multi-collapse"
                     id={`multiCollapseExample${item.id}`}
                   >
-                    {item.customListDropItem.map(
-                      (subItem: CustomListDropDataType) => {
-                        return (
-                          <li key={subItem.id}>
-                            <a href={subItem.url}>
-                              <h4>{subItem.title}</h4>
-                            </a>
-                          </li>
-                        );
-                      }
-                    )}
+                    {item.leftDropListDropItem.map((subItem: ListLinkType) => {
+                      return (
+                        <li key={subItem.id}>
+                          <a href={subItem.url}>
+                            <h4>{subItem.title}</h4>
+                          </a>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </>
               )}
@@ -70,4 +69,4 @@ const CustomList: FC<CustomListDataProps> = ({
   );
 };
 
-export default CustomList;
+export default LeftDropList;

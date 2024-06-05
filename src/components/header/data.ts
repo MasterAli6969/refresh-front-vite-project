@@ -28,3 +28,41 @@ export const userPanelData = {
     },
   ],
 };
+
+export const NoticeButtonData = [
+  {
+    id: 1,
+    name: "PC13",
+    time: "22:13",
+    title: "Новый заказ",
+    noticeItem: [
+      {
+        id: 1,
+        title: "Товар",
+        content: "",
+      },
+      {
+        id: 2,
+        title: "Количество",
+        content: "",
+      },
+      {
+        id: 3,
+        title: "Способ доставки",
+        content: "",
+      },
+      {
+        id: 4,
+        title: "Комментарий",
+        content: "",
+      },
+    ],
+  },
+  {
+    id: 1,
+    name: "PC13",
+    time: "22:13",
+    title: "Новый запрос о помощи!",
+    noticeItem: [],
+  },
+];
