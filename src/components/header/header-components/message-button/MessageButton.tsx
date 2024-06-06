@@ -2,8 +2,8 @@ import { FC } from "react";
 
 import MessagesIcons from "../../../../assets/icons/MessagesIcons.svg";
 import CustomModalButton from "../../../../common/custom-modal-button/CustomModalButton";
-import CustomDialogWindow from "../custom-dialog-window/CustomDialogWindow";
-import CustomMessenger from "../custom-messenger/CustomMessenger";
+import DialogWindow from "../../../../common/all-modal-windows/chat-window/dialog-window/DialogWindow";
+import Messenger from "../../../../common/all-modal-windows/chat-window/messenger/Messenger";
 
 import styles from "./message.module.scss";
 
@@ -13,8 +13,8 @@ const MessageButton: FC = () => {
       <CustomModalButton
         icon={MessagesIcons}
         title="Сообщения"
-        buttonLeft={CustomMessenger}
-        buttonRight={CustomDialogWindow}
+        buttonLeft={Messenger}
+        buttonRight={DialogWindow}
       />
     </div>
   );

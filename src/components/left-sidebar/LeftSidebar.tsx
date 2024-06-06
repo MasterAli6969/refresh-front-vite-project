@@ -66,14 +66,17 @@ const LeftSidebar: FC = () => {
             );
           })
         )}
-        <li className={styles.right_list}>
-          {activeItemId === 7 && (
+
+        {activeItemId === 7 && (
+          <li className={styles.right_list}>
             <LeftDropList leftDropListStaticData={leftDropListStaticData} />
-          )}
-          {activeItemId === 9 && (
+          </li>
+        )}
+        {activeItemId === 9 && (
+          <li className={styles.right_list}>
             <LeftDropList leftDropListDropData={LeftDropListDropMenuData} />
-          )}
-        </li>
+          </li>
+        )}
       </ul>
     </div>
   );

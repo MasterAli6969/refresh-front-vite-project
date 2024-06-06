@@ -1,0 +1,12 @@
+@import "/src/variables.scss";
+
+.div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  > div {
+    @include divStyle($primary-color, $tertiary-color);
+    background-color: transparent;
+  }
+}

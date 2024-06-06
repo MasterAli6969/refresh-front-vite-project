@@ -29,6 +29,38 @@ export const userPanelData = {
   ],
 };
 
+export const messageOutgoingEmployeesData = {
+  id: 1,
+  name: "Захар Ртищев",
+  time: "22:13",
+  message:
+    "Паста - производное от копипаст, copypaste, copy and paste, что означает копирование и вставка текста.",
+};
+
+export const dialogData = [
+  {
+    id: 1,
+    name: "PC12",
+    time: "22:13",
+    online: true,
+    lastMessage: "Паста - производное от копипаст, copypaste",
+  },
+  {
+    id: 2,
+    name: "PC12",
+    time: "22:13",
+    online: false,
+    lastMessage: "Паста - производное от копипаст, copypaste",
+  },
+  {
+    id: 3,
+    name: "PC12",
+    time: "22:13",
+    online: true,
+    lastMessage: "Паста - производное от копипаст, copypaste",
+  },
+];
+
 export const NoticeButtonData = [
   {
     id: 1,

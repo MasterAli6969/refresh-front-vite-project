@@ -1,0 +1,7 @@
+@import "/src/variables.scss";
+
+.textarea {
+  width: 100%;
+  min-height: 9.5rem;
+  @include inputStyle;
+}

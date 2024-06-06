@@ -1,8 +1,8 @@
 import { FC } from "react";
 
-import styles from "./custom_notice.module.scss";
+import styles from "./notice-window.module.scss";
 
-const CustomNotice: FC = () => {
+const NoticeWindow: FC = () => {
   return (
     <div className={styles.div}>
       <div className={styles.subdiv}>
@@ -32,4 +32,4 @@ const CustomNotice: FC = () => {
   );
 };
 
-export default CustomNotice;
+export default NoticeWindow;

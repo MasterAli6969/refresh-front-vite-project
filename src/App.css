@@ -146,23 +146,23 @@ textarea:focus {
 }
 
 h1 {
-  font-size: 1.5rem;
-  line-height: 1.8125rem;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.8125rem; /* 29px */
 }
 h2 {
-  font-size: 1.25rem;
-  line-height: 2.5rem;
+  font-size: 1.25rem; /* 20px */
+  line-height: 2.5rem; /* 40px */
 }
 h3 {
-  font-size: 0.9rem;
-  line-height: 1.125rem;
+  font-size: 0.9rem; /* 14.4px */
+  line-height: 1.125rem; /* 18px */
 }
 h4 {
-  font-size: 0.8rem;
-  line-height: 1rem;
+  font-size: 0.8rem; /* 12.8px */
+  line-height: 1rem; /* 16px */
 }
 
 p {
-  font-size: 0.75rem;
-  line-height: 0.9rem;
+  font-size: 0.75rem; /* 12px */
+  line-height: 0.9rem; /* 14.4px */
 }
