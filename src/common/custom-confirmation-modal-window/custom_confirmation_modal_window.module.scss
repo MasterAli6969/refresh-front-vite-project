@@ -1,0 +1,14 @@
+@import "/src/variables.scss";
+
+.div {
+  @include modalDivV1(20.8rem);
+  > h3 {
+    text-align: center;
+  }
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+}

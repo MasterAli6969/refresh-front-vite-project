@@ -1,3 +1,4 @@
 export interface CustomTextareaPropsType {
-  text: string;
+  label: string;
+  plaseholder: string;
 }

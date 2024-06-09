@@ -1,9 +1,15 @@
 @import "/src/variables.scss";
 .button {
   width: 100%;
-  background-color: $active-color;
   border: none;
   border-radius: 12px;
   color: $light-color;
   padding: 0.75rem 0;
+}
+
+._light {
+  background-color: $active-color;
+}
+._dark {
+  background-color: $tertiary-color;
 }

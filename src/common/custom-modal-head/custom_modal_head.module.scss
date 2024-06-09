@@ -5,6 +5,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: $border-style;
+  padding-bottom: 1rem;
   > div {
     @include divStyle($primary-color, $tertiary-color);
     background-color: transparent;

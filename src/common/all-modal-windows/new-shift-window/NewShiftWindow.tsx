@@ -12,17 +12,21 @@ const NewShiftWindow: FC = () => {
     <div className={styles.div}>
       <CustomModalHead text="Открытие новой смены" />
       <div className={styles.subdiv_input}>
-        <h3>Сумма на начало смены</h3>
         <div>
-          <CustomInput text="Введите сумму" />
+          <CustomInput
+            label="Сумма на начало смены"
+            plaseholder="Введите сумму"
+          />
         </div>
       </div>
       <div className={styles.subdiv_textarea}>
-        <h3>Сумма на начало смены</h3>
-        <CustomTextarea text="Введите комментарий" />
+        <CustomTextarea
+          label="Сумма на начало смены"
+          plaseholder="Введите комментарий"
+        />
       </div>
       <div>
-        <CustomButton text="Отправить" />
+        <CustomButton color="light" text="Отправить" />
       </div>
     </div>
   );

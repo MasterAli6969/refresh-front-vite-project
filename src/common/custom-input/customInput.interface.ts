@@ -1,3 +1,4 @@
 export interface CustomInputPropsType {
-  text: string;
+  label: string;
+  plaseholder: string;
 }

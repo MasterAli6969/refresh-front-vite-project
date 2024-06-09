@@ -1,7 +1,10 @@
 @import "/src/variables.scss";
 
+.label {
+  margin-bottom: 1rem;
+}
+
 .textarea {
-  width: 100%;
   min-height: 9.5rem;
   @include inputStyle;
 }

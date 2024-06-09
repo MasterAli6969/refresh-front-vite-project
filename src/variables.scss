@@ -3,6 +3,7 @@ $primary-color: #141718;
 $secondary-color: #232627;
 $tertiary-color: #343839;
 $quartet-color: #2f3233;
+$fifth-color: #141414;
 
 $light-color: #ffffff;
 $dark-color: #6c7275;
@@ -39,5 +40,16 @@ $boreder-radius16: 16px;
   border: $border-style;
   border-radius: $boreder-radius12;
   color: $light-color;
+  padding: 1rem;
+}
+
+@mixin modalDivV1($cutom-width) {
+  width: $cutom-width;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: $bg-primary;
+  border: $border-style;
+  border-radius: $boreder-radius16;
   padding: 1rem;
 }
