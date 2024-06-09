@@ -1,19 +1,21 @@
 @import "/src/variables.scss";
 .div {
-  display: flex;
-  align-items: center;
-  background-color: $secondary-color;
-  border-radius: 12px;
-  border: $border-style;
-  padding: 0.3rem;
-  > button {
-    width: 50%;
-    background-color: transparent;
-    color: white;
-    border: none;
+  .subdiv_buttons {
+    display: flex;
+    align-items: center;
+    background-color: $secondary-color;
     border-radius: 12px;
-  }
-  ._active {
-    background-color: $primary-color;
+    border: $border-style;
+    padding: 0.3rem;
+    > button {
+      width: 50%;
+      background-color: transparent;
+      color: white;
+      border: none;
+      border-radius: 12px;
+    }
+    ._active {
+      background-color: $primary-color;
+    }
   }
 }

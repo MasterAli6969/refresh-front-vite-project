@@ -14,15 +14,8 @@ const CustomModalButton: FC<CustomModalButtonPropsType> = ({
   buttonRight: ButtonRight,
 }) => {
   const [activeButton, setActiveButton] = useState(false);
-  const [switchButtonState, setSwitchButtonState] = useState<string | null>(
-    "system"
-  );
 
   const modalRef = useRef<HTMLDivElement>(null);
-
-  const handleSwitchButtonClick = (buttonName: string) => {
-    setSwitchButtonState(buttonName);
-  };
 
   const handleClick = () => {
     setActiveButton(!activeButton);
@@ -61,13 +54,12 @@ const CustomModalButton: FC<CustomModalButtonPropsType> = ({
           <h3>{title}</h3>
           <div>
             <CustomSwitchButton
-              button1="Сотрудники"
-              button2="Клиенты"
-              onButtonClick={handleSwitchButtonClick}
+              buttonLeft="Сотрудники"
+              componentLeft={ButtonLeft}
+              buttonRight="Клиенты"
+              componentRight={ButtonRight}
             />
           </div>
-          <div>{switchButtonState === "system" && <ButtonLeft />}</div>
-          <div>{switchButtonState === "clients" && <ButtonRight />}</div>
         </div>
       </div>
     </div>

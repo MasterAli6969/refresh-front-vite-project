@@ -11,6 +11,7 @@ const CustomButton: FC<CustomButtonPropsType> = ({ text, color }) => {
       className={classNames(styles.button, {
         [styles._light]: color === "light",
         [styles._dark]: color === "dark",
+        [styles._warning]: color === "warning",
       })}
     >
       {text}

@@ -1,5 +1,8 @@
+import { FC } from "react";
+
 export interface CustomSwitchButtonProps {
-  button1: string;
-  button2: string;
-  onButtonClick: (buttonName: string) => void;
+  buttonLeft: string;
+  componentLeft: FC;
+  buttonRight: string;
+  componentRight: FC;
 }

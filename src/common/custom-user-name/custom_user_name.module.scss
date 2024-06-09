@@ -1,0 +1,14 @@
+@import "/src/variables.scss";
+
+.div {
+  display: flex;
+  align-items: center;
+  > div:first-child {
+    margin-right: 1rem;
+  }
+  > div:last-child {
+    > h4 {
+      color: $faded-color;
+    }
+  }
+}

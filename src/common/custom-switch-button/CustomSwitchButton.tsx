@@ -7,31 +7,37 @@ import { CustomSwitchButtonProps } from "./customSwitchButton.interface";
 import style from "./custom_switch_button.module.scss";
 
 const CustomSwitchButton: FC<CustomSwitchButtonProps> = ({
-  button1,
-  button2,
-  onButtonClick,
+  buttonLeft,
+  componentLeft: ComponentLeft,
+  buttonRight,
+  componentRight: ComponentRight,
 }) => {
-  const [activeButton, setActiveButton] = useState<string | null>("system");
+  const [activeButton, setActiveButton] = useState<string | null>("left");
 
   const handleClick = (buttonName: string) => {
     setActiveButton(buttonName);
-    onButtonClick(buttonName);
   };
 
   return (
     <div className={style.div}>
-      <button
-        className={classNames({ [style._active]: activeButton === "system" })}
-        onClick={() => handleClick("system")}
-      >
-        {button1}
-      </button>
-      <button
-        className={classNames({ [style._active]: activeButton === "clients" })}
-        onClick={() => handleClick("clients")}
-      >
-        {button2}
-      </button>
+      <div className={style.subdiv_buttons}>
+        <button
+          className={classNames({ [style._active]: activeButton === "left" })}
+          onClick={() => handleClick("left")}
+        >
+          {buttonLeft}
+        </button>
+        <button
+          className={classNames({ [style._active]: activeButton === "right" })}
+          onClick={() => handleClick("right")}
+        >
+          {buttonRight}
+        </button>
+      </div>
+      <div className={style.subdiv_contents}>
+        <div>{activeButton === "left" && <ComponentLeft />}</div>
+        <div>{activeButton === "right" && <ComponentRight />}</div>
+      </div>
     </div>
   );
 };

@@ -7,8 +7,10 @@ $fifth-color: #141414;
 
 $light-color: #ffffff;
 $dark-color: #6c7275;
+$faded-color: #a2a5ae;
 
 $active-color: #3e90f0;
+$warning-color: #ff6a55;
 $error-color: #ff0000;
 
 //стили для границ
@@ -52,4 +54,15 @@ $boreder-radius16: 16px;
   border: $border-style;
   border-radius: $boreder-radius16;
   padding: 1rem;
+}
+
+@mixin twoButtonDivHorizont {
+  display: flex;
+  justify-content: space-between;
+  > button:first-child {
+    margin-right: 0.5rem;
+  }
+  > button:last-child {
+    margin-left: 0.5rem;
+  }
 }
