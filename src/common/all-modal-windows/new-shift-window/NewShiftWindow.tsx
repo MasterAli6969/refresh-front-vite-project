@@ -1,4 +1,6 @@
 import { FC } from "react";
+import { useAppDispatch } from "../../../features/redux/hooks/reduxRootHooks";
+import { setToggle } from "../../../features/redux/reducers/common-reducers/toggleRedusers";
 
 import CustomModalHead from "../../custom-modal-head/CustomModalHead";
 import CustomInput from "../../custom-input/CustomInput";
@@ -8,6 +10,13 @@ import CustomButton from "../../custom-button/CustomButton";
 import styles from "./new_shift_window.module.scss";
 
 const NewShiftWindow: FC = () => {
+  const dispatch = useAppDispatch();
+
+  const handleClick = () => {
+    dispatch(setToggle({ key: "isOpenShift", value: true }));
+    dispatch(setToggle({ key: "isModalOpen", value: false }));
+  };
+
   return (
     <div className={styles.div}>
       <CustomModalHead text="Открытие новой смены" />
@@ -25,7 +34,7 @@ const NewShiftWindow: FC = () => {
           plaseholder="Введите комментарий"
         />
       </div>
-      <div>
+      <div onClick={handleClick}>
         <CustomButton color="light" text="Отправить" />
       </div>
     </div>
