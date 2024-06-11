@@ -1,3 +1,5 @@
+@import "/src/variables.scss";
+
 #root {
   height: 100vh;
   margin: 0 auto;
@@ -165,4 +167,13 @@ h4 {
 p {
   font-size: 0.75rem; /* 12px */
   line-height: 0.9rem; /* 14.4px */
+}
+
+.form-floating > .form-select {
+  padding: 0 1rem;
+}
+.form-select {
+  border: none !important;
+  padding: 0 1rem;
+  background-color: #141718 !important;
 }

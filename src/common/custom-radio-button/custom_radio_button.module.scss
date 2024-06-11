@@ -1,0 +1,9 @@
+.div {
+  > h3 {
+    margin-bottom: 0.5rem;
+  }
+  .subdiv {
+    display: flex;
+    justify-content: space-between;
+  }
+}
