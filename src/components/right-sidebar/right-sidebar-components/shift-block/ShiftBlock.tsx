@@ -1,9 +1,10 @@
 import { FC } from "react";
 import NewShiftWindow from "../../../../common/all-modal-windows/new-shift-window/NewShiftWindow";
+import CloseShiftWindow from "../../../../common/all-modal-windows/close-shift-window/CloseShiftWindow";
 import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
 import styles from "./shift_block.module.scss";
 
-import CustomModalOpenContainer from "../../../../common/custom-modal-open-container/CustomModalOpenContainer";
+import CustomModalOpenContainer from "../../../../common/common-UI-components/custom-modal-open-container/CustomModalOpenContainer";
 
 const ShiftBlock: FC = () => {
   const { isOpenShift } = useAppSelector((state) => state.toggle);
@@ -24,7 +25,11 @@ const ShiftBlock: FC = () => {
       </div>
 
       {isOpenShift ? (
-        <button>Закрыть смену</button>
+        <div>
+          <CustomModalOpenContainer openComponents={CloseShiftWindow}>
+            Закрыть смену
+          </CustomModalOpenContainer>
+        </div>
       ) : (
         <CustomModalOpenContainer openComponents={NewShiftWindow}>
           Открыть смену

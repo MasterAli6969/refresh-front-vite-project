@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-import CustomModalHead from "../../custom-modal-head/CustomModalHead";
+import CustomModalHead from "../../common-UI-components/custom-modal-head/CustomModalHead";
 import CustomInput from "../../custom-input/CustomInput";
 import CustomTextarea from "../../custom-textarea/CustomTextarea";
-import CustomButton from "../../custom-button/CustomButton";
+import CustomButton from "../../common-UI-components/custom-button/CustomButton";
 
 import styles from "./user_penalty.module.scss";
 

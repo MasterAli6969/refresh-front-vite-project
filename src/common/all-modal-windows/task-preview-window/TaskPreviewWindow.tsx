@@ -1,10 +1,10 @@
 import { FC } from "react";
 
-import CustomModalHead from "../../custom-modal-head/CustomModalHead";
-import CustomUserName from "../../custom-user-name/CustomUserName";
+import CustomModalHead from "../../common-UI-components/custom-modal-head/CustomModalHead";
+import CustomUserName from "../../common-UI-components/custom-user-name/CustomUserName";
 import CustomDualTextDisplay from "../../custom-dual-text-display/CustomDualTextDisplay";
 import CustomLineProgress from "../../custom-line-progress/CustomLineProgress";
-import CustomButton from "../../custom-button/CustomButton";
+import CustomButton from "../../common-UI-components/custom-button/CustomButton";
 
 import styles from "./task_preview_window.module.scss";
 

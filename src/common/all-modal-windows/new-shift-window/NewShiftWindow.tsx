@@ -2,10 +2,10 @@ import { FC } from "react";
 import { useAppDispatch } from "../../../features/redux/hooks/reduxRootHooks";
 import { setToggle } from "../../../features/redux/reducers/common-reducers/toggleRedusers";
 
-import CustomModalHead from "../../custom-modal-head/CustomModalHead";
-import CustomInput from "../../custom-input/CustomInput";
-import CustomTextarea from "../../custom-textarea/CustomTextarea";
-import CustomButton from "../../custom-button/CustomButton";
+import CustomModalHead from "../../common-UI-components/custom-modal-head/CustomModalHead";
+import CustomInput from "../../common-UI-components/custom-input/CustomInput";
+import CustomTextarea from "../../common-UI-components/custom-textarea/CustomTextarea";
+import CustomButton from "../../common-UI-components/custom-button/CustomButton";
 
 import styles from "./new_shift_window.module.scss";
 

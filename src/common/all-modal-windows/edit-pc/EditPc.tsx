@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-import CustomModalHead from "../../custom-modal-head/CustomModalHead";
+import CustomModalHead from "../../common-UI-components/custom-modal-head/CustomModalHead";
 import CustomInput from "../../custom-input/CustomInput";
-import CustomSelect from "../../custom-select/CustomSelect";
-import CustomButton from "../../custom-button/CustomButton";
+import CustomSelect from "../../common-UI-components/custom-select/CustomSelect";
+import CustomButton from "../../common-UI-components/custom-button/CustomButton";
 
 import { selectTestData } from "../../testData";
 

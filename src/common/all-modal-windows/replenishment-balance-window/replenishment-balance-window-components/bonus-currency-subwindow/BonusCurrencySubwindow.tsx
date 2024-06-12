@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import CustomInput from "../../../../custom-input/CustomInput";
 import CustomTextarea from "../../../../custom-textarea/CustomTextarea";
-import CustomButton from "../../../../custom-button/CustomButton";
+import CustomButton from "../../../../common-UI-components/custom-button/CustomButton";
 
 import styles from "./bonus_currency_subwindow.module.scss";
 
