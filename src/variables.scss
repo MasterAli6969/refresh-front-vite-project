@@ -12,11 +12,20 @@ $faded-color: #a2a5ae;
 $active-color: #3e90f0;
 $warning-color: #ff6a55;
 $error-color: #ff0000;
+$ok-color: #159900;
 
 //стили для границ
 $border-style: 1px solid $tertiary-color;
+$boreder-radius5: 5px;
+$boreder-radius10: 10px;
 $boreder-radius12: 12px;
 $boreder-radius16: 16px;
+
+$hover-lists-active: linear-gradient(
+  to right,
+  rgba(42, 133, 255, 0.1),
+  rgba(255, 255, 255, 0.1)
+);
 
 //стили для мини кнопок с синей иконкой
 @mixin divStyle($bg-color, $hover-color) {

@@ -33,11 +33,7 @@
       }
     }
     .active {
-      background: linear-gradient(
-        to right,
-        rgba(42, 133, 255, 0.1),
-        rgba(255, 255, 255, 0.1)
-      );
+      background: $hover-lists-active;
     }
   }
   .right_list {

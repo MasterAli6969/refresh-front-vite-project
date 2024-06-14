@@ -1,5 +1,5 @@
 import { FC } from "react";
-import ArrowChekRight from "../../../../assets/icons/ArrowChekRight.svg";
+import ArrowChekRight from "../../../../assets/icons-svg-components/ArrowChekRight";
 import { ListLinkType } from "../../../../commonTypes.interface";
 import {
   LeftDropListDataProps,
@@ -44,7 +44,7 @@ const LeftDropList: FC<LeftDropListDataProps> = ({
                     aria-controls={`multiCollapseExample${item.id}`}
                   >
                     <h4>{item.title}</h4>
-                    <img src={ArrowChekRight} />
+                    <ArrowChekRight color="#6C7275" />
                   </button>
                   <ul
                     className="collapse multi-collapse"

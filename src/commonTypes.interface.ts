@@ -2,5 +2,6 @@
 export interface ListLinkType {
   id: number;
   url: string;
+  icon?: string;
   title: string;
 }

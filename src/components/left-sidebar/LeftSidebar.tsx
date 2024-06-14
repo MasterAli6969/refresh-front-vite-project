@@ -5,7 +5,6 @@ import classNames from "classnames";
 import { leftSidebarDataType } from "./leftSidebar.interface";
 
 import RefreshLogo from "../../assets/img/RefreshLogo.png";
-import ArrowChekRight from "../../assets/icons/ArrowChekRight.svg";
 
 import LeftDropList from "./left-sidebar-components/left-drop-list/LeftDropList";
 import {
@@ -15,6 +14,7 @@ import {
 } from "./data";
 
 import styles from "./left_sidebar.module.scss";
+import ArrowChekRight from "../../assets/icons-svg-components/ArrowChekRight";
 
 const LeftSidebar: FC = () => {
   const [activeItemId, setActiveItemId] = useState<number | null>(null);
@@ -59,7 +59,7 @@ const LeftSidebar: FC = () => {
                 </div>
                 {(item.id === 7 || item.id === 9) && (
                   <div>
-                    <img src={ArrowChekRight} />
+                    <ArrowChekRight color="#6C7275" />
                   </div>
                 )}
               </li>

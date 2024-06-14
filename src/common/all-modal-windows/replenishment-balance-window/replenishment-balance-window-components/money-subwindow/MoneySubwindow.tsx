@@ -1,7 +1,7 @@
 import { FC } from "react";
 
-import CustomInput from "../../../../custom-input/CustomInput";
-import CustomRadioButton from "../../../../custom-radio-button/CustomRadioButton";
+import CustomInput from "../../../../common-UI-components/custom-input/CustomInput";
+import CustomRadioButton from "../../../../common-UI-components/custom-radio-button/CustomRadioButton";
 import CustomButton from "../../../../common-UI-components/custom-button/CustomButton";
 
 import styles from "./money_subwindow.module.scss";
