@@ -16,11 +16,13 @@
       }
     }
   }
+  //  <li key={item.id} className={styles.li_dropdown}>
   .li_dropdown {
     padding: 0.5rem;
     > button,
     > a {
       &:hover {
+        cursor: pointer;
         color: $active-color;
       }
     }

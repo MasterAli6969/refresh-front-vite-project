@@ -14,7 +14,7 @@ export interface LeftDropListStaticDataType extends ListLinkType {}
 export interface LeftDropListDropMenuDataType {
   id: number;
   title: string;
-  leftDropListDropItem?: ListLinkType[];
+  customListDropItem?: ListLinkType[];
   url?: string;
 }
 

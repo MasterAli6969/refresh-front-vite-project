@@ -78,7 +78,7 @@ export const leftDropListStaticData = [
   },
 ];
 
-export const LeftDropListDropMenuData = [
+export const leftDropListDropData = [
   {
     id: 1,
     title: "Веб-администратор",

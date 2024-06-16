@@ -5,16 +5,16 @@ import classNames from "classnames";
 import { leftSidebarDataType } from "./leftSidebar.interface";
 
 import RefreshLogo from "../../assets/img/RefreshLogo.png";
+import ArrowChekRight from "../../assets/icons-svg-components/ArrowChekRight";
 
 import LeftDropList from "./left-sidebar-components/left-drop-list/LeftDropList";
 import {
   leftSidebarData,
   leftDropListStaticData,
-  LeftDropListDropMenuData,
+  leftDropListDropData,
 } from "./data";
 
 import styles from "./left_sidebar.module.scss";
-import ArrowChekRight from "../../assets/icons-svg-components/ArrowChekRight";
 
 const LeftSidebar: FC = () => {
   const [activeItemId, setActiveItemId] = useState<number | null>(null);
@@ -66,7 +66,6 @@ const LeftSidebar: FC = () => {
             );
           })
         )}
-
         {activeItemId === 7 && (
           <li className={styles.right_list}>
             <LeftDropList leftDropListStaticData={leftDropListStaticData} />
@@ -74,7 +73,7 @@ const LeftSidebar: FC = () => {
         )}
         {activeItemId === 9 && (
           <li className={styles.right_list}>
-            <LeftDropList leftDropListDropData={LeftDropListDropMenuData} />
+            <LeftDropList leftDropListDropData={leftDropListDropData} />
           </li>
         )}
       </ul>

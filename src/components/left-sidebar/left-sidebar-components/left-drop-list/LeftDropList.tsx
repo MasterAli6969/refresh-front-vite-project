@@ -1,17 +1,24 @@
 import { FC } from "react";
+
 import ArrowChekRight from "../../../../assets/icons-svg-components/ArrowChekRight";
-import { ListLinkType } from "../../../../commonTypes.interface";
+
 import {
   LeftDropListDataProps,
   LeftDropListStaticDataType,
   LeftDropListDropMenuDataType,
 } from "../../leftSidebar.interface";
+
+import { ListLinkType } from "../../../../commonTypes.interface";
+
 import styles from "./custom_list.module.scss";
 
 const LeftDropList: FC<LeftDropListDataProps> = ({
   leftDropListStaticData,
   leftDropListDropData,
 }) => {
+  console.log("Статические данные", leftDropListStaticData);
+  console.log("Динамические данные", leftDropListDropData);
+
   return (
     <ul className={styles.ul}>
       {leftDropListStaticData &&
@@ -30,8 +37,8 @@ const LeftDropList: FC<LeftDropListDataProps> = ({
         leftDropListDropData.map((item: LeftDropListDropMenuDataType) => {
           return (
             <li key={item.id} className={styles.li_dropdown}>
-              {!item.leftDropListDropItem ||
-              item.leftDropListDropItem.length === 0 ? (
+              {!item.customListDropItem ||
+              item.customListDropItem.length === 0 ? (
                 <a href={item.url}>
                   <h4>{item.title}</h4>
                 </a>
@@ -50,7 +57,7 @@ const LeftDropList: FC<LeftDropListDataProps> = ({
                     className="collapse multi-collapse"
                     id={`multiCollapseExample${item.id}`}
                   >
-                    {item.leftDropListDropItem.map((subItem: ListLinkType) => {
+                    {item.customListDropItem.map((subItem: ListLinkType) => {
                       return (
                         <li key={subItem.id}>
                           <a href={subItem.url}>
