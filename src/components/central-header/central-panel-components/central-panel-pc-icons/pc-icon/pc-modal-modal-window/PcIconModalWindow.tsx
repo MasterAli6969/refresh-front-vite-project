@@ -1,7 +1,11 @@
 import { FC } from "react";
-import ArrowChekRight from "../../../../../../assets/icons-svg-components/ArrowChekRight";
 import classNames from "classnames";
+
+import ArrowChekRight from "../../../../../../assets/icons-svg-components/ArrowChekRight";
+import CustomStatickList from "../../../../../../common/common-UI-components/custom-statick-list/CustomStatickList";
+
 import { PcIconModalWindowPropsData } from "./pcModalWindow.interface";
+
 import styles from "./pc_icon_modal_window.module.scss";
 
 const PcIconModalWindow: FC<PcIconModalWindowPropsData> = ({
@@ -34,13 +38,11 @@ const PcIconModalWindow: FC<PcIconModalWindowPropsData> = ({
                 pcIconModalWindowData.dropData?.dropDataItem.length === 0 ? (
                   <h1>Ooops, server error, please wait...</h1>
                 ) : (
-                  pcIconModalWindowData.dropData?.dropDataItem.map((item) => (
-                    <li key={item.id}>
-                      <a href={item.url}>
-                        <p>{item.title}</p>
-                      </a>
-                    </li>
-                  ))
+                  <CustomStatickList
+                    customStatickListData={
+                      pcIconModalWindowData.dropData?.dropDataItem
+                    }
+                  />
                 )}
               </ul>
             </div>

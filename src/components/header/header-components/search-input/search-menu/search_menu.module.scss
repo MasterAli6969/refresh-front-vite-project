@@ -1,0 +1,34 @@
+@import "/src/variables.scss";
+
+.ul {
+  background-color: $primary-color;
+  border: $border-style;
+  border-radius: $boreder-radius12;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  > li {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: $boreder-radius12;
+    padding: 1rem;
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hover_submenu {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: -190px;
+    }
+    &:hover {
+      background: $hover-lists-active;
+      .hover_submenu {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "/src/variables.scss";
+
+.ul {
+  background-color: $bg-primary;
+  color: white;
+  border: $border-style;
+  border-radius: $boreder-radius10;
+  padding: 0.3rem;
+  margin-left: 1rem !important;
+  > li {
+    padding: 0.5rem;
+    &:hover {
+      background: $hover-lists-active;
+      border-radius: $boreder-radius5;
+    }
+  }
+}

@@ -25,19 +25,8 @@
           }
         }
         > ul {
-          width: 12.9rem;
-          background-color: $bg-primary;
-          color: white;
-          border: $border-style;
-          padding: 0.3rem;
-          margin-left: 1rem !important;
-          > li {
-            padding: 0.5rem;
-            &:hover {
-              background: $hover-lists-active;
-              border-radius: $boreder-radius5;
-            }
-          }
+          background-color: transparent;
+          border: none;
         }
       }
     }
