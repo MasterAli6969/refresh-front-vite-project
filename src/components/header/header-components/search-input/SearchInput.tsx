@@ -44,9 +44,9 @@ const SearchInput: FC = () => {
           type="search"
           onFocus={handleFocus}
         />
-      </div>
-      <div>
-        <SearchMenu focused={isFocused} inputState={search} />
+        <div className={styles.search_menu}>
+          <SearchMenu focused={isFocused} inputState={search} />
+        </div>
       </div>
     </div>
   );

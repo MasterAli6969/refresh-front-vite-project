@@ -1,5 +1,6 @@
 @import "/src/variables.scss";
 .div {
+  position: relative;
   width: 25.1rem;
   display: flex;
   background-color: $primary-color;
@@ -14,5 +15,11 @@
     background-color: transparent;
     color: $light-color;
     border: none;
+  }
+  .search_menu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
   }
 }
