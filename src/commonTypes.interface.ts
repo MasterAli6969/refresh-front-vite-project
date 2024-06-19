@@ -11,4 +11,7 @@ export interface ListLinkType {
 export interface AuthInputPropsType {
   label: string;
   error: boolean;
+  name: "pass" | "mail";
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }

@@ -1,3 +1,4 @@
-export const TestMail: string = "mars.mir6969@gmail.com";
-
-export const TestPass: string = "1234";
+export const testAuthData = {
+  mail: "mars.mir6969@gmail.com",
+  pass: "1234",
+};

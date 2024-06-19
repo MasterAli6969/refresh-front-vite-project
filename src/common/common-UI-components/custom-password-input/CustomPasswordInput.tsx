@@ -8,7 +8,13 @@ import { AuthInputPropsType } from "../../../commonTypes.interface";
 
 import styles from "./custom_password_input.module.scss";
 
-const CustomPasswordInput: FC<AuthInputPropsType> = ({ label, error }) => {
+const CustomPasswordInput: FC<AuthInputPropsType> = ({
+  label,
+  error,
+  name,
+  value,
+  onChange,
+}) => {
   const [inputType, setInputType] = useState<string>("password");
 
   const togglePasswordVisibility = () => {
@@ -24,7 +30,13 @@ const CustomPasswordInput: FC<AuthInputPropsType> = ({ label, error }) => {
       >
         <div>
           <img src={KeyIcon} />
-          <input placeholder="Введите пароль" type={inputType} />
+          <input
+            type={inputType}
+            name={name}
+            placeholder="Введите пароль"
+            value={value}
+            onChange={onChange}
+          />
         </div>
         <img onClick={togglePasswordVisibility} src={EyeBlueIcon} />
       </div>
