@@ -1,0 +1,29 @@
+@import "/src/variables.scss";
+
+.div {
+  width: 100%;
+  > h3 {
+    color: $dark-color;
+    margin-bottom: 0.5rem;
+  }
+  .subdiv {
+    @include inputStyle;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    > img {
+      margin-right: 0.5rem;
+    }
+    > input {
+      border: none;
+      background-color: transparent;
+      color: $dark-color;
+    }
+  }
+  > p {
+    color: $error-color;
+  }
+  ._error {
+    border: 1px solid $error-color;
+  }
+}

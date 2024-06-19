@@ -1,0 +1,10 @@
+@import "/src/variables.scss";
+
+.div {
+  @include forms;
+  > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+}

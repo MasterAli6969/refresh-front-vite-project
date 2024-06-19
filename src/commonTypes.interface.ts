@@ -5,3 +5,10 @@ export interface ListLinkType {
   icon?: string;
   title: string;
 }
+
+// ЭТО ОБЩИЙ ИГНТЕРФЕЙС ДЛЯ INPUT ПОЛЕЙ В ФОРМЕ АВТАРИЗАЦИИ
+
+export interface AuthInputPropsType {
+  label: string;
+  error: boolean;
+}

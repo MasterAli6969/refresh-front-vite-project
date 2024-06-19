@@ -1,4 +1,5 @@
 export interface CustomButtonPropsType {
+  color: "light" | "dark" | "warning";
   text: string;
-  color: string;
+  type?: "button" | "submit" | "reset";
 }

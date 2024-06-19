@@ -75,3 +75,14 @@ $hover-lists-active: linear-gradient(
     margin-left: 0.5rem;
   }
 }
+
+@mixin forms {
+  width: 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: $bg-primary;
+  border: $border-style;
+  border-radius: $boreder-radius16;
+  padding: 1rem;
+}

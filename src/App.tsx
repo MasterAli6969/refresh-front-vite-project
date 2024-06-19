@@ -1,13 +1,14 @@
-import "./App.css";
+import { useLocation } from "react-router-dom";
+
 import PanelRotes from "./routes/PanelRotes";
+import AuthRoutes from "./routes/AuthRoutes";
+
+import "./App.scss";
 function App() {
-  return (
-    <>
-      <div>
-        <PanelRotes />
-      </div>
-    </>
-  );
+  const location = useLocation();
+  const isRout = location.pathname.startsWith("/auth"); // проверка, если маршрут начинается с /auth/
+
+  return <div>{isRout ? <AuthRoutes /> : <PanelRotes />}</div>;
 }
 
 export default App;

@@ -4,8 +4,8 @@ import classNames from "classnames";
 
 import { leftSidebarDataType } from "./leftSidebar.interface";
 
-import RefreshLogo from "../../assets/img/RefreshLogo.png";
 import ArrowChekRight from "../../assets/icons-svg-components/ArrowChekRight";
+import CustomLogo from "../../common/common-UI-components/custom-logo/CustomLogo";
 
 import LeftDropList from "./left-sidebar-components/left-drop-list/LeftDropList";
 import {
@@ -32,8 +32,7 @@ const LeftSidebar: FC = () => {
   return (
     <div className={styles.div}>
       <div className={styles.subdiv_logo}>
-        <img src={RefreshLogo} />
-        <h1>REFRESH</h1>
+        <CustomLogo display="block" />
       </div>
       <ul className={styles.subdiv_list}>
         {!leftSidebarData || leftSidebarData.length === 0 ? (

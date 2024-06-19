@@ -5,13 +5,7 @@
   border-right: 1px solid $secondary-color;
   padding: 1rem;
   .subdiv_logo {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
     margin-bottom: 1rem;
-    > img {
-      margin-right: 1rem;
-    }
   }
   .subdiv_list {
     position: relative;

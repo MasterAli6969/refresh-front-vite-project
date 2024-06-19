@@ -1,0 +1,19 @@
+.divFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divBlock {
+  display: block;
+}
+
+.subdiv {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+
+  > img {
+    margin-right: 1rem;
+  }
+}

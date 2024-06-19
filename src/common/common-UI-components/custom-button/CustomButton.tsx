@@ -5,7 +5,7 @@ import { CustomButtonPropsType } from "./customButton.interface";
 
 import styles from "./custom_button.module.scss";
 
-const CustomButton: FC<CustomButtonPropsType> = ({ text, color }) => {
+const CustomButton: FC<CustomButtonPropsType> = ({ text, color, type }) => {
   return (
     <button
       className={classNames(styles.button, {
@@ -13,6 +13,7 @@ const CustomButton: FC<CustomButtonPropsType> = ({ text, color }) => {
         [styles._dark]: color === "dark",
         [styles._warning]: color === "warning",
       })}
+      type={type ? type : "button"}
     >
       {text}
     </button>

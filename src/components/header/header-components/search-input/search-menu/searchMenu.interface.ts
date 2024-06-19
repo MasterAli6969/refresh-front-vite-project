@@ -10,5 +10,5 @@ export interface SearchMenuDataType {
 
 export interface SearchMenuPropsType {
   inputState: string;
-  Focused: boolean;
+  focused: boolean;
 }
