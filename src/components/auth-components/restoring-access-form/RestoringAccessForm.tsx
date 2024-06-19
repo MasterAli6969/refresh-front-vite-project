@@ -5,9 +5,9 @@ import CustomMailInput from "../../../common/common-UI-components/custom-mail-in
 import CustomButton from "../../../common/common-UI-components/custom-button/CustomButton";
 import SphereArrowCheckLeft from "../../../assets/icons/SphereArrowCheckLeft.svg";
 
-import styles from "./restoring_access.module.scss";
+import styles from "./restoring_access_form.module.scss";
 
-const RestoringAccess: FC = () => {
+const RestoringAccessForm: FC = () => {
   return (
     <div className={styles.div}>
       <div>
@@ -18,7 +18,13 @@ const RestoringAccess: FC = () => {
         <h3>Восстановление доступа</h3>
       </div>
       <div>
-        <CustomMailInput />
+        <CustomMailInput
+          error={false}
+          label="gog"
+          name="mail"
+          value="mail"
+          onChange={() => {}}
+        />
       </div>
       <div>
         <CustomButton
@@ -30,4 +36,4 @@ const RestoringAccess: FC = () => {
   );
 };
 
-export default RestoringAccess;
+export default RestoringAccessForm;

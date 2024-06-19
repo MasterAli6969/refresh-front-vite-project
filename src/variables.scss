@@ -76,6 +76,14 @@ $hover-lists-active: linear-gradient(
   }
 }
 
+@mixin formsPageDiv {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin forms {
   width: 26rem;
   display: flex;

@@ -5,12 +5,12 @@ import CustomPasswordInput from "../../../common/common-UI-components/custom-pas
 import CustomMailInput from "../../../common/common-UI-components/custom-mail-input/CustomMailInput";
 import CustomButton from "../../../common/common-UI-components/custom-button/CustomButton";
 
-import { testAuthDataTypes } from "./authForm.interface";
+import { testAuthDataTypes } from "./authorizationForm.interface";
 import { testAuthData } from "../../../pages/auth/data";
 
-import styles from "./auth_form.module.scss";
+import styles from "./authorization_form.module.scss";
 
-const AuthForm: FC = () => {
+const AuthorizationForm: FC = () => {
   const [authData, setAuthData] = useState<testAuthDataTypes>({
     mail: "",
     pass: "",
@@ -80,4 +80,4 @@ const AuthForm: FC = () => {
   );
 };
 
-export default AuthForm;
+export default AuthorizationForm;

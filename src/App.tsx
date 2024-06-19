@@ -1,14 +1,19 @@
 import { useLocation } from "react-router-dom";
-
 import PanelRotes from "./routes/PanelRotes";
-import AuthRoutes from "./routes/AuthRoutes";
-
+import AuthRoutes from "./routes/AuthRoutes"; // Импортируем компонент AuthRoutes
 import "./App.scss";
+
 function App() {
   const location = useLocation();
-  const isRout = location.pathname.startsWith("/auth"); // проверка, если маршрут начинается с /auth/
+  const isAuthRoute = location.pathname.startsWith("/authorization");
+  const isRestoringAccessRoute =
+    location.pathname.startsWith("/restoring-access");
 
-  return <div>{isRout ? <AuthRoutes /> : <PanelRotes />}</div>;
+  const isAuthOrRestoringAccessRoute = isAuthRoute || isRestoringAccessRoute;
+
+  return (
+    <div>{isAuthOrRestoringAccessRoute ? <AuthRoutes /> : <PanelRotes />}</div>
+  );
 }
 
 export default App;

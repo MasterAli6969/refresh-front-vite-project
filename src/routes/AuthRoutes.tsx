@@ -1,11 +1,13 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
-import Auth from "../pages/auth/Auth";
+import Authorization from "../pages/auth/authorization/Authorization";
+import RestoringAccess from "../pages/auth/restoring-access/RestoringAccess";
 
 const AuthRoutes: FC = () => {
   return (
     <Routes>
-      <Route path="/auth" element={<Auth />} />
+      <Route path="/authorization" element={<Authorization />} />
+      <Route path="/restoring-access" element={<RestoringAccess />} />
     </Routes>
   );
 };
