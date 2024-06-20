@@ -1,11 +1,15 @@
 import { FC, useState, ChangeEvent, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
 import CustomLogo from "../../../common/common-UI-components/custom-logo/CustomLogo";
 import CustomPasswordInput from "../../../common/common-UI-components/custom-password-input/CustomPasswordInput";
 import CustomMailInput from "../../../common/common-UI-components/custom-mail-input/CustomMailInput";
 import CustomButton from "../../../common/common-UI-components/custom-button/CustomButton";
 
-import { testAuthDataTypes } from "./authorizationForm.interface";
+import {
+  testAuthDataTypes,
+  errorsDataTypes,
+} from "./authorizationForm.interface";
 import { testAuthData } from "../../../pages/auth/data";
 
 import styles from "./authorization_form.module.scss";
@@ -16,10 +20,12 @@ const AuthorizationForm: FC = () => {
     pass: "",
   });
 
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<errorsDataTypes>({
     mail: false,
     pass: false,
   });
+
+  const navigate = useNavigate();
 
   const handlerChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -35,7 +41,7 @@ const AuthorizationForm: FC = () => {
     const isPassValid = authData.pass === testAuthData.pass;
 
     if (isMailValid && isPassValid) {
-      alert("Данные верны!");
+      navigate("/");
     } else {
       setErrors({
         mail: !isMailValid,
@@ -44,12 +50,14 @@ const AuthorizationForm: FC = () => {
     }
   };
 
+  const handleRedirectRestoringAccess = () => {
+    navigate("/restoring-access");
+  };
+
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <div>
-        <div>
-          <CustomLogo display="flex" isLabale="Авторизация" />
-        </div>
+        <CustomLogo display="flex" isLabale="Авторизация" />
       </div>
       <div>
         <CustomMailInput
@@ -68,6 +76,9 @@ const AuthorizationForm: FC = () => {
           name="pass"
           value={authData.pass}
         />
+      </div>
+      <div>
+        <h3 onClick={handleRedirectRestoringAccess}>Забыли пароль?</h3>
       </div>
       <div>
         <CustomButton type="submit" color="light" text="Выполнить вход" />

@@ -23,7 +23,13 @@ const CustomMailInput: FC<AuthInputPropsType> = ({
         })}
       >
         <img src={UserIcon} />
-        <input type="email" name={name} value={value} onChange={onChange} />
+        <input
+          placeholder="Введите почту"
+          type="email"
+          name={name}
+          value={value}
+          onChange={onChange}
+        />
       </div>
       {error && <p>Неверно введен адрес эл. почты</p>}
     </div>
