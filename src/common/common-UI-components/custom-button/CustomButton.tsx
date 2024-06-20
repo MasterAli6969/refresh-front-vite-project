@@ -5,9 +5,15 @@ import { CustomButtonPropsType } from "./customButton.interface";
 
 import styles from "./custom_button.module.scss";
 
-const CustomButton: FC<CustomButtonPropsType> = ({ text, color, type }) => {
+const CustomButton: FC<CustomButtonPropsType> = ({
+  text,
+  color,
+  type,
+  onClick,
+}) => {
   return (
     <button
+      onClick={onClick}
       className={classNames(styles.button, {
         [styles._light]: color === "light",
         [styles._dark]: color === "dark",

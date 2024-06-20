@@ -1,6 +1,6 @@
 @import "/src/variables.scss";
 
-.div {
+.form {
   @include forms;
   > div:nth-child(2) {
     display: flex;
