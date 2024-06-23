@@ -22,7 +22,7 @@ export const userPanelData = {
     },
     {
       id: 3,
-      url: "/refresh-front-vite-project/authorization ",
+      url: "/authorization ",
       icon: SignOutIcon,
       text: "Выход из CRM",
     },
