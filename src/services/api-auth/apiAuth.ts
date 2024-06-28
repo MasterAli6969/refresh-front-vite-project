@@ -7,13 +7,7 @@ export const postAuthorizationData = async (params: AuthPostDataTypes) => {
   console.log("ДАННЫЕ ПОСЛЕ ПАРСА", authPostDataJson);
   const response = await axios.post(
     "http://45.135.165.89:8082/",
-    authPostDataJson,
-    {
-      headers: {
-        "Content-Type": "application/json",
-        Origin: "http://45.135.165.89:8082/",
-      },
-    }
+    authPostDataJson
   );
   return response.data;
 };
