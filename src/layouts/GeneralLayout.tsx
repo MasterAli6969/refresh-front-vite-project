@@ -17,7 +17,7 @@ const GeneralLayout: FC<LayoutProps> = ({ children }) => {
       <div className="m-0 p-0 col-md-10">
         <Header />
         <div className="m-0 p-0 row">
-          <div className="m-0 p-0 col-md-9">
+          <div className="m-0 col-md-9">
             <CentralHeader />
             {children}
           </div>

@@ -1,28 +1,24 @@
 import { FC, useState, ChangeEvent, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { postAuthorizationData } from "../../../services/api-auth/apiAuth";
+
 import CustomLogo from "../../../common/common-UI-components/custom-logo/CustomLogo";
 import CustomPasswordInput from "../../../common/common-UI-components/custom-password-input/CustomPasswordInput";
 import CustomMailInput from "../../../common/common-UI-components/custom-mail-input/CustomMailInput";
 import CustomButton from "../../../common/common-UI-components/custom-button/CustomButton";
 
 import {
-  testAuthDataTypes,
-  errorsDataTypes,
+  AuthInputDataTypes,
+  AuthPostDataTypes,
 } from "./authorizationForm.interface";
-import { testAuthData } from "../../../pages/auth/data";
 
 import styles from "./authorization_form.module.scss";
 
 const AuthorizationForm: FC = () => {
-  const [authData, setAuthData] = useState<testAuthDataTypes>({
-    mail: "",
-    pass: "",
-  });
-
-  const [errors, setErrors] = useState<errorsDataTypes>({
-    mail: false,
-    pass: false,
+  const [authData, setAuthData] = useState<AuthInputDataTypes>({
+    login: "",
+    passw: "",
   });
 
   const navigate = useNavigate();
@@ -35,18 +31,23 @@ const AuthorizationForm: FC = () => {
     });
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const isMailValid = authData.mail === testAuthData.mail;
-    const isPassValid = authData.pass === testAuthData.pass;
 
-    if (isMailValid && isPassValid) {
-      navigate("/");
-    } else {
-      setErrors({
-        mail: !isMailValid,
-        pass: !isPassValid,
-      });
+    const authPostData: AuthPostDataTypes = {
+      request: "adminauth",
+      apiKey: 123456,
+      data: authData,
+    };
+
+    try {
+      const response = await postAuthorizationData(authPostData);
+      console.log("Response:", response);
+      // navigate("/");
+      alert("Загляни в консоль");
+    } catch (error) {
+      alert("Что-то не так");
+      console.log("DATA POST AUTH FRONT:", authPostData);
     }
   };
 
@@ -61,20 +62,18 @@ const AuthorizationForm: FC = () => {
       </div>
       <div>
         <CustomMailInput
-          error={errors.mail}
           label="Адрес эл. почты сотрудника"
           onChange={handlerChange}
-          name="mail"
-          value={authData.mail}
+          name="login"
+          value={authData.login}
         />
       </div>
       <div>
         <CustomPasswordInput
-          error={errors.pass}
           label="Пароль сотрудника"
           onChange={handlerChange}
-          name="pass"
-          value={authData.pass}
+          name="passw"
+          value={authData.passw}
         />
       </div>
       <div>

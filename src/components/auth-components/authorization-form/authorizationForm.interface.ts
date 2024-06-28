@@ -1,9 +1,15 @@
-export interface testAuthDataTypes {
-  mail: string;
-  pass: string;
+export interface AuthInputDataTypes {
+  login: string;
+  passw: string;
+}
+
+export interface AuthPostDataTypes {
+  request: string;
+  apiKey: number;
+  data: AuthInputDataTypes;
 }
 
 export interface errorsDataTypes {
-  mail: boolean;
-  pass: boolean;
+  login: boolean;
+  passw: boolean;
 }
