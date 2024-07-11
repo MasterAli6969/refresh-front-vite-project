@@ -5,7 +5,7 @@ import { AuthPostDataTypes } from "../../components/auth-components/authorizatio
 export const postAuthorizationData = async (params: AuthPostDataTypes) => {
   const authPostDataJson = JSON.stringify(params);
   console.log("ДАННЫЕ ПОСЛЕ ПАРСА", authPostDataJson);
-  const response = await axios.post("http://45.135.165.89:8082/", {
+  const response = await axios.post("https://45.135.165.89", {
     headers: {
       "Content-Type": "application/json",
     },
