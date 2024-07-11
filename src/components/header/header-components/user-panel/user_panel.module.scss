@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $quartet-color;
+    background-color: transparent;
     color: $light-color;
     .avatar {
       background-color: $primary-color;
@@ -21,8 +21,16 @@
     }
     > div {
       text-align: start;
-      > p {
+      > h3 {
+        margin: 0 0.5rem 0.3rem 0;
+      }
+      > div {
+        display: flex;
+        align-items: center;
         color: $dark-color;
+        > img {
+          margin-right: 0.5rem;
+        }
       }
     }
   }

@@ -6,27 +6,36 @@ export const userPanelData = {
   id: 1,
   avatar: "AL",
   name: "Алексей Лариков",
-  position: "Управляющий",
-  dropData: [
-    {
-      id: 1,
-      url: "#",
-      icon: UserIcon,
-      text: "Мой профиль",
+  status: true,
+  dropData: {
+    shiftStatus: true,
+    shiftData: {
+      generalSales: "3343",
+      cash: "3343",
+      bankCard: "3343",
+      refunds: "3343",
     },
-    {
-      id: 2,
-      url: "#",
-      icon: CalendarIcon,
-      text: "Календарь смен",
-    },
-    {
-      id: 3,
-      url: "authorization ",
-      icon: SignOutIcon,
-      text: "Выход из CRM",
-    },
-  ],
+    dropListItem: [
+      {
+        id: 1,
+        url: "#",
+        icon: UserIcon,
+        text: "Мой профиль",
+      },
+      {
+        id: 2,
+        url: "#",
+        icon: CalendarIcon,
+        text: "Календарь смен",
+      },
+      {
+        id: 3,
+        url: "authorization ",
+        icon: SignOutIcon,
+        text: "Выход из CRM",
+      },
+    ],
+  },
 };
 
 export const messageOutgoingEmployeesData = {

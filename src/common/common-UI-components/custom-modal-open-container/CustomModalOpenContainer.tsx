@@ -12,7 +12,6 @@ const CustomModalOpenContainer: FC<
 > = ({ children, openComponents: OpenComponents }) => {
   const dispatch = useAppDispatch();
   const { isModalOpen } = useAppSelector((state) => state.toggle);
-
   const handleClickOpen = useCallback(() => {
     dispatch(setToggle({ key: "isModalOpen", value: true }));
   }, [dispatch]);
