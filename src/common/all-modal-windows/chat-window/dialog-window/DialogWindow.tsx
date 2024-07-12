@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from "react";
 
-import OnlineIcon from "../../../../assets/icons/OnlineIcon.svg";
+import OfflineIcon from "../../../../assets/icons/OfflineIcon.svg";
 import OflineIcon from "../../../../assets/icons/OflineIcon.svg";
 
 import { dialogData } from "../../../../components/header/data";
@@ -30,7 +30,7 @@ const DialogWindow: FC = () => {
                 <div>
                   <p>{item.time}</p>
                   {item.online ? (
-                    <img src={OnlineIcon} />
+                    <img src={OfflineIcon} />
                   ) : (
                     <img src={OflineIcon} />
                   )}

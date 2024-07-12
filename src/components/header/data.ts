@@ -6,9 +6,7 @@ export const userPanelData = {
   id: 1,
   avatar: "AL",
   name: "Алексей Лариков",
-  status: true,
   dropData: {
-    shiftStatus: true,
     shiftData: {
       generalSales: "3343",
       cash: "3343",

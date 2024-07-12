@@ -13,7 +13,6 @@ export interface ShiftDataTypes {
 }
 
 export interface DropDataTypes {
-  shiftStatus: boolean;
   shiftData: ShiftDataTypes;
   dropListItem: DropListItemTypes[];
 }
@@ -23,7 +22,6 @@ export interface UserPanelDataTypes {
   avatar: string;
   name: string;
   position: string;
-  status: boolean;
   dropData: DropDataTypes;
 }
 
