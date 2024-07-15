@@ -3,11 +3,11 @@ import classNames from "classnames";
 
 import CustomSwitchButton from "../../static-components/custom-switch-button/CustomSwitchButton";
 
-import { CustomModalButtonPropsType } from "./customModalButton.interface";
+import { CustomModalOpenButtonSwitchPropsType } from "./customModalOpenButtonSwitch.interface";
 
-import styles from "./custom_modal_button.module.scss";
+import styles from "./custom_modal_open_button_switch.module.scss";
 
-const CustomModalButton: FC<CustomModalButtonPropsType> = ({
+const CustomModalOpenButtonSwitch: FC<CustomModalOpenButtonSwitchPropsType> = ({
   icon,
   title,
   buttonLeft: ButtonLeft,
@@ -41,9 +41,9 @@ const CustomModalButton: FC<CustomModalButtonPropsType> = ({
 
   return (
     <div className={styles.div}>
-      <div onClick={handleClick} className={styles.div}>
-        <p>OPEN</p>
-      </div>
+      <button onClick={handleClick} className={styles.button}>
+        <img src={icon} />
+      </button>
       <div
         ref={modalRef}
         className={classNames(styles.modal_icon, {
@@ -52,19 +52,18 @@ const CustomModalButton: FC<CustomModalButtonPropsType> = ({
       >
         <div className={styles.modal_div}>
           <h3>{title}</h3>
-
-          {/* <div>
+          <div>
             <CustomSwitchButton
               buttonLeft="Сотрудники"
               componentLeft={ButtonLeft}
               buttonRight="Клиенты"
               componentRight={ButtonRight}
             />
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default CustomModalButton;
+export default CustomModalOpenButtonSwitch;

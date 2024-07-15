@@ -3,12 +3,14 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../../features/redux/hooks/reduxRootHooks";
-import { CustomModalOpenContainerProps } from "./customModalOpenContainer.interface";
 import { setToggle } from "../../../features/redux/reducers/common-reducers/toggleRedusers";
+
 import { Dialog } from "@mui/material";
 
-const CustomModalOpenContainer: FC<
-  PropsWithChildren<CustomModalOpenContainerProps>
+import { CustomCenterModalOpenWrapperProps } from "./customCenterModalOpenWrapper.interface";
+
+const CustomCenterModalOpenWrapper: FC<
+  PropsWithChildren<CustomCenterModalOpenWrapperProps>
 > = ({ children, openComponents: OpenComponents }) => {
   const dispatch = useAppDispatch();
   const { isModalOpen } = useAppSelector((state) => state.toggle);
@@ -30,4 +32,4 @@ const CustomModalOpenContainer: FC<
   );
 };
 
-export default CustomModalOpenContainer;
+export default CustomCenterModalOpenWrapper;

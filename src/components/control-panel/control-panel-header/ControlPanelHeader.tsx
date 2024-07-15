@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import CustomPcIcon from "../../../common/static-components/custom-pc-icon/CustomPcIcon";
+import RoomTabsMenu from "./control-panel-header-components/room-tabs-menu/RoomTabsMenu";
 
 import styles from "./contro_panel_header.module.scss";
 
@@ -25,6 +26,9 @@ const ControlPanelHeader: FC = () => {
               <CustomPcIcon number={9} status="Servicing" />
             </li>
           </ul>
+          <div className={styles._room_tab_menu_visible}>
+            <RoomTabsMenu />
+          </div>
         </div>
         <div className={styles.subdiv_rooms_control}>
           <button>ЗАГ</button>

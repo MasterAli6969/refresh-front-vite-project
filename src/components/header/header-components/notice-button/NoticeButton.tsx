@@ -1,14 +1,14 @@
 import { FC } from "react";
 
 import NoticesIcons from "../../../../assets/icons/NoticesIcons.svg";
-import CustomModalButton from "../../../../common/smart-component/custom-modal-button/CustomModalButton";
+import CustomSwitchModalButton from "../../../../common/smart-component/custom-modal-open-button-switch/CustomModalOpenButtonSwitch";
 import SistemNoticeWindow from "./notice-windows/sistem-notice-window/SistemNoticeWindow";
 import ClientNoticeWindow from "./notice-windows/client-notice-window/ClientNoticeWindow";
 
 const NoticeButton: FC = () => {
   return (
     <div>
-      <CustomModalButton
+      <CustomSwitchModalButton
         icon={NoticesIcons}
         title="Уведомления"
         buttonLeft={SistemNoticeWindow}

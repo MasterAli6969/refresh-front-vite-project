@@ -9,7 +9,7 @@ import { pcIconData } from "./data";
 
 const ControlPanelPcIcons: FC = () => {
   return (
-    <div>
+    <div style={{ zIndex: "1", height: "100vh" }}>
       {!pcIconData || pcIconData.length === 0 ? (
         <h1>Ooops, server error, please wait...</h1>
       ) : (

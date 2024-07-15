@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import MessagesIcons from "../../../../assets/icons/MessagesIcons.svg";
-import CustomModalButton from "../../../../common/smart-component/custom-modal-button/CustomModalButton";
+import CustomSwitchModalButton from "../../../../common/smart-component/custom-modal-open-button-switch/CustomModalOpenButtonSwitch";
 import DialogWindow from "./chat-window/dialog-window/DialogWindow";
 import Messenger from "./chat-window/messenger/Messenger";
 
@@ -10,7 +10,7 @@ import styles from "./message.module.scss";
 const MessageButton: FC = () => {
   return (
     <div className={styles.div}>
-      <CustomModalButton
+      <CustomSwitchModalButton
         icon={MessagesIcons}
         title="Сообщения"
         buttonLeft={Messenger}

@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-items: center;
     .subdiv_rooms_tabs {
+      position: relative;
       display: flex;
       align-items: center;
       > p {
@@ -17,6 +18,18 @@
         > li {
           margin-right: 0.5rem;
         }
+      }
+      ._room_tab_menu_visible {
+        display: none;
+        position: absolute;
+        top: 20px;
+        left: 150px;
+        z-index: 5;
+      }
+    }
+    .subdiv_rooms_tabs:hover {
+      ._room_tab_menu_visible {
+        display: block;
       }
     }
   }
