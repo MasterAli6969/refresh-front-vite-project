@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import CustomModalHead from "../../common-UI-components/custom-modal-head/CustomModalHead";
+import CustomModalHead from "../../common-UI-components/custom-modal-components/custom-modal-head/CustomModalHead";
 import CustomInput from "../../custom-input/CustomInput";
 import CustomButton from "../../common-UI-components/custom-button/CustomButton";
 

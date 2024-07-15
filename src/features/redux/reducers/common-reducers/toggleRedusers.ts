@@ -4,12 +4,14 @@ interface ToggleStateType {
   isModalOpen: boolean;
   isOpenShift: boolean;
   isSidebarVisible: boolean;
+  isMessangerOpen: boolean;
 }
 
 const initialState: ToggleStateType = {
   isModalOpen: false,
   isOpenShift: false,
   isSidebarVisible: false,
+  isMessangerOpen: false,
 };
 
 export const toggleSlice = createSlice({

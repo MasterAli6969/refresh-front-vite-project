@@ -17,7 +17,6 @@ const CustomSwitchButton: FC<CustomSwitchButtonProps> = ({
   const handleClick = (buttonName: string) => {
     setActiveButton(buttonName);
   };
-
   return (
     <div className={style.div}>
       <div className={style.subdiv_buttons}>

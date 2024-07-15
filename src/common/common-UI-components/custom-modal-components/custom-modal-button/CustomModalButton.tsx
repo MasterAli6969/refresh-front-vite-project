@@ -1,7 +1,7 @@
 import { FC, useState, useEffect, useRef } from "react";
 import classNames from "classnames";
 
-import CustomSwitchButton from "../custom-switch-button/CustomSwitchButton";
+import CustomSwitchButton from "../../custom-switch-button/CustomSwitchButton";
 
 import { CustomModalButtonPropsType } from "./customModalButton.interface";
 

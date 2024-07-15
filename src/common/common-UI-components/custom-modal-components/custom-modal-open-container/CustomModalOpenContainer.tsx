@@ -2,9 +2,9 @@ import { FC, PropsWithChildren, useCallback } from "react";
 import {
   useAppDispatch,
   useAppSelector,
-} from "../../../features/redux/hooks/reduxRootHooks";
+} from "../../../../features/redux/hooks/reduxRootHooks";
 import { CustomModalOpenContainerProps } from "./customModalOpenContainer.interface";
-import { setToggle } from "../../../features/redux/reducers/common-reducers/toggleRedusers";
+import { setToggle } from "../../../../features/redux/reducers/common-reducers/toggleRedusers";
 import { Dialog } from "@mui/material";
 
 const CustomModalOpenContainer: FC<

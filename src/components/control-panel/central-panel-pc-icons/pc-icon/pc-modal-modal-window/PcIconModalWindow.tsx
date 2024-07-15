@@ -1,8 +1,8 @@
 import { FC } from "react";
 import classNames from "classnames";
 
-import ArrowChekRight from "../../../../../../assets/icons-svg-components/ArrowChekRight";
-import CustomStatickList from "../../../../../../common/common-UI-components/custom-statick-list/CustomStatickList";
+import ArrowChekRight from "../../../../../assets/icons-svg-components/ArrowChekRight";
+import CustomStatickList from "../../../../../common/common-UI-components/custom-statick-list/CustomStatickList";
 
 import { PcIconModalWindowPropsData } from "./pcModalWindow.interface";
 

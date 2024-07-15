@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import CustomModalHead from "../../common-UI-components/custom-modal-head/CustomModalHead";
+import CustomModalHead from "../../common-UI-components/custom-modal-components/custom-modal-head/CustomModalHead";
 import CustomSwitchButton from "../../common-UI-components/custom-switch-button/CustomSwitchButton";
 import MoneySubwindow from "./replenishment-balance-window-components/money-subwindow/MoneySubwindow";
 import BonusCurrencySubwindow from "./replenishment-balance-window-components/bonus-currency-subwindow/BonusCurrencySubwindow";

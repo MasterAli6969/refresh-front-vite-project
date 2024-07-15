@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import CustomModalHead from "../../common-UI-components/custom-modal-head/CustomModalHead";
+import CustomModalHead from "../../common-UI-components/custom-modal-components/custom-modal-head/CustomModalHead";
 import CustomUserName from "../../common-UI-components/custom-user-name/CustomUserName";
 import CustomDualTextDisplay from "../../custom-dual-text-display/CustomDualTextDisplay";
 import CustomLineProgress from "../../custom-line-progress/CustomLineProgress";

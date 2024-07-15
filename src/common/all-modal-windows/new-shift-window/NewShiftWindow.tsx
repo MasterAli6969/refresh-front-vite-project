@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useAppDispatch } from "../../../features/redux/hooks/reduxRootHooks";
 import { setToggle } from "../../../features/redux/reducers/common-reducers/toggleRedusers";
 
-import CustomModalHead from "../../common-UI-components/custom-modal-head/CustomModalHead";
+import CustomModalHead from "../../common-UI-components/custom-modal-components/custom-modal-head/CustomModalHead";
 import CustomInput from "../../common-UI-components/custom-input/CustomInput";
 import CustomTextarea from "../../common-UI-components/custom-textarea/CustomTextarea";
 import CustomButton from "../../common-UI-components/custom-button/CustomButton";

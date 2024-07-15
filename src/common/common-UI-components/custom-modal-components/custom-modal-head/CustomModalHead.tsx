@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { useAppDispatch } from "../../../features/redux/hooks/reduxRootHooks";
-import { setToggle } from "../../../features/redux/reducers/common-reducers/toggleRedusers";
-import CloseIcon from "../../../assets/icons-svg-components/CloseIcon";
+import { useAppDispatch } from "../../../../features/redux/hooks/reduxRootHooks";
+import { setToggle } from "../../../../features/redux/reducers/common-reducers/toggleRedusers";
+import CloseIcon from "../../../../assets/icons-svg-components/CloseIcon";
 import { CustomModalHeadPropsType } from "./customModalHead.interface";
 import styles from "./custom_modal_head.module.scss";
 

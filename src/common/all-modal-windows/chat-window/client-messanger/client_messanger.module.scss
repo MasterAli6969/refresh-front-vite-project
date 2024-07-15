@@ -1,0 +1,5 @@
+@import "/src/variables.scss";
+
+.div {
+  @include modalDivV1(30rem);
+}

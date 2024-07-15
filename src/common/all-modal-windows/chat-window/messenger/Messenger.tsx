@@ -57,18 +57,6 @@ const Messenger: FC = () => {
             </div>
           );
         })}
-        {/* <div className={styles.outgoing_message}>
-          <div>
-            <p>22:13</p>
-            <h4>Данил Колобородько</h4>
-          </div>
-          <div>
-            <h4>
-              Паста - производное от копипаст, copypaste, copy and paste, что
-              означает копирование и вставка текста.
-            </h4>
-          </div>
-        </div> */}
       </div>
       <div className={styles.subdiv_input_message}>
         <input

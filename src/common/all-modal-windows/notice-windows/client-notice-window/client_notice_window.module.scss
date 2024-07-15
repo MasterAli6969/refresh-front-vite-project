@@ -1,0 +1,23 @@
+@import "/src/variables.scss";
+.div {
+  .subdiv {
+    margin-bottom: 2rem;
+    > div:first-child {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    > div:last-child {
+      border-radius: $boreder-radius10;
+      border: $border-style;
+      padding: 1rem;
+      > p,
+      > ul > li {
+        margin-bottom: 1rem;
+      }
+      > p {
+        color: $active-color;
+      }
+    }
+  }
+}
