@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import RefreshLogo from "../../assets/img/RefreshLogo.png";
+import RefreshLogo from "../../../assets/img/RefreshLogo.png";
 
 import { CustomLogoPropsType } from "./customLogo.interface";
 

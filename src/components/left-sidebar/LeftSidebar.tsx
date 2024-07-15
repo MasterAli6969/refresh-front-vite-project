@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { leftSidebarDataType } from "./leftSidebar.interface";
 
 import ArrowChekRight from "../../assets/icons-svg-components/ArrowChekRight";
-import CustomLogo from "../../common/custom-logo/CustomLogo";
+import CustomLogo from "../../common/static-components/custom-logo/CustomLogo";
 
 import LeftDropList from "./left-sidebar-components/left-drop-list/LeftDropList";
 import {

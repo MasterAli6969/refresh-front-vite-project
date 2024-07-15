@@ -1,8 +1,8 @@
 import { FC } from "react";
 
-import CustomLogo from "../custom-logo/CustomLogo";
-import CheckBlueMask from "../../assets/img/CheckBlueMask.png";
-import CustomButton from "../custom-button/CustomButton";
+import CustomLogo from "../../static-components/custom-logo/CustomLogo";
+import CheckBlueMask from "../../../assets/img/CheckBlueMask.png";
+import CustomButton from "../../static-components/custom-button/CustomButton";
 
 import { CustomDoneAuthWindowPropsType } from "./customDoneAuthWindow.interface";
 

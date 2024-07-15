@@ -1,9 +1,9 @@
 import { FC } from "react";
 import classNames from "classnames";
 
-import UserIcon from "../../assets/icons/UserIcon.svg";
+import UserIcon from "../../../assets/icons/UserIcon.svg";
 
-import { AuthInputPropsType } from "../../commonTypes.interface";
+import { AuthInputPropsType } from "../../../commonTypes.interface";
 
 import styles from "./custom_mail_input.module.scss";
 

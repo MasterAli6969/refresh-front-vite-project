@@ -1,7 +1,7 @@
 import { FC, useState, useEffect, useRef } from "react";
 import classNames from "classnames";
 
-import CustomSwitchButton from "../../custom-switch-button/CustomSwitchButton";
+import CustomSwitchButton from "../../static-components/custom-switch-button/CustomSwitchButton";
 
 import { CustomModalButtonPropsType } from "./customModalButton.interface";
 
@@ -41,9 +41,9 @@ const CustomModalButton: FC<CustomModalButtonPropsType> = ({
 
   return (
     <div className={styles.div}>
-      <button onClick={handleClick} className={styles.button}>
-        <img src={icon} />
-      </button>
+      <div onClick={handleClick} className={styles.div}>
+        <p>OPEN</p>
+      </div>
       <div
         ref={modalRef}
         className={classNames(styles.modal_icon, {
@@ -52,14 +52,15 @@ const CustomModalButton: FC<CustomModalButtonPropsType> = ({
       >
         <div className={styles.modal_div}>
           <h3>{title}</h3>
-          <div>
+
+          {/* <div>
             <CustomSwitchButton
               buttonLeft="Сотрудники"
               componentLeft={ButtonLeft}
               buttonRight="Клиенты"
               componentRight={ButtonRight}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

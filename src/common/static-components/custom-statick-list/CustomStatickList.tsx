@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { CustomStatickListPropsType } from "./customStatickList.interface";
-import { ListLinkType } from "../../commonTypes.interface";
+import { ListLinkType } from "../../../commonTypes.interface";
 
 import styles from "./custom_statick_list.module.scss";
 

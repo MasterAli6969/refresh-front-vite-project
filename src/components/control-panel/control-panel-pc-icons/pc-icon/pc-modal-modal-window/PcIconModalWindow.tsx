@@ -2,7 +2,7 @@ import { FC } from "react";
 import classNames from "classnames";
 
 import ArrowChekRight from "../../../../../assets/icons-svg-components/ArrowChekRight";
-import CustomStatickList from "../../../../../common/custom-statick-list/CustomStatickList";
+import CustomStatickList from "../../../../../common/static-components/custom-statick-list/CustomStatickList";
 
 import { PcIconModalWindowPropsData } from "./pcModalWindow.interface";
 

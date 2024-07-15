@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
 import classNames from "classnames";
 
-import KeyIcon from "../../assets/icons/KeyIcon.svg";
-import EyeBlueIcon from "../../assets/icons/EyeBlueIcon.svg";
+import KeyIcon from "../../../assets/icons/KeyIcon.svg";
+import EyeBlueIcon from "../../../assets/icons/EyeBlueIcon.svg";
 
-import { AuthInputPropsType } from "../../commonTypes.interface";
+import { AuthInputPropsType } from "../../../commonTypes.interface";
 
 import styles from "./custom_password_input.module.scss";
 

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import CustomPcIcon from "../../../common/custom-pc-icon/CustomPcIcon";
+import CustomPcIcon from "../../../common/static-components/custom-pc-icon/CustomPcIcon";
 
 import styles from "./contro_panel_header.module.scss";
 

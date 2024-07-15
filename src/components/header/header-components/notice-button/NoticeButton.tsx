@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import NoticesIcons from "../../../../assets/icons/NoticesIcons.svg";
-import CustomModalButton from "../../../../common/custom-modal-components/custom-modal-button/CustomModalButton";
+import CustomModalButton from "../../../../common/smart-component/custom-modal-button/CustomModalButton";
 import SistemNoticeWindow from "./notice-windows/sistem-notice-window/SistemNoticeWindow";
 import ClientNoticeWindow from "./notice-windows/client-notice-window/ClientNoticeWindow";
 

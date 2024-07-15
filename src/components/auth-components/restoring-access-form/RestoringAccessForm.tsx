@@ -1,10 +1,10 @@
 import { FC, useState, ChangeEvent, FormEvent } from "react";
 
-import CustomLogo from "../../../common/custom-logo/CustomLogo";
-import CustomMailInput from "../../../common/custom-mail-input/CustomMailInput";
-import CustomButton from "../../../common/custom-button/CustomButton";
+import CustomLogo from "../../../common/static-components/custom-logo/CustomLogo";
+import CustomMailInput from "../../../common/static-components/custom-mail-input/CustomMailInput";
+import CustomButton from "../../../common/static-components/custom-button/CustomButton";
 import SphereArrowCheckLeft from "../../../assets/icons/SphereArrowCheckLeft.svg";
-import CustomDoneAuthWindow from "../../../common/custom-done-auth-window/CustomDoneAuthWindow";
+import CustomDoneAuthWindow from "../../../common/smart-component/custom-done-auth-window/CustomDoneAuthWindow";
 
 import { testAuthData } from "../../../pages/auth/data";
 
