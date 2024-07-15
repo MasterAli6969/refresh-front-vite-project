@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import ClockTimeIcon from "../../../../../assets/icons/ClockTimeIcon.svg";
 import ArrowChekRight from "../../../../../assets/icons-svg-components/ArrowChekRight";
-import CustomStatickList from "../../../../../common/common-UI-components/custom-statick-list/CustomStatickList";
+import CustomStatickList from "../../../../../common/custom-statick-list/CustomStatickList";
 
 import {
   SearchMenuDataType,

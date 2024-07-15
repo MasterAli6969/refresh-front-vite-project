@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
-import ControlPanel from "../pages/central-panel/ControlPanel";
+import ControlPanel from "../pages/control-panel/ControlPanel";
 import GeneralLayout from "../layouts/GeneralLayout";
 
 const PanelRotes: FC = () => {

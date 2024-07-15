@@ -1,7 +1,6 @@
 import { FC } from "react";
 import LeftSidebar from "../components/left-sidebar/LeftSidebar";
 import Header from "../components/header/Header";
-import ControlPanelHeader from "../components/control-panel/control-panel-header/ControlPanelHeader";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -15,7 +14,6 @@ const GeneralLayout: FC<LayoutProps> = ({ children }) => {
       </div>
       <div className="m-0 p-0 col-md-10">
         <Header />
-        <ControlPanelHeader />
         {children}
       </div>
     </div>

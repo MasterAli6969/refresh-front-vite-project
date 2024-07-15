@@ -1,0 +1,48 @@
+@import "/src/variables.scss";
+
+.div {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  z-index: 1;
+  cursor: pointer;
+  .subdiv_number {
+    position: absolute;
+  }
+  .subdiv_menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: -240px;
+    z-index: 999;
+    &:hover {
+      display: block;
+    }
+  }
+  &:hover {
+    border: 3px solid $light-color;
+    .subdiv_menu {
+      display: block;
+    }
+  }
+}
+
+._active {
+  background-color: $active-color;
+}
+
+._no_active {
+  background-color: $bg-primary;
+}
+
+._included {
+  background-color: $ok-color;
+}
+
+._servicing {
+  background-color: $warning-color;
+}

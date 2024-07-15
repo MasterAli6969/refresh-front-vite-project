@@ -4,7 +4,7 @@ import CloseShiftWindow from "../../../../common/all-modal-windows/close-shift-w
 import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
 import styles from "./shift_block.module.scss";
 
-import CustomModalOpenContainer from "../../../../common/common-UI-components/custom-modal-components/custom-modal-open-container/CustomModalOpenContainer";
+import CustomModalOpenContainer from "../../../../common/custom-modal-components/custom-modal-open-container/CustomModalOpenContainer";
 
 const ShiftBlock: FC = () => {
   const { isOpenShift } = useAppSelector((state) => state.toggle);

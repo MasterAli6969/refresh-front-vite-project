@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 import { postAuthorizationData } from "../../../services/api-auth/apiAuth";
 
-import CustomLogo from "../../../common/common-UI-components/custom-logo/CustomLogo";
-import CustomPasswordInput from "../../../common/common-UI-components/custom-password-input/CustomPasswordInput";
-import CustomMailInput from "../../../common/common-UI-components/custom-mail-input/CustomMailInput";
-import CustomButton from "../../../common/common-UI-components/custom-button/CustomButton";
+import CustomLogo from "../../../common/custom-logo/CustomLogo";
+import CustomPasswordInput from "../../../common/custom-password-input/CustomPasswordInput";
+import CustomMailInput from "../../../common/custom-mail-input/CustomMailInput";
+import CustomButton from "../../../common/custom-button/CustomButton";
 
 import {
   AuthInputDataTypes,

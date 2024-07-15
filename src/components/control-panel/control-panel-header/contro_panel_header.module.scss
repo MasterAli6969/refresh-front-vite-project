@@ -1,4 +1,23 @@
 @import "/src/variables.scss";
 
 .div {
+  padding: 1rem;
+  .subdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .subdiv_rooms_tabs {
+      display: flex;
+      align-items: center;
+      > p {
+        margin-right: 1rem;
+      }
+      > ul {
+        display: flex;
+        > li {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
 }

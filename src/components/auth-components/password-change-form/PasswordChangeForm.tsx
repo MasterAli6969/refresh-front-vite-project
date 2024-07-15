@@ -1,9 +1,9 @@
 import { FC, useState, ChangeEvent, FormEvent } from "react";
 
-import CustomLogo from "../../../common/common-UI-components/custom-logo/CustomLogo";
-import CustomPasswordInput from "../../../common/common-UI-components/custom-password-input/CustomPasswordInput";
-import CustomButton from "../../../common/common-UI-components/custom-button/CustomButton";
-import CustomDoneAuthWindow from "../../../common/common-UI-components/custom-done-auth-window/CustomDoneAuthWindow";
+import CustomLogo from "../../../common/custom-logo/CustomLogo";
+import CustomPasswordInput from "../../../common/custom-password-input/CustomPasswordInput";
+import CustomButton from "../../../common/custom-button/CustomButton";
+import CustomDoneAuthWindow from "../../../common/custom-done-auth-window/CustomDoneAuthWindow";
 
 import { PassStateDataType } from "./passwordChangeForm.interface";
 
