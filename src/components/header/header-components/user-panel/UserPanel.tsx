@@ -1,4 +1,5 @@
-import { FC, useState } from "react";
+import { FC } from "react";
+import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
 import classNames from "classnames";
 
 import OnlineIcon from "../../../../assets/icons/OnlineIcon.svg";
@@ -9,14 +10,14 @@ import {
   DropListItemTypes,
 } from "./userPanel.interface";
 
+import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
+import CutomModalWindowType3 from "../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-type3/CutomModalWindowType3";
 import styles from "./user_panel.module.scss";
 
 const UserPanel: FC<UserPanelDataPropsTypes> = ({ userPanelData }) => {
-  const [shiftStatus, setShiftStatus] = useState<boolean>(false);
-
-  const handleShiftToogle = () => {
-    setShiftStatus(!shiftStatus);
-  };
+  const isShiftStatus = useAppSelector(
+    (state) => state.toggle["isShiftStatus"]
+  );
 
   return (
     <div className={styles.div}>
@@ -33,28 +34,42 @@ const UserPanel: FC<UserPanelDataPropsTypes> = ({ userPanelData }) => {
           <div>
             <h3>{userPanelData.name}</h3>
             <div>
-              <img src={shiftStatus ? OnlineIcon : OfflineIcon} />
-              <p>{shiftStatus ? "На смене" : "Не на смене"}</p>
+              <img src={!isShiftStatus ? OfflineIcon : OnlineIcon} />
+              <p>{!isShiftStatus ? "Не на смене" : "На смене"}</p>
             </div>
           </div>
         </button>
         <div className={classNames("dropdown-menu", styles.dropdown_list)}>
           <div className={styles.dropdown_list_header}>
             <div>
-              <img src={shiftStatus ? OnlineIcon : OfflineIcon} />
-              <p>{shiftStatus ? "Смена открыта" : "Смена закрыта"}</p>
+              <img src={!isShiftStatus ? OfflineIcon : OnlineIcon} />
+              <p>{!isShiftStatus ? "Смена закрыта" : "Смена открыта "}</p>
             </div>
-            <button
-              className={classNames({
-                [styles._active_shift]: shiftStatus,
-                [styles._disactive_shift]: !shiftStatus,
-              })}
-              onClick={handleShiftToogle}
+            <CustomCenterModalOpenWrapper
+              redaxStateKey="isUserPanelOpenShiftModalOpen"
+              openComponents={() => (
+                <CutomModalWindowType3
+                  redaxStateKey="isUserPanelOpenShiftModalOpen"
+                  redaxShiftState="isShiftStatus"
+                  shiftType={isShiftStatus}
+                  title={!isShiftStatus ? "Открытие смены" : "Закрытие смены "}
+                  rightButton={
+                    !isShiftStatus ? "Открыть смену" : "Закрыть смену"
+                  }
+                />
+              )}
             >
-              <p>{shiftStatus ? "Закрыть смену" : "Открыть смену"}</p>
-            </button>
+              <button
+                className={classNames({
+                  [styles._active_shift]: isShiftStatus,
+                  [styles._disactive_shift]: !isShiftStatus,
+                })}
+              >
+                <p>{!isShiftStatus ? "Открыть смену" : "Закрыть смену"}</p>
+              </button>
+            </CustomCenterModalOpenWrapper>
           </div>
-          {shiftStatus && (
+          {isShiftStatus && (
             <div className={styles.dropdown_list_shift_data}>
               <p>Текущая смена</p>
               <ul>

@@ -1,3 +1,18 @@
+@import "/src/variables.scss";
+
 .div {
-  background-color: red;
+  background-color: $secondary_color;
+  border-radius: $boreder-radius10;
+  .subdiv {
+    padding: 0.5rem;
+    > div {
+      > span {
+        display: flex;
+        align-items: center;
+        > img {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
 }

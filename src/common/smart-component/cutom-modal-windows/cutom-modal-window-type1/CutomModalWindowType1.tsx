@@ -1,14 +1,37 @@
 import { FC } from "react";
 
-import CustomModalHead from "../../custom-modal-close-head/CustomModalCloseHead";
+import CustomModalCloseHead from "../../custom-modal-close-head/CustomModalCloseHead";
+import CustomInput from "../../../static-components/custom-input/CustomInput";
+import CustomButton from "../../../static-components/custom-button/CustomButton";
+
+import { CutomModalWindowType1PropsType1 } from "./cutomModalWindowType1.interface";
 
 import styles from "./cutom_modal_window_type1.module.scss";
 
-const CutomModalWindowType1: FC = () => {
+const CutomModalWindowType1: FC<CutomModalWindowType1PropsType1> = ({
+  redaxStateKey,
+  title,
+  specialText,
+}) => {
   return (
     <div className={styles.div}>
-      <CustomModalHead text="Переименование комнаты" specialText="Standart" />
-      <h1>GOG</h1>
+      <div>
+        <CustomModalCloseHead
+          redaxStateKey={redaxStateKey}
+          text={title}
+          specialText={specialText}
+        />
+      </div>
+      <div>
+        <CustomInput
+          label="Название комнаты"
+          plaseholder="Введите новое название комнаты"
+        />
+      </div>
+      <div>
+        <CustomButton color="dark" text="Отмена" />
+        <CustomButton color="light" text="Сохранить" />
+      </div>
     </div>
   );
 };

@@ -2,8 +2,10 @@ import { FC } from "react";
 
 import CustomPcIcon from "../../../common/static-components/custom-pc-icon/CustomPcIcon";
 import RoomTabsMenu from "./control-panel-header-components/room-tabs-menu/RoomTabsMenu";
+import AddNewRoomsButton from "./control-panel-header-components/add-new-rooms-button/AddNewRoomsButton";
 
 import styles from "./contro_panel_header.module.scss";
+import LayoutEdingButton from "./control-panel-header-components/layout-eding-button/LayoutEdingButton";
 
 const ControlPanelHeader: FC = () => {
   return (
@@ -31,8 +33,8 @@ const ControlPanelHeader: FC = () => {
           </div>
         </div>
         <div className={styles.subdiv_rooms_control}>
-          <button>ЗАГ</button>
-          <button>ЗАГ</button>
+          <AddNewRoomsButton />
+          <LayoutEdingButton />
         </div>
       </div>
     </div>

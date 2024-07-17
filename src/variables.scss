@@ -1,3 +1,4 @@
+//ЦВЕТА ПЕРВОГО МАКЕТА ИЛИ ПРОСТО СТАРЫЕ
 $bg-primary: #0a0c0c;
 $primary-color: #141718;
 $secondary-color: #232627;
@@ -13,6 +14,20 @@ $active-color: #3e90f0;
 $warning-color: #ff6a55;
 $error-color: #ff0000;
 $close-color: #e6543f;
+$ok-color: #159900;
+
+//ЦВЕТА НОВГО МАКЕТА ИЛИ ПРОСТО НОВЫЕ
+
+$primary_color: #0a0c0c;
+$secondary_color: #1b1f20;
+$tertiary_color: #161818;
+
+$light_color: #ffffff;
+$dark_color: #6c7275;
+$faded_color: #a2a5ae;
+
+$custom_blue: #3e90f0;
+$custom_red: #e6543f;
 $ok-color: #159900;
 
 //стили для границ
@@ -43,6 +58,18 @@ $hover-lists-active: linear-gradient(
     background-color: $hover-color;
     border: 1px solid $active-color;
   }
+}
+
+//СТИЛИ ДЛЯ МОДАЛЬНЫХ ОКОН TYPE1
+@mixin modalType1Style {
+  width: 23.75rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $primary_color;
+  border: $border-style;
+  border-radius: $boreder-radius10;
+  padding: 1rem;
+  gap: 2rem;
 }
 
 //стили для кастамных input and textarea элементов

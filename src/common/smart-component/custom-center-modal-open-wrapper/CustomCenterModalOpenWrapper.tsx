@@ -1,9 +1,12 @@
-import { FC, PropsWithChildren, useCallback } from "react";
+import { FC, PropsWithChildren } from "react";
 import {
   useAppDispatch,
   useAppSelector,
 } from "../../../features/redux/hooks/reduxRootHooks";
-import { setToggle } from "../../../features/redux/reducers/common-reducers/toggleRedusers";
+import {
+  setToggle,
+  ToggleStateType,
+} from "../../../features/redux/reducers/common-reducers/toggleRedusers";
 
 import { Dialog } from "@mui/material";
 
@@ -11,24 +14,38 @@ import { CustomCenterModalOpenWrapperProps } from "./customCenterModalOpenWrappe
 
 const CustomCenterModalOpenWrapper: FC<
   PropsWithChildren<CustomCenterModalOpenWrapperProps>
-> = ({ children, openComponents: OpenComponents }) => {
-  const dispatch = useAppDispatch();
-  const { isModalOpen } = useAppSelector((state) => state.toggle);
-  const handleClickOpen = useCallback(() => {
-    dispatch(setToggle({ key: "isModalOpen", value: true }));
-  }, [dispatch]);
+> = ({ children, redaxStateKey, openComponents: OpenComponents }) => {
+  const isOpen = useAppSelector(
+    (state) => state.toggle[redaxStateKey as keyof ToggleStateType]
+  );
 
-  const handleClose = useCallback(() => {
-    dispatch(setToggle({ key: "isModalOpen", value: false }));
-  }, [dispatch]);
+  const dispatch = useAppDispatch();
+
+  const handleClickOpen = () => {
+    dispatch(
+      setToggle({
+        key: redaxStateKey as keyof ToggleStateType,
+        value: true,
+      })
+    );
+  };
+
+  const handleClickClose = () => {
+    dispatch(
+      setToggle({
+        key: redaxStateKey as keyof ToggleStateType,
+        value: true,
+      })
+    );
+  };
 
   return (
-    <>
-      <button onClick={handleClickOpen}>{children}</button>
-      <Dialog open={isModalOpen} onClose={handleClose}>
+    <div>
+      <span onClick={handleClickOpen}>{children}</span>
+      <Dialog open={isOpen} onClose={handleClickClose}>
         <OpenComponents />
       </Dialog>
-    </>
+    </div>
   );
 };
 

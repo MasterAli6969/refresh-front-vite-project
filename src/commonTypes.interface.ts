@@ -15,3 +15,8 @@ export interface AuthInputPropsType {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+// ЭТО ОБЩИЙ ИГНТЕРФЕЙС ДЛЯ ТИПИЗАЦИИ СОСТОЯНИЯ КЛЮЧЕЙ REDAX
+export interface RedaxStateProps {
+  redaxStateKey: string;
+}

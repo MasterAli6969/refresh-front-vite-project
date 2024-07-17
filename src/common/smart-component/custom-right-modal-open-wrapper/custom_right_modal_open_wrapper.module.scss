@@ -1,0 +1,12 @@
+.div {
+  position: relative;
+  .open_components {
+    position: absolute;
+    top: -0.5rem;
+    left: 7.5rem;
+    display: none;
+  }
+  ._visible {
+    display: block;
+  }
+}
