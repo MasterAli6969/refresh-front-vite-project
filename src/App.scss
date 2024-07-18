@@ -133,6 +133,21 @@ body {
   scrollbar-color: #3e90f0 #0a0c0c;
 }
 
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield; /* Firefox */
+}
+
 /* Убираем стили для маркированных списков */
 ul {
   list-style: none;

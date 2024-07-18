@@ -1,4 +1,4 @@
-import { ListLinkType } from "../../../../../../../commonTypes.interface";
+import { ListLinkType } from "../../../../../commonTypes.interface";
 
 export interface DropDataObjectType {
   client: string;
@@ -7,12 +7,12 @@ export interface DropDataObjectType {
 }
 
 // Тип для pcIconModalWindowData
-export interface PcIconModalWindowDataType {
+export interface PcIconMenuDataType {
   dropData?: DropDataObjectType;
   modalListItem: ListLinkType[];
 }
 
-export interface PcIconModalWindowPropsData {
-  pcIconModalWindowData: PcIconModalWindowDataType;
+export interface PcIconMenuPropsData {
+  pcIconModalWindowData: PcIconMenuDataType;
   pcStatus: string;
 }

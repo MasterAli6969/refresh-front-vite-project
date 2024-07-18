@@ -1,0 +1,15 @@
+@import "/src/variables.scss";
+
+.button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: $light_color;
+  border: none;
+  border-radius: $boreder-radius5;
+  padding: 0.5rem;
+}
+
+._active {
+  background-color: $tertiary_color;
+}

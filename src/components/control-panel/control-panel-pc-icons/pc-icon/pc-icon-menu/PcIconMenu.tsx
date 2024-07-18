@@ -2,18 +2,18 @@ import { FC } from "react";
 import classNames from "classnames";
 
 import ArrowChekRight from "../../../../../assets/icons-svg-components/ArrowChekRight";
-import CustomStatickList from "../../../../../common/static-components/custom-statick-list/CustomStatickList";
+import ReplenishmentBalanceModalWindows from "../../../../../common/special-componet/replenishment-balance-modal-windows/ReplenishmentBalanceModalWindows";
+import UserPenaltyModalWindow from "./pc-icon-menu-modal-windows/user-penalty-modal-window/UserPenaltyModalWindow";
 
-import { PcIconModalWindowPropsData } from "./pcModalWindow.interface";
+import { PcIconMenuPropsData } from "./pcIconMenu.interface";
 
-import styles from "./pc_icon_modal_window.module.scss";
+import styles from "./pc_icon_menu.module.scss";
+import CustomCenterModalOpenWrapper from "../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 
-const PcIconModalWindow: FC<PcIconModalWindowPropsData> = ({
+const PcIconMenu: FC<PcIconMenuPropsData> = ({
   pcIconModalWindowData,
   pcStatus,
 }) => {
-  console.log(pcStatus, "СТАТУС");
-
   return (
     <div className={styles.div}>
       <div className={styles.subdiv}>
@@ -23,27 +23,41 @@ const PcIconModalWindow: FC<PcIconModalWindowPropsData> = ({
               <div data-bs-toggle="dropdown" aria-expanded="false">
                 <div>
                   <p>
-                    Клиент:{" "}
+                    Клиент:
                     <span>{pcIconModalWindowData.dropData?.client}</span>
                   </p>
                   <p>
-                    Осталось:{" "}
+                    Осталось:
                     <span>{pcIconModalWindowData.dropData?.timeLeft}</span>
                   </p>
                 </div>
                 <ArrowChekRight color="#ffff" />
               </div>
               <ul className="dropdown-menu">
-                {!pcIconModalWindowData.dropData?.dropDataItem ||
-                pcIconModalWindowData.dropData?.dropDataItem.length === 0 ? (
-                  <h1>Ooops, server error, please wait...</h1>
-                ) : (
-                  <CustomStatickList
-                    customStatickListData={
-                      pcIconModalWindowData.dropData?.dropDataItem
-                    }
-                  />
-                )}
+                <CustomCenterModalOpenWrapper
+                  redaxStateKey="isReplenishmentBalanceModalWindowsOpen"
+                  openComponents={() => (
+                    <ReplenishmentBalanceModalWindows redaxStateKey="isReplenishmentBalanceModalWindowsOpen" />
+                  )}
+                >
+                  <li>Пополнение</li>
+                </CustomCenterModalOpenWrapper>
+                <CustomCenterModalOpenWrapper
+                  redaxStateKey="isUserPenaltyModalWindowOpen"
+                  openComponents={() => (
+                    <UserPenaltyModalWindow redaxStateKey="isUserPenaltyModalWindowOpen" />
+                  )}
+                >
+                  <li>Штраф</li>
+                </CustomCenterModalOpenWrapper>
+
+                <li>Отправить сообщение</li>
+                <li>Отправить уведомление</li>
+                <li>Сменить место</li>
+                <li>Выйти из сессии</li>
+                <li>Тарифы клиента</li>
+                <li>История операций</li>
+                <li>История транзакций</li>
               </ul>
             </div>
           </div>
@@ -87,4 +101,4 @@ const PcIconModalWindow: FC<PcIconModalWindowPropsData> = ({
   );
 };
 
-export default PcIconModalWindow;
+export default PcIconMenu;

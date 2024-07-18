@@ -21,6 +21,7 @@ $ok-color: #159900;
 $primary_color: #0a0c0c;
 $secondary_color: #1b1f20;
 $tertiary_color: #161818;
+$quartet_color: #343839;
 
 $light_color: #ffffff;
 $dark_color: #6c7275;
@@ -72,16 +73,7 @@ $hover-lists-active: linear-gradient(
   gap: 2rem;
 }
 
-//стили для кастамных input and textarea элементов
-@mixin inputStyle {
-  width: 100%;
-  background-color: $primary-color;
-  border: $border-style;
-  border-radius: $boreder-radius12;
-  color: $light-color;
-  padding: 1rem;
-}
-
+//СТИЛИ ДЛЯ МОДАЛЬНЫХ ОКОН VERSI1
 @mixin modalDivV1($cutom-width) {
   width: $cutom-width;
   display: flex;
@@ -90,6 +82,16 @@ $hover-lists-active: linear-gradient(
   background-color: $bg-primary;
   border: $border-style;
   border-radius: $boreder-radius16;
+  padding: 1rem;
+}
+
+//стили для кастамных input and textarea элементов
+@mixin inputStyle {
+  width: 100%;
+  background-color: $primary-color;
+  border: $border-style;
+  border-radius: $boreder-radius12;
+  color: $light-color;
   padding: 1rem;
 }
 

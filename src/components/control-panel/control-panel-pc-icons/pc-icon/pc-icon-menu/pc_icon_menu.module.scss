@@ -2,7 +2,7 @@
 
 .div {
   width: 14.8rem;
-  background-color: $bg-primary;
+  background-color: $primary_color;
   border: $border-style;
   border-radius: 10px;
   z-index: 1;
@@ -25,8 +25,17 @@
           }
         }
         > ul {
-          background-color: transparent;
-          border: none;
+          width: 14.8rem;
+          background-color: $primary_color;
+          color: $light_color;
+          border: $border-style;
+          padding: 1rem;
+          li {
+            padding: 0.3rem;
+            &:hover {
+              background-color: $tertiary_color;
+            }
+          }
         }
       }
     }

@@ -1,4 +1,4 @@
-import { PcIconModalWindowDataType } from "./pc-icon-components/pc-modal-modal-window/pcModalWindow.interface";
+import { PcIconModalWindowDataType } from "./pc-icon-menu/pcIconMenu.interface";
 
 // Тип для объекта внутри pcIconData
 export interface PcIconDataObjektType {

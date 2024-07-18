@@ -1,0 +1,8 @@
+@import "/src/variables.scss";
+
+.div {
+  @include modalDivV1(25rem);
+  > div:nth-child(5) {
+    display: flex;
+  }
+}

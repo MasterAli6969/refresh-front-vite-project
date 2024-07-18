@@ -3,7 +3,7 @@ import { FC } from "react";
 import { CircularProgress } from "@mui/material";
 import classNames from "classnames";
 
-import PcIconModalWindow from "./pc-modal-modal-window/PcIconModalWindow";
+import PcIconModalWindow from "./pc-icon-menu/PcIconMenu";
 
 import { PcIconPropsType } from "./pcIcon.interface";
 

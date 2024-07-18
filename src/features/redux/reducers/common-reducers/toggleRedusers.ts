@@ -6,6 +6,8 @@ export interface ToggleStateType {
   isAddNewRoomsButtonModalOpen: boolean;
   isLayoutEdingButtonModalOpen: boolean;
   isUserPanelOpenShiftModalOpen: boolean;
+  isReplenishmentBalanceModalWindowsOpen: boolean;
+  isUserPenaltyModalWindowOpen: boolean;
   isShiftStatus: boolean;
   isSidebarVisible: boolean;
   isMessangerOpen: boolean;
@@ -17,6 +19,8 @@ const initialState: ToggleStateType = {
   isAddNewRoomsButtonModalOpen: false,
   isLayoutEdingButtonModalOpen: false,
   isUserPanelOpenShiftModalOpen: false,
+  isReplenishmentBalanceModalWindowsOpen: false,
+  isUserPenaltyModalWindowOpen: false,
   isShiftStatus: false,
   isSidebarVisible: false,
   isMessangerOpen: false,

@@ -1,0 +1,26 @@
+@import "/src/variables.scss";
+
+.div {
+  @include modalDivV1(25rem);
+  > div:nth-child(2),
+  > div:nth-child(4),
+  .cash_card_select_block {
+    > p {
+      margin-bottom: 0.5rem;
+    }
+    > div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .mail_select_block {
+    > div {
+      width: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $quartet_color;
+      border-radius: $boreder-radius5;
+    }
+  }
+}
