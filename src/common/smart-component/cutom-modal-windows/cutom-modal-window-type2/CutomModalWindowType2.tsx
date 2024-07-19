@@ -1,10 +1,17 @@
 import { FC } from "react";
+import { RedaxStateProps } from "../../../../commonTypes.interface";
 
-import { CutomModalWindowType2PropsType } from "./cutomModalWindowType2.interface";
 import CustomModalCloseHead from "../../custom-modal-close-head/CustomModalCloseHead";
-import CustomButton from "../../../static-components/custom-button/CustomButton";
+import CustomDualButtonYesNo from "../../../static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
 import styles from "./cutom_modal_window_type2.module.scss";
+
+export interface CutomModalWindowType2PropsType extends RedaxStateProps {
+  title: string;
+  specialText?: string;
+  descritpion?: string;
+  rightButton: string;
+}
 
 const CutomModalWindowType2: FC<CutomModalWindowType2PropsType> = ({
   redaxStateKey,
@@ -22,12 +29,16 @@ const CutomModalWindowType2: FC<CutomModalWindowType2PropsType> = ({
           specialText={specialText}
         />
       </div>
+      {descritpion && (
+        <div>
+          <p>{descritpion}</p>
+        </div>
+      )}
       <div>
-        <p>{descritpion}</p>
-      </div>
-      <div>
-        <CustomButton color="dark" text="Отмена" />
-        <CustomButton color="light" text={rightButton} />
+        <CustomDualButtonYesNo
+          redaxStateKey={redaxStateKey}
+          buttonRightText={rightButton}
+        />
       </div>
     </div>
   );

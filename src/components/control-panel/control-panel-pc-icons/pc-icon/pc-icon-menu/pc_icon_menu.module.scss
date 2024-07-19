@@ -41,18 +41,20 @@
     }
     > ul {
       padding: 0.3rem;
+      //Стили для пустышек
       > li {
         display: flex;
         align-items: center;
+        margin-right: 0.5rem;
+      }
+      // ниже стили для того что уже обёрнуто кнопкой
+      > li {
         padding: 0.5rem;
         &:hover {
           background: $hover-lists-active;
-          border-radius: $boreder-radius5;
+          border-radius: $border-radius5;
         }
-        > img {
-          margin-right: 0.5rem;
-        }
-        > a {
+        > div > span {
           display: flex;
           align-items: center;
           > img {

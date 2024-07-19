@@ -33,10 +33,10 @@ $ok-color: #159900;
 
 //стили для границ
 $border-style: 1px solid $tertiary-color;
-$boreder-radius5: 5px;
-$boreder-radius10: 10px;
-$boreder-radius12: 12px;
-$boreder-radius16: 16px;
+$border-radius5: 5px;
+$border-radius10: 10px;
+$border-radius12: 12px;
+$border-radius16: 16px;
 
 $hover-lists-active: linear-gradient(
   to right,
@@ -54,7 +54,7 @@ $hover-lists-active: linear-gradient(
   align-items: center;
   background-color: $bg-color;
   border: none;
-  border-radius: $boreder-radius12;
+  border-radius: $border-radius12;
   &:hover {
     background-color: $hover-color;
     border: 1px solid $active-color;
@@ -68,7 +68,7 @@ $hover-lists-active: linear-gradient(
   flex-direction: column;
   background-color: $primary_color;
   border: $border-style;
-  border-radius: $boreder-radius10;
+  border-radius: $border-radius10;
   padding: 1rem;
   gap: 2rem;
 }
@@ -81,7 +81,7 @@ $hover-lists-active: linear-gradient(
   gap: 1.5rem;
   background-color: $bg-primary;
   border: $border-style;
-  border-radius: $boreder-radius16;
+  border-radius: $border-radius16;
   padding: 1rem;
 }
 
@@ -90,7 +90,7 @@ $hover-lists-active: linear-gradient(
   width: 100%;
   background-color: $primary-color;
   border: $border-style;
-  border-radius: $boreder-radius12;
+  border-radius: $border-radius12;
   color: $light-color;
   padding: 1rem;
 }
@@ -121,6 +121,6 @@ $hover-lists-active: linear-gradient(
   gap: 1.5rem;
   background-color: $bg-primary;
   border: $border-style;
-  border-radius: $boreder-radius16;
+  border-radius: $border-radius16;
   padding: 1rem;
 }

@@ -1,0 +1,28 @@
+@import "/src/variables.scss";
+
+.div {
+  width: 22rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(77, 176, 155, 0.4);
+  border-radius: $border-radius10;
+  padding: 1rem;
+  gap: 1rem;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    > div:first-child {
+      display: flex;
+      align-items: center;
+    }
+    > div:last-child {
+      cursor: pointer;
+    }
+  }
+  > button {
+    background-color: $light_color;
+    border: none;
+    border-radius: $border-radius5;
+    padding: 0.5rem;
+  }
+}

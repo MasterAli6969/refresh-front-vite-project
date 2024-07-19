@@ -3,12 +3,11 @@ import { FC, useState, useEffect } from "react";
 import CustomModalCloseHead from "../../smart-component/custom-modal-close-head/CustomModalCloseHead";
 import CustomToggleButton from "../../static-components/custom-toggle-button/CustomToggleButton";
 import CustomInput from "../../static-components/custom-input/CustomInput";
-import CustomButton from "../../static-components/custom-button/CustomButton";
 
 import { ReplenishmentBalanceModalWindowsPropsType } from "./replenishmentBalanceModalWindows.interface";
 
 import styles from "./replenishment_balance_modal_windows.module.scss";
-import CustomSelect from "../../static-components/custom-select/CustomSelect";
+import CustomDualButtonYesNo from "../../static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
 const ReplenishmentBalanceModalWindows: FC<
   ReplenishmentBalanceModalWindowsPropsType
@@ -37,25 +36,6 @@ const ReplenishmentBalanceModalWindows: FC<
   const handleTypeselectedCheck = (type: string) => {
     setSelectedCheckType(type);
   };
-
-  const dataSel = [
-    {
-      id: 1,
-      selectItem: "GOG",
-    },
-    {
-      id: 1,
-      selectItem: "GOG",
-    },
-    {
-      id: 1,
-      selectItem: "GOG",
-    },
-    {
-      id: 1,
-      selectItem: "GOG",
-    },
-  ];
 
   return (
     <div className={styles.div}>
@@ -136,8 +116,10 @@ const ReplenishmentBalanceModalWindows: FC<
         </div>
       </div>
       <div>
-        <CustomButton color="dark" text="Отмена" />
-        <CustomButton color="light" text="Оплата" />
+        <CustomDualButtonYesNo
+          redaxStateKey={redaxStateKey}
+          buttonRightText="Оплата"
+        />
       </div>
     </div>
   );

@@ -1,0 +1,18 @@
+@import "/src/variables.scss";
+
+.div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  > button {
+    &:hover {
+      background-color: $quartet_color;
+    }
+  }
+  > button:first-child {
+    margin-right: 0.5rem;
+  }
+  > button:last-child {
+    margin-left: 0.5rem;
+  }
+}

@@ -3,10 +3,10 @@ import { FC } from "react";
 import CustomModalCloseHead from "../../../../../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
 import CustomTextarea from "../../../../../../../common/static-components/custom-textarea/CustomTextarea";
 import CustomCounterInput from "../../../../../../../common/static-components/custom-counter-input/CustomCounterInput";
-import CustomButton from "../../../../../../../common/static-components/custom-button/CustomButton";
 
 import { UserPenaltyModalWindowPropsType } from "./userPenaltyModalWindow.interface";
 import styles from "./user_penalty_modal_window.module.scss";
+import CustomDualButtonYesNo from "../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
 const UserPenaltyModalWindow: FC<UserPenaltyModalWindowPropsType> = ({
   redaxStateKey,
@@ -33,8 +33,10 @@ const UserPenaltyModalWindow: FC<UserPenaltyModalWindowPropsType> = ({
         />
       </div>
       <div>
-        <CustomButton color="dark" text="Отмена" />
-        <CustomButton color="light" text="Готово" />
+        <CustomDualButtonYesNo
+          redaxStateKey={redaxStateKey}
+          buttonRightText="Готово"
+        />
       </div>
     </div>
   );

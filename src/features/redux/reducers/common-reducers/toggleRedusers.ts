@@ -8,6 +8,13 @@ export interface ToggleStateType {
   isUserPanelOpenShiftModalOpen: boolean;
   isReplenishmentBalanceModalWindowsOpen: boolean;
   isUserPenaltyModalWindowOpen: boolean;
+  isChangeLocationModalWindowOpen: boolean;
+  isEditPcModalWindowOpen: boolean;
+  isExitSessionWindowOpen: boolean;
+  isAdministratorModeWindowOpen: boolean;
+  isMaintenanceMode: boolean;
+  isTaskManager: boolean;
+  isScreenshotSavedModalWindowsOpen: boolean;
   isShiftStatus: boolean;
   isSidebarVisible: boolean;
   isMessangerOpen: boolean;
@@ -21,6 +28,13 @@ const initialState: ToggleStateType = {
   isUserPanelOpenShiftModalOpen: false,
   isReplenishmentBalanceModalWindowsOpen: false,
   isUserPenaltyModalWindowOpen: false,
+  isChangeLocationModalWindowOpen: false,
+  isEditPcModalWindowOpen: false,
+  isExitSessionWindowOpen: false,
+  isAdministratorModeWindowOpen: false,
+  isMaintenanceMode: false,
+  isTaskManager: false,
+  isScreenshotSavedModalWindowsOpen: false,
   isShiftStatus: false,
   isSidebarVisible: false,
   isMessangerOpen: false,
