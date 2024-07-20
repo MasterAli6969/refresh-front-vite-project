@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   background-color: rgba(77, 176, 155, 0.4);
-  border-radius: $border-radius10;
+  border-radius: $border_radius10;
   padding: 1rem;
   gap: 1rem;
   > div {
@@ -22,7 +22,7 @@
   > button {
     background-color: $light_color;
     border: none;
-    border-radius: $border-radius5;
+    border-radius: $border_radius5;
     padding: 0.5rem;
   }
 }

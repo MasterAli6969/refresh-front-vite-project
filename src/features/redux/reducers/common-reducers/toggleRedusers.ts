@@ -15,6 +15,7 @@ export interface ToggleStateType {
   isMaintenanceMode: boolean;
   isTaskManager: boolean;
   isScreenshotSavedModalWindowsOpen: boolean;
+  isAddUserModalWindowOpen: boolean;
   isShiftStatus: boolean;
   isSidebarVisible: boolean;
   isMessangerOpen: boolean;
@@ -35,6 +36,7 @@ const initialState: ToggleStateType = {
   isMaintenanceMode: false,
   isTaskManager: false,
   isScreenshotSavedModalWindowsOpen: false,
+  isAddUserModalWindowOpen: false,
   isShiftStatus: false,
   isSidebarVisible: false,
   isMessangerOpen: false,

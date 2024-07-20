@@ -57,7 +57,7 @@
         color: $light-color;
         border: none;
         padding: 0.75rem 1.25rem;
-        border-radius: $border-radius10;
+        border-radius: $border_radius10;
       }
       ._active_shift {
         background-color: $close-color;
@@ -94,7 +94,7 @@
           color: $light-color;
           background-color: $primary-color;
           border: none;
-          border-radius: $border-radius10;
+          border-radius: $border_radius10;
           padding: 0.75rem 1.25rem;
         }
       }

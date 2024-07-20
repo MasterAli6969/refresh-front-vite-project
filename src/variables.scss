@@ -32,11 +32,11 @@ $custom_red: #e6543f;
 $ok-color: #159900;
 
 //стили для границ
-$border-style: 1px solid $tertiary-color;
-$border-radius5: 5px;
-$border-radius10: 10px;
-$border-radius12: 12px;
-$border-radius16: 16px;
+$border_style: 1px solid $tertiary-color;
+$border_radius5: 5px;
+$border_radius10: 10px;
+$border_radius12: 12px;
+$border_radius16: 16px;
 
 $hover-lists-active: linear-gradient(
   to right,
@@ -54,7 +54,7 @@ $hover-lists-active: linear-gradient(
   align-items: center;
   background-color: $bg-color;
   border: none;
-  border-radius: $border-radius12;
+  border-radius: $border_radius12;
   &:hover {
     background-color: $hover-color;
     border: 1px solid $active-color;
@@ -67,8 +67,8 @@ $hover-lists-active: linear-gradient(
   display: flex;
   flex-direction: column;
   background-color: $primary_color;
-  border: $border-style;
-  border-radius: $border-radius10;
+  border: $border_style;
+  border-radius: $border_radius10;
   padding: 1rem;
   gap: 2rem;
 }
@@ -80,8 +80,8 @@ $hover-lists-active: linear-gradient(
   flex-direction: column;
   gap: 1.5rem;
   background-color: $bg-primary;
-  border: $border-style;
-  border-radius: $border-radius16;
+  border: $border_style;
+  border-radius: $border_radius16;
   padding: 1rem;
 }
 
@@ -89,8 +89,8 @@ $hover-lists-active: linear-gradient(
 @mixin inputStyle {
   width: 100%;
   background-color: $primary-color;
-  border: $border-style;
-  border-radius: $border-radius12;
+  border: $border_style;
+  border-radius: $border_radius12;
   color: $light-color;
   padding: 1rem;
 }
@@ -120,7 +120,7 @@ $hover-lists-active: linear-gradient(
   flex-direction: column;
   gap: 1.5rem;
   background-color: $bg-primary;
-  border: $border-style;
-  border-radius: $border-radius16;
+  border: $border_style;
+  border-radius: $border_radius16;
   padding: 1rem;
 }

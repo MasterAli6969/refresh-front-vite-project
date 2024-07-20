@@ -1,9 +1,12 @@
 import { FC, useState, useEffect, useRef } from "react";
 
 import SearchIcon from "../../../../assets/icons/SearchIcon.svg";
-import SearchMenu from "./search-menu/SearchMenu";
+import AddUserLight from "../../../../assets/icons/AddUserLight.svg";
+import SearchMenu from "./search-input-components/search-menu/SearchMenu";
+import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 
 import styles from "./search_input.module.scss";
+import AddUserModalWindow from "./search-input-components/add-user-modal-window/AddUserModalWindow";
 
 const SearchInput: FC = () => {
   const [search, setSearch] = useState<string>("");
@@ -13,7 +16,6 @@ const SearchInput: FC = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setSearch(value);
-    console.log(value);
   };
 
   const handleFocus = () => {
@@ -44,6 +46,16 @@ const SearchInput: FC = () => {
           type="search"
           onFocus={handleFocus}
         />
+        {!isFocused && (
+          <CustomCenterModalOpenWrapper
+            redaxStateKey="isAddUserModalWindowOpen"
+            openComponents={() => (
+              <AddUserModalWindow redaxStateKey="isAddUserModalWindowOpen" />
+            )}
+          >
+            <img className={styles.add_user_icon} src={AddUserLight} />
+          </CustomCenterModalOpenWrapper>
+        )}
         <div className={styles.search_menu}>
           <SearchMenu focused={isFocused} inputState={search} />
         </div>

@@ -3,7 +3,7 @@
 .div {
   width: 14.8rem;
   background-color: $primary_color;
-  border: $border-style;
+  border: $border_style;
   border-radius: 10px;
   z-index: 1;
   .subdiv {
@@ -28,7 +28,7 @@
           width: 14.8rem;
           background-color: $primary_color;
           color: $light_color;
-          border: $border-style;
+          border: $border_style;
           padding: 1rem;
           li {
             padding: 0.3rem;
@@ -52,7 +52,7 @@
         padding: 0.5rem;
         &:hover {
           background: $hover-lists-active;
-          border-radius: $border-radius5;
+          border-radius: $border_radius5;
         }
         > div > span {
           display: flex;

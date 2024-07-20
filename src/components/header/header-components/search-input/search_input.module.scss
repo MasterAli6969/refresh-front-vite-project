@@ -16,10 +16,19 @@
     color: $light-color;
     border: none;
   }
+  > .add_user_icon {
+    cursor: pointer;
+    border-radius: $border_radius5;
+    padding: 0.3rem;
+    &:hover {
+      background-color: $tertiary_color;
+    }
+  }
   .search_menu {
     position: absolute;
     top: 50px;
     left: 0;
     width: 100%;
+    z-index: 999;
   }
 }

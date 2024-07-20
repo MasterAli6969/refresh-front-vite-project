@@ -40,7 +40,7 @@ const CustomCenterModalOpenWrapper: FC<
   };
 
   return (
-    <div>
+    <div style={{ cursor: "pointer" }}>
       <span onClick={handleClickOpen}>{children}</span>
       <Dialog open={isOpen} onClose={handleClickClose}>
         <OpenComponents />

@@ -3,15 +3,15 @@
 .ul {
   background-color: $bg-primary;
   color: white;
-  border: $border-style;
-  border-radius: $border-radius10;
+  border: $border_style;
+  border-radius: $border_radius10;
   padding: 0.3rem;
   margin-left: 1rem !important;
   > li {
     padding: 0.5rem;
     &:hover {
       background: $hover-lists-active;
-      border-radius: $border-radius5;
+      border-radius: $border_radius5;
     }
   }
 }
