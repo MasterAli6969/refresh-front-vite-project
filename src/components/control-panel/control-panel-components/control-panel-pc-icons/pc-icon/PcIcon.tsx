@@ -18,10 +18,6 @@ export interface PcIconDataObjektType {
 }
 
 // Тип для основного массива данных
-export interface PcIconDataType {
-  id: number;
-  pcIconDataObjekt: PcIconDataObjektType;
-}
 
 export interface PcIconPropsType {
   pcIconDataObjekt: PcIconDataObjektType;

@@ -1,15 +1,28 @@
 import { FC } from "react";
 
 import Draggable from "react-draggable";
-import PcIcon, { PcIconDataType } from "./pc-icon/PcIcon";
+import PcIcon, { PcIconDataObjektType } from "./pc-icon/PcIcon";
 
-import { pcIconData } from "./data";
+interface PcIconDataType {
+  id: number;
+  pcIconDataObjekt: PcIconDataObjektType;
+}
 
-const ControlPanelPcIcons: FC = () => {
+interface ControlPanelPcIconsPropsType {
+  pcIconData?: PcIconDataType[];
+}
+
+const ControlPanelPcIcons: FC<ControlPanelPcIconsPropsType> = ({
+  pcIconData,
+}) => {
   return (
     <div style={{ zIndex: "1", height: "100vh" }}>
       {!pcIconData || pcIconData.length === 0 ? (
-        <h1>Ooops, server error, please wait...</h1>
+        <Draggable bounds="parent" grid={[50, 50]}>
+          <div
+            style={{ width: "50px", height: "50px", backgroundColor: "red" }}
+          ></div>
+        </Draggable>
       ) : (
         pcIconData.map((item: PcIconDataType) => {
           return (

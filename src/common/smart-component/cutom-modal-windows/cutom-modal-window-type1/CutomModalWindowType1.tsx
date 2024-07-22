@@ -26,7 +26,7 @@ const CutomModalWindowType1: FC<CutomModalWindowType1PropsType1> = ({
   specialText,
 }) => {
   const stateAddInput = useAppSelector(
-    (state) => state.input["addNewRoomsButtonModalWindow"]
+    (state) => state.input[redaxStateKey as keyof InputStatesType]
   );
   const dispatch = useAppDispatch();
 
@@ -57,7 +57,6 @@ const CutomModalWindowType1: FC<CutomModalWindowType1PropsType1> = ({
         <CustomButton color="dark" text="Отмена" />
         <CustomButton color="light" text="Сохранить" />
       </div>
-      <h1>{stateAddInput}</h1>
     </div>
   );
 };
