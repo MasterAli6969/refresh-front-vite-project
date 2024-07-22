@@ -1,9 +1,14 @@
 import { FC } from "react";
 import classNames from "classnames";
 
-import { CustomButtonPropsType } from "./customButton.interface";
-
 import styles from "./custom_button.module.scss";
+
+export interface CustomButtonPropsType {
+  color: "light" | "dark" | "warning";
+  text: string;
+  type?: "button" | "submit" | "reset";
+  onClick?: () => void;
+}
 
 const CustomButton: FC<CustomButtonPropsType> = ({
   text,

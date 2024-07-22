@@ -1,7 +1,11 @@
 import { FC, PropsWithChildren } from "react";
 import classNames from "classnames";
-import { CustomToggleButtonPropsType } from "./customToggleButton.interface";
 import styles from "./custom_toggle_button.module.scss";
+
+export interface CustomToggleButtonPropsType {
+  active: boolean;
+  onClick?: () => void;
+}
 
 const CustomToggleButton: FC<
   PropsWithChildren<CustomToggleButtonPropsType>

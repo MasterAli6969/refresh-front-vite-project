@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { RedaxStateProps } from "../../../../commonTypes.interface";
 
 import CustomModalCloseHead from "../../custom-modal-close-head/CustomModalCloseHead";
 import CustomInput from "../../../static-components/custom-input/CustomInput";
@@ -6,14 +7,19 @@ import CustomButton from "../../../static-components/custom-button/CustomButton"
 import CustomTextarea from "../../../static-components/custom-textarea/CustomTextarea";
 import CustomDualTextDisplay from "../../../static-components/custom-dual-text-display/CustomDualTextDisplay";
 
-import { CutomModalWindowType3PropsType } from "./cutomModalWindowType3.interface";
-
 import styles from "./cutom_modal_window_type3.module.scss";
 import { useAppDispatch } from "../../../../features/redux/hooks/reduxRootHooks";
 import {
   setToggle,
   ToggleStateType,
 } from "../../../../features/redux/reducers/common-reducers/toggleRedusers";
+
+export interface CutomModalWindowType3PropsType extends RedaxStateProps {
+  shiftType: boolean;
+  redaxShiftState: string;
+  title: string;
+  rightButton: string;
+}
 
 const CutomModalWindowType3: FC<CutomModalWindowType3PropsType> = ({
   shiftType,

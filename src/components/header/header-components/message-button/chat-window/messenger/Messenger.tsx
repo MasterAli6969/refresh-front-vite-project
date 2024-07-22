@@ -1,9 +1,15 @@
 import { FC, useState } from "react";
 
-import { MessageDataType } from "./messenger.interface";
 import { messageOutgoingEmployeesData } from "../../../../data";
 
 import styles from "./messenger.module.scss";
+
+export interface MessageDataType {
+  id: number;
+  name: string;
+  time: string;
+  message: string;
+}
 
 const Messenger: FC = () => {
   const [messageElement, setMessageElement] = useState<MessageDataType>({

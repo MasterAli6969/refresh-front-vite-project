@@ -1,9 +1,7 @@
 import { FC } from "react";
 
 import Draggable from "react-draggable";
-import PcIcon from "./pc-icon/PcIcon";
-
-import { PcIconDataType } from "./pc-icon/pcIcon.interface";
+import PcIcon, { PcIconDataType } from "./pc-icon/PcIcon";
 
 import { pcIconData } from "./data";
 

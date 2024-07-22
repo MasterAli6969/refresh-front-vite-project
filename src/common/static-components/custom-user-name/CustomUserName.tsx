@@ -2,9 +2,13 @@ import { FC } from "react";
 
 import CustomAvatarName from "../custom-avatar-name/CustomAvatarName";
 
-import { CustomUserNamePropsType } from "./customUserName.interface";
-
 import styles from "./custom_user_name.module.scss";
+
+export interface CustomUserNamePropsType {
+  initials: string;
+  name: string;
+  position?: string;
+}
 
 const CustomUserName: FC<CustomUserNamePropsType> = ({
   initials,

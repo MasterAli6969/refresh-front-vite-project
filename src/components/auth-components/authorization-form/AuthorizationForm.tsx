@@ -8,12 +8,23 @@ import CustomPasswordInput from "../../../common/static-components/custom-passwo
 import CustomMailInput from "../../../common/static-components/custom-mail-input/CustomMailInput";
 import CustomButton from "../../../common/static-components/custom-button/CustomButton";
 
-import {
-  AuthInputDataTypes,
-  AuthPostDataTypes,
-} from "./authorizationForm.interface";
-
 import styles from "./authorization_form.module.scss";
+
+export interface AuthInputDataTypes {
+  login: string;
+  passw: string;
+}
+
+export interface AuthPostDataTypes {
+  request: string;
+  apiKey: number;
+  data: AuthInputDataTypes;
+}
+
+export interface errorsDataTypes {
+  login: boolean;
+  passw: boolean;
+}
 
 const AuthorizationForm: FC = () => {
   const [authData, setAuthData] = useState<AuthInputDataTypes>({

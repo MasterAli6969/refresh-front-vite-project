@@ -6,7 +6,6 @@ import AddNewRoomsButton from "./control-panel-header-components/add-new-rooms-b
 
 import styles from "./contro_panel_header.module.scss";
 import LayoutEdingButton from "./control-panel-header-components/layout-eding-button/LayoutEdingButton";
-import CustomCounterInput from "../../../common/static-components/custom-counter-input/CustomCounterInput";
 
 const ControlPanelHeader: FC = () => {
   return (

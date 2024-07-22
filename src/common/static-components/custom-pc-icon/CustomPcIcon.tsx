@@ -2,9 +2,12 @@ import { FC } from "react";
 
 import classNames from "classnames";
 
-import { CustomPcIconPropsType } from "./customPcIcon.interface";
-
 import styles from "./custom_pc_icon.module.scss";
+
+export interface CustomPcIconPropsType {
+  number: number;
+  status: string;
+}
 
 const CustomPcIcon: FC<CustomPcIconPropsType> = ({ number, status }) => {
   return (

@@ -1,6 +1,9 @@
 import { FC } from "react";
 
-import { CustomDualTextDisplayPropsType } from "./customDualTextDisplay.interface";
+export interface CustomDualTextDisplayPropsType {
+  text1: string;
+  text2: string;
+}
 
 const CustomDualTextDisplay: FC<CustomDualTextDisplayPropsType> = ({
   text1,

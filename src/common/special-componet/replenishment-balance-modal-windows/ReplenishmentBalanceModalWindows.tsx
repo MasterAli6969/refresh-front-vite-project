@@ -1,13 +1,15 @@
 import { FC, useState, useEffect } from "react";
+import { RedaxStateProps } from "../../../commonTypes.interface";
 
 import CustomModalCloseHead from "../../smart-component/custom-modal-close-head/CustomModalCloseHead";
 import CustomToggleButton from "../../static-components/custom-toggle-button/CustomToggleButton";
 import CustomInput from "../../static-components/custom-input/CustomInput";
 
-import { ReplenishmentBalanceModalWindowsPropsType } from "./replenishmentBalanceModalWindows.interface";
-
 import styles from "./replenishment_balance_modal_windows.module.scss";
 import CustomDualButtonYesNo from "../../static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+
+export interface ReplenishmentBalanceModalWindowsPropsType
+  extends RedaxStateProps {}
 
 const ReplenishmentBalanceModalWindows: FC<
   ReplenishmentBalanceModalWindowsPropsType

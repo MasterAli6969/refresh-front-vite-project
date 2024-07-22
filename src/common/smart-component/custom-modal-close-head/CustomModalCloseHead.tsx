@@ -5,9 +5,15 @@ import {
   ToggleStateType,
 } from "../../../features/redux/reducers/common-reducers/toggleRedusers";
 import CloseIcon from "../../../assets/icons-svg-components/CloseIcon";
-import { CustomModalCloseHeadPropsType } from "./customModalCloseHead.interface";
 
 import styles from "./custom_modal_close_head.module.scss";
+
+import { RedaxStateProps } from "../../../commonTypes.interface";
+
+export interface CustomModalCloseHeadPropsType extends RedaxStateProps {
+  text: string;
+  specialText?: string;
+}
 
 const CustomModalCloseHead: FC<CustomModalCloseHeadPropsType> = ({
   redaxStateKey,

@@ -1,8 +1,10 @@
 import { FC } from "react";
 
-import { CustomAvatarNamePropType } from "./customAvatarName.interface";
-
 import styles from "./custom_avatar_name.module.scss";
+
+export interface CustomAvatarNamePropType {
+  name: string;
+}
 
 const CustomAvatarName: FC<CustomAvatarNamePropType> = ({ name }) => {
   return (

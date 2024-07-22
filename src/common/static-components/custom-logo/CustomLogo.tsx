@@ -1,11 +1,14 @@
 import { FC } from "react";
+import classNames from "classnames";
 
 import RefreshLogo from "../../../assets/img/RefreshLogo.png";
 
-import { CustomLogoPropsType } from "./customLogo.interface";
-
 import styles from "./custom_logo.module.scss";
-import classNames from "classnames";
+
+export interface CustomLogoPropsType {
+  display: string;
+  isLabale?: string;
+}
 
 const CustomLogo: FC<CustomLogoPropsType> = ({ display, isLabale }) => {
   return (

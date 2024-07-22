@@ -3,11 +3,29 @@ import { FC } from "react";
 import { CircularProgress } from "@mui/material";
 import classNames from "classnames";
 
-import PcIconModalWindow from "./pc-icon-menu/PcIconMenu";
-
-import { PcIconPropsType } from "./pcIcon.interface";
+import PcIconModalWindow, {
+  PcIconMenuDataType,
+} from "./pc-icon-menu/PcIconMenu";
 
 import styles from "./pc_icon.module.scss";
+
+// Тип для объекта внутри pcIconData
+export interface PcIconDataObjektType {
+  status: string;
+  pcNumber: number;
+  timeLeftPcent: number;
+  pcIconModalWindowData: PcIconMenuDataType;
+}
+
+// Тип для основного массива данных
+export interface PcIconDataType {
+  id: number;
+  pcIconDataObjekt: PcIconDataObjektType;
+}
+
+export interface PcIconPropsType {
+  pcIconDataObjekt: PcIconDataObjektType;
+}
 
 const PcIcon: FC<PcIconPropsType> = ({ pcIconDataObjekt }) => {
   const valueProgress = pcIconDataObjekt.timeLeftPcent;

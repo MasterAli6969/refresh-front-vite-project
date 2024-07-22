@@ -9,9 +9,13 @@ import {
   ToggleStateType,
 } from "../../../features/redux/reducers/common-reducers/toggleRedusers";
 import classNames from "classnames";
+import { RedaxStateProps } from "../../../commonTypes.interface";
 
-import { CustomRightModalOpenWrapperPropsType } from "./customRightModalOpenWrapper.interface";
 import styles from "./custom_right_modal_open_wrapper.module.scss";
+
+export interface CustomRightModalOpenWrapperPropsType extends RedaxStateProps {
+  openComponents: FC;
+}
 
 const CustomRightModalOpenWrapper: FC<
   PropsWithChildren<CustomRightModalOpenWrapperPropsType>

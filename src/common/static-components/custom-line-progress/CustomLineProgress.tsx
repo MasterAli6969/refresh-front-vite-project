@@ -1,8 +1,11 @@
 import { FC } from "react";
 
-import { CustomLineProgressPropsType } from "./customLineProgress.interface";
-
 import styles from "./custom_line_progress.module.scss";
+
+export interface CustomLineProgressPropsType {
+  text: string;
+  valuePropgress: string;
+}
 
 const CustomLineProgress: FC<CustomLineProgressPropsType> = ({
   text,

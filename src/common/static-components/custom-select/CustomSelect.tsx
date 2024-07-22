@@ -1,11 +1,17 @@
 import { FC } from "react";
 
-import {
-  CustomSelectPropsType,
-  CustomSelectDataType,
-} from "./customSelect.interface";
-
 import styles from "./custom_select.module.scss";
+
+export interface CustomSelectDataType {
+  id: number;
+  selectItem: string;
+}
+
+export interface CustomSelectPropsType {
+  title: string;
+  selectTitle: string;
+  customSelectData: CustomSelectDataType[];
+}
 
 const CustomSelect: FC<CustomSelectPropsType> = ({
   title,

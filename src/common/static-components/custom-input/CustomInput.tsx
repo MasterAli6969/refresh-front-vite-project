@@ -1,8 +1,11 @@
 import { FC } from "react";
 
-import { CustomInputPropsType } from "./customInput.interface";
-
 import styles from "./custom_input.module.scss";
+
+export interface CustomInputPropsType {
+  label?: string;
+  plaseholder: string;
+}
 
 const CustomInput: FC<CustomInputPropsType> = ({ label, plaseholder }) => {
   return (

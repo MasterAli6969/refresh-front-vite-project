@@ -4,7 +4,10 @@ import PlusIcon from "../../../assets/icons/PlusIcon.svg";
 import CounterMinus from "../../../assets/icons/CounterMinus.svg";
 
 import styles from "./custom_counter_input.module.scss";
-import { CustomCounterInputPropsType } from "./customCounterInput.interface";
+
+export interface CustomCounterInputPropsType {
+  label: string;
+}
 
 const CustomCounterInput: FC<CustomCounterInputPropsType> = ({ label }) => {
   const [count, setCount] = useState<number>(0);

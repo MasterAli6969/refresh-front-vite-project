@@ -3,10 +3,10 @@ import { FC } from "react";
 import ArrowChekRight from "../../../../assets/icons-svg-components/ArrowChekRight";
 
 import {
+  LeftDropListDropMenuDataType,
   LeftDropListDataProps,
   LeftDropListStaticDataType,
-  LeftDropListDropMenuDataType,
-} from "../../leftSidebar.interface";
+} from "../../LeftSidebar";
 
 import { ListLinkType } from "../../../../commonTypes.interface";
 

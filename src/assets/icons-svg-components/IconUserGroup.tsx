@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { propsIcon } from "./props.interface";
+import { PropsIcon } from "./props.interface";
 
-const IconUserGroup: FC<propsIcon> = ({ color }) => {
+const IconUserGroup: FC<PropsIcon> = ({ color }) => {
   return (
     <>
       <svg

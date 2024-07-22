@@ -1,9 +1,11 @@
 import { FC } from "react";
-
-import { CustomStatickListPropsType } from "./customStatickList.interface";
 import { ListLinkType } from "../../../commonTypes.interface";
 
 import styles from "./custom_statick_list.module.scss";
+
+export interface CustomStatickListPropsType {
+  customStatickListData: ListLinkType[];
+}
 
 const CustomStatickList: FC<CustomStatickListPropsType> = ({
   customStatickListData,

@@ -3,6 +3,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../../features/redux/hooks/reduxRootHooks";
+import { RedaxStateProps } from "../../../commonTypes.interface";
 import {
   setToggle,
   ToggleStateType,
@@ -10,7 +11,9 @@ import {
 
 import { Dialog } from "@mui/material";
 
-import { CustomCenterModalOpenWrapperProps } from "./customCenterModalOpenWrapper.interface";
+export interface CustomCenterModalOpenWrapperProps extends RedaxStateProps {
+  openComponents: FC;
+}
 
 const CustomCenterModalOpenWrapper: FC<
   PropsWithChildren<CustomCenterModalOpenWrapperProps>

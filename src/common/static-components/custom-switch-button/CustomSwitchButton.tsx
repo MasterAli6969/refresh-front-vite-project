@@ -2,9 +2,14 @@ import { FC, useState } from "react";
 
 import classNames from "classnames";
 
-import { CustomSwitchButtonProps } from "./customSwitchButton.interface";
-
 import style from "./custom_switch_button.module.scss";
+
+export interface CustomSwitchButtonProps {
+  buttonLeft: string;
+  componentLeft: FC;
+  buttonRight: string;
+  componentRight: FC;
+}
 
 const CustomSwitchButton: FC<CustomSwitchButtonProps> = ({
   buttonLeft,

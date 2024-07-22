@@ -2,16 +2,20 @@ import { FC, useState, useEffect } from "react";
 import OfflineIcon from "../../../../../../assets/icons/OfflineIcon.svg";
 import OflineIcon from "../../../../../../assets/icons/OflineIcon.svg";
 import { dialogData } from "../../../../data";
-import { DialogDataType } from "./dialogWindow.interface";
 import styles from "./dialog_window.module.scss";
-import { useAppDispatch } from "../../../../../../features/redux/hooks/reduxRootHooks";
+
+export interface DialogDataType {
+  id: number;
+  name: string;
+  time: string;
+  online: boolean;
+  lastMessage: string;
+}
 
 const DialogWindow: FC = () => {
   const [dialogDataRender, setDialogDataRender] = useState<DialogDataType[]>(
     []
   );
-
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
     setDialogDataRender(dialogData);

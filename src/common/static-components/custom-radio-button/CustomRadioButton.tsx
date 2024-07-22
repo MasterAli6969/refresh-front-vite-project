@@ -1,8 +1,12 @@
 import { FC } from "react";
 
-import { CustomRadioButtonPropsType } from "./customRadioButton.interface";
-
 import styles from "./custom_radio_button.module.scss";
+
+export interface CustomRadioButtonPropsType {
+  title: string;
+  radioLeft: string;
+  redioRight: string;
+}
 
 const CustomRadioButton: FC<CustomRadioButtonPropsType> = ({
   title,

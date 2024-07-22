@@ -1,9 +1,8 @@
 import { FC } from "react";
+import { RedaxStateProps } from "../../../../../../../commonTypes.interface";
 
 import CustomModalCloseHead from "../../../../../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
 import CustomSelect from "../../../../../../../common/static-components/custom-select/CustomSelect";
-
-import { ChangeLocationModalWindowPropsType } from "./changeLocationModalWindow.interface";
 
 import styles from "./change_location_modal_window.module.scss";
 import CustomDualButtonYesNo from "../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
@@ -22,6 +21,8 @@ const selectData = [
     selectItem: "Select1",
   },
 ];
+
+export interface ChangeLocationModalWindowPropsType extends RedaxStateProps {}
 
 const ChangeLocationModalWindow: FC<ChangeLocationModalWindowPropsType> = ({
   redaxStateKey,

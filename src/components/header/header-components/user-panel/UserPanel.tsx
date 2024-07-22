@@ -5,14 +5,39 @@ import classNames from "classnames";
 import OnlineIcon from "../../../../assets/icons/OnlineIcon.svg";
 import OfflineIcon from "../../../../assets/icons/OfflineIcon.svg";
 
-import {
-  UserPanelDataPropsTypes,
-  DropListItemTypes,
-} from "./userPanel.interface";
-
 import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 import CutomModalWindowType3 from "../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-type3/CutomModalWindowType3";
 import styles from "./user_panel.module.scss";
+
+export interface DropListItemTypes {
+  id: number;
+  url: string;
+  icon: string;
+  text: string;
+}
+
+export interface ShiftDataTypes {
+  generalSales: string;
+  cash: string;
+  bankCard: string;
+  refunds: string;
+}
+
+export interface DropDataTypes {
+  shiftData: ShiftDataTypes;
+  dropListItem: DropListItemTypes[];
+}
+
+export interface UserPanelDataTypes {
+  id: number;
+  avatar: string;
+  name: string;
+  dropData: DropDataTypes;
+}
+
+export interface UserPanelDataPropsTypes {
+  userPanelData: UserPanelDataTypes;
+}
 
 const UserPanel: FC<UserPanelDataPropsTypes> = ({ userPanelData }) => {
   const isShiftStatus = useAppSelector(

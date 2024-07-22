@@ -1,12 +1,16 @@
 import { FC } from "react";
+import { RedaxStateProps } from "../../../../commonTypes.interface";
 
 import CustomModalCloseHead from "../../custom-modal-close-head/CustomModalCloseHead";
 import CustomInput from "../../../static-components/custom-input/CustomInput";
 import CustomButton from "../../../static-components/custom-button/CustomButton";
 
-import { CutomModalWindowType1PropsType1 } from "./cutomModalWindowType1.interface";
-
 import styles from "./cutom_modal_window_type1.module.scss";
+
+export interface CutomModalWindowType1PropsType1 extends RedaxStateProps {
+  title: string;
+  specialText?: string;
+}
 
 const CutomModalWindowType1: FC<CutomModalWindowType1PropsType1> = ({
   redaxStateKey,

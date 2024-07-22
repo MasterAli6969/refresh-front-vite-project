@@ -3,9 +3,14 @@ import classNames from "classnames";
 
 import CustomSwitchButton from "../../static-components/custom-switch-button/CustomSwitchButton";
 
-import { CustomModalOpenButtonSwitchPropsType } from "./customModalOpenButtonSwitch.interface";
-
 import styles from "./custom_modal_open_button_switch.module.scss";
+
+export interface CustomModalOpenButtonSwitchPropsType {
+  icon: string;
+  title: string;
+  buttonLeft: FC;
+  buttonRight: FC;
+}
 
 const CustomModalOpenButtonSwitch: FC<CustomModalOpenButtonSwitchPropsType> = ({
   icon,

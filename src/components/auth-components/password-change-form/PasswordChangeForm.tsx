@@ -5,9 +5,17 @@ import CustomPasswordInput from "../../../common/static-components/custom-passwo
 import CustomButton from "../../../common/static-components/custom-button/CustomButton";
 import CustomDoneAuthWindow from "../../../common/smart-component/custom-done-auth-window/CustomDoneAuthWindow";
 
-import { PassStateDataType } from "./passwordChangeForm.interface";
-
 import styles from "./password_change_form.module.scss";
+
+export interface PassStateDataType {
+  pass: string;
+  repeatPass: string;
+}
+
+export interface ErrorDataType {
+  pass: boolean;
+  repeatPass: boolean;
+}
 
 const PasswordChangeForm: FC = () => {
   const [passData, setPassData] = useState<PassStateDataType>({
