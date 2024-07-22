@@ -8,6 +8,9 @@
   padding: 0.5rem;
   &:hover {
     background-color: $quartet_color;
+    ._room_tab_menu_visible {
+      display: block;
+    }
   }
   > p {
     margin-right: 1rem;
@@ -26,8 +29,6 @@
     z-index: 5;
   }
 }
-.subdiv_rooms_tabs:hover {
-  ._room_tab_menu_visible {
-    display: block;
-  }
+._active {
+  background-color: $quartet_color;
 }

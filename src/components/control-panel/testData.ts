@@ -1,13 +1,13 @@
-import UserMiniIcon from "../../../../assets/icons/UserMiniIcon.svg";
-import LoaderMiniIcon from "../../../../assets/icons/LoaderMiniIcon.svg";
-import RemoteSvgrepoMini from "../../../../assets/icons/RemoteSvgrepoMini.svg";
-import CornersOutMiniIcons from "../../../../assets/icons/CornersOutMiniIcons.svg";
-import WindowsLogoMiniIcons from "../../../../assets/icons/WindowsLogoMiniIcons.svg";
-import WrenchMiniIcons from "../../../../assets/icons/WrenchMiniIcons.svg";
-import ListMiniIcons from "../../../../assets/icons/ListMiniIcons.svg";
-import PencilSimpleMiniIcons from "../../../../assets/icons/PencilSimpleMiniIcons.svg";
-import SimplerebootSvgrepoMiniIcons from "../../../../assets/icons/SimplerebootSvgrepoMiniIcons.svg";
-import PowerMiniIcons from "../../../../assets/icons/PowerMiniIcons.svg";
+import UserMiniIcon from "../../assets/icons/UserMiniIcon.svg";
+import LoaderMiniIcon from "../../assets/icons/LoaderMiniIcon.svg";
+import RemoteSvgrepoMini from "../../assets/icons/RemoteSvgrepoMini.svg";
+import CornersOutMiniIcons from "../../assets/icons/CornersOutMiniIcons.svg";
+import WindowsLogoMiniIcons from "../../assets/icons/WindowsLogoMiniIcons.svg";
+import WrenchMiniIcons from "../../assets/icons/WrenchMiniIcons.svg";
+import ListMiniIcons from "../../assets/icons/ListMiniIcons.svg";
+import PencilSimpleMiniIcons from "../../assets/icons/PencilSimpleMiniIcons.svg";
+import SimplerebootSvgrepoMiniIcons from "../../assets/icons/SimplerebootSvgrepoMiniIcons.svg";
+import PowerMiniIcons from "../../assets/icons/PowerMiniIcons.svg";
 
 const modalListItem = [
   {
@@ -167,5 +167,38 @@ export const pcIconData = [
         modalListItem: modalListItem,
       },
     },
+  },
+];
+
+export const centralHeaderData = [
+  {
+    id: 1,
+    title: "Чистый доход",
+    value: 0,
+    trendProcent: 0,
+  },
+  {
+    id: 2,
+    title: "Чистый доход",
+    value: 0,
+    trendProcent: 0,
+  },
+  {
+    id: 3,
+    title: "Чистый доход",
+    value: 0,
+    trendProcent: 0,
+  },
+  {
+    id: 4,
+    title: "Чистый доход",
+    value: 0,
+    trendProcent: 0,
+  },
+  {
+    id: 5,
+    title: "Чистый доход",
+    value: 0,
+    trendProcent: 0,
   },
 ];

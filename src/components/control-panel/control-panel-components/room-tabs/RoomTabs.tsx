@@ -1,17 +1,27 @@
-import { FC } from "react";
+import { FC, useState } from "react";
+import classNames from "classnames";
 
-import CustomPcIcon from "../../../../../../common/static-components/custom-pc-icon/CustomPcIcon";
+import CustomPcIcon from "../../../../common/static-components/custom-pc-icon/CustomPcIcon";
 import RoomTabsMenu from "./room-tabs-menu/RoomTabsMenu";
 
 import styles from "./room_tabs.module.scss";
 
 interface RoomTabsPropsType {
+  id: number;
   title: string;
 }
 
-const RoomTabs: FC<RoomTabsPropsType> = ({ title }) => {
+const RoomTabs: FC<RoomTabsPropsType> = ({ title, id }) => {
+  const [activeTabId, setActiveTabId] = useState<number | null>(null);
+
+  const handleClick = (id: number) => {
+    setActiveTabId(id);
+  };
   return (
-    <div className={styles.subdiv_rooms_tabs}>
+    <div
+      className={classNames(styles.subdiv_rooms_tabs)}
+      onClick={() => handleClick(id)}
+    >
       <p>{title}</p>
       <ul>
         <li>

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { RedaxStateProps } from "../../../../commonTypes.interface";
 import {
   useAppDispatch,
@@ -9,11 +9,20 @@ import CustomModalCloseHead from "../../custom-modal-close-head/CustomModalClose
 import CustomInput from "../../../static-components/custom-input/CustomInput";
 import CustomButton from "../../../static-components/custom-button/CustomButton";
 
-import styles from "./cutom_modal_window_type1.module.scss";
 import {
   setInput,
   InputStatesType,
 } from "../../../../features/redux/reducers/common-reducers/inputReduser";
+import {
+  setClick,
+  OnClickStatesType,
+} from "../../../../features/redux/reducers/common-reducers/onClickReduser";
+import {
+  setToggle,
+  ToggleStateType,
+} from "../../../../features/redux/reducers/common-reducers/toggleRedusers";
+
+import styles from "./cutom_modal_window_type1.module.scss";
 
 export interface CutomModalWindowType1PropsType1 extends RedaxStateProps {
   title: string;
@@ -30,34 +39,48 @@ const CutomModalWindowType1: FC<CutomModalWindowType1PropsType1> = ({
   );
   const dispatch = useAppDispatch();
 
+  const [localInputValue, setLocalInputValue] = useState<string>(stateAddInput);
+
   const handleInputChange = (value: string) => {
+    setLocalInputValue(value);
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
     dispatch(
-      setInput({ key: redaxStateKey as keyof InputStatesType, value: value })
+      setInput({
+        key: redaxStateKey as keyof InputStatesType,
+        value: localInputValue,
+      })
+    );
+
+    dispatch(
+      setClick({ key: redaxStateKey as keyof OnClickStatesType, value: true })
+    );
+
+    dispatch(
+      setToggle({ key: redaxStateKey as keyof ToggleStateType, value: false })
     );
   };
 
   return (
-    <div className={styles.div}>
-      <div>
-        <CustomModalCloseHead
-          redaxStateKey={redaxStateKey}
-          text={title}
-          specialText={specialText}
-        />
-      </div>
-      <div>
-        <CustomInput
-          label="Название комнаты"
-          placeholder="Введите новое название комнаты"
-          value={stateAddInput}
-          onChange={handleInputChange}
-        />
-      </div>
+    <form onSubmit={handleSubmit} className={styles.div}>
+      <CustomModalCloseHead
+        redaxStateKey={redaxStateKey}
+        text={title}
+        specialText={specialText}
+      />
+      <CustomInput
+        label="Название комнаты"
+        placeholder="Введите новое название комнаты"
+        value={localInputValue}
+        onChange={handleInputChange}
+      />
       <div>
         <CustomButton color="dark" text="Отмена" />
-        <CustomButton color="light" text="Сохранить" />
+        <CustomButton type="submit" color="light" text="Сохранить" />
       </div>
-    </div>
+    </form>
   );
 };
 

@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import toggleReducer from "./reducers/common-reducers/toggleRedusers";
 import inputReducer from "./reducers/common-reducers/inputReduser";
+import onClick from "./reducers/common-reducers/onClickReduser";
 
 const rootReducer = combineReducers({
   toggle: toggleReducer,
   input: inputReducer,
+  click: onClick,
 });
 
 export const setupStore = () => {

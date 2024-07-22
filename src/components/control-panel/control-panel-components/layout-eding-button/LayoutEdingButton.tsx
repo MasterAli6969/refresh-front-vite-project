@@ -1,10 +1,10 @@
 import { FC } from "react";
 
-import LockAltLight from "../../../../../../assets/icons/LockAltLight.svg";
-import CustomCenterModalOpenWrapper from "../../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
+import LockAltLight from "../../../../assets/icons/LockAltLight.svg";
+import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 
 import styles from "./layout_eding_button.module.scss";
-import CutomModalWindowType2 from "../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-type2/CutomModalWindowType2";
+import CutomModalWindowType2 from "../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-type2/CutomModalWindowType2";
 
 const LayoutEdingButton: FC = () => {
   return (
