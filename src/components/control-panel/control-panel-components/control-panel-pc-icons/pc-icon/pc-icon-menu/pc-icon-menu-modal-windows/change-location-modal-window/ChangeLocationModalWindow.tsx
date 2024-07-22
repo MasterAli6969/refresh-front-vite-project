@@ -1,11 +1,11 @@
 import { FC } from "react";
-import { RedaxStateProps } from "../../../../../../../commonTypes.interface";
+import { RedaxStateProps } from "../../../../../../../../commonTypes.interface";
 
-import CustomModalCloseHead from "../../../../../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
-import CustomSelect from "../../../../../../../common/static-components/custom-select/CustomSelect";
+import CustomModalCloseHead from "../../../../../../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
+import CustomSelect from "../../../../../../../../common/static-components/custom-select/CustomSelect";
 
 import styles from "./change_location_modal_window.module.scss";
-import CustomDualButtonYesNo from "../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomDualButtonYesNo from "../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
 const selectData = [
   {

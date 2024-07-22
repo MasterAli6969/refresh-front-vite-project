@@ -48,9 +48,9 @@ const SearchInput: FC = () => {
         />
         {!isFocused && (
           <CustomCenterModalOpenWrapper
-            redaxStateKey="isAddUserModalWindowOpen"
+            redaxStateKey="addUserModalWindow"
             openComponents={() => (
-              <AddUserModalWindow redaxStateKey="isAddUserModalWindowOpen" />
+              <AddUserModalWindow redaxStateKey="addUserModalWindow" />
             )}
           >
             <img className={styles.add_user_icon} src={AddUserLight} />

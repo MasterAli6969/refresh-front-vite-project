@@ -1,12 +1,12 @@
 import { FC } from "react";
-import { RedaxStateProps } from "../../../../../../../commonTypes.interface";
+import { RedaxStateProps } from "../../../../../../../../commonTypes.interface";
 
-import CustomModalCloseHead from "../../../../../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
-import CustomTextarea from "../../../../../../../common/static-components/custom-textarea/CustomTextarea";
-import CustomCounterInput from "../../../../../../../common/static-components/custom-counter-input/CustomCounterInput";
+import CustomModalCloseHead from "../../../../../../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
+import CustomTextarea from "../../../../../../../../common/static-components/custom-textarea/CustomTextarea";
+import CustomCounterInput from "../../../../../../../../common/static-components/custom-counter-input/CustomCounterInput";
 
 import styles from "./user_penalty_modal_window.module.scss";
-import CustomDualButtonYesNo from "../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomDualButtonYesNo from "../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
 export interface UserPenaltyModalWindowPropsType extends RedaxStateProps {}
 

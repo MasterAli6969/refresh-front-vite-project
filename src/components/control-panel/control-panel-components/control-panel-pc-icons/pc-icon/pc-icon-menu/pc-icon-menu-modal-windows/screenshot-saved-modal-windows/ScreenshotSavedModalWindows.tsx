@@ -1,15 +1,15 @@
 import { FC } from "react";
-import { useAppDispatch } from "../../../../../../../features/redux/hooks/reduxRootHooks";
+import { useAppDispatch } from "../../../../../../../../features/redux/hooks/reduxRootHooks";
 import {
   setToggle,
   ToggleStateType,
-} from "../../../../../../../features/redux/reducers/common-reducers/toggleRedusers";
+} from "../../../../../../../../features/redux/reducers/common-reducers/toggleRedusers";
 
-import CloseIcon from "../../../../../../../assets/icons-svg-components/CloseIcon";
-import CheckedWhiteIcon from "../../../../../../../assets/icons/CheckedWhiteIcon.svg";
+import CloseIcon from "../../../../../../../../assets/icons-svg-components/CloseIcon";
+import CheckedWhiteIcon from "../../../../../../../../assets/icons/CheckedWhiteIcon.svg";
 
 import styles from "./screenshot_saved_modal_windows.module.scss";
-import { RedaxStateProps } from "../../../../../../../commonTypes.interface";
+import { RedaxStateProps } from "../../../../../../../../commonTypes.interface";
 
 interface ScreenshotSavedModalWindowsPropsType extends RedaxStateProps {}
 

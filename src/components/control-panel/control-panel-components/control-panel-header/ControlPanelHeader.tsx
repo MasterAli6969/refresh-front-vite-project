@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import CustomPcIcon from "../../../common/static-components/custom-pc-icon/CustomPcIcon";
+import CustomPcIcon from "../../../../common/static-components/custom-pc-icon/CustomPcIcon";
 import RoomTabsMenu from "./control-panel-header-components/room-tabs-menu/RoomTabsMenu";
 import AddNewRoomsButton from "./control-panel-header-components/add-new-rooms-button/AddNewRoomsButton";
 

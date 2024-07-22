@@ -1,42 +1,42 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface ToggleStateType {
-  isRoomTabsMenuRenameModalOpen: boolean;
-  isRoomTabsMenuDeleteModalOpen: boolean;
-  isAddNewRoomsButtonModalOpen: boolean;
-  isLayoutEdingButtonModalOpen: boolean;
-  isUserPanelOpenShiftModalOpen: boolean;
-  isReplenishmentBalanceModalWindowsOpen: boolean;
-  isUserPenaltyModalWindowOpen: boolean;
-  isChangeLocationModalWindowOpen: boolean;
-  isEditPcModalWindowOpen: boolean;
-  isExitSessionWindowOpen: boolean;
-  isAdministratorModeWindowOpen: boolean;
-  isMaintenanceMode: boolean;
-  isTaskManager: boolean;
-  isScreenshotSavedModalWindowsOpen: boolean;
-  isAddUserModalWindowOpen: boolean;
+  roomTabsMenuRenameModalWindow: boolean;
+  roomTabsMenuDeleteModalWindow: boolean;
+  addNewRoomsButtonModalWindow: boolean;
+  layoutEdingButtonModalWindow: boolean;
+  userPanelOpenShiftModalWindow: boolean;
+  replenishmentBalanceModalWindow: boolean;
+  userPenaltyModalWindow: boolean;
+  changeLocationModalWindow: boolean;
+  editPcModalWindow: boolean;
+  exitSessionModalWindow: boolean;
+  administratorModeModalWindow: boolean;
+  maintenanceModeModalWindow: boolean;
+  taskManagerModalWindow: boolean;
+  screenshotSavedModalWindows: boolean;
+  addUserModalWindow: boolean;
   isShiftStatus: boolean;
   isSidebarVisible: boolean;
   isMessangerOpen: boolean;
 }
 
 const initialState: ToggleStateType = {
-  isRoomTabsMenuRenameModalOpen: false,
-  isRoomTabsMenuDeleteModalOpen: false,
-  isAddNewRoomsButtonModalOpen: false,
-  isLayoutEdingButtonModalOpen: false,
-  isUserPanelOpenShiftModalOpen: false,
-  isReplenishmentBalanceModalWindowsOpen: false,
-  isUserPenaltyModalWindowOpen: false,
-  isChangeLocationModalWindowOpen: false,
-  isEditPcModalWindowOpen: false,
-  isExitSessionWindowOpen: false,
-  isAdministratorModeWindowOpen: false,
-  isMaintenanceMode: false,
-  isTaskManager: false,
-  isScreenshotSavedModalWindowsOpen: false,
-  isAddUserModalWindowOpen: false,
+  roomTabsMenuRenameModalWindow: false,
+  roomTabsMenuDeleteModalWindow: false,
+  addNewRoomsButtonModalWindow: false,
+  layoutEdingButtonModalWindow: false,
+  userPanelOpenShiftModalWindow: false,
+  replenishmentBalanceModalWindow: false,
+  userPenaltyModalWindow: false,
+  changeLocationModalWindow: false,
+  editPcModalWindow: false,
+  exitSessionModalWindow: false,
+  administratorModeModalWindow: false,
+  maintenanceModeModalWindow: false,
+  taskManagerModalWindow: false,
+  screenshotSavedModalWindows: false,
+  addUserModalWindow: false,
   isShiftStatus: false,
   isSidebarVisible: false,
   isMessangerOpen: false,

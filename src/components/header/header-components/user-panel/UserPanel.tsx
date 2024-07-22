@@ -71,10 +71,10 @@ const UserPanel: FC<UserPanelDataPropsTypes> = ({ userPanelData }) => {
               <p>{!isShiftStatus ? "Смена закрыта" : "Смена открыта "}</p>
             </div>
             <CustomCenterModalOpenWrapper
-              redaxStateKey="isUserPanelOpenShiftModalOpen"
+              redaxStateKey="userPanelOpenShiftModalWindow"
               openComponents={() => (
                 <CutomModalWindowType3
-                  redaxStateKey="isUserPanelOpenShiftModalOpen"
+                  redaxStateKey="userPanelOpenShiftModalWindow"
                   redaxShiftState="isShiftStatus"
                   shiftType={isShiftStatus}
                   title={!isShiftStatus ? "Открытие смены" : "Закрытие смены "}
