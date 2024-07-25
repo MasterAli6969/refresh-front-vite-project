@@ -1,14 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface InputStatesType {
-  addNewRoomsButtonModalWindow: string;
+  [key: string]: string;
 }
 
 const initialState: InputStatesType = {
   addNewRoomsButtonModalWindow: "",
 };
 
-export const inputSlice = createSlice({
+const inputSlice = createSlice({
   name: "input",
   initialState,
   reducers: {

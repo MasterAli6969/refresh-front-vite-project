@@ -1,5 +1,5 @@
 // RoomTabsMenu.tsx
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 import EditFill from "../../../../../assets/icons/EditFill.svg";
 import CustomCenterModalOpenWrapper from "../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
@@ -7,17 +7,32 @@ import CutomModalWindowType1 from "../../../../../common/smart-component/cutom-m
 import CutomModalWindowType2 from "../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-type2/CutomModalWindowType2";
 
 import styles from "./room_tabs_menu.module.scss";
+import { useAppSelector } from "../../../../../features/redux/hooks/reduxRootHooks";
 
-const RoomTabsMenu: FC = () => {
+interface RoomTabsMenu {
+  title: string;
+}
+
+const RoomTabsMenu: FC<RoomTabsMenu> = ({ title }) => {
+  const isGetIdModalDelete = useAppSelector(
+    (state) => state.number["roomTabsMenuDeleteModalWindow"]
+  );
+  useEffect(() => {
+    console.log(
+      "RoomTabsMenu ЗНАЧЕНИ селектора по roomTabsMenuDeleteModalWindow",
+      isGetIdModalDelete
+    );
+  }, [isGetIdModalDelete]);
+
   return (
     <div className={styles.div}>
       <div className={styles.subdiv}>
         <CustomCenterModalOpenWrapper
-          redaxStateKey="roomTabsMenuRenameModalWindow"
+          redaxStateKey={`roomTabsMenuRenameModalWindow`}
           openComponents={() => (
             <CutomModalWindowType1
-              redaxStateKey="roomTabsMenuRenameModalWindow"
-              title="GOG1"
+              redaxStateKey={`roomTabsMenuRenameModalWindow`}
+              title={title}
               specialText="Standart"
             />
           )}
@@ -28,13 +43,13 @@ const RoomTabsMenu: FC = () => {
       </div>
       <div className={styles.subdiv}>
         <CustomCenterModalOpenWrapper
-          redaxStateKey="roomTabsMenuDeleteModalWindow"
+          redaxStateKey={`roomTabsMenuDeleteModalWindow`}
           openComponents={() => (
             <CutomModalWindowType2
-              redaxStateKey="roomTabsMenuDeleteModalWindow"
+              redaxStateKey={`roomTabsMenuDeleteModalWindow`}
               title="Удаление комнаты"
-              specialText="Gaming"
-              descritpion="Вы уверены что хотите удалить данную комнату? "
+              specialText={title}
+              descritpion="Вы уверены что хотите удалить данную комнату?"
               rightButton="Удалить"
             />
           )}

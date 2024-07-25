@@ -12,11 +12,13 @@ import {
 interface CustomDualButtonYesNoPropsType {
   redaxStateKey: string;
   buttonRightText: string;
+  onClickRightButton?: () => void;
 }
 
 const CustomDualButtonYesNo: FC<CustomDualButtonYesNoPropsType> = ({
   redaxStateKey,
   buttonRightText,
+  onClickRightButton,
 }) => {
   const dispatch = useAppDispatch();
 
@@ -29,7 +31,11 @@ const CustomDualButtonYesNo: FC<CustomDualButtonYesNoPropsType> = ({
   return (
     <div className={styles.div}>
       <CustomButton onClick={handleClose} color="dark" text="Отмена" />
-      <CustomButton color="light" text={buttonRightText} />
+      <CustomButton
+        onClick={onClickRightButton}
+        color="light"
+        text={buttonRightText}
+      />
     </div>
   );
 };

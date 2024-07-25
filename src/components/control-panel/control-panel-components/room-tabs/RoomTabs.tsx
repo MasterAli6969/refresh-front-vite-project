@@ -1,4 +1,5 @@
-import { FC, useState } from "react";
+import { FC } from "react";
+
 import classNames from "classnames";
 
 import CustomPcIcon from "../../../../common/static-components/custom-pc-icon/CustomPcIcon";
@@ -9,19 +10,12 @@ import styles from "./room_tabs.module.scss";
 interface RoomTabsPropsType {
   id: number;
   title: string;
+  redaxStateKey: string;
 }
 
 const RoomTabs: FC<RoomTabsPropsType> = ({ title, id }) => {
-  const [activeTabId, setActiveTabId] = useState<number | null>(null);
-
-  const handleClick = (id: number) => {
-    setActiveTabId(id);
-  };
   return (
-    <div
-      className={classNames(styles.subdiv_rooms_tabs)}
-      onClick={() => handleClick(id)}
-    >
+    <div className={classNames(styles.subdiv_rooms_tabs)}>
       <p>{title}</p>
       <ul>
         <li>
@@ -37,9 +31,11 @@ const RoomTabs: FC<RoomTabsPropsType> = ({ title, id }) => {
           <CustomPcIcon number={9} status="Servicing" />
         </li>
       </ul>
-      <div className={styles._room_tab_menu_visible}>
-        <RoomTabsMenu />
-      </div>
+      {id != 1 && (
+        <div className={styles._room_tab_menu_visible}>
+          <RoomTabsMenu title={title} />
+        </div>
+      )}
     </div>
   );
 };

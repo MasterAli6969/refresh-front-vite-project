@@ -3,17 +3,15 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../features/redux/hooks/reduxRootHooks";
-
 import AddNewRoomsButton from "./control-panel-components/add-new-rooms-button/AddNewRoomsButton";
 import LayoutEdingButton from "./control-panel-components/layout-eding-button/LayoutEdingButton";
 import RoomTabs from "./control-panel-components/room-tabs/RoomTabs";
 import ControlPanelPcIcons from "./control-panel-components/control-panel-pc-icons/ControlPanelPcIcons";
-
 import { pcIconData } from "./testData";
-
 import styles from "./control_panel.module.scss";
 import { setClick } from "../../features/redux/reducers/common-reducers/onClickReduser";
 import { setInput } from "../../features/redux/reducers/common-reducers/inputReduser";
+import { setSaveNumber } from "../../features/redux/reducers/common-reducers/saveNumberReduser";
 
 interface RoomTabObjectItem {
   id: number;
@@ -27,24 +25,47 @@ const ControlPanel: FC = () => {
     {
       id: 1,
       name: "Room 1",
-      renderRoomTab: (name, id) => <RoomTabs id={id} title={name} />,
+      renderRoomTab: (name, id) => (
+        <RoomTabs
+          redaxStateKey={`roomTabsMenuDeleteModalWindow${id}`}
+          id={id}
+          title={name}
+        />
+      ),
       renderPcPanel: () => <ControlPanelPcIcons pcIconData={pcIconData} />,
     },
   ]);
-  const [activePanelId, setActivePanelId] = useState<number | null>(null);
+  const dispatch = useAppDispatch();
 
+  const [activePanelId, setActivePanelId] = useState<number | null>(null);
+  //вызов имени из модального окна новой вкладки
   const newTabsName = useAppSelector(
     (state) => state.input["addNewRoomsButtonModalWindow"]
   );
-
-  const isClick = useAppSelector(
+  //значение события кнопки добавления новой вкладки
+  const isClickAdd = useAppSelector(
     (state) => state.click["addNewRoomsButtonModalWindow"]
   );
 
-  const dispatch = useAppDispatch();
+  // получение текушего id удаляемой вкладки
+  const isGetIdModalDelete = useAppSelector(
+    (state) => state.number["roomTabsMenuDeleteModalWindow"]
+  );
+
+  //значение события кнопки удаления конкретной вкладки
+  const isClickDelete = useAppSelector(
+    (state) => state.click[`roomTabsMenuDeleteModalWindow${isGetIdModalDelete}`]
+  );
 
   useEffect(() => {
-    if (isClick) {
+    if (roomTabs.length > 0) {
+      setActivePanelId(roomTabs[0].id);
+    }
+  }, [roomTabs]);
+
+  useEffect(() => {
+    //обработка событий для добавления новой вкладки в массив
+    if (isClickAdd) {
       const newId =
         roomTabs.length > 0
           ? Math.max(...roomTabs.map((tab) => tab.id)) + 1
@@ -53,7 +74,11 @@ const ControlPanel: FC = () => {
         id: newId,
         name: newTabsName,
         renderRoomTab: (name: string, id: number) => (
-          <RoomTabs id={id} title={name} />
+          <RoomTabs
+            redaxStateKey={`roomTabsMenuDeleteModalWindow${newId}`}
+            id={id}
+            title={name}
+          />
         ),
         renderPcPanel: () => <ControlPanelPcIcons />,
       };
@@ -70,8 +95,37 @@ const ControlPanel: FC = () => {
           value: "",
         })
       );
+
+      dispatch(
+        setSaveNumber({
+          key: "roomTabsMenuDeleteModalWindow",
+          value: newId,
+        })
+      );
     }
-  }, [isClick, newTabsName, roomTabs, dispatch]);
+  }, [isClickAdd, newTabsName, roomTabs, dispatch]);
+
+  useEffect(() => {
+    //обработка событий для удаления вкладки из массива
+    if (isClickDelete) {
+      const updatedTabs = roomTabs.filter(
+        (tab) => tab.id !== isGetIdModalDelete
+      );
+      setRoomTabs(updatedTabs);
+      dispatch(
+        setClick({
+          key: `roomTabsMenuDeleteModalWindow${isGetIdModalDelete}`,
+          value: false,
+        })
+      );
+      dispatch(
+        setSaveNumber({
+          key: "roomTabsMenuDeleteModalWindow",
+          value: null,
+        })
+      );
+    }
+  }, [isClickDelete, isGetIdModalDelete, roomTabs, dispatch]);
 
   const handleRoomTabClick = (id: number) => {
     setActivePanelId(id);

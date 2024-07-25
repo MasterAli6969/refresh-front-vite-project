@@ -1,24 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface ToggleStateType {
-  roomTabsMenuRenameModalWindow: boolean;
-  roomTabsMenuDeleteModalWindow: boolean;
-  addNewRoomsButtonModalWindow: boolean;
-  layoutEdingButtonModalWindow: boolean;
-  userPanelOpenShiftModalWindow: boolean;
-  replenishmentBalanceModalWindow: boolean;
-  userPenaltyModalWindow: boolean;
-  changeLocationModalWindow: boolean;
-  editPcModalWindow: boolean;
-  exitSessionModalWindow: boolean;
-  administratorModeModalWindow: boolean;
-  maintenanceModeModalWindow: boolean;
-  taskManagerModalWindow: boolean;
-  screenshotSavedModalWindows: boolean;
-  addUserModalWindow: boolean;
-  isShiftStatus: boolean;
-  isSidebarVisible: boolean;
-  isMessangerOpen: boolean;
+  [key: string]: boolean;
 }
 
 const initialState: ToggleStateType = {

@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface OnClickStatesType {
-  addNewRoomsButtonModalWindow: boolean;
+  [key: string]: boolean;
 }
 
 const initialState: OnClickStatesType = {
   addNewRoomsButtonModalWindow: false,
+  roomTabsMenuDeleteModalWindow: false,
 };
 
 export const onClickSlice = createSlice({
@@ -14,7 +15,7 @@ export const onClickSlice = createSlice({
   reducers: {
     setClick: (
       state,
-      action: PayloadAction<{ key: keyof OnClickStatesType; value: boolean }>
+      action: PayloadAction<{ key: string; value: boolean }>
     ) => {
       state[action.payload.key] = action.payload.value;
     },
