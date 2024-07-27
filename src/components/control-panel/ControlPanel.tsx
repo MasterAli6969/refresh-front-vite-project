@@ -9,9 +9,12 @@ import RoomTabs from "./control-panel-components/room-tabs/RoomTabs";
 import ControlPanelPcIcons from "./control-panel-components/control-panel-pc-icons/ControlPanelPcIcons";
 import { pcIconData } from "./testData";
 import styles from "./control_panel.module.scss";
-import { setClick } from "../../features/redux/reducers/common-reducers/onClickReduser";
-import { setInput } from "../../features/redux/reducers/common-reducers/inputReduser";
-import { setSaveNumber } from "../../features/redux/reducers/common-reducers/saveNumberReduser";
+import { setClick } from "../../features/redux/reducers/common-reducers/single-component-reducers/onClickReduser";
+import { setInput } from "../../features/redux/reducers/common-reducers/single-component-reducers/inputReduser";
+import {
+  DynamicNumberStatesType,
+  setSaveDynamicNumber,
+} from "../../features/redux/reducers/common-reducers/dynamic-component-reducers/saveNumberDynamicReduser";
 
 interface RoomTabObjectItem {
   id: number;
@@ -21,23 +24,19 @@ interface RoomTabObjectItem {
 }
 
 const ControlPanel: FC = () => {
+  //состояние айди таба который выбрали в данный момент
+  const [activePanelId, setActivePanelId] = useState<number | string>("");
+
   const [roomTabs, setRoomTabs] = useState<RoomTabObjectItem[]>([
     {
       id: 1,
-      name: "Room 1",
-      renderRoomTab: (name, id) => (
-        <RoomTabs
-          redaxStateKey={`roomTabsMenuDeleteModalWindow${id}`}
-          id={id}
-          title={name}
-        />
-      ),
+      name: "Все",
+      renderRoomTab: (name, id) => <RoomTabs id={id} title={name} />,
       renderPcPanel: () => <ControlPanelPcIcons pcIconData={pcIconData} />,
     },
   ]);
   const dispatch = useAppDispatch();
 
-  const [activePanelId, setActivePanelId] = useState<number | null>(null);
   //вызов имени из модального окна новой вкладки
   const newTabsName = useAppSelector(
     (state) => state.input["addNewRoomsButtonModalWindow"]
@@ -47,14 +46,17 @@ const ControlPanel: FC = () => {
     (state) => state.click["addNewRoomsButtonModalWindow"]
   );
 
-  // получение текушего id удаляемой вкладки
-  const isGetIdModalDelete = useAppSelector(
-    (state) => state.number["roomTabsMenuDeleteModalWindow"]
-  );
-
   //значение события кнопки удаления конкретной вкладки
   const isClickDelete = useAppSelector(
-    (state) => state.click[`roomTabsMenuDeleteModalWindow${isGetIdModalDelete}`]
+    (state) => state.click[`roomTabsMenuDeleteModalWindow`]
+  );
+
+  //значение свежей айди новых объектов
+  const isGetModalId = useAppSelector(
+    (state) =>
+      state.saveDynamicNumber.roomTabsMenuDeleteModalWindow[
+        activePanelId as keyof DynamicNumberStatesType["roomTabsMenuDeleteModalWindow"]
+      ]
   );
 
   useEffect(() => {
@@ -74,11 +76,7 @@ const ControlPanel: FC = () => {
         id: newId,
         name: newTabsName,
         renderRoomTab: (name: string, id: number) => (
-          <RoomTabs
-            redaxStateKey={`roomTabsMenuDeleteModalWindow${newId}`}
-            id={id}
-            title={name}
-          />
+          <RoomTabs id={id} title={name} />
         ),
         renderPcPanel: () => <ControlPanelPcIcons />,
       };
@@ -95,37 +93,28 @@ const ControlPanel: FC = () => {
           value: "",
         })
       );
-
       dispatch(
-        setSaveNumber({
-          key: "roomTabsMenuDeleteModalWindow",
+        setSaveDynamicNumber({
+          key: newId,
           value: newId,
         })
       );
     }
-  }, [isClickAdd, newTabsName, roomTabs, dispatch]);
+  }, [isClickAdd, newTabsName, isGetModalId, roomTabs, dispatch]);
 
   useEffect(() => {
     //обработка событий для удаления вкладки из массива
     if (isClickDelete) {
-      const updatedTabs = roomTabs.filter(
-        (tab) => tab.id !== isGetIdModalDelete
-      );
+      const updatedTabs = roomTabs.filter((tab) => tab.id !== isGetModalId);
       setRoomTabs(updatedTabs);
       dispatch(
         setClick({
-          key: `roomTabsMenuDeleteModalWindow${isGetIdModalDelete}`,
+          key: `roomTabsMenuDeleteModalWindow`,
           value: false,
         })
       );
-      dispatch(
-        setSaveNumber({
-          key: "roomTabsMenuDeleteModalWindow",
-          value: null,
-        })
-      );
     }
-  }, [isClickDelete, isGetIdModalDelete, roomTabs, dispatch]);
+  }, [isClickDelete, isGetModalId, roomTabs, dispatch]);
 
   const handleRoomTabClick = (id: number) => {
     setActivePanelId(id);

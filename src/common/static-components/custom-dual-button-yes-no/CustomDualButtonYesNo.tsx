@@ -4,13 +4,11 @@ import CustomButton from "../custom-button/CustomButton";
 
 import styles from "./custom_dual_button_yes_no.module.scss";
 import { useAppDispatch } from "../../../features/redux/hooks/reduxRootHooks";
-import {
-  setToggle,
-  ToggleStateType,
-} from "../../../features/redux/reducers/common-reducers/toggleRedusers";
+
+import { setToggleDynamic } from "../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
 
 interface CustomDualButtonYesNoPropsType {
-  redaxStateKey: string;
+  redaxStateKey: string | number;
   buttonRightText: string;
   onClickRightButton?: () => void;
 }
@@ -24,7 +22,10 @@ const CustomDualButtonYesNo: FC<CustomDualButtonYesNoPropsType> = ({
 
   const handleClose = () => {
     dispatch(
-      setToggle({ key: redaxStateKey as keyof ToggleStateType, value: false })
+      setToggleDynamic({
+        id: redaxStateKey,
+        value: false,
+      })
     );
   };
 

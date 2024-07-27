@@ -12,15 +12,15 @@ import CustomButton from "../../../static-components/custom-button/CustomButton"
 import {
   setInput,
   InputStatesType,
-} from "../../../../features/redux/reducers/common-reducers/inputReduser";
+} from "../../../../features/redux/reducers/common-reducers/single-component-reducers/inputReduser";
 import {
   setClick,
   OnClickStatesType,
-} from "../../../../features/redux/reducers/common-reducers/onClickReduser";
+} from "../../../../features/redux/reducers/common-reducers/single-component-reducers/onClickReduser";
 import {
   setToggle,
   ToggleStateType,
-} from "../../../../features/redux/reducers/common-reducers/toggleRedusers";
+} from "../../../../features/redux/reducers/common-reducers/single-component-reducers/toggleRedusers";
 
 import styles from "./cutom_modal_window_type1.module.scss";
 

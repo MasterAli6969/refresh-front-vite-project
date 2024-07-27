@@ -64,6 +64,7 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
               <ul className="dropdown-menu">
                 <li>
                   <CustomCenterModalOpenWrapper
+                    type="single"
                     redaxStateKey="replenishmentBalanceModalWindow"
                     openComponents={() => (
                       <ReplenishmentBalanceModalWindows redaxStateKey="replenishmentBalanceModalWindow" />
@@ -74,6 +75,7 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
                 </li>
                 <li>
                   <CustomCenterModalOpenWrapper
+                    type="single"
                     redaxStateKey="userPenaltyModalWindow"
                     openComponents={() => (
                       <UserPenaltyModalWindow redaxStateKey="userPenaltyModalWindow" />
@@ -87,6 +89,7 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
                 <li>Отправить уведомление</li>
                 <li>
                   <CustomCenterModalOpenWrapper
+                    type="single"
                     redaxStateKey="changeLocationModalWindow"
                     openComponents={() => (
                       <ChangeLocationModalWindow redaxStateKey="changeLocationModalWindow" />
@@ -97,6 +100,7 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
                 </li>
                 <li>
                   <CustomCenterModalOpenWrapper
+                    type="single"
                     redaxStateKey="exitSessionModalWindow"
                     openComponents={() => (
                       <CutomModalWindowType2
@@ -124,6 +128,7 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
           </li>
           <li>
             <CustomCenterModalOpenWrapper
+              type="single"
               redaxStateKey="screenshotSavedModalWindows"
               openComponents={() => (
                 <ScreenshotSavedModalWindows redaxStateKey="screenshotSavedModalWindows" />
@@ -135,6 +140,7 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
           </li>
           <li>
             <CustomCenterModalOpenWrapper
+              type="single"
               redaxStateKey="administratorModeModalWindow"
               openComponents={() => (
                 <CutomModalWindowType2
@@ -150,6 +156,7 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
           </li>
           <li>
             <CustomCenterModalOpenWrapper
+              type="single"
               redaxStateKey="maintenanceModeModalWindow"
               openComponents={() => (
                 <CutomModalWindowType2
@@ -165,6 +172,7 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
           </li>
           <li>
             <CustomCenterModalOpenWrapper
+              type="single"
               redaxStateKey="taskManagerModalWindow"
               openComponents={() => (
                 <CutomModalWindowType2
@@ -180,6 +188,7 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
           </li>
           <li>
             <CustomCenterModalOpenWrapper
+              type="single"
               redaxStateKey="editPcModalWindow"
               openComponents={() => (
                 <EditPcModalWindow redaxStateKey="editPcModalWindow" />

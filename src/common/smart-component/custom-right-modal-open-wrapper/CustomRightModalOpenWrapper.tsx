@@ -7,7 +7,7 @@ import {
 import {
   setToggle,
   ToggleStateType,
-} from "../../../features/redux/reducers/common-reducers/toggleRedusers";
+} from "../../../features/redux/reducers/common-reducers/single-component-reducers/toggleRedusers";
 import classNames from "classnames";
 import { RedaxStateProps } from "../../../commonTypes.interface";
 

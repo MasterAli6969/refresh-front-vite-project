@@ -18,5 +18,5 @@ export interface AuthInputPropsType {
 
 // ЭТО ОБЩИЙ ИГНТЕРФЕЙС ДЛЯ ТИПИЗАЦИИ СОСТОЯНИЯ КЛЮЧЕЙ REDAX
 export interface RedaxStateProps {
-  redaxStateKey: string;
+  redaxStateKey: string | number;
 }

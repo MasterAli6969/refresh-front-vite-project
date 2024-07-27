@@ -12,7 +12,7 @@ import { useAppDispatch } from "../../../../features/redux/hooks/reduxRootHooks"
 import {
   setToggle,
   ToggleStateType,
-} from "../../../../features/redux/reducers/common-reducers/toggleRedusers";
+} from "../../../../features/redux/reducers/common-reducers/single-component-reducers/toggleRedusers";
 
 export interface CutomModalWindowType3PropsType extends RedaxStateProps {
   shiftType: boolean;

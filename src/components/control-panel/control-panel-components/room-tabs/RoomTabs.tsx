@@ -8,9 +8,8 @@ import RoomTabsMenu from "./room-tabs-menu/RoomTabsMenu";
 import styles from "./room_tabs.module.scss";
 
 interface RoomTabsPropsType {
-  id: number;
+  id: number | string;
   title: string;
-  redaxStateKey: string;
 }
 
 const RoomTabs: FC<RoomTabsPropsType> = ({ title, id }) => {
@@ -33,7 +32,7 @@ const RoomTabs: FC<RoomTabsPropsType> = ({ title, id }) => {
       </ul>
       {id != 1 && (
         <div className={styles._room_tab_menu_visible}>
-          <RoomTabsMenu title={title} />
+          <RoomTabsMenu tabId={id} title={title} />
         </div>
       )}
     </div>
