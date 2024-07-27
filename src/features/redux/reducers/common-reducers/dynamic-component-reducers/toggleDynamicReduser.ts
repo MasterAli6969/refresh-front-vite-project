@@ -20,9 +20,12 @@ export const toggleDynamicSlice = createSlice({
       const uniqueId = action.payload.id; // Преобразование id в строку и добавление случайного символа
       state.modalStates[uniqueId] = action.payload.value;
     },
+    resetModals: (state) => {
+      state.modalStates = {};
+    },
   },
 });
 
-export const { setToggleDynamic } = toggleDynamicSlice.actions;
+export const { setToggleDynamic, resetModals } = toggleDynamicSlice.actions;
 
 export default toggleDynamicSlice.reducer;

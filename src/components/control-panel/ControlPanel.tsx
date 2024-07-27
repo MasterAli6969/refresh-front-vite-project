@@ -15,6 +15,10 @@ import {
   DynamicNumberStatesType,
   setSaveDynamicNumber,
 } from "../../features/redux/reducers/common-reducers/dynamic-component-reducers/saveNumberDynamicReduser";
+import {
+  resetModals,
+  setToggleDynamic,
+} from "../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
 
 interface RoomTabObjectItem {
   id: number;
@@ -47,8 +51,8 @@ const ControlPanel: FC = () => {
   );
 
   //значение события кнопки удаления конкретной вкладки
-  const isClickDelete = useAppSelector(
-    (state) => state.click[`roomTabsMenuDeleteModalWindow`]
+  const isDelete = useAppSelector(
+    (state) => state.toggleDynamic.modalStates["roomTabDelete"]
   );
 
   //значение свежей айди новых объектов
@@ -66,7 +70,6 @@ const ControlPanel: FC = () => {
   }, [roomTabs]);
 
   useEffect(() => {
-    //обработка событий для добавления новой вкладки в массив
     if (isClickAdd) {
       const newId =
         roomTabs.length > 0
@@ -100,21 +103,23 @@ const ControlPanel: FC = () => {
         })
       );
     }
-  }, [isClickAdd, newTabsName, isGetModalId, roomTabs, dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isClickAdd, newTabsName, dispatch]);
 
   useEffect(() => {
-    //обработка событий для удаления вкладки из массива
-    if (isClickDelete) {
+    if (isDelete) {
       const updatedTabs = roomTabs.filter((tab) => tab.id !== isGetModalId);
       setRoomTabs(updatedTabs);
       dispatch(
-        setClick({
-          key: `roomTabsMenuDeleteModalWindow`,
+        setToggleDynamic({
+          id: "roomTabDelete",
           value: false,
-        })
+        }),
+        resetModals()
       );
     }
-  }, [isClickDelete, isGetModalId, roomTabs, dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isDelete, isGetModalId, dispatch]);
 
   const handleRoomTabClick = (id: number) => {
     setActivePanelId(id);

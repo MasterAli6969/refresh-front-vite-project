@@ -15,7 +15,7 @@ export const onClickSlice = createSlice({
   reducers: {
     setClick: (
       state,
-      action: PayloadAction<{ key: string; value: boolean }>
+      action: PayloadAction<{ key: keyof OnClickStatesType; value: boolean }>
     ) => {
       state[action.payload.key] = action.payload.value;
     },

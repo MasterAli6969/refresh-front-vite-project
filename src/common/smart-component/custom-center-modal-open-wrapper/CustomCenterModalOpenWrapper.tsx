@@ -49,7 +49,6 @@ const CustomCenterModalOpenWrapper: FC<
         })
       );
     }
-    console.log(isOpenDynamic);
   };
 
   const handleClickClose = () => {
