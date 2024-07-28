@@ -4,12 +4,10 @@ import {
   useAppSelector,
 } from "../../../features/redux/hooks/reduxRootHooks";
 import { RedaxStateProps } from "../../../commonTypes.interface";
-import {
-  setToggle,
-  ToggleStateType,
-} from "../../../features/redux/reducers/common-reducers/single-component-reducers/toggleRedusers";
+import { ToggleStateType } from "../../../features/redux/reducers/common-reducers/single-component-reducers/toggleRedusers";
 import { Dialog } from "@mui/material";
 import {
+  resetModals,
   setToggleDynamic,
   ToggleDynamicReduserStatesType,
 } from "../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
@@ -25,9 +23,6 @@ const CustomCenterModalOpenWrapper: FC<
   const dispatch = useAppDispatch();
 
   // Определение состояния открытия модальных окон
-  const isOpenSingle = useAppSelector(
-    (state) => state.toggle[redaxStateKey as keyof ToggleStateType]
-  );
 
   const isOpenDynamic = useAppSelector(
     (state) =>
@@ -37,42 +32,31 @@ const CustomCenterModalOpenWrapper: FC<
   );
 
   const handleClickOpen = () => {
-    if (type === "single") {
-      dispatch(
-        setToggle({ key: redaxStateKey as keyof ToggleStateType, value: true })
-      );
-    } else if (type === "dynamic") {
-      dispatch(
-        setToggleDynamic({
-          id: redaxStateKey,
-          value: true,
-        })
-      );
-    }
+    dispatch(
+      setToggleDynamic({
+        id: redaxStateKey,
+        value: true,
+      }),
+      resetModals()
+    );
   };
 
   const handleClickClose = () => {
-    if (type === "single") {
-      dispatch(
-        setToggle({ key: redaxStateKey as keyof ToggleStateType, value: false })
-      );
-    } else if (type === "dynamic") {
-      dispatch(
-        setToggleDynamic({
-          id: redaxStateKey,
-          value: false,
-        })
-      );
-    }
+    dispatch(
+      setToggleDynamic({
+        id: redaxStateKey,
+        value: false,
+      }),
+      resetModals()
+    );
   };
 
   // Определение, открыто ли модальное окно
-  const isOpen = type === "single" ? !!isOpenSingle : !!isOpenDynamic;
 
   return (
     <div style={{ cursor: "pointer" }}>
       <span onClick={handleClickOpen}>{children}</span>
-      <Dialog open={isOpen} onClose={handleClickClose}>
+      <Dialog open={isOpenDynamic} onClose={handleClickClose}>
         <OpenComponents />
       </Dialog>
     </div>

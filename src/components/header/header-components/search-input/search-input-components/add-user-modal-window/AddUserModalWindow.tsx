@@ -35,7 +35,7 @@ const AddUserModalWindow: FC<AddUserModalWindowPropsType> = ({
       <div>
         <CustomInput
           label="Адрес эл. почты нового клиента"
-          plaseholder="Введите email адрес"
+          placeholder="Введите email адрес"
         />
       </div>
       <CustomDualButtonYesNo

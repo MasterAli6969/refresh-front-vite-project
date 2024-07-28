@@ -1,15 +1,15 @@
 import { FC } from "react";
 import { useAppDispatch } from "../../../features/redux/hooks/reduxRootHooks";
-import {
-  setToggle,
-  ToggleStateType,
-} from "../../../features/redux/reducers/common-reducers/single-component-reducers/toggleRedusers";
+
 import CloseIcon from "../../../assets/icons-svg-components/CloseIcon";
 
-import styles from "./custom_modal_close_head.module.scss";
-
 import { RedaxStateProps } from "../../../commonTypes.interface";
-import { setToggleDynamic } from "../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+import {
+  resetModals,
+  setToggleDynamic,
+} from "../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+
+import styles from "./custom_modal_close_head.module.scss";
 
 export interface CustomModalCloseHeadPropsType extends RedaxStateProps {
   text: string;
@@ -28,7 +28,8 @@ const CustomModalCloseHead: FC<CustomModalCloseHeadPropsType> = ({
       setToggleDynamic({
         id: redaxStateKey,
         value: false,
-      })
+      }),
+      resetModals()
     );
   };
 

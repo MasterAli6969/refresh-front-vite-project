@@ -9,7 +9,6 @@ import RoomTabs from "./control-panel-components/room-tabs/RoomTabs";
 import ControlPanelPcIcons from "./control-panel-components/control-panel-pc-icons/ControlPanelPcIcons";
 import { pcIconData } from "./testData";
 import styles from "./control_panel.module.scss";
-import { setClick } from "../../features/redux/reducers/common-reducers/single-component-reducers/onClickReduser";
 import { setInput } from "../../features/redux/reducers/common-reducers/single-component-reducers/inputReduser";
 import {
   DynamicNumberStatesType,
@@ -19,6 +18,10 @@ import {
   resetModals,
   setToggleDynamic,
 } from "../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+import {
+  resetOnClickDynamic,
+  setOnClickDynamic,
+} from "../../features/redux/reducers/common-reducers/dynamic-component-reducers/onClickDynamicReduser";
 
 interface RoomTabObjectItem {
   id: number;
@@ -47,12 +50,8 @@ const ControlPanel: FC = () => {
   );
   //значение события кнопки добавления новой вкладки
   const isClickAdd = useAppSelector(
-    (state) => state.click["addNewRoomsButtonModalWindow"]
-  );
-
-  //значение события кнопки удаления конкретной вкладки
-  const isDelete = useAppSelector(
-    (state) => state.toggleDynamic.modalStates["roomTabDelete"]
+    (state) =>
+      state.onClickDynamic.onClickStates["addNewRoomsButtonModalWindow"]
   );
 
   //значение свежей айди новых объектов
@@ -61,6 +60,11 @@ const ControlPanel: FC = () => {
       state.saveDynamicNumber.roomTabsMenuDeleteModalWindow[
         activePanelId as keyof DynamicNumberStatesType["roomTabsMenuDeleteModalWindow"]
       ]
+  );
+
+  //значение события кнопки удаления конкретной вкладки
+  const isDelete = useAppSelector(
+    (state) => state.onClickDynamic.onClickStates[isGetModalId]
   );
 
   useEffect(() => {
@@ -84,11 +88,13 @@ const ControlPanel: FC = () => {
         renderPcPanel: () => <ControlPanelPcIcons />,
       };
       setRoomTabs((prevTabs) => [...prevTabs, newRoomTab]);
+
       dispatch(
-        setClick({
+        setOnClickDynamic({
           key: "addNewRoomsButtonModalWindow",
           value: false,
-        })
+        }),
+        resetOnClickDynamic()
       );
       dispatch(
         setInput({
@@ -110,13 +116,6 @@ const ControlPanel: FC = () => {
     if (isDelete) {
       const updatedTabs = roomTabs.filter((tab) => tab.id !== isGetModalId);
       setRoomTabs(updatedTabs);
-      dispatch(
-        setToggleDynamic({
-          id: "roomTabDelete",
-          value: false,
-        }),
-        resetModals()
-      );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDelete, isGetModalId, dispatch]);

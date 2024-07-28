@@ -6,7 +6,14 @@ import CustomModalCloseHead from "../../custom-modal-close-head/CustomModalClose
 import CustomDualButtonYesNo from "../../../static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
 import styles from "./cutom_modal_window_type2.module.scss";
-import { setToggleDynamic } from "../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+import {
+  resetModals,
+  setToggleDynamic,
+} from "../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+import {
+  resetOnClickDynamic,
+  setOnClickDynamic,
+} from "../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/onClickDynamicReduser";
 
 export interface CutomModalWindowType2PropsType extends RedaxStateProps {
   title: string;
@@ -26,10 +33,18 @@ const CutomModalWindowType2: FC<CutomModalWindowType2PropsType> = ({
 
   const handleRightClick = () => {
     dispatch(
-      setToggleDynamic({
-        id: "roomTabDelete",
+      setOnClickDynamic({
+        key: redaxStateKey,
         value: true,
-      })
+      }),
+      resetOnClickDynamic()
+    );
+    dispatch(
+      setToggleDynamic({
+        id: redaxStateKey,
+        value: false,
+      }),
+      resetModals()
     );
   };
   return (

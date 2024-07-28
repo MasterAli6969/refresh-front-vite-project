@@ -13,16 +13,16 @@ import {
   setInput,
   InputStatesType,
 } from "../../../../features/redux/reducers/common-reducers/single-component-reducers/inputReduser";
-import {
-  setClick,
-  OnClickStatesType,
-} from "../../../../features/redux/reducers/common-reducers/single-component-reducers/onClickReduser";
-import {
-  setToggle,
-  ToggleStateType,
-} from "../../../../features/redux/reducers/common-reducers/single-component-reducers/toggleRedusers";
 
 import styles from "./cutom_modal_window_type1.module.scss";
+import {
+  resetModals,
+  setToggleDynamic,
+} from "../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+import {
+  resetOnClickDynamic,
+  setOnClickDynamic,
+} from "../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/onClickDynamicReduser";
 
 export interface CutomModalWindowType1PropsType1 extends RedaxStateProps {
   title: string;
@@ -55,11 +55,19 @@ const CutomModalWindowType1: FC<CutomModalWindowType1PropsType1> = ({
     );
 
     dispatch(
-      setClick({ key: redaxStateKey as keyof OnClickStatesType, value: true })
+      setOnClickDynamic({
+        key: redaxStateKey,
+        value: true,
+      }),
+      resetOnClickDynamic()
     );
 
     dispatch(
-      setToggle({ key: redaxStateKey as keyof ToggleStateType, value: false })
+      setToggleDynamic({
+        id: redaxStateKey,
+        value: false,
+      }),
+      resetModals()
     );
   };
 

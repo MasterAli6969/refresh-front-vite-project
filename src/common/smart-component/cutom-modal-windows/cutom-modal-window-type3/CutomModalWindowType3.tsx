@@ -9,10 +9,7 @@ import CustomDualTextDisplay from "../../../static-components/custom-dual-text-d
 
 import styles from "./cutom_modal_window_type3.module.scss";
 import { useAppDispatch } from "../../../../features/redux/hooks/reduxRootHooks";
-import {
-  setToggle,
-  ToggleStateType,
-} from "../../../../features/redux/reducers/common-reducers/single-component-reducers/toggleRedusers";
+import { setToggleDynamic } from "../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
 
 export interface CutomModalWindowType3PropsType extends RedaxStateProps {
   shiftType: boolean;
@@ -33,30 +30,39 @@ const CutomModalWindowType3: FC<CutomModalWindowType3PropsType> = ({
   const handleClickOpenisShiftStatus = () => {
     if (!shiftType) {
       dispatch(
-        setToggle({
-          key: redaxShiftState as keyof ToggleStateType,
+        setToggleDynamic({
+          id: redaxShiftState,
           value: true,
         })
       );
       dispatch(
-        setToggle({ key: redaxStateKey as keyof ToggleStateType, value: false })
+        setToggleDynamic({
+          id: redaxStateKey,
+          value: false,
+        })
       );
     } else {
       dispatch(
-        setToggle({
-          key: redaxShiftState as keyof ToggleStateType,
+        setToggleDynamic({
+          id: redaxShiftState,
           value: false,
         })
       );
       dispatch(
-        setToggle({ key: redaxStateKey as keyof ToggleStateType, value: false })
+        setToggleDynamic({
+          id: redaxStateKey,
+          value: false,
+        })
       );
     }
   };
 
   const handleClickCancelisShiftStatus = () => {
     dispatch(
-      setToggle({ key: redaxStateKey as keyof ToggleStateType, value: false })
+      setToggleDynamic({
+        id: redaxStateKey,
+        value: false,
+      })
     );
   };
 
@@ -71,7 +77,7 @@ const CutomModalWindowType3: FC<CutomModalWindowType3PropsType> = ({
         <div>
           <CustomInput
             label="Сумма на начало смены"
-            plaseholder="Введите сумму"
+            placeholder="Введите сумму"
           />
         </div>
       )}

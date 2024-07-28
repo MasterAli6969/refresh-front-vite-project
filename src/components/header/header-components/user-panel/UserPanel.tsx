@@ -41,7 +41,7 @@ export interface UserPanelDataPropsTypes {
 
 const UserPanel: FC<UserPanelDataPropsTypes> = ({ userPanelData }) => {
   const isShiftStatus = useAppSelector(
-    (state) => state.toggle["isShiftStatus"]
+    (state) => state.toggleDynamic.modalStates["isShiftStatus"]
   );
 
   return (

@@ -1,15 +1,12 @@
 import { FC } from "react";
 import { useAppDispatch } from "../../../../../../../../features/redux/hooks/reduxRootHooks";
-import {
-  setToggle,
-  ToggleStateType,
-} from "../../../../../../../../features/redux/reducers/common-reducers/single-component-reducers/toggleRedusers";
 
 import CloseIcon from "../../../../../../../../assets/icons-svg-components/CloseIcon";
 import CheckedWhiteIcon from "../../../../../../../../assets/icons/CheckedWhiteIcon.svg";
 
 import styles from "./screenshot_saved_modal_windows.module.scss";
 import { RedaxStateProps } from "../../../../../../../../commonTypes.interface";
+import { setToggleDynamic } from "../../../../../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
 
 interface ScreenshotSavedModalWindowsPropsType extends RedaxStateProps {}
 
@@ -20,8 +17,8 @@ const ScreenshotSavedModalWindows: FC<ScreenshotSavedModalWindowsPropsType> = ({
 
   const handleClose = () => {
     dispatch(
-      setToggle({
-        key: redaxStateKey as keyof ToggleStateType,
+      setToggleDynamic({
+        id: redaxStateKey,
         value: false,
       })
     );
