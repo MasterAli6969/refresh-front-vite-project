@@ -1,14 +1,16 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import inputReducer from "./reducers/common-reducers/single-component-reducers/inputReduser";
-import saveDynamicNumber from "./reducers/common-reducers/dynamic-component-reducers/saveNumberDynamicReduser";
-import toggleDynamic from "./reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
-import onClickDynamic from "./reducers/common-reducers/dynamic-component-reducers/onClickDynamicReduser";
+import inputDynamic from "./reducers/common-reducers/inputDynamicReduser";
+import saveDynamicNumber from "./reducers/common-reducers/saveNumberDynamicReduser";
+import toggleDynamic from "./reducers/common-reducers/toggleDynamicReduser";
+import onClickDynamic from "./reducers/common-reducers/onClickDynamicReduser";
+import selectorDataReduscer from "./reducers/common-reducers/selectorDataReduscer";
 
 const rootReducer = combineReducers({
-  input: inputReducer,
+  inputDynamic: inputDynamic,
   saveDynamicNumber: saveDynamicNumber,
   toggleDynamic: toggleDynamic,
   onClickDynamic: onClickDynamic,
+  selectorDataReduscer: selectorDataReduscer,
 });
 
 export const setupStore = () => {

@@ -9,11 +9,11 @@ import styles from "./cutom_modal_window_type2.module.scss";
 import {
   resetModals,
   setToggleDynamic,
-} from "../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+} from "../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
 import {
   resetOnClickDynamic,
   setOnClickDynamic,
-} from "../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/onClickDynamicReduser";
+} from "../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
 
 export interface CutomModalWindowType2PropsType extends RedaxStateProps {
   title: string;

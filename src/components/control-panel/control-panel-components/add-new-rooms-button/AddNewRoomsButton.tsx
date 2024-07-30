@@ -11,7 +11,6 @@ const AddNewRoomsButton: FC = () => {
     <div className={styles.div}>
       <div className={styles.subdiv}>
         <CustomCenterModalOpenWrapper
-          type="single"
           redaxStateKey="addNewRoomsButtonModalWindow"
           openComponents={() => (
             <CutomModalWindowType1

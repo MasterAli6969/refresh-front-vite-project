@@ -9,7 +9,7 @@ import CustomDualTextDisplay from "../../../static-components/custom-dual-text-d
 
 import styles from "./cutom_modal_window_type3.module.scss";
 import { useAppDispatch } from "../../../../features/redux/hooks/reduxRootHooks";
-import { setToggleDynamic } from "../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+import { setToggleDynamic } from "../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
 
 export interface CutomModalWindowType3PropsType extends RedaxStateProps {
   shiftType: boolean;

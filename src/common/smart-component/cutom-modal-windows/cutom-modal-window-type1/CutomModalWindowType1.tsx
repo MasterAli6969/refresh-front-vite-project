@@ -9,20 +9,17 @@ import CustomModalCloseHead from "../../custom-modal-close-head/CustomModalClose
 import CustomInput from "../../../static-components/custom-input/CustomInput";
 import CustomButton from "../../../static-components/custom-button/CustomButton";
 
-import {
-  setInput,
-  InputStatesType,
-} from "../../../../features/redux/reducers/common-reducers/single-component-reducers/inputReduser";
+import { setDynamicInput } from "../../../../features/redux/reducers/common-reducers/inputDynamicReduser";
 
 import styles from "./cutom_modal_window_type1.module.scss";
 import {
   resetModals,
   setToggleDynamic,
-} from "../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+} from "../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
 import {
   resetOnClickDynamic,
   setOnClickDynamic,
-} from "../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/onClickDynamicReduser";
+} from "../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
 
 export interface CutomModalWindowType1PropsType1 extends RedaxStateProps {
   title: string;
@@ -35,7 +32,7 @@ const CutomModalWindowType1: FC<CutomModalWindowType1PropsType1> = ({
   specialText,
 }) => {
   const stateAddInput = useAppSelector(
-    (state) => state.input[redaxStateKey as keyof InputStatesType]
+    (state) => state.inputDynamic.inputStatesDynamic[redaxStateKey]
   );
   const dispatch = useAppDispatch();
 
@@ -48,8 +45,8 @@ const CutomModalWindowType1: FC<CutomModalWindowType1PropsType1> = ({
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     dispatch(
-      setInput({
-        key: redaxStateKey as keyof InputStatesType,
+      setDynamicInput({
+        key: redaxStateKey,
         value: localInputValue,
       })
     );

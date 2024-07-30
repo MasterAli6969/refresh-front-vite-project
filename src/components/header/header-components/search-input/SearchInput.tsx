@@ -48,7 +48,6 @@ const SearchInput: FC = () => {
         />
         {!isFocused && (
           <CustomCenterModalOpenWrapper
-            type="single"
             redaxStateKey="addUserModalWindow"
             openComponents={() => (
               <AddUserModalWindow redaxStateKey="addUserModalWindow" />

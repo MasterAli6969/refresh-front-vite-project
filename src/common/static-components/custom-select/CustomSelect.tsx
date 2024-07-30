@@ -8,7 +8,7 @@ export interface CustomSelectDataType {
 }
 
 export interface CustomSelectPropsType {
-  title: string;
+  title?: string;
   selectTitle: string;
   customSelectData: CustomSelectDataType[];
 }

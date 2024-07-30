@@ -9,16 +9,17 @@ import RoomTabs from "./control-panel-components/room-tabs/RoomTabs";
 import ControlPanelPcIcons from "./control-panel-components/control-panel-pc-icons/ControlPanelPcIcons";
 import { pcIconData } from "./testData";
 import styles from "./control_panel.module.scss";
-import { setInput } from "../../features/redux/reducers/common-reducers/single-component-reducers/inputReduser";
+import { setDynamicInput } from "../../features/redux/reducers/common-reducers/inputDynamicReduser";
 import {
   DynamicNumberStatesType,
   setSaveDynamicNumber,
-} from "../../features/redux/reducers/common-reducers/dynamic-component-reducers/saveNumberDynamicReduser";
+} from "../../features/redux/reducers/common-reducers/saveNumberDynamicReduser";
 
 import {
   resetOnClickDynamic,
   setOnClickDynamic,
-} from "../../features/redux/reducers/common-reducers/dynamic-component-reducers/onClickDynamicReduser";
+} from "../../features/redux/reducers/common-reducers/onClickDynamicReduser";
+import { setSelectorData } from "../../features/redux/reducers/common-reducers/selectorDataReduscer";
 
 interface RoomTabObjectItem {
   id: number;
@@ -43,7 +44,8 @@ const ControlPanel: FC = () => {
 
   //вызов имени из модального окна новой вкладки
   const newTabsName = useAppSelector(
-    (state) => state.input["addNewRoomsButtonModalWindow"]
+    (state) =>
+      state.inputDynamic.inputStatesDynamic["addNewRoomsButtonModalWindow"]
   );
   //значение события кнопки добавления новой вкладки
   const isClickAdd = useAppSelector(
@@ -94,7 +96,7 @@ const ControlPanel: FC = () => {
         resetOnClickDynamic()
       );
       dispatch(
-        setInput({
+        setDynamicInput({
           key: "addNewRoomsButtonModalWindow",
           value: "",
         })

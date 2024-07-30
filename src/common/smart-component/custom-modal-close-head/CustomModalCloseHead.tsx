@@ -7,7 +7,7 @@ import { RedaxStateProps } from "../../../commonTypes.interface";
 import {
   resetModals,
   setToggleDynamic,
-} from "../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+} from "../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
 
 import styles from "./custom_modal_close_head.module.scss";
 

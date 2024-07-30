@@ -1,7 +1,7 @@
 // RoomTabsMenu.tsx
 import { FC } from "react";
 import { useAppSelector } from "../../../../../features/redux/hooks/reduxRootHooks";
-import { DynamicNumberStatesType } from "../../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/saveNumberDynamicReduser";
+import { DynamicNumberStatesType } from "../../../../../features/redux/reducers/common-reducers/saveNumberDynamicReduser";
 
 import EditFill from "../../../../../assets/icons/EditFill.svg";
 import CustomCenterModalOpenWrapper from "../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
@@ -27,7 +27,6 @@ const RoomTabsMenu: FC<RoomTabsMenu> = ({ title, tabId }) => {
     <div className={styles.div}>
       <div className={styles.subdiv}>
         <CustomCenterModalOpenWrapper
-          type="single"
           redaxStateKey={`roomTabsMenuRenameModalWindow`}
           openComponents={() => (
             <CutomModalWindowType1
@@ -43,7 +42,6 @@ const RoomTabsMenu: FC<RoomTabsMenu> = ({ title, tabId }) => {
       </div>
       <div className={styles.subdiv}>
         <CustomCenterModalOpenWrapper
-          type="dynamic"
           redaxStateKey={isGetModalId}
           openComponents={() => (
             <CutomModalWindowType2

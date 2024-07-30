@@ -6,7 +6,7 @@ import CheckedWhiteIcon from "../../../../../../../../assets/icons/CheckedWhiteI
 
 import styles from "./screenshot_saved_modal_windows.module.scss";
 import { RedaxStateProps } from "../../../../../../../../commonTypes.interface";
-import { setToggleDynamic } from "../../../../../../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+import { setToggleDynamic } from "../../../../../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
 
 interface ScreenshotSavedModalWindowsPropsType extends RedaxStateProps {}
 

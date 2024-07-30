@@ -9,16 +9,15 @@ import {
   resetModals,
   setToggleDynamic,
   ToggleDynamicReduserStatesType,
-} from "../../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+} from "../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
 
 export interface CustomCenterModalOpenWrapperProps extends RedaxStateProps {
-  type: "single" | "dynamic";
   openComponents: FC;
 }
 
 const CustomCenterModalOpenWrapper: FC<
   PropsWithChildren<CustomCenterModalOpenWrapperProps>
-> = ({ children, redaxStateKey, openComponents: OpenComponents, type }) => {
+> = ({ children, redaxStateKey, openComponents: OpenComponents }) => {
   const dispatch = useAppDispatch();
 
   // Определение состояния открытия модальных окон
