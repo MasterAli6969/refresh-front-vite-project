@@ -4,7 +4,6 @@ import {
   useAppSelector,
 } from "../../../features/redux/hooks/reduxRootHooks";
 import { RedaxStateProps } from "../../../commonTypes.interface";
-import { ToggleStateType } from "../../../features/redux/reducers/common-reducers/single-component-reducers/toggleRedusers";
 import { Dialog } from "@mui/material";
 import {
   resetModals,

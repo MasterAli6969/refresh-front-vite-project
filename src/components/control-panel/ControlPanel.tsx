@@ -14,10 +14,7 @@ import {
   DynamicNumberStatesType,
   setSaveDynamicNumber,
 } from "../../features/redux/reducers/common-reducers/dynamic-component-reducers/saveNumberDynamicReduser";
-import {
-  resetModals,
-  setToggleDynamic,
-} from "../../features/redux/reducers/common-reducers/dynamic-component-reducers/toggleDynamicReduser";
+
 import {
   resetOnClickDynamic,
   setOnClickDynamic,

@@ -3,12 +3,10 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // Определяем тип состояния для элементов с уникальными ID
 export interface ToggleDynamicReduserStatesType {
   modalStates: { [id: number | string]: boolean };
-  onClickStates: { [id: number | string]: boolean };
 }
 
 const initialState: ToggleDynamicReduserStatesType = {
   modalStates: {},
-  onClickStates: {},
 };
 
 export const toggleDynamicSlice = createSlice({

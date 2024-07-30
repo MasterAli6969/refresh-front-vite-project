@@ -1,26 +1,29 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface InputStatesType {
-  [key: string]: string;
+export interface InputStatesDynamicType {
+  inputStatesDynamic: { [key: string | number]: string };
 }
 
-const initialState: InputStatesType = {
-  addNewRoomsButtonModalWindow: "",
+const initialState: InputStatesDynamicType = {
+  inputStatesDynamic: {},
 };
 
-const inputSlice = createSlice({
-  name: "input",
+const inputDynamicSlice = createSlice({
+  name: "inputDynamic",
   initialState,
   reducers: {
-    setInput: (
+    setDynamicInput: (
       state,
-      action: PayloadAction<{ key: keyof InputStatesType; value: string }>
+      action: PayloadAction<{ key: string | number; value: string }>
     ) => {
-      state[action.payload.key] = action.payload.value;
+      state.inputStatesDynamic[action.payload.key] = action.payload.value;
+    },
+    resetDynamicInput: (state) => {
+      state.inputStatesDynamic = {};
     },
   },
 });
 
-export const { setInput } = inputSlice.actions;
+export const { setDynamicInput } = inputDynamicSlice.actions;
 
-export default inputSlice.reducer;
+export default inputDynamicSlice.reducer;
