@@ -24,6 +24,6 @@ const inputDynamicSlice = createSlice({
   },
 });
 
-export const { setDynamicInput } = inputDynamicSlice.actions;
+export const { setDynamicInput, resetDynamicInput } = inputDynamicSlice.actions;
 
 export default inputDynamicSlice.reducer;

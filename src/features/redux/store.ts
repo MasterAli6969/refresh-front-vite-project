@@ -4,6 +4,7 @@ import saveDynamicNumber from "./reducers/common-reducers/saveNumberDynamicRedus
 import toggleDynamic from "./reducers/common-reducers/toggleDynamicReduser";
 import onClickDynamic from "./reducers/common-reducers/onClickDynamicReduser";
 import selectorDataReduscer from "./reducers/common-reducers/selectorDataReduscer";
+import roomTabsEdit from "./reducers/special-reducers/control-panel-reducers/roomTabsEditReducer";
 
 const rootReducer = combineReducers({
   inputDynamic: inputDynamic,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   toggleDynamic: toggleDynamic,
   onClickDynamic: onClickDynamic,
   selectorDataReduscer: selectorDataReduscer,
+  roomTabsEdit: roomTabsEdit,
 });
 
 export const setupStore = () => {

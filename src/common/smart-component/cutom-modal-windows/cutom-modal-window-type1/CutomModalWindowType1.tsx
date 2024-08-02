@@ -7,7 +7,6 @@ import {
 
 import CustomModalCloseHead from "../../custom-modal-close-head/CustomModalCloseHead";
 import CustomInput from "../../../static-components/custom-input/CustomInput";
-import CustomButton from "../../../static-components/custom-button/CustomButton";
 
 import { setDynamicInput } from "../../../../features/redux/reducers/common-reducers/inputDynamicReduser";
 
@@ -20,6 +19,7 @@ import {
   resetOnClickDynamic,
   setOnClickDynamic,
 } from "../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
+import CustomDualButtonYesNo from "../../../static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
 export interface CutomModalWindowType1PropsType1 extends RedaxStateProps {
   title: string;
@@ -78,12 +78,15 @@ const CutomModalWindowType1: FC<CutomModalWindowType1PropsType1> = ({
       <CustomInput
         label="Название комнаты"
         placeholder="Введите новое название комнаты"
-        value={localInputValue}
+        value={localInputValue || ""}
         onChange={handleInputChange}
       />
       <div>
-        <CustomButton color="dark" text="Отмена" />
-        <CustomButton type="submit" color="light" text="Сохранить" />
+        <CustomDualButtonYesNo
+          redaxStateKey={redaxStateKey}
+          buttonRightText="Сохранить"
+          isSubmit={true}
+        />
       </div>
     </form>
   );

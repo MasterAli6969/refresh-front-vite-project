@@ -10,12 +10,14 @@ import { setToggleDynamic } from "../../../features/redux/reducers/common-reduce
 interface CustomDualButtonYesNoPropsType {
   redaxStateKey: string | number;
   buttonRightText: string;
+  isSubmit?: boolean;
   onClickRightButton?: () => void;
 }
 
 const CustomDualButtonYesNo: FC<CustomDualButtonYesNoPropsType> = ({
   redaxStateKey,
   buttonRightText,
+  isSubmit,
   onClickRightButton,
 }) => {
   const dispatch = useAppDispatch();
@@ -33,6 +35,7 @@ const CustomDualButtonYesNo: FC<CustomDualButtonYesNoPropsType> = ({
     <div className={styles.div}>
       <CustomButton onClick={handleClose} color="dark" text="Отмена" />
       <CustomButton
+        type={isSubmit ? "submit" : "button"}
         onClick={onClickRightButton}
         color="light"
         text={buttonRightText}

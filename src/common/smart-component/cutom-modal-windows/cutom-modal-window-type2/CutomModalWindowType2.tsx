@@ -10,10 +10,7 @@ import {
   resetModals,
   setToggleDynamic,
 } from "../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
-import {
-  resetOnClickDynamic,
-  setOnClickDynamic,
-} from "../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
+import { setOnClickDynamic } from "../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
 
 export interface CutomModalWindowType2PropsType extends RedaxStateProps {
   title: string;
@@ -36,9 +33,9 @@ const CutomModalWindowType2: FC<CutomModalWindowType2PropsType> = ({
       setOnClickDynamic({
         key: redaxStateKey,
         value: true,
-      }),
-      resetOnClickDynamic()
+      })
     );
+
     dispatch(
       setToggleDynamic({
         id: redaxStateKey,

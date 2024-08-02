@@ -1,7 +1,6 @@
 // RoomTabsMenu.tsx
 import { FC } from "react";
 import { useAppSelector } from "../../../../../features/redux/hooks/reduxRootHooks";
-import { DynamicNumberStatesType } from "../../../../../features/redux/reducers/common-reducers/saveNumberDynamicReduser";
 
 import EditFill from "../../../../../assets/icons/EditFill.svg";
 import CustomCenterModalOpenWrapper from "../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
@@ -17,20 +16,17 @@ interface RoomTabsMenu {
 
 const RoomTabsMenu: FC<RoomTabsMenu> = ({ title, tabId }) => {
   const isGetModalId = useAppSelector(
-    (state) =>
-      state.saveDynamicNumber.roomTabsMenuDeleteModalWindow[
-        tabId as keyof DynamicNumberStatesType["roomTabsMenuDeleteModalWindow"]
-      ]
+    (state) => state.saveDynamicNumber.dynamicNumberStates[tabId]
   );
 
   return (
     <div className={styles.div}>
       <div className={styles.subdiv}>
         <CustomCenterModalOpenWrapper
-          redaxStateKey={`roomTabsMenuRenameModalWindow`}
+          redaxStateKey={`renameRoomTabs${isGetModalId}`}
           openComponents={() => (
             <CutomModalWindowType1
-              redaxStateKey={`roomTabsMenuRenameModalWindow`}
+              redaxStateKey={`renameRoomTabs${isGetModalId}`}
               title={title}
               specialText="Standart"
             />
@@ -42,10 +38,10 @@ const RoomTabsMenu: FC<RoomTabsMenu> = ({ title, tabId }) => {
       </div>
       <div className={styles.subdiv}>
         <CustomCenterModalOpenWrapper
-          redaxStateKey={isGetModalId}
+          redaxStateKey={`deleteRoomTab${isGetModalId}`}
           openComponents={() => (
             <CutomModalWindowType2
-              redaxStateKey={isGetModalId}
+              redaxStateKey={`deleteRoomTab${isGetModalId}`}
               title="Удаление комнаты"
               specialText={title}
               descritpion="Вы уверены что хотите удалить данную комнату?"

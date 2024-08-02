@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // Определяем тип состояния, который хранит числа или строки в виде динамических ключей
 export interface DynamicNumberStatesType {
-  roomTabsMenuDeleteModalWindow: { [key: string | number]: number | string };
+  dynamicNumberStates: { [key: string | number]: number | string };
 }
 
 // Начальное состояние с пустым объектом
 const initialState: DynamicNumberStatesType = {
-  roomTabsMenuDeleteModalWindow: {},
+  dynamicNumberStates: {},
 };
 
 // Создаём slice для управления состоянием
@@ -23,8 +23,7 @@ const saveNumberDynamicSlice = createSlice({
       }>
     ) => {
       // Сохраняем значение по указанному ключу
-      state.roomTabsMenuDeleteModalWindow[action.payload.key] =
-        action.payload.value;
+      state.dynamicNumberStates[action.payload.key] = action.payload.value;
     },
   },
 });
