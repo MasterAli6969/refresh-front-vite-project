@@ -19,6 +19,7 @@ import { setSaveDynamicNumber } from "../../features/redux/reducers/common-reduc
 import { resetOnClickDynamic } from "../../features/redux/reducers/common-reducers/onClickDynamicReduser";
 import { pcIconData } from "./testData";
 import styles from "./control_panel.module.scss";
+import { addNewPcIcons } from "../../features/redux/reducers/special-reducers/control-panel-reducers/pcIconEditReducer";
 
 const ControlPanel: FC = () => {
   const [activePanelId, setActivePanelId] = useState<number | string>("");
@@ -34,6 +35,8 @@ const ControlPanel: FC = () => {
     (state) =>
       state.onClickDynamic.onClickStates["addNewRoomsButtonModalWindow"]
   );
+
+  const newId = getNewId(roomTabs);
 
   const isDelete = useAppSelector(
     (state) =>
@@ -55,14 +58,23 @@ const ControlPanel: FC = () => {
       state.onClickDynamic.onClickStates[`renameRoomTabs${activePanelId}`]
   );
 
+  const pcIconsNewRooms = useAppSelector((state) => state.pcIconEdit.pcIcons);
+
+  const handleDeafaultRender = useCallback(() => {
+    if (roomTabs.length > 0 && !activePanelId) {
+      setActivePanelId(roomTabs[0].id);
+    }
+    dispatch(addNewPcIcons({ key: `pcIconsData${1}`, icons: pcIconData }));
+  }, [dispatch, roomTabs, activePanelId]);
+
   const handleRoomTabClick = useCallback((id: number | string) => {
     setActivePanelId(id);
   }, []);
 
   const handleAddNewTab = useCallback(() => {
     if (isClickAdd) {
-      const newId = getNewId(roomTabs);
       dispatch(addNewTab({ id: newId, name: newTabsName }));
+      dispatch(addNewPcIcons({ key: `pcIconsData${newId}`, icons: [] }));
       dispatch(resetOnClickDynamic());
       dispatch(
         setDynamicInput({ key: "addNewRoomsButtonModalWindow", value: "" })
@@ -70,7 +82,7 @@ const ControlPanel: FC = () => {
       dispatch(setSaveDynamicNumber({ key: newId, value: newId }));
       setActivePanelId(newId);
     }
-  }, [isClickAdd, newTabsName, dispatch, roomTabs]);
+  }, [isClickAdd, newTabsName, dispatch, newId]);
 
   const handleDeleteTab = useCallback(() => {
     if (isDelete) {
@@ -80,7 +92,7 @@ const ControlPanel: FC = () => {
         setActivePanelId(remainingTabs.length ? remainingTabs[0].id : "");
       }
     }
-  }, [isDelete, isGetModalId, dispatch, activePanelId, roomTabs]);
+  }, [isDelete, isGetModalId, dispatch, activePanelId]);
 
   const handleRenameTab = useCallback(() => {
     if (isReneme) {
@@ -89,32 +101,36 @@ const ControlPanel: FC = () => {
   }, [isReneme, activePanelId, remaneTabName, dispatch]);
 
   useEffect(() => {
-    if (roomTabs.length > 0 && !activePanelId) {
-      setActivePanelId(roomTabs[0].id);
+    handleDeafaultRender();
+  }, [handleDeafaultRender]);
+
+  useEffect(() => {
+    if (isClickAdd) {
+      handleAddNewTab();
     }
-  }, [roomTabs, activePanelId]);
+  }, [handleAddNewTab, isClickAdd]);
 
   useEffect(() => {
-    handleAddNewTab();
-  }, [handleAddNewTab]);
+    if (isDelete) {
+      handleDeleteTab();
+    }
+  }, [handleDeleteTab, isDelete]);
 
   useEffect(() => {
-    handleDeleteTab();
-  }, [handleDeleteTab]);
+    if (isReneme) {
+      handleRenameTab();
+    }
+  }, [handleRenameTab, isReneme]);
 
-  useEffect(() => {
-    handleRenameTab();
-  }, [handleRenameTab]);
-
-  const renderActivePanel = () => {
-    const activeTab = roomTabs.find((tab) => tab.id === activePanelId);
-    const shouldShowIcons = activeTab?.id === 1;
-    return activeTab ? (
-      <ControlPanelPcIcons
-        pcIconData={shouldShowIcons ? pcIconData : undefined}
-      />
+  const renderActivePanel = useCallback(() => {
+    const pcIcons =
+      activePanelId === 1
+        ? pcIconsNewRooms[`pcIconsData${1}`]
+        : pcIconsNewRooms[`pcIconsData${activePanelId}`];
+    return activePanelId ? (
+      <ControlPanelPcIcons pcIconData={pcIcons || []} />
     ) : null;
-  };
+  }, [activePanelId, pcIconsNewRooms]);
 
   return (
     <div className={styles.div}>

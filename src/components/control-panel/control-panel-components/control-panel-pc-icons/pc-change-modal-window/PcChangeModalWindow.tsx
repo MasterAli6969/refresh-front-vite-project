@@ -1,26 +1,36 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { RedaxStateProps } from "../../../../../commonTypes.interface";
-import { useAppSelector } from "../../../../../features/redux/hooks/reduxRootHooks";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../../../../features/redux/hooks/reduxRootHooks";
 import CustomModalCloseHead from "../../../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
 import CustomSelect, {
   CustomSelectDataType,
 } from "../../../../../common/static-components/custom-select/CustomSelect";
 import CustomDualButtonYesNo from "../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
-import styles from "./pc_change_modal_window.module.scss";
 import { RoomTabObjectTypes } from "../../../../../features/redux/reducers/special-reducers/control-panel-reducers/roomTabsEditReducer";
+import { setSaveDynamicNumber } from "../../../../../features/redux/reducers/common-reducers/saveNumberDynamicReduser";
 
-const selectData: CustomSelectDataType[] = [
-  { id: 1, selectItem: "selectItem1" },
-  { id: 2, selectItem: "selectItem2" },
-  { id: 3, selectItem: "selectItem3" },
-];
+import styles from "./pc_change_modal_window.module.scss";
+import {
+  resetModals,
+  setToggleDynamic,
+} from "../../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
+import {
+  resetOnClickDynamic,
+  setOnClickDynamic,
+} from "../../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
 
 interface PcChangeModalWindowPropsType extends RedaxStateProps {}
 
 const PcChangeModalWindow: FC<PcChangeModalWindowPropsType> = ({
   redaxStateKey,
 }) => {
+  const [selectedId, setSelectedId] = useState<number | string>("");
   const roomTabsName = useAppSelector((state) => state.roomTabsEdit.roomTabs);
+
+  const dispatch = useAppDispatch();
 
   const mapRoomTabsNameSelectData = (
     data: RoomTabObjectTypes
@@ -29,8 +39,34 @@ const PcChangeModalWindow: FC<PcChangeModalWindowPropsType> = ({
     selectItem: data.name,
   });
 
+  const handleRoomChange = (key: number | string) => {
+    setSelectedId(key);
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    dispatch(
+      setSaveDynamicNumber({ key: "roomChangeSelectId", value: selectedId })
+    );
+    dispatch(
+      setOnClickDynamic({
+        key: redaxStateKey,
+        value: true,
+      }),
+      resetOnClickDynamic()
+    );
+
+    dispatch(
+      setToggleDynamic({
+        id: redaxStateKey,
+        value: false,
+      }),
+      resetModals()
+    );
+  };
+
   return (
-    <div className={styles.div}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <CustomModalCloseHead
         redaxStateKey={redaxStateKey}
         text="Перенос выбранных ПК в другую комнату"
@@ -39,12 +75,14 @@ const PcChangeModalWindow: FC<PcChangeModalWindowPropsType> = ({
         selectTitle="Выберите комнату"
         customSelectData={roomTabsName}
         mapDataToSelect={mapRoomTabsNameSelectData}
+        handleSelectId={handleRoomChange}
       />
       <CustomDualButtonYesNo
+        isSubmit={true}
         buttonRightText="Перенести"
         redaxStateKey={redaxStateKey}
       />
-    </div>
+    </form>
   );
 };
 

@@ -168,6 +168,28 @@ export const pcIconData = [
       },
     },
   },
+  {
+    id: 5,
+    pcIconDataObjekt: {
+      status: "Servicing",
+      pcNumber: 25,
+      timeLeftPcent: 100,
+      pcIconModalWindowData: {
+        modalListItem: modalListItem,
+      },
+    },
+  },
+  {
+    id: 6,
+    pcIconDataObjekt: {
+      status: "Included",
+      pcNumber: 23,
+      timeLeftPcent: 40,
+      pcIconModalWindowData: {
+        modalListItem: modalListItem,
+      },
+    },
+  },
 ];
 
 export const centralHeaderData = [

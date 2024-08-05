@@ -23,16 +23,12 @@ const roomTabsEditSlice = createSlice({
   initialState: roomTabsEditInitionalState,
   reducers: {
     addNewTab: (state, action: PayloadAction<RoomTabObjectTypes>) => {
-      console.log("Adding new tab:", action.payload); // Логирование действия
       state.roomTabs.push(action.payload);
-      console.log("Updated roomTabs:", state.roomTabs); // Логирование обновленного состояния
     },
     removeTab: (state, action: PayloadAction<number | string>) => {
-      console.log("Removing tab with id:", action.payload); // Логирование действия
       state.roomTabs = state.roomTabs.filter(
         (tab) => tab.id !== action.payload
       );
-      console.log("Updated roomTabs:", state.roomTabs); // Логирование обновленного состояния
     },
     nameTab: (
       state,

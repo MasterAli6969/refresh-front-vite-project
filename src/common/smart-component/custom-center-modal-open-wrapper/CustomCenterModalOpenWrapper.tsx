@@ -20,13 +20,11 @@ const CustomCenterModalOpenWrapper: FC<
 > = ({ children, redaxStateKey, openComponents: OpenComponents }) => {
   const dispatch = useAppDispatch();
 
-  // Определение состояния открытия модальных окон
-
   const isOpenDynamic = useAppSelector(
     (state) =>
       state.toggleDynamic.modalStates[
         redaxStateKey as keyof ToggleDynamicReduserStatesType["modalStates"]
-      ]
+      ] ?? false // Добавлена защита от undefined
   );
 
   const handleClickOpen = () => {
@@ -34,8 +32,7 @@ const CustomCenterModalOpenWrapper: FC<
       setToggleDynamic({
         id: redaxStateKey,
         value: true,
-      }),
-      resetModals()
+      })
     );
   };
 
@@ -44,12 +41,9 @@ const CustomCenterModalOpenWrapper: FC<
       setToggleDynamic({
         id: redaxStateKey,
         value: false,
-      }),
-      resetModals()
+      })
     );
   };
-
-  // Определение, открыто ли модальное окно
 
   return (
     <div style={{ cursor: "pointer" }}>

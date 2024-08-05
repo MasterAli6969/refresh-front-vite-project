@@ -1,4 +1,3 @@
-import { FC } from "react";
 import styles from "./custom_select.module.scss";
 
 export interface CustomSelectDataType {
@@ -11,6 +10,7 @@ export interface CustomSelectPropsType<T> {
   selectTitle: string;
   customSelectData: T[];
   mapDataToSelect: (data: T) => CustomSelectDataType;
+  handleSelectId?: (key: string | number) => void;
 }
 
 const CustomSelect = <T,>({
@@ -18,8 +18,15 @@ const CustomSelect = <T,>({
   selectTitle,
   customSelectData,
   mapDataToSelect,
+  handleSelectId,
 }: CustomSelectPropsType<T>) => {
   const mappedData = customSelectData.map(mapDataToSelect);
+
+  const handlerSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    if (handleSelectId) {
+      handleSelectId(event.target.value);
+    }
+  };
 
   return (
     <div className={styles.div}>
@@ -28,6 +35,7 @@ const CustomSelect = <T,>({
         <select
           className="form-select bg-dark text-white"
           id="floatingSelectGrid"
+          onChange={handlerSelect}
         >
           <option>{selectTitle}</option>
           {!customSelectData || customSelectData.length === 0 ? (
