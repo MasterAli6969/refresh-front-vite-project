@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import PanelRotes from "./routes/PanelRotes";
+import PageRoutes from "./routes/PageRoutes";
 import AuthRoutes from "./routes/AuthRoutes"; // Импортируем компонент AuthRoutes
 import "./App.scss";
 
@@ -15,7 +15,7 @@ function App() {
     isAuthRoute || isRestoringAccessRoute || isPasswordChange;
 
   return (
-    <div>{isAuthOrRestoringAccessRoute ? <AuthRoutes /> : <PanelRotes />}</div>
+    <div>{isAuthOrRestoringAccessRoute ? <AuthRoutes /> : <PageRoutes />}</div>
   );
 }
 

@@ -69,19 +69,21 @@ const LeftSidebar: FC = () => {
                 })}
                 onClick={() => handleLiClick(item.id)}
               >
-                <div>
+                <a href={item.url}>
                   <div>
-                    <Icon
-                      color={activeItemId === item.id ? "#3e90f0" : "#6c7275"}
-                    />
+                    <div>
+                      <Icon
+                        color={activeItemId === item.id ? "#3e90f0" : "#6c7275"}
+                      />
+                    </div>
+                    {item.text}
                   </div>
-                  {item.text}
-                </div>
-                {(item.id === 7 || item.id === 9) && (
-                  <div>
-                    <ArrowChekRight color="#6C7275" />
-                  </div>
-                )}
+                  {(item.id === 7 || item.id === 9) && (
+                    <div>
+                      <ArrowChekRight color="#6C7275" />
+                    </div>
+                  )}
+                </a>
               </li>
             );
           })

@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
-import Authorization from "../pages/auth/authorization/Authorization";
-import RestoringAccess from "../pages/auth/restoring-access/RestoringAccess";
-import PasswordChange from "../pages/auth/password-change/PasswordChange";
+import Authorization from "../pages/auth-page/authorization/Authorization";
+import RestoringAccess from "../pages/auth-page/restoring-access/RestoringAccess";
+import PasswordChange from "../pages/auth-page/password-change/PasswordChange";
 
 const AuthRoutes: FC = () => {
   return (

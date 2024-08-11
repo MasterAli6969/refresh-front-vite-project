@@ -6,7 +6,7 @@ import CustomButton from "../../../common/static-components/custom-button/Custom
 import SphereArrowCheckLeft from "../../../assets/icons/SphereArrowCheckLeft.svg";
 import CustomDoneAuthWindow from "../../../common/smart-component/custom-done-auth-window/CustomDoneAuthWindow";
 
-import { testAuthData } from "../../../pages/auth/data";
+import { testAuthData } from "../../../pages/auth-page/data";
 
 import styles from "./restoring_access_form.module.scss";
 

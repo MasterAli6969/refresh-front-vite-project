@@ -17,7 +17,7 @@ export const leftSidebarData = [
   },
   {
     id: 2,
-    url: "#",
+    url: "shop",
     icon: IconStore,
     text: "Магазин",
   },

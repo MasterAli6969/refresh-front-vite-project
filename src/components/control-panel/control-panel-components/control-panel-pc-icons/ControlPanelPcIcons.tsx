@@ -10,6 +10,7 @@ import PcIcon, { PcIconDataObjektType } from "./pc-icon/PcIcon";
 import PcChangeModalWindow from "./pc-change-modal-window/PcChangeModalWindow";
 import { setToggleDynamic } from "../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
 import { addNewPcIcons } from "../../../../features/redux/reducers/special-reducers/control-panel-reducers/pcIconEditReducer";
+import { resetOnClickDynamic } from "../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
 
 export interface PcIconDataType {
   id: number | string;
@@ -75,6 +76,8 @@ const ControlPanelPcIcons: FC<ControlPanelPcIconsPropsType> = ({
                 icons: selectedIcons,
               })
             );
+            dispatch(resetOnClickDynamic());
+            console.log("ДАННЫЕ ИКОНОК УШЛИ");
           }
           setSelectedIcons([]); // Обнуление состояния
         }
@@ -84,15 +87,15 @@ const ControlPanelPcIcons: FC<ControlPanelPcIconsPropsType> = ({
   );
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => handleClickOn(event);
     const handleKeyUp = (event: KeyboardEvent) => handleClickOff(event);
+    const handleKeyDown = (event: KeyboardEvent) => handleClickOn(event);
 
-    window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [handleClickOn, handleClickOff]);
 
@@ -123,7 +126,7 @@ const ControlPanelPcIcons: FC<ControlPanelPcIconsPropsType> = ({
           <PcChangeModalWindow redaxStateKey="PcChangeModalWindow" />
         )}
         redaxStateKey="PcChangeModalWindow"
-      />
+      ></CustomCenterModalOpenWrapper>
     </div>
   );
 };

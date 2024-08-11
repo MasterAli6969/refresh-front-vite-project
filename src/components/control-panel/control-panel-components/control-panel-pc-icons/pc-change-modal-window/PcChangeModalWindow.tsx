@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { RedaxStateProps } from "../../../../../commonTypes.interface";
 import {
   useAppDispatch,
@@ -39,6 +39,14 @@ const PcChangeModalWindow: FC<PcChangeModalWindowPropsType> = ({
     selectItem: data.name,
   });
 
+  const isChangePcIcon = useAppSelector(
+    (state) => state.onClickDynamic.onClickStates[redaxStateKey]
+  );
+
+  useEffect(() => {
+    console.log("isChangePcIcon initial state:", isChangePcIcon);
+  }, []);
+
   const handleRoomChange = (key: number | string) => {
     setSelectedId(key);
   };
@@ -55,7 +63,6 @@ const PcChangeModalWindow: FC<PcChangeModalWindowPropsType> = ({
       }),
       resetOnClickDynamic()
     );
-
     dispatch(
       setToggleDynamic({
         id: redaxStateKey,
@@ -63,6 +70,8 @@ const PcChangeModalWindow: FC<PcChangeModalWindowPropsType> = ({
       }),
       resetModals()
     );
+
+    console.log("SUBMİT ОТРАБОТАЛ", isChangePcIcon);
   };
 
   return (
