@@ -16,6 +16,7 @@ const ReplenishmentBalanceModalWindows: FC<
 > = ({ redaxStateKey }) => {
   const [selectedReplenishmentsType, setSelectedReplenishmentsType] =
     useState<string>("");
+
   const [selectPaymentMethodType, setSelectPaymentMethodType] =
     useState<string>("");
 
@@ -66,7 +67,7 @@ const ReplenishmentBalanceModalWindows: FC<
         </div>
       </div>
       <div>
-        <CustomInput label="Сумма пополнения" plaseholder="Введите сумму" />
+        <CustomInput label="Сумма пополнения" placeholder="Введите сумму" />
       </div>
       <div>
         <p>Способ оплаты</p>
@@ -93,11 +94,11 @@ const ReplenishmentBalanceModalWindows: FC<
       </div>
       {selectPaymentMethodType === "split" && (
         <div className={styles.mail_select_block}>
-          <CustomInput plaseholder="Сумма наличных" />
+          <CustomInput placeholder="Сумма наличных" />
           <div>
             <p>50/50</p>
           </div>
-          <CustomInput plaseholder="Сумма оплаты по БК" />
+          <CustomInput placeholder="Сумма оплаты по БК" />
         </div>
       )}
       <div className={styles.cash_card_select_block}>

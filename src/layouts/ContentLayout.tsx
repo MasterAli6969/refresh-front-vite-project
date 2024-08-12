@@ -1,4 +1,7 @@
 import { FC } from "react";
+
+import { Grid } from "@mui/material";
+
 import LeftSidebar from "../components/left-sidebar/LeftSidebar";
 import Header from "../components/header/Header";
 
@@ -8,15 +11,15 @@ interface LayoutProps {
 
 const GeneralLayout: FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="m-0 p-0 row">
-      <div className="m-0 p-0 col-md-2">
+    <Grid container>
+      <Grid item md={2} sx={{ margin: "0", padding: "0" }}>
         <LeftSidebar />
-      </div>
-      <div className="m-0 p-0 col-md-10">
+      </Grid>
+      <Grid item md={10} sx={{ margin: "0", padding: "0" }}>
         <Header />
         {children}
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 };
 

@@ -1,0 +1,55 @@
+@import "/src/variables.scss";
+
+.div {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary_color;
+  padding: 1rem;
+  gap: 1rem;
+  .subdiv_header {
+    > p:last-child {
+      font-size: 0.6rem;
+      opacity: 0.7;
+    }
+  }
+  .subdiv_search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: $border_style;
+    border-radius: $border_radius10;
+    padding: 0.3rem;
+    > input {
+      max-width: 12rem;
+      border: none;
+      background-color: transparent;
+      color: white;
+    }
+  }
+  .subdiv_cart_item {
+    .subdiv_cart_item_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .subdiv_cart_item_positios {
+      height: 30rem;
+      .subdiv_cart_item_positios_none {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
+  .subdiv_footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

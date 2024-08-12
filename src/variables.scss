@@ -18,10 +18,11 @@ $ok-color: #159900;
 
 //ЦВЕТА НОВГО МАКЕТА ИЛИ ПРОСТО НОВЫЕ
 
-$primary_color: #0a0c0c;
-$secondary_color: #1b1f20;
-$tertiary_color: #161818;
-$quartet_color: #343839;
+$primary_color: #1b1c20;
+$special_primary_color: #141518;
+$secondary_color: #17181a;
+$tertiary_color: #383b41;
+$quartet_color: #1a1c21;
 
 $light_color: #ffffff;
 $dark_color: #6c7275;
@@ -88,7 +89,7 @@ $hover-lists-active: linear-gradient(
 //стили для кастамных input and textarea элементов
 @mixin inputStyle {
   width: 100%;
-  background-color: $primary-color;
+  background-color: $secondary_color;
   border: $border_style;
   border-radius: $border_radius12;
   color: $light-color;

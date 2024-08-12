@@ -1,0 +1,16 @@
+@import "/src/variables.scss";
+
+.div {
+  border: $border_style;
+  border-radius: $border_radius5;
+  .subdiv_header,
+  .subdiv_item > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  .subdiv_header {
+    border-bottom: $border_style;
+  }
+}

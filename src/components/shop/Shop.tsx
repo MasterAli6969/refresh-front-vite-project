@@ -1,14 +1,22 @@
 import { FC } from "react";
 
+import { Grid } from "@mui/material";
+
+import ShopCenralPanel from "./shop-componenes/shop-cenral-panel/ShopCenralPanel";
+import ShopSidebar from "./shop-componenes/shop-sidebar/ShopSidebar";
+
 import styles from "./shop.module.scss";
 
 const Shop: FC = () => {
   return (
-    <div className={styles.div}>
-      <div>
-        <h1>GOG SHOP</h1>
-      </div>
-    </div>
+    <Grid container className={styles.div}>
+      <Grid item md={9}>
+        <ShopCenralPanel />
+      </Grid>
+      <Grid item md={3}>
+        <ShopSidebar />
+      </Grid>
+    </Grid>
   );
 };
 
