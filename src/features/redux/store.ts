@@ -6,6 +6,7 @@ import onClickDynamic from "./reducers/common-reducers/onClickDynamicReduser";
 import selectorDataReduscer from "./reducers/common-reducers/selectorDataReduscer";
 import roomTabsEdit from "./reducers/special-reducers/control-panel-reducers/roomTabsEditReducer";
 import pcIconEdit from "./reducers/special-reducers/control-panel-reducers/pcIconEditReducer";
+import cartItems from "./reducers/special-reducers/shop-reducers/cartItemsReducer";
 
 const rootReducer = combineReducers({
   inputDynamic: inputDynamic,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   selectorDataReduscer: selectorDataReduscer,
   roomTabsEdit: roomTabsEdit,
   pcIconEdit: pcIconEdit,
+  cartItems: cartItems,
 });
 
 export const setupStore = () => {
