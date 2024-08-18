@@ -53,7 +53,10 @@ const ShopCenralPanel: FC = () => {
         />
       </div>
       <div className={styles.subdiv_product_panel}>
-        <ProsuctItemList searchInputValue={searchPropduct} />
+        <ProsuctItemList
+          productRenderType={selectedPropductType}
+          searchInputValue={searchPropduct}
+        />
       </div>
     </div>
   );

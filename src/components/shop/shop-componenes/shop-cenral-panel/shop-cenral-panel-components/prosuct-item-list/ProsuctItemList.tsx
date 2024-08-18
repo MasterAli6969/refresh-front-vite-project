@@ -1,72 +1,96 @@
 import { FC, useCallback, useEffect, useState } from "react";
-import { useAppDispatch } from "../../../../../../features/redux/hooks/reduxRootHooks";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../../../../../features/redux/hooks/reduxRootHooks";
 
 import { Grid } from "@mui/material";
 import Checkmark from "../../../../../../assets/icons/Checkmark.svg";
 
-import { testProductData } from "../../../data";
 import { selectPropductType } from "../../../../shop.interface";
+import { addNewProduct } from "../../../../../../features/redux/reducers/special-reducers/shop-reducers/cartItemsReducer";
+import { testProductData } from "../../../data";
 
 import styles from "./prosuct_item_list.module.scss";
-import { addNewProduct } from "../../../../../../features/redux/reducers/special-reducers/shop-reducers/cartItemsReducer";
 
 export interface productDataType {
   id: number;
   img: string;
   name: string;
-  price: string;
+  price: number;
+  type: string;
 }
 
 export interface ProsuctItemListPropsType {
+  productRenderType: string;
   searchInputValue: string;
 }
 
 const ProsuctItemList: FC<ProsuctItemListPropsType> = ({
   searchInputValue,
+  productRenderType,
 }) => {
   const [productsData, setProductsData] = useState<productDataType[]>([]);
+
   const [filteredProducts, setFilteredProducts] = useState<productDataType[]>(
     []
   );
 
-  const dispatch = useAppDispatch();
-
   const [selectPropduct, setSelectPropduct] =
     useState<selectPropductType | null>(null);
 
+  const dispatch = useAppDispatch();
+
+  const cartItems = useAppSelector((state) => state.cartItems.cartItem);
+
   const handleGetTestData = useCallback(() => {
     setProductsData(testProductData);
-    setFilteredProducts(testProductData);
   }, []);
 
-  const handleFilterSearchProduct = useCallback(() => {
-    const filtered = productsData.filter((product) =>
+  const handleFilterProducts = useCallback(() => {
+    const filteredByType = productsData.filter((product) => {
+      return productRenderType === "Product"
+        ? product.type === "product"
+        : productRenderType === "Tariffs"
+        ? product.type === "tariff"
+        : true;
+    });
+
+    const filtered = filteredByType.filter((product) =>
       product.name.toLowerCase().includes(searchInputValue.toLowerCase())
     );
     setFilteredProducts(filtered);
-  }, [searchInputValue, productsData]);
+  }, [searchInputValue, productsData, productRenderType]);
 
   const handleSelectPropduct = (id: number) => {
     const product = productsData.find((p) => p.id === id);
+    const pieceСount = 1;
     if (product) {
-      const { id, name, price } = product;
-      setSelectPropduct({ id, name, price });
+      const { id, name, price, type } = product;
+      setSelectPropduct({ id, name, price, pieceСount, type });
     }
   };
 
   const handleAddSelectProductCart = useCallback(() => {
     if (selectPropduct !== null) {
-      dispatch(addNewProduct(selectPropduct));
+      const productExists = cartItems.find(
+        (item) => item.id === selectPropduct.id
+      );
+      if (!productExists) {
+        dispatch(addNewProduct(selectPropduct));
+      }
     }
-  }, [dispatch, selectPropduct]);
+  }, [dispatch, selectPropduct, cartItems]);
 
   useEffect(() => {
     handleGetTestData();
   }, [handleGetTestData]);
 
   useEffect(() => {
-    handleFilterSearchProduct();
-  }, [handleFilterSearchProduct]);
+    if (productsData.length > 0) {
+      handleFilterProducts();
+    }
+  }, [handleFilterProducts]);
 
   useEffect(() => {
     handleAddSelectProductCart();
@@ -75,7 +99,7 @@ const ProsuctItemList: FC<ProsuctItemListPropsType> = ({
   return (
     <Grid container className={styles.div}>
       {filteredProducts.length === 0 ? (
-        <h1>ДАННЫЕ НЕ ПОСТУПАЮТ</h1>
+        <h1>Ожидание...</h1>
       ) : (
         filteredProducts.map((item: productDataType) => {
           return (

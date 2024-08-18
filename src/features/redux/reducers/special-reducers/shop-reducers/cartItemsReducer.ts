@@ -2,12 +2,32 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { selectPropductType } from "../../../../../components/shop/shop.interface";
 
+export interface CartItemType extends selectPropductType {
+  originPrice: number;
+}
+
+export interface CartItemsTotalType {
+  totalPrice: number;
+  totalProductsPrice: number;
+  totalTarifesPrice: number;
+  typeProductsCount: number;
+  typeTarifesCount: number;
+}
+
 export interface СartItemsReducerInitionalStateType {
-  cartItem: selectPropductType[];
+  cartItem: CartItemType[];
+  cartItemsTotal: CartItemsTotalType;
 }
 
 const cartItemsReducerInitionalState: СartItemsReducerInitionalStateType = {
   cartItem: [],
+  cartItemsTotal: {
+    totalPrice: 0,
+    totalProductsPrice: 0,
+    totalTarifesPrice: 0,
+    typeProductsCount: 0,
+    typeTarifesCount: 0,
+  },
 };
 
 const cartItemsSlice = createSlice({
@@ -15,23 +35,45 @@ const cartItemsSlice = createSlice({
   initialState: cartItemsReducerInitionalState,
   reducers: {
     addNewProduct: (state, action: PayloadAction<selectPropductType>) => {
-      const productExists = state.cartItem.some(
-        (item) => item.id === action.payload.id
-      );
-      if (!productExists) {
-        state.cartItem.push(action.payload);
-      }
+      state.cartItem.push({
+        ...action.payload,
+        originPrice: action.payload.price,
+      });
     },
-    removeProduct: (state, action: PayloadAction<number>) => {
-      if (state.cartItem != null) {
-        state.cartItem = state.cartItem.filter(
-          (item) => item.id !== action.payload
-        );
-      }
+    removeProduct: (state, action: PayloadAction<number | null>) => {
+      state.cartItem = state.cartItem.filter(
+        (item) => item.id !== action.payload
+      );
+    },
+    updateProductQuantity: (
+      state,
+      action: PayloadAction<{
+        id: number;
+        newPrice: number;
+        newPieceСount: number;
+      }>
+    ) => {
+      state.cartItem = state.cartItem.map((item) =>
+        item.id === action.payload.id
+          ? {
+              ...item,
+              price: action.payload.newPrice,
+              pieceСount: action.payload.newPieceСount,
+            }
+          : item
+      );
+    },
+    cartItemsTotal: (state, action: PayloadAction<CartItemsTotalType>) => {
+      state.cartItemsTotal = action.payload;
     },
   },
 });
 
-export const { addNewProduct, removeProduct } = cartItemsSlice.actions;
+export const {
+  addNewProduct,
+  removeProduct,
+  updateProductQuantity,
+  cartItemsTotal,
+} = cartItemsSlice.actions;
 
 export default cartItemsSlice.reducer;

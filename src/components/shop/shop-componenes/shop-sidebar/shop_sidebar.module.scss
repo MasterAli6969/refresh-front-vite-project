@@ -32,20 +32,6 @@
       justify-content: space-between;
       align-items: center;
     }
-    .subdiv_cart_item_positios {
-      height: 30rem;
-      .subdiv_cart_item_positios_none {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        > div {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-    }
   }
   .subdiv_footer {
     display: flex;
