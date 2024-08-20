@@ -1,16 +1,16 @@
 import { FC, useMemo, useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useAppSelector } from "../../../../../../features/redux/hooks/reduxRootHooks";
+import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
 
-import CardItemNone from "../../../../../../assets/icons/CardItemNone.svg";
-import DeleteTrashIcon from "../../../../../../assets/icons/DeleteTrashIcon.svg";
+import CardItemNone from "../../../../assets/icons/CardItemNone.svg";
+import DeleteTrashIcon from "../../../../assets/icons/DeleteTrashIcon.svg";
 
 import {
   cartItemsTotal,
   CartItemType,
   removeProduct,
   updateProductQuantity,
-} from "../../../../../../features/redux/reducers/special-reducers/shop-reducers/cartItemsReducer";
+} from "../../../../features/redux/reducers/special-reducers/shop-reducers/cartItemsReducer";
 
 import styles from "./cart_items.module.scss";
 

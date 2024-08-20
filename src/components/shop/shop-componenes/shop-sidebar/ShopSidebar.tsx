@@ -1,14 +1,15 @@
 import { FC } from "react";
 
-import SearchIcon from "../../../../assets/icons/SearchIcon.svg";
-import CloseIcon from "../../../../assets/icons-svg-components/CloseIcon";
-
+import ClientSearchInput from "./shop-sidebar-components/client-search-input/ClientSearchInput";
+import CartItem from "../../shop-common/cart-items/CartItems";
 import CustomInput from "../../../../common/static-components/custom-input/CustomInput";
-import CartItem from "./shop-sidebar-components/cart-items/CartItems";
 import TotalPurchase from "../../shop-common/total-purchase/TotalPurchase";
 import CustomButton from "../../../../common/static-components/custom-button/CustomButton";
 
 import styles from "./shop_sidebar.module.scss";
+import PaymentModalWindow from "./shop-sidebar-components/payment-modal-window/PaymentModalWindow";
+import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
+import CustomToggleButton from "../../../../common/static-components/custom-toggle-button/CustomToggleButton";
 
 const ShopSidebar: FC = () => {
   return (
@@ -17,16 +18,15 @@ const ShopSidebar: FC = () => {
         <p>Выберите пользователя</p>
         <p>Для гостевой продажи оставьте поле пустым!</p>
       </div>
-      <div className={styles.subdiv_search}>
-        <img src={SearchIcon} />
-        <input type="text" />
-        <span>{<CloseIcon />}</span>
-      </div>
+
       <div className={styles.subdiv_cart_item}>
         <div className={styles.subdiv_cart_item_header}>
           <p>Проверьте заказ</p>
           <p>0 позиций</p>
         </div>
+      </div>
+      <div>
+        <ClientSearchInput />
       </div>
       <div>
         <CartItem />
@@ -39,7 +39,14 @@ const ShopSidebar: FC = () => {
         <div>
           <TotalPurchase />
         </div>
-        <CustomButton color="light" text="Перейти к выбору способа оплаты" />
+        <CustomCenterModalOpenWrapper
+          redaxStateKey="PaymentModalWindow"
+          openComponents={() => (
+            <PaymentModalWindow redaxStateKey="PaymentModalWindow" />
+          )}
+        >
+          <CustomButton color="light" text="Перейти к выбору способа оплаты" />
+        </CustomCenterModalOpenWrapper>
       </div>
     </div>
   );

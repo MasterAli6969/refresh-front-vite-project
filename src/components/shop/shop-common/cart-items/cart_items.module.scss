@@ -6,6 +6,7 @@
   gap: 1rem;
   .subdiv_cart_item_positios {
     height: 30rem;
+    overflow-y: scroll;
     .subdiv_cart_item_positios_none {
       height: 100%;
       display: flex;

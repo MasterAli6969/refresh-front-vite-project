@@ -12,20 +12,7 @@
       opacity: 0.7;
     }
   }
-  .subdiv_search {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: $border_style;
-    border-radius: $border_radius10;
-    padding: 0.3rem;
-    > input {
-      max-width: 12rem;
-      border: none;
-      background-color: transparent;
-      color: white;
-    }
-  }
+
   .subdiv_cart_item {
     .subdiv_cart_item_header {
       display: flex;

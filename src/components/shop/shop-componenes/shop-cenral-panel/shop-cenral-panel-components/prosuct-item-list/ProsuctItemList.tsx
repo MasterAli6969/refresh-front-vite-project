@@ -49,9 +49,9 @@ const ProsuctItemList: FC<ProsuctItemListPropsType> = ({
 
   const handleFilterProducts = useCallback(() => {
     const filteredByType = productsData.filter((product) => {
-      return productRenderType === "Product"
+      return productRenderType === "Товары"
         ? product.type === "product"
-        : productRenderType === "Tariffs"
+        : productRenderType === "Тарифы"
         ? product.type === "tariff"
         : true;
     });

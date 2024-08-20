@@ -1,15 +1,20 @@
 @import "/src/variables.scss";
 
-.button {
+.div {
   display: flex;
   align-items: center;
-  background-color: transparent;
-  color: $light_color;
-  border: none;
-  border-radius: $border_radius5;
-  padding: 0.5rem;
-}
+  gap: 1rem;
+  .button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: $light_color;
+    border: none;
+    border-radius: $border_radius5;
+    padding: 0.5rem;
+  }
 
-._active {
-  background-color: $tertiary_color;
+  ._active {
+    background-color: $tertiary_color;
+  }
 }

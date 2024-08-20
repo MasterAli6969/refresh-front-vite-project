@@ -11,40 +11,23 @@ const ShopCenralPanel: FC = () => {
 
   const [searchPropduct, setSearchPropduct] = useState<string>("");
 
-  const handleSelectPropductType = useCallback(() => {
-    setSelectedPropductType("Product");
-  }, []);
-
   const handleChangeSearchProduct = (value: string) => {
     setSearchPropduct(value);
   };
 
-  useEffect(() => {
-    handleSelectPropductType();
-  }, [handleSelectPropductType]);
-
-  const handleSelectPropductTypeClick = (type: string) => {
-    setSelectedPropductType(type);
+  const handleToggleChange = (activeItem: string) => {
+    setSelectedPropductType(activeItem);
   };
 
   return (
     <div className={styles.div}>
       <div className={styles.subdiv_button_type}>
         <CustomToggleButton
-          active={selectedPropductType === "Product"}
-          onClick={() => handleSelectPropductTypeClick("Product")}
-        >
-          <img src="" alt="" />
-          <h3>Товары</h3>
-        </CustomToggleButton>
-        <CustomToggleButton
-          active={selectedPropductType === "Tariffs"}
-          onClick={() => handleSelectPropductTypeClick("Tariffs")}
-        >
-          <img src="" alt="" />
-          <h3>Тарифы</h3>
-        </CustomToggleButton>
+          onToggleChange={handleToggleChange}
+          buttonsText={["Товары", "Тарифы"]}
+        />
       </div>
+
       <div className={styles.subdiv_search_input}>
         <CustomInput
           value={searchPropduct || ""}

@@ -6,7 +6,6 @@ import {
 import { RedaxStateProps } from "../../../commonTypes.interface";
 import { Dialog } from "@mui/material";
 import {
-  resetModals,
   setToggleDynamic,
   ToggleDynamicReduserStatesType,
 } from "../../../features/redux/reducers/common-reducers/toggleDynamicReduser";

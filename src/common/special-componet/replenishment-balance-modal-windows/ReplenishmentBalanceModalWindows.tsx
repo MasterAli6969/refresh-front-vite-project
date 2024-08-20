@@ -14,30 +14,10 @@ export interface ReplenishmentBalanceModalWindowsPropsType
 const ReplenishmentBalanceModalWindows: FC<
   ReplenishmentBalanceModalWindowsPropsType
 > = ({ redaxStateKey }) => {
-  const [selectedReplenishmentsType, setSelectedReplenishmentsType] =
-    useState<string>("");
+  const [selectedToggle, setSelectedToggle] = useState<string>("");
 
-  const [selectPaymentMethodType, setSelectPaymentMethodType] =
-    useState<string>("");
-
-  const [selectedCheckType, setSelectedCheckType] = useState<string>("");
-
-  useEffect(() => {
-    setSelectedReplenishmentsType("primary");
-    setSelectPaymentMethodType("cash");
-    setSelectedCheckType("print");
-  }, []);
-
-  const handleTypeSelectReplenishmentsType = (type: string) => {
-    setSelectedReplenishmentsType(type);
-  };
-
-  const handleTypeSelectPaymentMethodType = (type: string) => {
-    setSelectPaymentMethodType(type);
-  };
-
-  const handleTypeselectedCheck = (type: string) => {
-    setSelectedCheckType(type);
+  const handleToggleChange = (activeItem: string) => {
+    setSelectedToggle(activeItem);
   };
 
   return (
@@ -51,48 +31,21 @@ const ReplenishmentBalanceModalWindows: FC<
       </div>
       <div>
         <p>Выберите тип пополнения</p>
-        <div>
-          <CustomToggleButton
-            active={selectedReplenishmentsType === "primary"}
-            onClick={() => handleTypeSelectReplenishmentsType("primary")}
-          >
-            <p>Основной баланс</p>
-          </CustomToggleButton>
-          <CustomToggleButton
-            active={selectedReplenishmentsType === "bonus"}
-            onClick={() => handleTypeSelectReplenishmentsType("bonus")}
-          >
-            <p>Бонусный баланс</p>
-          </CustomToggleButton>
-        </div>
+        <CustomToggleButton
+          buttonsText={["Основной баланс", "Бонусный баланс"]}
+        />
       </div>
       <div>
         <CustomInput label="Сумма пополнения" placeholder="Введите сумму" />
       </div>
       <div>
         <p>Способ оплаты</p>
-        <div>
-          <CustomToggleButton
-            active={selectPaymentMethodType === "cash"}
-            onClick={() => handleTypeSelectPaymentMethodType("cash")}
-          >
-            <p>Наличные</p>
-          </CustomToggleButton>
-          <CustomToggleButton
-            active={selectPaymentMethodType === "card"}
-            onClick={() => handleTypeSelectPaymentMethodType("card")}
-          >
-            <p>Карта</p>
-          </CustomToggleButton>
-          <CustomToggleButton
-            active={selectPaymentMethodType === "split"}
-            onClick={() => handleTypeSelectPaymentMethodType("split")}
-          >
-            <p>Разделить</p>
-          </CustomToggleButton>
-        </div>
+        <CustomToggleButton
+          buttonsText={["Наличные", "Карта", "Разделить"]}
+          onToggleChange={handleToggleChange}
+        />
       </div>
-      {selectPaymentMethodType === "split" && (
+      {selectedToggle === "Разделить" && (
         <div className={styles.mail_select_block}>
           <CustomInput placeholder="Сумма наличных" />
           <div>
@@ -101,22 +54,12 @@ const ReplenishmentBalanceModalWindows: FC<
           <CustomInput placeholder="Сумма оплаты по БК" />
         </div>
       )}
+
       <div className={styles.cash_card_select_block}>
         <p>Чек</p>
-        <div>
-          <CustomToggleButton
-            active={selectedCheckType === "print"}
-            onClick={() => handleTypeselectedCheck("print")}
-          >
-            <p>Печатать</p>
-          </CustomToggleButton>
-          <CustomToggleButton
-            active={selectedCheckType === "mail"}
-            onClick={() => handleTypeselectedCheck("mail")}
-          >
-            <p>Отправить на эл. почту</p>
-          </CustomToggleButton>
-        </div>
+        <CustomToggleButton
+          buttonsText={["Печатать", "Отправить на эл. почту", "Разделить"]}
+        />
       </div>
       <div>
         <CustomDualButtonYesNo

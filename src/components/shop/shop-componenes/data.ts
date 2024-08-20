@@ -73,3 +73,22 @@ export const testProductData = [
     type: "tariff",
   },
 ];
+
+export const clientSearchTestData = [
+  {
+    id: 1,
+    name: "Yatoro",
+  },
+  {
+    id: 2,
+    name: "Aleksey",
+  },
+  {
+    id: 3,
+    name: "Ali",
+  },
+  {
+    id: 4,
+    name: "Gog",
+  },
+];
