@@ -1,0 +1,28 @@
+@import "/src/variables.scss";
+
+.div {
+  padding: 1rem;
+  .table {
+    width: 100%;
+  }
+  .thead > tr,
+  .tbody > tr {
+    border-radius: $border_radius5;
+  }
+  .thead > tr > th,
+  .tbody > tr > td {
+    padding: 1rem;
+  }
+  .thead {
+    > tr {
+      background-color: $special_primary_color;
+    }
+  }
+  .tbody {
+    > tr {
+      &:hover {
+        background-color: $hover_color;
+      }
+    }
+  }
+}

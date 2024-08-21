@@ -1,4 +1,4 @@
-import { FC, useState, useEffect, useCallback } from "react";
+import { FC, useState } from "react";
 
 import CustomToggleButton from "../../../../common/static-components/custom-toggle-button/CustomToggleButton";
 import CustomInput from "../../../../common/static-components/custom-input/CustomInput";
