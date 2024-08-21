@@ -47,7 +47,11 @@ const CustomCenterModalOpenWrapper: FC<
   return (
     <div style={{ cursor: "pointer" }}>
       <span onClick={handleClickOpen}>{children}</span>
-      <Dialog open={isOpenDynamic} onClose={handleClickClose}>
+      <Dialog
+        sx={{ backgroundColor: "transparent", color: "white" }}
+        open={isOpenDynamic}
+        onClose={handleClickClose}
+      >
         <OpenComponents />
       </Dialog>
     </div>
