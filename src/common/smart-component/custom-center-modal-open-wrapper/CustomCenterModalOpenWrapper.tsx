@@ -1,10 +1,9 @@
-import { FC, PropsWithChildren } from "react";
+import { FC, useLayoutEffect, useState, PropsWithChildren } from "react";
 import {
   useAppDispatch,
   useAppSelector,
 } from "../../../features/redux/hooks/reduxRootHooks";
 import { RedaxStateProps } from "../../../commonTypes.interface";
-import { Dialog } from "@mui/material";
 import {
   setToggleDynamic,
   ToggleDynamicReduserStatesType,
@@ -23,8 +22,40 @@ const CustomCenterModalOpenWrapper: FC<
     (state) =>
       state.toggleDynamic.modalStates[
         redaxStateKey as keyof ToggleDynamicReduserStatesType["modalStates"]
-      ] ?? false // Добавлена защита от undefined
+      ] ?? false
   );
+
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  const [modalSize, setModalSize] = useState({ width: 0, height: 0 });
+
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Для задания начальных размеров
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleModalRef = (modal: HTMLDivElement | null) => {
+    if (modal) {
+      const { offsetWidth, offsetHeight } = modal;
+      if (
+        offsetWidth !== modalSize.width ||
+        offsetHeight !== modalSize.height
+      ) {
+        setModalSize({
+          width: offsetWidth,
+          height: offsetHeight,
+        });
+      }
+    }
+  };
 
   const handleClickOpen = () => {
     dispatch(
@@ -44,16 +75,25 @@ const CustomCenterModalOpenWrapper: FC<
     );
   };
 
+  const modalStyles = {
+    left: `${(windowSize.width - modalSize.width) / 2}px`,
+    top: `${(windowSize.height - modalSize.height) / 2}px`,
+    position: "fixed" as const,
+  };
+
   return (
-    <div style={{ cursor: "pointer" }}>
+    <div style={{ cursor: "pointer", zIndex: "25" }}>
       <span onClick={handleClickOpen}>{children}</span>
-      <Dialog
-        sx={{ backgroundColor: "transparent", color: "white" }}
-        open={isOpenDynamic}
-        onClose={handleClickClose}
-      >
-        <OpenComponents />
-      </Dialog>
+      {isOpenDynamic && (
+        <div
+          ref={handleModalRef}
+          style={{
+            ...modalStyles,
+          }}
+        >
+          <OpenComponents />
+        </div>
+      )}
     </div>
   );
 };
