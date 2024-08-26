@@ -1,31 +1,35 @@
-import { FC } from "react";
-import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
+import { FC, useMemo } from "react";
 
 import styles from "./total_purchase.module.scss";
+import { CartItemsTotalType } from "../../../../features/redux/reducers/special-reducers/shop-reducers/cartItemsReducer";
 
-const TotalPurchase: FC = () => {
-  const getTotal = useAppSelector((state) => state.cartItems.cartItemsTotal);
+interface TotalPurchasePropsType {
+  getTotal: CartItemsTotalType;
+}
+
+const TotalPurchase: FC<TotalPurchasePropsType> = ({ getTotal }) => {
+  const totalRender = useMemo(() => getTotal, [getTotal]);
 
   return (
     <div className={styles.div}>
       <div className={styles.subdiv_header}>
         <p>Общая сумма</p>
-        <p>₽ {getTotal.totalPrice}</p>
+        <p>₽ {totalRender.totalPrice}</p>
       </div>
       <div className={styles.subdiv_item}>
         <div>
           <p>
             Товары
-            <span>{`(х ${getTotal.typeProductsCount})`}</span>
+            <span>{`(х ${totalRender.typeProductsCount})`}</span>
           </p>
-          <p>₽ {getTotal.totalProductsPrice}</p>
+          <p>₽ {totalRender.totalProductsPrice}</p>
         </div>
         <div>
           <p>
             Тарифы
-            <span>{`(х ${getTotal.typeTarifesCount})`}</span>
+            <span>{`(х ${totalRender.typeTarifesCount})`}</span>
           </p>
-          <p>₽ {getTotal.totalTarifesPrice}</p>
+          <p>₽ {totalRender.totalTarifesPrice}</p>
         </div>
       </div>
     </div>

@@ -1,12 +1,11 @@
 import { FC } from "react";
 import { RedaxStateProps } from "../../../../../../../../commonTypes.interface";
 
-import CustomModalCloseHead from "../../../../../../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
 import CustomCounterInput from "../../../../../../../../common/static-components/custom-counter-input/CustomCounterInput";
 import CustomSelect from "../../../../../../../../common/static-components/custom-select/CustomSelect";
 import CustomDualButtonYesNo from "../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
-import styles from "./edit_pc_modal_window.module.scss";
+import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
 
 interface EditPcModalWindowPropsType extends RedaxStateProps {}
 
@@ -33,38 +32,34 @@ const EditPcModalWindow: FC<EditPcModalWindowPropsType> = ({
   redaxStateKey,
 }) => {
   return (
-    <div className={styles.div}>
-      <div>
-        <CustomModalCloseHead
-          redaxStateKey={redaxStateKey}
-          text="Редактирование"
-          specialText="ПК-13"
-        />
-      </div>
-      <div>
-        <CustomCounterInput label="Номер компьютера" />
-      </div>
-      <div>
-        <CustomSelect
-          customSelectData={dataSelect}
-          title="Группа ПК"
-          selectTitle="Выберите группу для данного ПК"
-        />
-      </div>
-      <div>
-        <CustomSelect
-          customSelectData={dataSelect}
-          title="Отнести ПК к комнате"
-          selectTitle="Выберите комнату для данного ПК"
-        />
-      </div>
-      <div>
-        <CustomDualButtonYesNo
-          redaxStateKey={redaxStateKey}
-          buttonRightText="Готово"
-        />
-      </div>
-    </div>
+    <CutomModalWindowUniversal
+      redaxStateKey={redaxStateKey}
+      title="Редактирование"
+      specialText="ПК-13"
+      components={[
+        () => <CustomCounterInput label="Номер компьютера" />,
+        () => (
+          <CustomSelect
+            customSelectData={dataSelect}
+            title="Группа ПК"
+            selectTitle="Выберите группу для данного ПК"
+          />
+        ),
+        () => (
+          <CustomSelect
+            customSelectData={dataSelect}
+            title="Отнести ПК к комнате"
+            selectTitle="Выберите комнату для данного ПК"
+          />
+        ),
+        () => (
+          <CustomDualButtonYesNo
+            redaxStateKey={redaxStateKey}
+            buttonRightText="Готово"
+          />
+        ),
+      ]}
+    />
   );
 };
 

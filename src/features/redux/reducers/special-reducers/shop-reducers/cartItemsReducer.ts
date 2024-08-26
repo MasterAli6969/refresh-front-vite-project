@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { selectPropductType } from "../../../../../components/shop/shop.interface";
+import { SelectPropductType } from "../../../../../components/shop/shop.interface";
 
-export interface CartItemType extends selectPropductType {
+export interface CartItemType extends SelectPropductType {
   originPrice: number;
 }
 
@@ -34,7 +34,7 @@ const cartItemsSlice = createSlice({
   name: "cartItems",
   initialState: cartItemsReducerInitionalState,
   reducers: {
-    addNewProduct: (state, action: PayloadAction<selectPropductType>) => {
+    addNewProduct: (state, action: PayloadAction<SelectPropductType>) => {
       state.cartItem.push({
         ...action.payload,
         originPrice: action.payload.price,

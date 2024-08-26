@@ -1,27 +1,30 @@
 import { FC } from "react";
 
-import CustomModalCloseHead from "../../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
+import CustomInput from "../../../../common/static-components/custom-input/CustomInput";
+import CustomTextarea from "../../../../common/static-components/custom-textarea/CustomTextarea";
 
 import { RedaxStateProps } from "../../../../commonTypes.interface";
 
 import styles from "./cheque_return.module.scss";
+import CutomModalWindowUniversal from "../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
 
-export interface CutomModalWindowType1PropsType1 extends RedaxStateProps {
+export interface ChequeReturnPropsType extends RedaxStateProps {
   title: string;
   specialText?: string;
 }
 
-const ChequeReturn: FC<CutomModalWindowType1PropsType1> = ({
-  redaxStateKey,
-  title,
-  specialText,
-}) => {
+const ChequeReturn: FC<ChequeReturnPropsType> = ({ redaxStateKey, title }) => {
   return (
     <div className={styles.div}>
-      <CustomModalCloseHead
+      <CutomModalWindowUniversal
         redaxStateKey={redaxStateKey}
-        text={title}
-        specialText={specialText}
+        title={title}
+        components={[
+          () => <CustomInput placeholder="gog25" />,
+          () => <CustomInput placeholder="gog25" />,
+          () => <CustomInput placeholder="gog25" />,
+          () => <CustomTextarea plaseholder="gog25265" label="ascasc" />,
+        ]}
       />
     </div>
   );

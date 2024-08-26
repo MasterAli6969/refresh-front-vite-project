@@ -9,9 +9,13 @@ import CustomButton from "../../../../common/static-components/custom-button/Cus
 import styles from "./shop_sidebar.module.scss";
 import PaymentModalWindow from "./shop-sidebar-components/payment-modal-window/PaymentModalWindow";
 import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
-import CustomToggleButton from "../../../../common/static-components/custom-toggle-button/CustomToggleButton";
+import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
 
 const ShopSidebar: FC = () => {
+  const getCartItem = useAppSelector((state) => state.cartItems.cartItem);
+
+  const getTotal = useAppSelector((state) => state.cartItems.cartItemsTotal);
+
   return (
     <div className={styles.div}>
       <div className={styles.subdiv_header}>
@@ -29,7 +33,7 @@ const ShopSidebar: FC = () => {
         <ClientSearchInput />
       </div>
       <div>
-        <CartItem />
+        <CartItem getCartItem={getCartItem} />
       </div>
       <div className={styles.subdiv_footer}>
         <div>
@@ -37,7 +41,7 @@ const ShopSidebar: FC = () => {
           <CustomInput placeholder="Введите промокод" />
         </div>
         <div>
-          <TotalPurchase />
+          <TotalPurchase getTotal={getTotal} />
         </div>
         <CustomCenterModalOpenWrapper
           redaxStateKey="PaymentModalWindow"

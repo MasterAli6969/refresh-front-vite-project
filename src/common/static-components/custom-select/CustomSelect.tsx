@@ -9,7 +9,7 @@ export interface CustomSelectPropsType<T> {
   title?: string;
   selectTitle: string;
   customSelectData: T[];
-  mapDataToSelect: (data: T) => CustomSelectDataType;
+  mapDataToSelect?: (data: T) => CustomSelectDataType; // Сделано необязательным
   handleSelectId?: (key: string | number) => void;
 }
 
@@ -20,7 +20,10 @@ const CustomSelect = <T,>({
   mapDataToSelect,
   handleSelectId,
 }: CustomSelectPropsType<T>) => {
-  const mappedData = customSelectData.map(mapDataToSelect);
+  // Если mapDataToSelect не передан, используем данные напрямую
+  const mappedData = mapDataToSelect
+    ? customSelectData.map(mapDataToSelect)
+    : (customSelectData as unknown as CustomSelectDataType[]); // Приводим тип данных к нужному интерфейсу
 
   const handlerSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (handleSelectId) {

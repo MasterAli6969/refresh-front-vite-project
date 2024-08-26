@@ -2,6 +2,8 @@ import { FC, useMemo, useState } from "react";
 import InfoIconSmall from "../../assets/icons/InfoIconSmall.svg";
 import { transactionsTestData } from "./data";
 import styles from "./transactions.module.scss";
+import CustomCenterModalOpenWrapper from "../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
+import ChequeReturn from "./transactions-components/cheque-return-modal-window/ChequeReturn";
 
 interface TransactionDataTypes {
   id: number;
@@ -89,7 +91,17 @@ const Transactions: FC = () => {
           }}
         >
           <li>Повторная печать</li>
-          <li>Возврат</li>
+          <CustomCenterModalOpenWrapper
+            redaxStateKey="ChequeReturnModalWindow"
+            openComponents={() => (
+              <ChequeReturn
+                redaxStateKey="ChequeReturnModalWindow"
+                title="Возврат чека"
+              />
+            )}
+          >
+            <li>Возврат</li>
+          </CustomCenterModalOpenWrapper>
         </ul>
       )}
     </div>

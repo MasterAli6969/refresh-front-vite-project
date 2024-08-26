@@ -64,6 +64,16 @@ $light_gradient: linear-gradient(
   }
 }
 
+@mixin modalUniversal1Style {
+  display: flex;
+  flex-direction: column;
+  background-color: $fifth_color;
+  border: $border_style;
+  border-radius: $border_radius5;
+  padding: 1rem;
+  gap: 1rem;
+}
+
 //СТИЛИ ДЛЯ МОДАЛЬНЫХ ОКОН TYPE1
 @mixin modalType1Style {
   width: 23.75rem;

@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import { RedaxStateProps } from "../../../commonTypes.interface";
 
 import CustomModalCloseHead from "../../smart-component/custom-modal-close-head/CustomModalCloseHead";

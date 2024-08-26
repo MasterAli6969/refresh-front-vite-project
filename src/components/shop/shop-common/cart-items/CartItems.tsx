@@ -1,6 +1,5 @@
 import { FC, useMemo, useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
 
 import CardItemNone from "../../../../assets/icons/CardItemNone.svg";
 import DeleteTrashIcon from "../../../../assets/icons/DeleteTrashIcon.svg";
@@ -14,9 +13,11 @@ import {
 
 import styles from "./cart_items.module.scss";
 
-const CartItem: FC = () => {
-  const getCartItem = useAppSelector((state) => state.cartItems.cartItem);
+interface CartItemPropsType {
+  getCartItem: CartItemType[];
+}
 
+const CartItem: FC<CartItemPropsType> = ({ getCartItem }) => {
   const dispatch = useDispatch();
 
   const cartItemRender = useMemo(() => getCartItem, [getCartItem]);

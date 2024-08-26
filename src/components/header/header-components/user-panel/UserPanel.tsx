@@ -6,7 +6,7 @@ import OnlineIcon from "../../../../assets/icons/OnlineIcon.svg";
 import OfflineIcon from "../../../../assets/icons/OfflineIcon.svg";
 
 import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
-import CutomModalWindowType3 from "../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-type3/CutomModalWindowType3";
+import CutomModalWindowType3 from "../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-types/cutom-modal-window-type3/CutomModalWindowType3";
 import styles from "./user_panel.module.scss";
 
 export interface DropListItemTypes {

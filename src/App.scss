@@ -163,8 +163,6 @@ a {
   color: white;
 }
 
-/* Общие стили для тела    документа */
-
 /* Убираем контур у элементов, получающих фокус */
 a:focus,
 input:focus,
@@ -193,18 +191,4 @@ h4 {
 p {
   font-size: 0.75rem; /* 12px */
   line-height: 0.9rem; /* 14.4px */
-}
-
-.form-floating > .form-select {
-  padding: 0 1rem;
-}
-.form-select {
-  border: none !important;
-  padding: 0 1rem;
-  background-color: #141718 !important;
-}
-
-.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
-  background-color: transparent !important;
-  color: white !important;
 }

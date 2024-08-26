@@ -15,7 +15,7 @@ import ArrowChekRight from "../../../../../../assets/icons-svg-components/ArrowC
 import ReplenishmentBalanceModalWindows from "../../../../../../common/special-componet/replenishment-balance-modal-windows/ReplenishmentBalanceModalWindows";
 import CustomCenterModalOpenWrapper from "../../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 import ChangeLocationModalWindow from "./pc-icon-menu-modal-windows/change-location-modal-window/ChangeLocationModalWindow";
-import CutomModalWindowType2 from "../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-type2/CutomModalWindowType2";
+import CutomModalWindowType2 from "../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-types/cutom-modal-window-type2/CutomModalWindowType2";
 import EditPcModalWindow from "./pc-icon-menu-modal-windows/edit-pc-modal-window/EditPcModalWindow";
 import ScreenshotSavedModalWindows from "./pc-icon-menu-modal-windows/screenshot-saved-modal-windows/ScreenshotSavedModalWindows";
 

@@ -8,7 +8,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+
+/* ТУТ СБРАСЫВАЮТСЯ ОБЩИЕ ГЛОБАЛЬНЫЕ СТИЛИ РАЗНЫХ БИБЛИТЕК ПРОЕКТА*/
+/* .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
   background-color: transparent !important;
   color: white !important;
+} */
+
+.form-floating > .form-select {
+  padding: 0 1rem;
+}
+.form-select {
+  border: none !important;
+  padding: 0 1rem;
+  background-color: #141718 !important;
 }

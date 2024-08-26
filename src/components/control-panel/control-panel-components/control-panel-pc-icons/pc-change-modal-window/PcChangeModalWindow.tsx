@@ -21,6 +21,7 @@ import {
   resetOnClickDynamic,
   setOnClickDynamic,
 } from "../../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
+import CutomModalWindowUniversal from "../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
 
 interface PcChangeModalWindowPropsType extends RedaxStateProps {}
 
@@ -75,23 +76,30 @@ const PcChangeModalWindow: FC<PcChangeModalWindowPropsType> = ({
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
-      <CustomModalCloseHead
+    <>
+      <CutomModalWindowUniversal
         redaxStateKey={redaxStateKey}
-        text="Перенос выбранных ПК в другую комнату"
+        title="Перенос выбранных ПК в другую комнату"
+        onSubmit={handleSubmit}
+        components={[
+          () => (
+            <CustomSelect
+              selectTitle="Выберите комнату"
+              customSelectData={roomTabsName}
+              mapDataToSelect={mapRoomTabsNameSelectData}
+              handleSelectId={handleRoomChange}
+            />
+          ),
+          () => (
+            <CustomDualButtonYesNo
+              isSubmit={true}
+              buttonRightText="Перенести"
+              redaxStateKey={redaxStateKey}
+            />
+          ),
+        ]}
       />
-      <CustomSelect
-        selectTitle="Выберите комнату"
-        customSelectData={roomTabsName}
-        mapDataToSelect={mapRoomTabsNameSelectData}
-        handleSelectId={handleRoomChange}
-      />
-      <CustomDualButtonYesNo
-        isSubmit={true}
-        buttonRightText="Перенести"
-        redaxStateKey={redaxStateKey}
-      />
-    </form>
+    </>
   );
 };
 

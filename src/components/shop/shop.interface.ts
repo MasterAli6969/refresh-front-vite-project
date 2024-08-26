@@ -1,4 +1,4 @@
-export interface selectPropductType {
+export interface SelectPropductType {
   id: number;
   name: string;
   price: number;

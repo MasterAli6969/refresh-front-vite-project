@@ -7,7 +7,7 @@ import {
 import { Grid } from "@mui/material";
 import Checkmark from "../../../../../../assets/icons/Checkmark.svg";
 
-import { selectPropductType } from "../../../../shop.interface";
+import { SelectPropductType } from "../../../../shop.interface";
 import { addNewProduct } from "../../../../../../features/redux/reducers/special-reducers/shop-reducers/cartItemsReducer";
 import { testProductData } from "../../../data";
 
@@ -37,7 +37,7 @@ const ProsuctItemList: FC<ProsuctItemListPropsType> = ({
   );
 
   const [selectPropduct, setSelectPropduct] =
-    useState<selectPropductType | null>(null);
+    useState<SelectPropductType | null>(null);
 
   const dispatch = useAppDispatch();
 

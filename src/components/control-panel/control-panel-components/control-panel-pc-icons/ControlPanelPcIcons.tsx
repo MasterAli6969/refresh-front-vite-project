@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { FC, useCallback, useEffect, useState } from "react";
 import {
   useAppDispatch,
