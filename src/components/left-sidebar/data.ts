@@ -17,13 +17,13 @@ export const leftSidebarData = [
   },
   {
     id: 2,
-    url: "/shop",
+    url: "shop",
     icon: IconStore,
     text: "Магазин",
   },
   {
     id: 3,
-    url: "/transactions",
+    url: "transactions",
     icon: Iconlighting,
     text: "Транзакции",
   },

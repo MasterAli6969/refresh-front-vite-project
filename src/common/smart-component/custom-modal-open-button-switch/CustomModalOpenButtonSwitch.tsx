@@ -1,4 +1,4 @@
-import { FC, useState, useEffect, useRef } from "react";
+import { FC, useState, useEffect, useRef, useCallback } from "react";
 import classNames from "classnames";
 
 import CustomSwitchButton from "../../static-components/custom-switch-button/CustomSwitchButton";
@@ -26,11 +26,11 @@ const CustomModalOpenButtonSwitch: FC<CustomModalOpenButtonSwitchPropsType> = ({
     setActiveButton(!activeButton);
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
+  const handleClickOutside = useCallback((event: MouseEvent) => {
     if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
       setActiveButton(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     if (activeButton) {
@@ -42,7 +42,7 @@ const CustomModalOpenButtonSwitch: FC<CustomModalOpenButtonSwitchPropsType> = ({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [activeButton]);
+  }, [activeButton, handleClickOutside]);
 
   return (
     <div className={styles.div}>

@@ -127,3 +127,19 @@ $light_gradient: linear-gradient(
   border-radius: $border_radius16;
   padding: 1rem;
 }
+
+@mixin PopoverMenuUl {
+  background-color: $special_primary_color;
+  border: $border_style;
+  border-radius: $border_radius10;
+  display: inline-block;
+  max-width: 100%;
+  > li {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    &:hover {
+      background-color: $hover_color;
+    }
+  }
+}
