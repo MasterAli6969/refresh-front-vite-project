@@ -10,6 +10,7 @@ export interface CutomModalWindowUniversalPropsType extends RedaxStateProps {
   specialText?: string;
   onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
   components: FC[];
+  width?: string; // Строка для ширины
 }
 
 const CutomModalWindowUniversal: FC<CutomModalWindowUniversalPropsType> = ({
@@ -18,23 +19,26 @@ const CutomModalWindowUniversal: FC<CutomModalWindowUniversalPropsType> = ({
   specialText,
   components,
   onSubmit,
+  width = "100%", // Значение по умолчанию, если пропс не передан
 }) => {
   return (
-    <form onSubmit={onSubmit} className={styles.form}>
+    <form
+      style={{ width }} // Используем `width` напрямую
+      onSubmit={onSubmit}
+      className={styles.form}
+    >
       <CustomModalCloseHead
         redaxStateKey={redaxStateKey}
         text={title}
         specialText={specialText}
       />
       {components &&
-        components.length != 0 &&
-        components.map((Components, index) => {
-          return (
-            <div key={index}>
-              <Components />
-            </div>
-          );
-        })}
+        components.length !== 0 &&
+        components.map((Component, index) => (
+          <div key={index}>
+            <Component />
+          </div>
+        ))}
     </form>
   );
 };

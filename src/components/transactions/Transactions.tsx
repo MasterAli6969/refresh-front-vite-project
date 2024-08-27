@@ -1,9 +1,21 @@
-import { FC, useMemo, useState } from "react";
+import { FC, useCallback, useEffect, useMemo, useState } from "react";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../features/redux/hooks/reduxRootHooks";
+
 import InfoIconSmall from "../../assets/icons/InfoIconSmall.svg";
-import { transactionsTestData } from "./data";
-import styles from "./transactions.module.scss";
 import CustomCenterModalOpenWrapper from "../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 import ChequeReturn from "./transactions-components/cheque-return-modal-window/ChequeReturn";
+
+import { transactionsTestData } from "./data";
+import { SelectPropductType } from "../shop/shop.interface";
+
+import styles from "./transactions.module.scss";
+import {
+  addNewProduct,
+  clearCart,
+} from "../../features/redux/reducers/special-reducers/shop-reducers/cartItemsReducer";
 
 interface TransactionDataTypes {
   id: number;
@@ -13,12 +25,22 @@ interface TransactionDataTypes {
   paymentMethod: string;
   amount: number;
   transactionDetails: number;
+  positionsProduct: SelectPropductType[];
   transactionID: string;
   transactionStatus: string;
 }
 
 const Transactions: FC = () => {
+  const reduxCartItemsReducerStateKey = "transactionsProduct";
+
+  const isModalOpen = useAppSelector(
+    (state) =>
+      state.toggleDynamic.modalStates["ChequeReturnModalWindow"] ?? false
+  );
+
   const transactionsData = useMemo(() => transactionsTestData, []);
+
+  const dispatch = useAppDispatch();
 
   const [activeItemId, setActiveItemId] = useState<number | null>(null);
   const [menuPosition, setMenuPosition] = useState<{
@@ -26,21 +48,54 @@ const Transactions: FC = () => {
     left: number;
   } | null>(null);
 
-  const handleBarClick = (
-    event: React.MouseEvent<HTMLDivElement>,
-    id: number
-  ) => {
-    if (activeItemId === id) {
-      setActiveItemId(null);
-    } else {
-      const rect = event.currentTarget.getBoundingClientRect();
-      setMenuPosition({
-        top: rect.top + window.scrollY + event.clientY - rect.top,
-        left: rect.left + window.scrollX + event.clientX - rect.left,
+  const handleBarClick = useCallback(
+    (event: React.MouseEvent<HTMLDivElement>, id: number) => {
+      if (activeItemId === id) {
+        setActiveItemId(null);
+      } else {
+        const rect = event.currentTarget.getBoundingClientRect();
+        setMenuPosition({
+          top: rect.top + window.scrollY + event.clientY - rect.top,
+          left: rect.left + window.scrollX + event.clientX - rect.left,
+        });
+
+        setActiveItemId(id);
+      }
+    },
+    [activeItemId]
+  );
+
+  const handlePostProductModal = useCallback(() => {
+    if (isModalOpen) {
+      const positionsProductFind =
+        transactionsData.find((item) => item.id === activeItemId)
+          ?.positionsProduct || [];
+      positionsProductFind.forEach((product) => {
+        dispatch(
+          addNewProduct({
+            key: reduxCartItemsReducerStateKey,
+            product: product,
+          })
+        );
+        console.log("открыто ли окно", product);
       });
-      setActiveItemId(id);
+    } else {
+      dispatch(clearCart(reduxCartItemsReducerStateKey));
     }
-  };
+  }, [activeItemId, dispatch, isModalOpen]);
+
+  useEffect(() => {
+    handlePostProductModal();
+  }, [handlePostProductModal]);
+
+  // useEffect(() => {
+  //   console.log("Текущее значение isModalOpen:", isModalOpen);
+  //   if (isModalOpen) {
+  //     console.log("Модальное окно открыто");
+  //   } else {
+  //     console.log("Модальное окно закрыто");
+  //   }
+  // }, [isModalOpen]);
 
   return (
     <div className={styles.div}>
@@ -72,8 +127,17 @@ const Transactions: FC = () => {
                 {transaction.transactionDetails} позиции
                 <img src={InfoIconSmall} alt="Info" />
                 <ul>
-                  <li>GOG 1</li>
-                  <li>GOG 2</li>
+                  {transaction.positionsProduct.map(
+                    (item: SelectPropductType) => {
+                      return (
+                        <li key={item.id}>
+                          <p>{item.name}</p>
+                          <p>{item.pieceСount}</p>
+                          <p>{item.price}</p>
+                        </li>
+                      );
+                    }
+                  )}
                 </ul>
               </td>
               <td>ID: {transaction.transactionID}</td>
@@ -91,17 +155,19 @@ const Transactions: FC = () => {
           }}
         >
           <li>Повторная печать</li>
-          <CustomCenterModalOpenWrapper
-            redaxStateKey="ChequeReturnModalWindow"
-            openComponents={() => (
-              <ChequeReturn
-                redaxStateKey="ChequeReturnModalWindow"
-                title="Возврат чека"
-              />
-            )}
-          >
-            <li>Возврат</li>
-          </CustomCenterModalOpenWrapper>
+          <li>
+            <CustomCenterModalOpenWrapper
+              redaxStateKey="ChequeReturnModalWindow"
+              openComponents={() => (
+                <ChequeReturn
+                  redaxStateKey="ChequeReturnModalWindow"
+                  title="Возврат чека"
+                />
+              )}
+            >
+              Возврат
+            </CustomCenterModalOpenWrapper>
+          </li>
         </ul>
       )}
     </div>

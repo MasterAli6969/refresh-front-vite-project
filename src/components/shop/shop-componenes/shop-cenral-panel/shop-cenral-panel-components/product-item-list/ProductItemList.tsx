@@ -1,4 +1,5 @@
 import { FC, useCallback, useEffect, useState } from "react";
+import { createSelector } from "reselect";
 import {
   useAppDispatch,
   useAppSelector,
@@ -21,15 +22,17 @@ export interface productDataType {
   type: string;
 }
 
-export interface ProsuctItemListPropsType {
+export interface ProductItemListPropsType {
   productRenderType: string;
   searchInputValue: string;
 }
 
-const ProsuctItemList: FC<ProsuctItemListPropsType> = ({
+const ProductItemList: FC<ProductItemListPropsType> = ({
   searchInputValue,
   productRenderType,
 }) => {
+  const reduxCartItemsReducerStateKey = "shopProduct";
+
   const [productsData, setProductsData] = useState<productDataType[]>([]);
 
   const [filteredProducts, setFilteredProducts] = useState<productDataType[]>(
@@ -41,7 +44,9 @@ const ProsuctItemList: FC<ProsuctItemListPropsType> = ({
 
   const dispatch = useAppDispatch();
 
-  const cartItems = useAppSelector((state) => state.cartItems.cartItem);
+  const cartItems = useAppSelector(
+    (state) => state.cartItems[reduxCartItemsReducerStateKey]?.cartItem || []
+  );
 
   const handleGetTestData = useCallback(() => {
     setProductsData(testProductData);
@@ -77,10 +82,15 @@ const ProsuctItemList: FC<ProsuctItemListPropsType> = ({
         (item) => item.id === selectPropduct.id
       );
       if (!productExists) {
-        dispatch(addNewProduct(selectPropduct));
+        dispatch(
+          addNewProduct({
+            key: reduxCartItemsReducerStateKey,
+            product: selectPropduct,
+          })
+        );
       }
     }
-  }, [dispatch, selectPropduct, cartItems]);
+  }, [selectPropduct]);
 
   useEffect(() => {
     handleGetTestData();
@@ -124,4 +134,4 @@ const ProsuctItemList: FC<ProsuctItemListPropsType> = ({
   );
 };
 
-export default ProsuctItemList;
+export default ProductItemList;

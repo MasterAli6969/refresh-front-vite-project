@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
 import { SelectPropductType } from "../../../../../components/shop/shop.interface";
 
 export interface CartItemType extends SelectPropductType {
@@ -14,57 +13,95 @@ export interface CartItemsTotalType {
   typeTarifesCount: number;
 }
 
-export interface СartItemsReducerInitionalStateType {
-  cartItem: CartItemType[];
-  cartItemsTotal: CartItemsTotalType;
+export interface CartStateType {
+  [key: string]: {
+    cartItem: CartItemType[];
+    cartItemsTotal: CartItemsTotalType;
+  };
 }
 
-const cartItemsReducerInitionalState: СartItemsReducerInitionalStateType = {
-  cartItem: [],
-  cartItemsTotal: {
-    totalPrice: 0,
-    totalProductsPrice: 0,
-    totalTarifesPrice: 0,
-    typeProductsCount: 0,
-    typeTarifesCount: 0,
-  },
-};
+const initialCartState: CartStateType = {};
 
 const cartItemsSlice = createSlice({
   name: "cartItems",
-  initialState: cartItemsReducerInitionalState,
+  initialState: initialCartState,
   reducers: {
-    addNewProduct: (state, action: PayloadAction<SelectPropductType>) => {
-      state.cartItem.push({
-        ...action.payload,
-        originPrice: action.payload.price,
-      });
+    addNewProduct: (
+      state,
+      action: PayloadAction<{ key: string; product: SelectPropductType }>
+    ) => {
+      const { key, product } = action.payload;
+      if (!state[key]) {
+        state[key] = {
+          cartItem: [],
+          cartItemsTotal: {
+            totalPrice: 0,
+            totalProductsPrice: 0,
+            totalTarifesPrice: 0,
+            typeProductsCount: 0,
+            typeTarifesCount: 0,
+          },
+        };
+      }
+      state[key].cartItem = [
+        ...state[key].cartItem,
+        { ...product, originPrice: product.price },
+      ];
     },
-    removeProduct: (state, action: PayloadAction<number | null>) => {
-      state.cartItem = state.cartItem.filter(
-        (item) => item.id !== action.payload
-      );
+    removeProduct: (
+      state,
+      action: PayloadAction<{ key: string; productId: number | null }>
+    ) => {
+      const { key, productId } = action.payload;
+      if (state[key]) {
+        state[key].cartItem = state[key].cartItem.filter(
+          (item) => item.id !== productId
+        );
+      }
+    },
+    clearCart: (state, action: PayloadAction<string>) => {
+      const key = action.payload;
+      if (state[key]) {
+        state[key].cartItem = [];
+        state[key].cartItemsTotal = {
+          totalPrice: 0,
+          totalProductsPrice: 0,
+          totalTarifesPrice: 0,
+          typeProductsCount: 0,
+          typeTarifesCount: 0,
+        };
+      }
     },
     updateProductQuantity: (
       state,
       action: PayloadAction<{
+        key: string;
         id: number;
         newPrice: number;
-        newPieceСount: number;
+        newPieceCount: number;
       }>
     ) => {
-      state.cartItem = state.cartItem.map((item) =>
-        item.id === action.payload.id
-          ? {
-              ...item,
-              price: action.payload.newPrice,
-              pieceСount: action.payload.newPieceСount,
-            }
-          : item
-      );
+      const { key, id, newPrice, newPieceCount } = action.payload;
+      if (state[key]) {
+        state[key].cartItem = state[key].cartItem.map((item) =>
+          item.id === id
+            ? {
+                ...item,
+                price: newPrice,
+                pieceCount: newPieceCount,
+              }
+            : item
+        );
+      }
     },
-    cartItemsTotal: (state, action: PayloadAction<CartItemsTotalType>) => {
-      state.cartItemsTotal = action.payload;
+    updateCartItemsTotal: (
+      state,
+      action: PayloadAction<{ key: string; totals: CartItemsTotalType }>
+    ) => {
+      const { key, totals } = action.payload;
+      if (state[key]) {
+        state[key].cartItemsTotal = totals;
+      }
     },
   },
 });
@@ -72,8 +109,9 @@ const cartItemsSlice = createSlice({
 export const {
   addNewProduct,
   removeProduct,
+  clearCart,
   updateProductQuantity,
-  cartItemsTotal,
+  updateCartItemsTotal,
 } = cartItemsSlice.actions;
 
 export default cartItemsSlice.reducer;

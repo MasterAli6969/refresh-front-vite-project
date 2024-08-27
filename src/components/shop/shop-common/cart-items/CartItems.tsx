@@ -5,7 +5,7 @@ import CardItemNone from "../../../../assets/icons/CardItemNone.svg";
 import DeleteTrashIcon from "../../../../assets/icons/DeleteTrashIcon.svg";
 
 import {
-  cartItemsTotal,
+  updateCartItemsTotal,
   CartItemType,
   removeProduct,
   updateProductQuantity,
@@ -18,6 +18,8 @@ interface CartItemPropsType {
 }
 
 const CartItem: FC<CartItemPropsType> = ({ getCartItem }) => {
+  const reduxCartItemsReducerStateKey = "shopProduct";
+
   const dispatch = useDispatch();
 
   const cartItemRender = useMemo(() => getCartItem, [getCartItem]);
@@ -39,9 +41,10 @@ const CartItem: FC<CartItemPropsType> = ({ getCartItem }) => {
       const quantityPieceСount = isIncrement ? pieceСount + 1 : pieceСount - 1;
       dispatch(
         updateProductQuantity({
+          key: reduxCartItemsReducerStateKey,
           id: id,
           newPrice: quantityPrice,
-          newPieceСount: quantityPieceСount > 0 ? quantityPieceСount : 1,
+          newPieceCount: quantityPieceСount > 0 ? quantityPieceСount : 1,
         })
       );
     },
@@ -78,12 +81,15 @@ const CartItem: FC<CartItemPropsType> = ({ getCartItem }) => {
 
   useEffect(() => {
     dispatch(
-      cartItemsTotal({
-        totalPrice: totalPrice,
-        totalProductsPrice: totalProductsPrice,
-        totalTarifesPrice: totalTarifesPrice,
-        typeProductsCount: typeProductsCount,
-        typeTarifesCount: typeTarifesCount,
+      updateCartItemsTotal({
+        key: reduxCartItemsReducerStateKey,
+        totals: {
+          totalPrice: totalPrice,
+          totalProductsPrice: totalProductsPrice,
+          totalTarifesPrice: totalTarifesPrice,
+          typeProductsCount: typeProductsCount,
+          typeTarifesCount: typeTarifesCount,
+        },
       })
     );
   }, [
@@ -97,7 +103,9 @@ const CartItem: FC<CartItemPropsType> = ({ getCartItem }) => {
 
   const handleRemoveProduct = useCallback(
     (id: number) => {
-      dispatch(removeProduct(id));
+      dispatch(
+        removeProduct({ key: reduxCartItemsReducerStateKey, productId: id })
+      );
     },
     [dispatch]
   );

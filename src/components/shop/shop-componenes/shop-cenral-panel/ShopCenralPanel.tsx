@@ -4,7 +4,7 @@ import CustomToggleButton from "../../../../common/static-components/custom-togg
 import CustomInput from "../../../../common/static-components/custom-input/CustomInput";
 
 import styles from "./shop_cenral_panel.module.scss";
-import ProsuctItemList from "./shop-cenral-panel-components/prosuct-item-list/ProsuctItemList";
+import ProductItemList from "./shop-cenral-panel-components/product-item-list/ProductItemList";
 
 const ShopCenralPanel: FC = () => {
   const [selectedPropductType, setSelectedPropductType] = useState<string>("");
@@ -36,7 +36,7 @@ const ShopCenralPanel: FC = () => {
         />
       </div>
       <div className={styles.subdiv_product_panel}>
-        <ProsuctItemList
+        <ProductItemList
           productRenderType={selectedPropductType}
           searchInputValue={searchPropduct}
         />

@@ -1,12 +1,11 @@
 import { FC } from "react";
-
-import CustomInput from "../../../../common/static-components/custom-input/CustomInput";
-import CustomTextarea from "../../../../common/static-components/custom-textarea/CustomTextarea";
+import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
 
 import { RedaxStateProps } from "../../../../commonTypes.interface";
 
 import styles from "./cheque_return.module.scss";
 import CutomModalWindowUniversal from "../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CartItem from "../../../shop/shop-common/cart-items/CartItems";
 
 export interface ChequeReturnPropsType extends RedaxStateProps {
   title: string;
@@ -14,17 +13,24 @@ export interface ChequeReturnPropsType extends RedaxStateProps {
 }
 
 const ChequeReturn: FC<ChequeReturnPropsType> = ({ redaxStateKey, title }) => {
+  const reduxCartItemsReducerStateKey = "transactionsProduct";
+
+  const productTransactionData = useAppSelector(
+    (state) => state.cartItems[reduxCartItemsReducerStateKey]?.cartItem || []
+  );
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+  };
+
   return (
     <div className={styles.div}>
       <CutomModalWindowUniversal
+        width="30rem"
+        onSubmit={handleSubmit}
         redaxStateKey={redaxStateKey}
         title={title}
-        components={[
-          () => <CustomInput placeholder="gog25" />,
-          () => <CustomInput placeholder="gog25" />,
-          () => <CustomInput placeholder="gog25" />,
-          () => <CustomTextarea plaseholder="gog25265" label="ascasc" />,
-        ]}
+        components={[() => <CartItem getCartItem={productTransactionData} />]}
       />
     </div>
   );

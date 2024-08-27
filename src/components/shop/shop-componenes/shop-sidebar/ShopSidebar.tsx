@@ -12,9 +12,16 @@ import CustomCenterModalOpenWrapper from "../../../../common/smart-component/cus
 import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
 
 const ShopSidebar: FC = () => {
-  const getCartItem = useAppSelector((state) => state.cartItems.cartItem);
+  const reduxCartItemsReducerStateKey = "shopProduct";
 
-  const getTotal = useAppSelector((state) => state.cartItems.cartItemsTotal);
+  const getCartItem = useAppSelector(
+    (state) => state.cartItems[reduxCartItemsReducerStateKey]?.cartItem || []
+  );
+
+  const getTotal = useAppSelector(
+    (state) =>
+      state.cartItems[reduxCartItemsReducerStateKey]?.cartItemsTotal || {}
+  );
 
   return (
     <div className={styles.div}>
