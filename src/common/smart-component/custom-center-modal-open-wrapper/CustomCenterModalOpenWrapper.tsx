@@ -23,7 +23,7 @@ const CustomCenterModalOpenWrapper: FC<
     (state) =>
       state.toggleDynamic.modalStates[
         redaxStateKey as keyof ToggleDynamicReduserStatesType["modalStates"]
-      ] ?? false // Добавлена защита от undefined
+      ] ?? false
   );
 
   const handleClickOpen = () => {

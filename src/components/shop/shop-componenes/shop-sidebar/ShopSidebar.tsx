@@ -1,27 +1,26 @@
-import { FC } from "react";
-
+import { FC, useCallback } from "react";
+import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
 import ClientSearchInput from "./shop-sidebar-components/client-search-input/ClientSearchInput";
 import CartItem from "../../shop-common/cart-items/CartItems";
 import CustomInput from "../../../../common/static-components/custom-input/CustomInput";
 import TotalPurchase from "../../shop-common/total-purchase/TotalPurchase";
 import CustomButton from "../../../../common/static-components/custom-button/CustomButton";
-
 import styles from "./shop_sidebar.module.scss";
 import PaymentModalWindow from "./shop-sidebar-components/payment-modal-window/PaymentModalWindow";
 import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
-import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
+import {
+  reduxCartItemsReducerStateKey,
+  selectCartItems,
+  selectCartItemsTotal,
+} from "../../shopCommonSelectorsMemo";
 
 const ShopSidebar: FC = () => {
-  const reduxCartItemsReducerStateKey = "shopProduct";
+  const getCartItem = useAppSelector(selectCartItems);
+  const getTotal = useAppSelector(selectCartItemsTotal);
 
-  const getCartItem = useAppSelector(
-    (state) => state.cartItems[reduxCartItemsReducerStateKey]?.cartItem || []
-  );
-
-  const getTotal = useAppSelector(
-    (state) =>
-      state.cartItems[reduxCartItemsReducerStateKey]?.cartItemsTotal || {}
-  );
+  const openPaymentModalWindow = useCallback(() => {
+    return <PaymentModalWindow redaxStateKey="PaymentModalWindow" />;
+  }, []);
 
   return (
     <div className={styles.div}>
@@ -40,7 +39,11 @@ const ShopSidebar: FC = () => {
         <ClientSearchInput />
       </div>
       <div>
-        <CartItem getCartItem={getCartItem} />
+        <CartItem
+          isProductRemove={true}
+          redaxStateKeyProduct={reduxCartItemsReducerStateKey}
+          getCartItem={getCartItem}
+        />
       </div>
       <div className={styles.subdiv_footer}>
         <div>
@@ -52,9 +55,7 @@ const ShopSidebar: FC = () => {
         </div>
         <CustomCenterModalOpenWrapper
           redaxStateKey="PaymentModalWindow"
-          openComponents={() => (
-            <PaymentModalWindow redaxStateKey="PaymentModalWindow" />
-          )}
+          openComponents={openPaymentModalWindow}
         >
           <CustomButton color="light" text="Перейти к выбору способа оплаты" />
         </CustomCenterModalOpenWrapper>

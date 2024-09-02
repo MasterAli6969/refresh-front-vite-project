@@ -10,12 +10,21 @@ import CustomDualButtonYesNo from "../../../../../../common/static-components/cu
 import { RedaxStateProps } from "../../../../../../commonTypes.interface";
 
 import styles from "./payment_modal_window.module.scss";
+import { useAppSelector } from "../../../../../../features/redux/hooks/reduxRootHooks";
+import {
+  reduxCartItemsReducerStateKey,
+  selectCartItems,
+  selectCartItemsTotal,
+} from "../../../../shopCommonSelectorsMemo";
 
 export interface PaymentModalWindowPropsType extends RedaxStateProps {}
 
 const PaymentModalWindow: FC<PaymentModalWindowPropsType> = ({
   redaxStateKey,
 }) => {
+  const getCartItem = useAppSelector(selectCartItems);
+  const getTotal = useAppSelector(selectCartItemsTotal);
+
   const [selectedPaymantType, setSelectedPaymantType] = useState<string>("");
 
   const handleToggleChange = (activeItem: string) => {
@@ -30,10 +39,14 @@ const PaymentModalWindow: FC<PaymentModalWindowPropsType> = ({
       />
       <div className={styles.sub_div}>
         <div className={styles.sub_div_left}>
-          <CartItem />
+          <CartItem
+            isProductRemove={true}
+            redaxStateKeyProduct={reduxCartItemsReducerStateKey}
+            getCartItem={getCartItem}
+          />
         </div>
         <div className={styles.sub_div_right}>
-          <TotalPurchase />
+          <TotalPurchase getTotal={getTotal} />
           <div>
             <p>Способ оплаты</p>
             <div>

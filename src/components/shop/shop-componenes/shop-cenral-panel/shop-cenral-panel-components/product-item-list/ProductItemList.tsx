@@ -69,10 +69,10 @@ const ProductItemList: FC<ProductItemListPropsType> = ({
 
   const handleSelectPropduct = (id: number) => {
     const product = productsData.find((p) => p.id === id);
-    const pieceСount = 1;
+    const pieceCount = 1;
     if (product) {
       const { id, name, price, type } = product;
-      setSelectPropduct({ id, name, price, pieceСount, type });
+      setSelectPropduct({ id, name, price, pieceCount, type });
     }
   };
 

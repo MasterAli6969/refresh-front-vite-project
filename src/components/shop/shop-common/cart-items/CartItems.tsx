@@ -14,22 +14,34 @@ import {
 import styles from "./cart_items.module.scss";
 
 interface CartItemPropsType {
+  redaxStateKeyProduct: string;
+  isProductRemove: boolean;
   getCartItem: CartItemType[];
 }
 
-const CartItem: FC<CartItemPropsType> = ({ getCartItem }) => {
-  const reduxCartItemsReducerStateKey = "shopProduct";
-
+const CartItem: FC<CartItemPropsType> = ({
+  getCartItem,
+  redaxStateKeyProduct,
+  isProductRemove,
+}) => {
   const dispatch = useDispatch();
 
   const cartItemRender = useMemo(() => getCartItem, [getCartItem]);
+
+  useEffect(() => {
+    console.log("ПРИХОДЯЩИЙ МАССИВ", cartItemRender);
+    console.log(
+      "АЙДИ ВСЕХ ТОВАРОВ",
+      cartItemRender.map((item) => item.pieceCount)
+    );
+  }, [cartItemRender]);
 
   const handleUpdateProductQuantity = useCallback(
     (
       id: number,
       defaultPrice: number,
       currentPrice: number,
-      pieceСount: number,
+      pieceCount: number,
       isIncrement: boolean
     ) => {
       const quantityPrice = isIncrement
@@ -38,17 +50,18 @@ const CartItem: FC<CartItemPropsType> = ({ getCartItem }) => {
         ? currentPrice - defaultPrice
         : defaultPrice;
 
-      const quantityPieceСount = isIncrement ? pieceСount + 1 : pieceСount - 1;
+      const quantityPieceCount = isIncrement ? pieceCount + 1 : pieceCount - 1;
+
       dispatch(
         updateProductQuantity({
-          key: reduxCartItemsReducerStateKey,
+          key: redaxStateKeyProduct,
           id: id,
           newPrice: quantityPrice,
-          newPieceCount: quantityPieceСount > 0 ? quantityPieceСount : 1,
+          newPieceCount: quantityPieceCount > 0 ? quantityPieceCount : 1,
         })
       );
     },
-    [dispatch]
+    [dispatch, redaxStateKeyProduct]
   );
 
   const totalPrice = useMemo(() => {
@@ -79,10 +92,10 @@ const CartItem: FC<CartItemPropsType> = ({ getCartItem }) => {
     (item) => item.type === "tariff"
   ).length;
 
-  useEffect(() => {
+  const handleUpdateCartItemsTotal = useCallback(() => {
     dispatch(
       updateCartItemsTotal({
-        key: reduxCartItemsReducerStateKey,
+        key: redaxStateKeyProduct,
         totals: {
           totalPrice: totalPrice,
           totalProductsPrice: totalProductsPrice,
@@ -94,6 +107,7 @@ const CartItem: FC<CartItemPropsType> = ({ getCartItem }) => {
     );
   }, [
     dispatch,
+    redaxStateKeyProduct,
     totalPrice,
     totalProductsPrice,
     totalTarifesPrice,
@@ -101,11 +115,13 @@ const CartItem: FC<CartItemPropsType> = ({ getCartItem }) => {
     typeTarifesCount,
   ]);
 
+  useEffect(() => {
+    handleUpdateCartItemsTotal();
+  }, [handleUpdateCartItemsTotal]);
+
   const handleRemoveProduct = useCallback(
     (id: number) => {
-      dispatch(
-        removeProduct({ key: reduxCartItemsReducerStateKey, productId: id })
-      );
+      dispatch(removeProduct({ key: redaxStateKeyProduct, productId: id }));
     },
     [dispatch]
   );
@@ -131,9 +147,14 @@ const CartItem: FC<CartItemPropsType> = ({ getCartItem }) => {
                 <div className={styles.subdiv_total}>
                   <p>₽ {item.price}</p>
                   <div>
-                    <button onClick={() => handleRemoveProduct(item.id)}>
-                      <img src={DeleteTrashIcon} />
-                    </button>
+                    {isProductRemove ? (
+                      <button onClick={() => handleRemoveProduct(item.id)}>
+                        <img src={DeleteTrashIcon} />
+                      </button>
+                    ) : (
+                      ""
+                    )}
+
                     <div>
                       <button
                         onClick={() =>
@@ -141,21 +162,21 @@ const CartItem: FC<CartItemPropsType> = ({ getCartItem }) => {
                             item.id,
                             item.originPrice,
                             item.price,
-                            item.pieceСount,
+                            item.pieceCount,
                             false
                           )
                         }
                       >
                         -
                       </button>
-                      <p>{item.pieceСount}</p>
+                      <p>{item.pieceCount}</p>
                       <button
                         onClick={() =>
                           handleUpdateProductQuantity(
                             item.id,
                             item.originPrice,
                             item.price,
-                            item.pieceСount,
+                            item.pieceCount,
                             true
                           )
                         }

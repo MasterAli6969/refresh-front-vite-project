@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useCallback, useEffect } from "react";
 import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
 
 import { RedaxStateProps } from "../../../../commonTypes.interface";
@@ -6,6 +6,12 @@ import { RedaxStateProps } from "../../../../commonTypes.interface";
 import styles from "./cheque_return.module.scss";
 import CutomModalWindowUniversal from "../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
 import CartItem from "../../../shop/shop-common/cart-items/CartItems";
+import {
+  reduxCartItemsReducerStateKeyTransactions,
+  selectCartItems,
+  selectCartItemsTotal,
+} from "../../transactionsCommonSelectMemo";
+import TotalPurchase from "../../../shop/shop-common/total-purchase/TotalPurchase";
 
 export interface ChequeReturnPropsType extends RedaxStateProps {
   title: string;
@@ -13,11 +19,18 @@ export interface ChequeReturnPropsType extends RedaxStateProps {
 }
 
 const ChequeReturn: FC<ChequeReturnPropsType> = ({ redaxStateKey, title }) => {
-  const reduxCartItemsReducerStateKey = "transactionsProduct";
+  const getCartItem = useAppSelector(selectCartItems);
+  const getTotal = useAppSelector(selectCartItemsTotal);
 
-  const productTransactionData = useAppSelector(
-    (state) => state.cartItems[reduxCartItemsReducerStateKey]?.cartItem || []
-  );
+  const cartItemMemoRender = useCallback(() => {
+    return (
+      <CartItem
+        isProductRemove={false}
+        redaxStateKeyProduct={reduxCartItemsReducerStateKeyTransactions}
+        getCartItem={getCartItem}
+      />
+    );
+  }, [getCartItem]);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -30,7 +43,10 @@ const ChequeReturn: FC<ChequeReturnPropsType> = ({ redaxStateKey, title }) => {
         onSubmit={handleSubmit}
         redaxStateKey={redaxStateKey}
         title={title}
-        components={[() => <CartItem getCartItem={productTransactionData} />]}
+        components={[
+          cartItemMemoRender,
+          () => <TotalPurchase getTotal={getTotal} />,
+        ]}
       />
     </div>
   );

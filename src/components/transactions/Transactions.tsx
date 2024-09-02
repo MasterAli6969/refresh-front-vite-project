@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useMemo, useState } from "react";
+import { FC, useState, useEffect, useCallback, useMemo } from "react";
 import {
   useAppDispatch,
   useAppSelector,
@@ -16,6 +16,7 @@ import {
   addNewProduct,
   clearCart,
 } from "../../features/redux/reducers/special-reducers/shop-reducers/cartItemsReducer";
+import { reduxCartItemsReducerStateKeyTransactions } from "./transactionsCommonSelectMemo";
 
 interface TransactionDataTypes {
   id: number;
@@ -31,8 +32,6 @@ interface TransactionDataTypes {
 }
 
 const Transactions: FC = () => {
-  const reduxCartItemsReducerStateKey = "transactionsProduct";
-
   const isModalOpen = useAppSelector(
     (state) =>
       state.toggleDynamic.modalStates["ChequeReturnModalWindow"] ?? false
@@ -73,29 +72,19 @@ const Transactions: FC = () => {
       positionsProductFind.forEach((product) => {
         dispatch(
           addNewProduct({
-            key: reduxCartItemsReducerStateKey,
+            key: reduxCartItemsReducerStateKeyTransactions,
             product: product,
           })
         );
-        console.log("открыто ли окно", product);
       });
     } else {
-      dispatch(clearCart(reduxCartItemsReducerStateKey));
+      dispatch(clearCart(reduxCartItemsReducerStateKeyTransactions));
     }
   }, [activeItemId, dispatch, isModalOpen]);
 
   useEffect(() => {
     handlePostProductModal();
   }, [handlePostProductModal]);
-
-  // useEffect(() => {
-  //   console.log("Текущее значение isModalOpen:", isModalOpen);
-  //   if (isModalOpen) {
-  //     console.log("Модальное окно открыто");
-  //   } else {
-  //     console.log("Модальное окно закрыто");
-  //   }
-  // }, [isModalOpen]);
 
   return (
     <div className={styles.div}>
@@ -132,7 +121,7 @@ const Transactions: FC = () => {
                       return (
                         <li key={item.id}>
                           <p>{item.name}</p>
-                          <p>{item.pieceСount}</p>
+                          <p>{item.pieceCount}</p>
                           <p>{item.price}</p>
                         </li>
                       );

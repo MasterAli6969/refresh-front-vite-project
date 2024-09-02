@@ -2,6 +2,6 @@ export interface SelectPropductType {
   id: number;
   name: string;
   price: number;
-  pieceСount: number;
+  pieceCount: number;
   type: string;
 }
