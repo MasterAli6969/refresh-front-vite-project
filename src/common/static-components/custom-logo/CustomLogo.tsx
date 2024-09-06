@@ -1,7 +1,7 @@
 import { FC } from "react";
 import classNames from "classnames";
 
-import RefreshLogo from "../../../assets/img/RefreshLogo.png";
+import RefreshNewLogo from "../../../assets/img/RefreshNewLogo.png";
 
 import styles from "./custom_logo.module.scss";
 
@@ -19,8 +19,7 @@ const CustomLogo: FC<CustomLogoPropsType> = ({ display, isLabale }) => {
       })}
     >
       <div className={styles.subdiv}>
-        <img src={RefreshLogo} />
-        <h1>REFRESH</h1>
+        <img src={RefreshNewLogo} />
       </div>
       {isLabale && <h3>{isLabale}</h3>}
     </div>

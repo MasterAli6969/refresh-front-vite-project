@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ListLinkType } from "../../../../../../commonTypes.interface";
+import { ListType } from "../../../../../../commonTypes.interface";
 //ИКОНКИ
 import UserPenaltyModalWindow from "./pc-icon-menu-modal-windows/user-penalty-modal-window/UserPenaltyModalWindow";
 import UserMiniIcon from "../../../../../../assets/icons/UserMiniIcon.svg";
@@ -24,13 +24,13 @@ import styles from "./pc_icon_menu.module.scss";
 export interface DropDataObjectType {
   client: string;
   timeLeft: string;
-  dropDataItem: ListLinkType[];
+  dropDataItem: ListType[];
 }
 
 // Тип для pcIconModalWindowData
 export interface PcIconMenuDataType {
   dropData?: DropDataObjectType;
-  modalListItem: ListLinkType[];
+  modalListItem: ListType[];
 }
 
 export interface PcIconMenuPropsData {

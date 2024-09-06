@@ -4,7 +4,6 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../../../../features/redux/hooks/reduxRootHooks";
-import CustomModalCloseHead from "../../../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
 import CustomSelect, {
   CustomSelectDataType,
 } from "../../../../../common/static-components/custom-select/CustomSelect";
@@ -12,7 +11,6 @@ import CustomDualButtonYesNo from "../../../../../common/static-components/custo
 import { RoomTabObjectTypes } from "../../../../../features/redux/reducers/special-reducers/control-panel-reducers/roomTabsEditReducer";
 import { setSaveDynamicNumber } from "../../../../../features/redux/reducers/common-reducers/saveNumberDynamicReduser";
 
-import styles from "./pc_change_modal_window.module.scss";
 import {
   resetModals,
   setToggleDynamic,

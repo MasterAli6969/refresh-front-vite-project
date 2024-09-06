@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ListLinkType } from "../../../../../../commonTypes.interface";
+import { ListType } from "../../../../../../commonTypes.interface";
 
 import ClockTimeIcon from "../../../../../../assets/icons/ClockTimeIcon.svg";
 import ArrowChekRight from "../../../../../../assets/icons-svg-components/ArrowChekRight";
@@ -15,7 +15,7 @@ export interface SearchMenuDataType {
   name: string;
   paymentAmount: string;
   timeLeft: string;
-  hoverSubMenuItem: ListLinkType[];
+  hoverSubMenuItem: ListType[];
 }
 
 export interface SearchMenuPropsType {

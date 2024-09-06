@@ -31,6 +31,7 @@ module.exports = {
     ],
     "react/jsx-uses-react": "off", // Эти правила не нужны с React 17+
     "react/react-in-jsx-scope": "off", // Эти правила не нужны с React 17+
+    "react-hooks/exhaustive-deps": "off",
     "import/no-unresolved": "error", // Ошибка при неверных импортах
     "import/named": "error",
     "import/default": "error",

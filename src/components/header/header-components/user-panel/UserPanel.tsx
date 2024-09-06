@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
 import classNames from "classnames";
 

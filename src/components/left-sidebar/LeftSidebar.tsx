@@ -1,40 +1,28 @@
 // 1. Импорты из библиотек React и других внешних библиотек
+
+//ТУТ НУЖНО РАЗОБРАТЬ ПОЧЕМУ У НАС НЕ РАБОТАЕТ dropMenuItem И ЕГО rightContextMenuItem НУЖНО РЕОРГАНИЗОВАТЬ ПРОЦЕССЫ РЕНДЕРА
+
 import { FC, useState, useEffect } from "react";
 import classNames from "classnames";
-import { PropsIcon } from "../../assets/icons-svg-components/props.interface";
-import { ListLinkType } from "../../commonTypes.interface";
 
 import ArrowChekRight from "../../assets/icons-svg-components/ArrowChekRight";
 import CustomLogo from "../../common/static-components/custom-logo/CustomLogo";
 
-import LeftDropList from "./left-sidebar-components/left-drop-list/LeftDropList";
-import {
-  leftSidebarData,
-  leftDropListStaticData,
-  leftDropListDropData,
-} from "./data";
+import { PropsIcon } from "../../assets/icons-svg-components/props.interface";
+import { leftSidebarData } from "./data";
 
 import styles from "./left_sidebar.module.scss";
+import { ListType } from "../../commonTypes.interface";
+import DropListWrapper from "./left-sidebar-components/drop-list-wrapper/DropListWrapper";
+import CustomMenuRightOpenWrapper from "../../common/smart-component/custom-menu-right-open-wrapper/CustomMenuRightOpenWrapper";
+import CustomStatickList from "../../common/static-components/custom-statick-list/CustomStatickList";
 
 export interface leftSidebarDataType {
   id: number;
   url: string;
   icon: FC<PropsIcon>;
   text: string;
-}
-
-export interface LeftDropListStaticDataType extends ListLinkType {}
-
-export interface LeftDropListDropMenuDataType {
-  id: number;
-  title: string;
-  customListDropItem?: ListLinkType[];
-  url?: string;
-}
-
-export interface LeftDropListDataProps {
-  leftDropListStaticData?: LeftDropListStaticDataType[];
-  leftDropListDropData?: LeftDropListDropMenuDataType[];
+  dropMenuItem?: ListType[];
 }
 
 const LeftSidebar: FC = () => {
@@ -60,7 +48,6 @@ const LeftSidebar: FC = () => {
           <h1>Ooops, server error, please wait...</h1>
         ) : (
           leftSidebarData.map((item: leftSidebarDataType) => {
-            const Icon = item.icon;
             return (
               <li
                 key={item.id}
@@ -69,36 +56,23 @@ const LeftSidebar: FC = () => {
                 })}
                 onClick={() => handleLiClick(item.id)}
               >
-                <a href={item.url}>
-                  <div>
-                    <div>
-                      <Icon
-                        color={activeItemId === item.id ? "#3e90f0" : "#6c7275"}
-                      />
-                    </div>
-                    {item.text}
-                  </div>
-                  {(item.id === 7 || item.id === 9) && (
-                    <div>
-                      <ArrowChekRight color="#6C7275" />
-                    </div>
-                  )}
-                </a>
+                {item.id === 6 || item.id === 8 ? (
+                  <DropListWrapper dropMenuRender={item.dropMenuItem}>
+                    <h4>{item.text}</h4>
+                  </DropListWrapper>
+                ) : (
+                  <a href={item.url}>
+                    <h4>{item.text}</h4>
+                  </a>
+                )}
               </li>
             );
           })
         )}
-        {activeItemId === 7 && (
-          <li className={styles.right_list}>
-            <LeftDropList leftDropListStaticData={leftDropListStaticData} />
-          </li>
-        )}
-        {activeItemId === 9 && (
-          <li className={styles.right_list}>
-            <LeftDropList leftDropListDropData={leftDropListDropData} />
-          </li>
-        )}
       </ul>
+      <div>
+        <ArrowChekRight color="#6C7275" />
+      </div>
     </div>
   );
 };

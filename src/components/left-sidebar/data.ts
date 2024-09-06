@@ -1,171 +1,225 @@
-import IconMonitor from "../../assets/icons-svg-components/IconMonitor";
-import IconStore from "../../assets/icons-svg-components/IconStore";
-import Iconlighting from "../../assets/icons-svg-components/Iconlighting";
-import IconCube from "../../assets/icons-svg-components/IconCube";
-import IconUserGroup from "../../assets/icons-svg-components/IconUserGroup";
-import IconCalendarPlus from "../../assets/icons-svg-components/IconCalendarPlus";
-import IconLoader from "../../assets/icons-svg-components/IconLoader";
-import IconLineChart from "../../assets/icons-svg-components/IconLineChart";
-import IconNut from "../../assets/icons-svg-components/IconNut";
+import ControlPanelIcon from "../../assets/icons-svg-components/left-sidebar-icons/ControlPanelIcon";
+import ShopIcon from "../../assets/icons-svg-components/left-sidebar-icons/ShopIcon";
+import TransactionsIcon from "../../assets/icons-svg-components/left-sidebar-icons/TransactionsIcon";
+import UsersIcon from "../../assets/icons-svg-components/left-sidebar-icons/UsersIcon";
+import ReservationsIcon from "../../assets/icons-svg-components/left-sidebar-icons/ReservationsIcon";
+import HistoryIcon from "../../assets/icons-svg-components/left-sidebar-icons/HistoryIcon";
+import StatisticsIcon from "../../assets/icons-svg-components/left-sidebar-icons/StatisticsIcon";
+import SettingsIcon from "../../assets/icons-svg-components/left-sidebar-icons/SettingsIcon";
+import MessagesIcon from "../../assets/icons-svg-components/left-sidebar-icons/MessagesIcon";
+import NotificationsIcons from "../../assets/icons-svg-components/left-sidebar-icons/NotificationsIcons";
+import KnowledgeBaseIcon from "../../assets/icons-svg-components/left-sidebar-icons/KnowledgeBaseIcon";
 
 export const leftSidebarData = [
   {
     id: 1,
     url: "#",
-    icon: IconMonitor,
-    text: "Панель управления ПК",
+    icon: ControlPanelIcon,
+    text: "Панель управления",
   },
   {
     id: 2,
     url: "shop",
-    icon: IconStore,
+    icon: ShopIcon,
     text: "Магазин",
   },
   {
     id: 3,
     url: "transactions",
-    icon: Iconlighting,
+    icon: TransactionsIcon,
     text: "Транзакции",
   },
   {
     id: 4,
     url: "#",
-    icon: IconCube,
-    text: "Склад",
+    icon: UsersIcon,
+    text: "Пользователи",
   },
   {
     id: 5,
     url: "#",
-    icon: IconUserGroup,
-    text: "Пользователи",
+    icon: ReservationsIcon,
+    text: "Бронирования",
   },
   {
     id: 6,
     url: "#",
-    icon: IconCalendarPlus,
-    text: "Бронирования",
+    icon: HistoryIcon,
+    text: "История",
+    dropMenuItem: [
+      {
+        id: 1,
+        title: "Операции со складом",
+        rightContextMenuItem: [
+          {
+            id: 1,
+            url: "#",
+            title: "Операции со складом 1",
+          },
+          {
+            id: 2,
+            url: "#",
+            title: "Операции со складом 2",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Прочие операции",
+        rightContextMenuItem: [
+          {
+            id: 1,
+            url: "#",
+            title: "Прочие операции 1",
+          },
+          {
+            id: 2,
+            url: "#",
+            title: "Прочие операции 2",
+          },
+          {
+            id: 3,
+            url: "#",
+            title: "Прочие операции3",
+          },
+        ],
+      },
+    ],
   },
   {
     id: 7,
     url: "#",
-    icon: IconLoader,
-    text: "История",
+    icon: StatisticsIcon,
+    text: "Статистика",
   },
   {
     id: 8,
     url: "#",
-    icon: IconLineChart,
-    text: "Статистика",
+    icon: SettingsIcon,
+    text: "Настройки",
+    dropMenuItem: [
+      {
+        id: 1,
+        title: "Веб-администратор",
+        rightContextMenuItem: [
+          {
+            id: 1,
+            url: "#",
+            title: "Общие настройки",
+          },
+          {
+            id: 2,
+            url: "#",
+            title: "Конфигурация отчетов",
+          },
+          {
+            id: 3,
+            url: "#",
+            title: "Конфигурация бронирования",
+          },
+          {
+            id: 4,
+            url: "#",
+            title: "Склад",
+          },
+          {
+            id: 5,
+            url: "#",
+            title: "Конфигурация кассы",
+          },
+          {
+            id: 6,
+            url: "#",
+            title: "Сотрудники и роли",
+          },
+          {
+            id: 7,
+            url: "#",
+            title: "Продукты и подписки",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Клиент",
+        rightContextMenuItem: [
+          {
+            id: 1,
+            url: "#",
+            title: "Конфигурация клиента",
+          },
+          {
+            id: 2,
+            url: "#",
+            title: "Дизайн",
+          },
+          {
+            id: 3,
+            url: "#",
+            title: "Консоли",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Контент",
+        rightContextMenuItem: [
+          {
+            id: 1,
+            url: "#",
+            title: "Игры и приложения",
+          },
+          {
+            id: 2,
+            url: "#",
+            title: "Лицензии",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Лояльность",
+        rightContextMenuItem: [
+          {
+            id: 1,
+            url: "#",
+            title: "Рейтинг участников",
+          },
+          {
+            id: 2,
+            url: "#",
+            title: "Достижения",
+          },
+          {
+            id: 3,
+            url: "#",
+            title: "Ежедневные награды",
+          },
+          {
+            id: 4,
+            url: "#",
+            title: "Промокоды",
+          },
+        ],
+      },
+    ],
   },
   {
     id: 9,
     url: "#",
-    icon: IconNut,
-    text: "Настройки",
+    icon: MessagesIcon,
+    text: "Сообщения",
   },
-];
-
-export const leftDropListStaticData = [
   {
-    id: 1,
+    id: 10,
     url: "#",
-    title: "Инвентаризация",
+    icon: NotificationsIcons,
+    text: "Уведомления",
   },
   {
-    id: 2,
+    id: 11,
     url: "#",
-    title: "Прочие операции",
-  },
-];
-
-export const leftDropListDropData = [
-  {
-    id: 1,
-    title: "Веб-администратор",
-    customListDropItem: [
-      {
-        id: 1,
-        url: "#",
-        title: "Общие настройки",
-      },
-      {
-        id: 2,
-        url: "#",
-        title: "Конфигурация отчетов",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Клиент",
-    customListDropItem: [
-      {
-        id: 1,
-        url: "#",
-        title: "Конфигурация клиента",
-      },
-      {
-        id: 2,
-        url: "#",
-        title: "Дизайн",
-      },
-      {
-        id: 3,
-        url: "#",
-        title: "Консоли",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Операции с контентом",
-    customListDropItem: [
-      {
-        id: 1,
-        url: "#",
-        title: "Игры и приложения",
-      },
-      {
-        id: 2,
-        url: "#",
-        title: "Акканты центра",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "Системы лояльности",
-    customListDropItem: [
-      {
-        id: 1,
-        url: "#",
-        title: "Рейтинг участников",
-      },
-      {
-        id: 2,
-        url: "#",
-        title: "Достижения",
-      },
-      {
-        id: 3,
-        url: "#",
-        title: "Ежедневные награды",
-      },
-    ],
-  },
-  {
-    id: 5,
-    url: "#",
-    title: "Сотрудники и роли",
-  },
-  {
-    id: 6,
-    url: "#",
-    title: "Касса",
-  },
-  {
-    id: 7,
-    url: "#",
-    title: "Продукты и подписки",
+    icon: KnowledgeBaseIcon,
+    text: "База знаний",
   },
 ];

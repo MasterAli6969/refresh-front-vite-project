@@ -1,5 +1,4 @@
 import { FC, useCallback, useEffect, useState } from "react";
-import { createSelector } from "reselect";
 import {
   useAppDispatch,
   useAppSelector,

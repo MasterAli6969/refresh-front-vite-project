@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect } from "react";
+import { FC, useCallback } from "react";
 import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
 
 import { RedaxStateProps } from "../../../../commonTypes.interface";

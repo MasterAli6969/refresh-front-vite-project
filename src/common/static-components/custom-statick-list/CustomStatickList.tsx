@@ -1,10 +1,10 @@
 import { FC } from "react";
-import { ListLinkType } from "../../../commonTypes.interface";
+import { ListType } from "../../../commonTypes.interface";
 
 import styles from "./custom_statick_list.module.scss";
 
 export interface CustomStatickListPropsType {
-  customStatickListData: ListLinkType[];
+  customStatickListData?: ListType[];
 }
 
 const CustomStatickList: FC<CustomStatickListPropsType> = ({
@@ -15,7 +15,7 @@ const CustomStatickList: FC<CustomStatickListPropsType> = ({
       {!customStatickListData || customStatickListData.length === 0 ? (
         <h1>Ooops, server error, please wait...</h1>
       ) : (
-        customStatickListData.map((item: ListLinkType) => (
+        customStatickListData.map((item: ListType) => (
           <li key={item.id}>
             <a href={item.url}>
               <p>{item.title}</p>
