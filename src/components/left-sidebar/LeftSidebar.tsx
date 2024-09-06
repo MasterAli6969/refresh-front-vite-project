@@ -11,11 +11,9 @@ import CustomLogo from "../../common/static-components/custom-logo/CustomLogo";
 import { PropsIcon } from "../../assets/icons-svg-components/props.interface";
 import { leftSidebarData } from "./data";
 
-import styles from "./left_sidebar.module.scss";
 import { ListType } from "../../commonTypes.interface";
 import DropListWrapper from "./left-sidebar-components/drop-list-wrapper/DropListWrapper";
-import CustomMenuRightOpenWrapper from "../../common/smart-component/custom-menu-right-open-wrapper/CustomMenuRightOpenWrapper";
-import CustomStatickList from "../../common/static-components/custom-statick-list/CustomStatickList";
+import styles from "./left_sidebar.module.scss";
 
 export interface leftSidebarDataType {
   id: number;

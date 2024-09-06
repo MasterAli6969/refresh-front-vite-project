@@ -4,6 +4,7 @@ import ArrowChekRight from "../../../../assets/icons-svg-components/ArrowChekRig
 
 import styles from "./drop_list_wrapper.module.scss";
 import { ListType } from "../../../../commonTypes.interface";
+import classNames from "classnames";
 
 interface DropListWrapperPropsType {
   dropMenuRender?: ListType[];
@@ -16,6 +17,7 @@ const DropListWrapper: FC<PropsWithChildren<DropListWrapperPropsType>> = ({
   return (
     <div className={styles.div}>
       <button
+        className={styles.button}
         data-bs-toggle="collapse"
         data-bs-target={`#multiCollapseExample1`}
         aria-expanded="false"
@@ -24,7 +26,10 @@ const DropListWrapper: FC<PropsWithChildren<DropListWrapperPropsType>> = ({
         {children}
         <ArrowChekRight color="#6C7275" />
       </button>
-      <ul className="collapse multi-collapse" id={`multiCollapseExample1`}>
+      <ul
+        className={classNames("collapse multi-collapse", styles.ul)}
+        id={`multiCollapseExample1`}
+      >
         {dropMenuRender &&
           dropMenuRender.map((item: ListType) => {
             return (
