@@ -1,8 +1,7 @@
 @import "/src/variables.scss";
 
-.label {
-  margin-bottom: 1rem;
-}
-.input {
-  @include inputStyle;
+.div {
+  > div {
+    @include inputStyleSpesialContainer;
+  }
 }

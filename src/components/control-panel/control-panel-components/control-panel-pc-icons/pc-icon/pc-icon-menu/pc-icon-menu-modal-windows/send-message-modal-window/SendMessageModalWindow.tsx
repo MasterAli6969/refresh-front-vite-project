@@ -2,30 +2,28 @@ import { FC } from "react";
 import { RedaxStateProps } from "../../../../../../../../commonTypes.interface";
 
 import CustomTextarea from "../../../../../../../../common/static-components/custom-textarea/CustomTextarea";
-import CustomCounterInput from "../../../../../../../../common/static-components/custom-counter-input/CustomCounterInput";
-
 import CustomDualButtonYesNo from "../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+
 import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
 
-export interface UserPenaltyModalWindowPropsType extends RedaxStateProps {}
+interface SendMessageModalWindowPropsType extends RedaxStateProps {}
 
-const UserPenaltyModalWindow: FC<UserPenaltyModalWindowPropsType> = ({
+const SendMessageModalWindow: FC<SendMessageModalWindowPropsType> = ({
   redaxStateKey,
 }) => {
   return (
     <CutomModalWindowUniversal
       redaxStateKey={redaxStateKey}
-      title="Штраф пользователя"
-      specialText="Quest"
+      title="Сообщение пользователю"
+      specialText="GG.August"
     >
-      <CustomCounterInput label="Штрафное время" />
-      <CustomTextarea label="Комментарий" plaseholder="Введите комментарий" />
+      <CustomTextarea plaseholder="Введите сообщение..." />
       <CustomDualButtonYesNo
         redaxStateKey={redaxStateKey}
-        buttonRightText="Готово"
+        buttonRightText="Отправить"
       />
     </CutomModalWindowUniversal>
   );
 };
 
-export default UserPenaltyModalWindow;
+export default SendMessageModalWindow;

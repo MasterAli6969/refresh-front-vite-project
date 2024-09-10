@@ -44,26 +44,18 @@ const CutomModalWindowType2: FC<CutomModalWindowType2PropsType> = ({
     );
   };
   return (
-    <>
-      <CutomModalWindowUniversal
+    <CutomModalWindowUniversal
+      redaxStateKey={redaxStateKey}
+      title={title}
+      specialText={specialText}
+    >
+      <p>{descritpion && descritpion}</p>
+      <CustomDualButtonYesNo
+        onClickRightButton={handleRightClick}
         redaxStateKey={redaxStateKey}
-        title={title}
-        specialText={specialText}
-        components={[
-          () => <p>{descritpion && descritpion}</p>,
-          () => (
-            <CustomDualButtonYesNo
-              onClickRightButton={handleRightClick}
-              redaxStateKey={redaxStateKey}
-              buttonRightText={rightButton}
-            />
-          ),
-        ]}
+        buttonRightText={rightButton}
       />
-      <form>
-        <div></div>
-      </form>
-    </>
+    </CutomModalWindowUniversal>
   );
 };
 

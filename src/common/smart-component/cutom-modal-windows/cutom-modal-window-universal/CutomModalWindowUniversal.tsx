@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 
 import { RedaxStateProps } from "../../../../commonTypes.interface";
 import CustomModalCloseHead from "../../custom-modal-close-head/CustomModalCloseHead";
@@ -9,17 +9,18 @@ export interface CutomModalWindowUniversalPropsType extends RedaxStateProps {
   title: string;
   specialText?: string;
   onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
-  components: FC[];
-  width?: string; // Строка для ширины
+  width?: string;
 }
 
-const CutomModalWindowUniversal: FC<CutomModalWindowUniversalPropsType> = ({
+const CutomModalWindowUniversal: FC<
+  PropsWithChildren<CutomModalWindowUniversalPropsType>
+> = ({
   redaxStateKey,
   title,
   specialText,
-  components,
   onSubmit,
   width = "100%", // Значение по умолчанию, если пропс не передан
+  children,
 }) => {
   return (
     <form
@@ -32,13 +33,7 @@ const CutomModalWindowUniversal: FC<CutomModalWindowUniversalPropsType> = ({
         text={title}
         specialText={specialText}
       />
-      {components &&
-        components.length !== 0 &&
-        components.map((Component, index) => (
-          <div key={index}>
-            <Component />
-          </div>
-        ))}
+      {children}
     </form>
   );
 };

@@ -1,25 +1,26 @@
 import { FC } from "react";
 import { ListType } from "../../../../../../commonTypes.interface";
-//ИКОНКИ
-import UserPenaltyModalWindow from "./pc-icon-menu-modal-windows/user-penalty-modal-window/UserPenaltyModalWindow";
-import UserMiniIcon from "../../../../../../assets/icons/UserMiniIcon.svg";
-import LoaderMiniIcon from "../../../../../../assets/icons/LoaderMiniIcon.svg";
-import RemoteSvgrepoMini from "../../../../../../assets/icons/RemoteSvgrepoMini.svg";
-import CornersOutMiniIcons from "../../../../../../assets/icons/CornersOutMiniIcons.svg";
-import WindowsLogoMiniIcons from "../../../../../../assets/icons/WindowsLogoMiniIcons.svg";
-import WrenchMiniIcons from "../../../../../../assets/icons/WrenchMiniIcons.svg";
-import ListMiniIcons from "../../../../../../assets/icons/ListMiniIcons.svg";
-import PencilSimpleMiniIcons from "../../../../../../assets/icons/PencilSimpleMiniIcons.svg";
-//МОДАЛЬНЫЕ ОКНА
-import ArrowChekRight from "../../../../../../assets/icons-svg-components/ArrowChekRight";
-import ReplenishmentBalanceModalWindows from "../../../../../../common/special-componet/replenishment-balance-modal-windows/ReplenishmentBalanceModalWindows";
+//МОДУЛИ ДЛЯ РАБОТЫ
+import CustomMenuRightOpenWrapper from "../../../../../../common/smart-component/custom-menu-right-open-wrapper/CustomMenuRightOpenWrapper";
 import CustomCenterModalOpenWrapper from "../../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
-import ChangeLocationModalWindow from "./pc-icon-menu-modal-windows/change-location-modal-window/ChangeLocationModalWindow";
-import CutomModalWindowType2 from "../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-types/cutom-modal-window-type2/CutomModalWindowType2";
-import EditPcModalWindow from "./pc-icon-menu-modal-windows/edit-pc-modal-window/EditPcModalWindow";
-import ScreenshotSavedModalWindows from "./pc-icon-menu-modal-windows/screenshot-saved-modal-windows/ScreenshotSavedModalWindows";
+//ИКОНКИ
+import UserMiniIcon from "../../../../../../assets/icons/UserMiniIcon.svg";
+import RemoteSvgrepoMini from "../../../../../../assets/icons/RemoteSvgrepoMini.svg";
+import ServiceIconMini from "../../../../../../assets/icons/ServiceIconMini.svg";
+import EditIconMini from "../../../../../../assets/icons/EditIconMini.svg";
+import PowerIconMini from "../../../../../../assets/icons/PowerIconMini.svg";
+import ArrowChekRight from "../../../../../../assets/icons-svg-components/ArrowChekRight";
+
+import { EditingMenu, ManagementMenu, PowerMenu } from "./drop-menus/DropMenus";
 
 import styles from "./pc_icon_menu.module.scss";
+import ReplenishmentBalanceModalWindows from "../../../../../../common/special-componet/replenishment-balance-modal-windows/ReplenishmentBalanceModalWindows";
+import UserPenaltyModalWindow from "./pc-icon-menu-modal-windows/user-penalty-modal-window/UserPenaltyModalWindow";
+import SendMessageModalWindow from "./pc-icon-menu-modal-windows/send-message-modal-window/SendMessageModalWindow";
+import EndSessionModalWindow from "./pc-icon-menu-modal-windows/end-session-modal-window/EndSessionModalWindow";
+import ChangeLocationModalWindow from "./pc-icon-menu-modal-windows/change-location-modal-window/ChangeLocationModalWindow";
+import GuestSessionModalWindow from "./pc-icon-menu-modal-windows/guest-session-modal-window/GuestSessionModalWindow";
+import AddTimeModalWindow from "./pc-icon-menu-modal-windows/add-time-modal-window/AddTimeModalWindow";
 
 export interface DropDataObjectType {
   client: string;
@@ -45,7 +46,7 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
   return (
     <div className={styles.div}>
       <div className={styles.subdiv}>
-        {pcStatus === "Active" && (
+        {pcStatus === "ActiveMode" && (
           <div className={styles.drop_menu}>
             <div className="btn-group dropend">
               <div data-bs-toggle="dropdown" aria-expanded="false">
@@ -74,6 +75,16 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
                 </li>
                 <li>
                   <CustomCenterModalOpenWrapper
+                    redaxStateKey="addTimeModalWindow"
+                    openComponents={() => (
+                      <AddTimeModalWindow redaxStateKey="addTimeModalWindow" />
+                    )}
+                  >
+                    Добавить время
+                  </CustomCenterModalOpenWrapper>
+                </li>
+                <li>
+                  <CustomCenterModalOpenWrapper
                     redaxStateKey="userPenaltyModalWindow"
                     openComponents={() => (
                       <UserPenaltyModalWindow redaxStateKey="userPenaltyModalWindow" />
@@ -83,8 +94,26 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
                   </CustomCenterModalOpenWrapper>
                 </li>
 
-                <li>Отправить сообщение</li>
-                <li>Отправить уведомление</li>
+                <li>
+                  <CustomCenterModalOpenWrapper
+                    redaxStateKey="sendMessageModalWindow"
+                    openComponents={() => (
+                      <SendMessageModalWindow redaxStateKey="sendMessageModalWindow" />
+                    )}
+                  >
+                    Отправить сообщение
+                  </CustomCenterModalOpenWrapper>
+                </li>
+                <li>
+                  <CustomCenterModalOpenWrapper
+                    redaxStateKey="endSessionModalWindow"
+                    openComponents={() => (
+                      <EndSessionModalWindow redaxStateKey="endSessionModalWindow" />
+                    )}
+                  >
+                    Завершить сессию
+                  </CustomCenterModalOpenWrapper>
+                </li>
                 <li>
                   <CustomCenterModalOpenWrapper
                     redaxStateKey="changeLocationModalWindow"
@@ -95,108 +124,69 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
                     Сменить место
                   </CustomCenterModalOpenWrapper>
                 </li>
-                <li>
-                  <CustomCenterModalOpenWrapper
-                    redaxStateKey="exitSessionModalWindow"
-                    openComponents={() => (
-                      <CutomModalWindowType2
-                        redaxStateKey="exitSessionModalWindow"
-                        title="Выйти из сессии пользователя"
-                        specialText="GG.August"
-                        rightButton="Выход"
-                      />
-                    )}
-                  >
-                    Выйти из сессии
-                  </CustomCenterModalOpenWrapper>
-                </li>
-                <li>Тарифы клиента</li>
-                <li>История операций</li>
+                <li>Профиль клиента</li>
                 <li>История транзакций</li>
               </ul>
             </div>
           </div>
         )}
+        <div className={styles.pc_title}>
+          <p>Устройство: PC9</p>
+        </div>
         <ul>
           <li>
-            <img src={UserMiniIcon} />
-            <p>Удаленный доступ</p>
-          </li>
-          <li>
             <CustomCenterModalOpenWrapper
-              redaxStateKey="screenshotSavedModalWindows"
+              redaxStateKey={`guestSessionModalWindow${pcStatus}`}
               openComponents={() => (
-                <ScreenshotSavedModalWindows redaxStateKey="screenshotSavedModalWindows" />
-              )}
-            >
-              <img src={LoaderMiniIcon} />
-              <p>Скриншот</p>
-            </CustomCenterModalOpenWrapper>
-          </li>
-          <li>
-            <CustomCenterModalOpenWrapper
-              redaxStateKey="administratorModeModalWindow"
-              openComponents={() => (
-                <CutomModalWindowType2
-                  redaxStateKey="administratorModeModalWindow"
-                  title="Перевести ПК в режим администратора?"
-                  rightButton="Готово"
+                <GuestSessionModalWindow
+                  redaxStateKey={`guestSessionModalWindow${pcStatus}`}
                 />
               )}
             >
-              <img src={RemoteSvgrepoMini} />
-              <p>Доступ администратора</p>
+              <div>
+                <img src={UserMiniIcon} />
+                <p>Гостевой сеанс</p>
+              </div>
             </CustomCenterModalOpenWrapper>
           </li>
           <li>
-            <CustomCenterModalOpenWrapper
-              redaxStateKey="maintenanceModeModalWindow"
-              openComponents={() => (
-                <CutomModalWindowType2
-                  redaxStateKey="maintenanceModeModalWindow"
-                  title="Перевести ПК в режим обслуживания?"
-                  rightButton="Готово"
-                />
-              )}
+            <CustomMenuRightOpenWrapper openMenu={() => <ManagementMenu />}>
+              <div>
+                <img src={RemoteSvgrepoMini} />
+                <p>Управление</p>
+              </div>
+              <ArrowChekRight color="#949496" />
+            </CustomMenuRightOpenWrapper>
+          </li>
+          <li>
+            <div>
+              <img src={ServiceIconMini} />
+              <p>Режим ремонта</p>
+            </div>
+          </li>
+          <li>
+            <CustomMenuRightOpenWrapper
+              positionRight="-7"
+              openMenu={() => <EditingMenu />}
             >
-              <img src={CornersOutMiniIcons} />
-              <p>Режим обслуживания</p>
-            </CustomCenterModalOpenWrapper>
+              <div>
+                <img src={EditIconMini} />
+                <p>Редактирование</p>
+              </div>
+              <ArrowChekRight color="#949496" />
+            </CustomMenuRightOpenWrapper>
           </li>
           <li>
-            <CustomCenterModalOpenWrapper
-              redaxStateKey="taskManagerModalWindow"
-              openComponents={() => (
-                <CutomModalWindowType2
-                  redaxStateKey="taskManagerModalWindow"
-                  title="Открыть диспетчер задач у клиента?"
-                  rightButton="Готово"
-                />
-              )}
+            <CustomMenuRightOpenWrapper
+              positionRight="-7"
+              openMenu={() => <PowerMenu />}
             >
-              <img src={WindowsLogoMiniIcons} />
-              <p>Диспетчер задач</p>
-            </CustomCenterModalOpenWrapper>
-          </li>
-          <li>
-            <CustomCenterModalOpenWrapper
-              redaxStateKey="editPcModalWindow"
-              openComponents={() => (
-                <EditPcModalWindow redaxStateKey="editPcModalWindow" />
-              )}
-            >
-              <img src={WrenchMiniIcons} />
-              <p>Редактирование</p>
-            </CustomCenterModalOpenWrapper>
-          </li>
-
-          <li>
-            <img src={ListMiniIcons} />
-            <p>Перезагрузка</p>
-          </li>
-          <li>
-            <img src={PencilSimpleMiniIcons} />
-            <p>Выключение</p>
+              <div>
+                <img src={PowerIconMini} />
+                <p>Питание</p>
+              </div>
+              <ArrowChekRight color="#949496" />
+            </CustomMenuRightOpenWrapper>
           </li>
         </ul>
       </div>

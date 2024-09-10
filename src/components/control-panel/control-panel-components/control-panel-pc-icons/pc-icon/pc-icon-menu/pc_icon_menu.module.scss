@@ -2,12 +2,10 @@
 
 .div {
   width: 14.8rem;
-  background-color: $primary_color;
-  border: $border_style;
-  border-radius: 10px;
+  @include PopoverMenuUl;
   z-index: 1;
   .subdiv {
-    > .drop_menu {
+    .drop_menu {
       background-color: $active-color;
       border-radius: 10px 10px 0 0;
       padding: 1rem;
@@ -39,26 +37,27 @@
         }
       }
     }
+    .pc_title {
+      background-color: $sixth_color;
+      padding: 1rem;
+    }
     > ul {
       padding: 0.3rem;
-      //Стили для пустышек
       > li {
         display: flex;
         align-items: center;
-        margin-right: 0.5rem;
-      }
-      // ниже стили для того что уже обёрнуто кнопкой
-      > li {
+        justify-content: space-between;
         padding: 0.5rem;
+        margin-right: 0.5rem;
         &:hover {
           background: $light_gradient;
           border-radius: $border_radius5;
         }
-        > div > span {
+        > div {
           display: flex;
-          align-items: center;
-          > img {
-            margin-right: 0.5rem;
+          > div {
+            justify-content: space-between;
+            display: flex;
           }
         }
       }

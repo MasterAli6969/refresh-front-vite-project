@@ -12,42 +12,33 @@ const AddUserModalWindow: FC<AddUserModalWindowPropsType> = ({
   redaxStateKey,
 }) => {
   return (
-    <>
-      <CutomModalWindowUniversal
-        redaxStateKey={redaxStateKey}
-        title="Регистрация нового пользователя"
-        components={[
-          () => (
-            <>
-              <p>
-                Во избежание утечки персональной информации, регистрация
-                клиентов возможна 2 способами:
-              </p>
-              <u>
-                <p>1. Через пользовательский лаунчер центра</p>
-                <p>
-                  2. Путем отправки регистрационной ссылки на email клиента.
-                  Если потенциальный клиент предпочел данный вариант , введите
-                  email адрес в графу ниже.
-                </p>
-              </u>
-            </>
-          ),
-          () => (
-            <CustomInput
-              label="Адрес эл. почты нового клиента"
-              placeholder="Введите email адрес"
-            />
-          ),
-          () => (
-            <CustomDualButtonYesNo
-              redaxStateKey={redaxStateKey}
-              buttonRightText="Отправить"
-            />
-          ),
-        ]}
+    <CutomModalWindowUniversal
+      redaxStateKey={redaxStateKey}
+      title="Регистрация нового пользователя"
+    >
+      <div>
+        <p>
+          Во избежание утечки персональной информации, регистрация клиентов
+          возможна 2 способами:
+        </p>
+        <u>
+          <p>1. Через пользовательский лаунчер центра</p>
+          <p>
+            2. Путем отправки регистрационной ссылки на email клиента. Если
+            потенциальный клиент предпочел данный вариант , введите email адрес
+            в графу ниже.
+          </p>
+        </u>
+      </div>
+      <CustomInput
+        label="Адрес эл. почты нового клиента"
+        placeholder="Введите email адрес"
       />
-    </>
+      <CustomDualButtonYesNo
+        redaxStateKey={redaxStateKey}
+        buttonRightText="Отправить"
+      />
+    </CutomModalWindowUniversal>
   );
 };
 

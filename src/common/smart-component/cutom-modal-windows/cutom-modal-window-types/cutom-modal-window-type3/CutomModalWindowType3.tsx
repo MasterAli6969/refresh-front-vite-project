@@ -66,51 +66,32 @@ const CutomModalWindowType3: FC<CutomModalWindowType3PropsType> = ({
   };
 
   return (
-    <>
-      <CutomModalWindowUniversal
-        redaxStateKey={redaxStateKey}
-        title={title}
-        components={[
-          () => (
-            <>
-              {shiftType ? (
-                <CustomDualTextDisplay
-                  text1="Начало смены"
-                  text2="05.05.2005 13:00"
-                />
-              ) : (
-                <div>
-                  <CustomInput
-                    label="Сумма на начало смены"
-                    placeholder="Введите сумму"
-                  />
-                </div>
-              )}
-            </>
-          ),
-          () => (
-            <CustomTextarea
-              label="Комментарий к смене"
-              plaseholder="Введите комментарий"
-            />
-          ),
-          () => (
-            <CustomButton
-              onClick={handleClickCancelisShiftStatus}
-              color="dark"
-              text="Отмена"
-            />
-          ),
-          () => (
-            <CustomButton
-              onClick={handleClickOpenisShiftStatus}
-              color="light"
-              text={rightButton}
-            />
-          ),
-        ]}
+    <CutomModalWindowUniversal redaxStateKey={redaxStateKey} title={title}>
+      {shiftType ? (
+        <CustomDualTextDisplay text1="Начало смены" text2="05.05.2005 13:00" />
+      ) : (
+        <div>
+          <CustomInput
+            label="Сумма на начало смены"
+            placeholder="Введите сумму"
+          />
+        </div>
+      )}
+      <CustomTextarea
+        label="Комментарий к смене"
+        plaseholder="Введите комментарий"
       />
-    </>
+      <CustomButton
+        onClick={handleClickCancelisShiftStatus}
+        color="dark"
+        text="Отмена"
+      />
+      <CustomButton
+        onClick={handleClickOpenisShiftStatus}
+        color="light"
+        text={rightButton}
+      />
+    </CutomModalWindowUniversal>
   );
 };
 

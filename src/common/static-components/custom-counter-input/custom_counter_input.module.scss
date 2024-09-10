@@ -5,24 +5,25 @@
     margin-bottom: 0.5rem;
   }
   > div {
-    @include inputStyle;
+    @include inputStyleSpesialContainer;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0.5rem;
     > input {
       background-color: $primary-color;
       border: none;
       color: $light_color;
     }
-    > img {
-      cursor: pointer;
-      margin-top: 0.7rem;
-      &:hover {
-        background-color: $quartet_color;
+    > div {
+      height: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      > img {
+        width: 0.5rem;
+        cursor: pointer;
       }
-    }
-    > img:first-child {
-      margin-top: 0.7rem;
     }
   }
 }

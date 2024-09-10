@@ -73,24 +73,19 @@ const CutomModalWindowType1: FC<CutomModalWindowType1PropsType> = ({
       title={title}
       specialText={specialText}
       onSubmit={handleSubmit}
-      components={[
-        () => (
-          <CustomInput
-            label="Название комнаты"
-            placeholder="Введите новое название комнаты"
-            value={localInputValue || ""}
-            onChange={handleInputChange}
-          />
-        ),
-        () => (
-          <CustomDualButtonYesNo
-            redaxStateKey={redaxStateKey}
-            buttonRightText="Сохранить"
-            isSubmit={true}
-          />
-        ),
-      ]}
-    />
+    >
+      <CustomInput
+        label="Название комнаты"
+        placeholder="Введите новое название комнаты"
+        value={localInputValue || ""}
+        onChange={handleInputChange}
+      />
+      <CustomDualButtonYesNo
+        redaxStateKey={redaxStateKey}
+        buttonRightText="Сохранить"
+        isSubmit={true}
+      />
+    </CutomModalWindowUniversal>
   );
 };
 

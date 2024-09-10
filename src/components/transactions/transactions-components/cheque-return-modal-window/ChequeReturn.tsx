@@ -43,11 +43,9 @@ const ChequeReturn: FC<ChequeReturnPropsType> = ({ redaxStateKey, title }) => {
         onSubmit={handleSubmit}
         redaxStateKey={redaxStateKey}
         title={title}
-        components={[
-          cartItemMemoRender,
-          () => <TotalPurchase getTotal={getTotal} />,
-        ]}
-      />
+      >
+        <TotalPurchase getTotal={getTotal} />
+      </CutomModalWindowUniversal>
     </div>
   );
 };

@@ -74,30 +74,23 @@ const PcChangeModalWindow: FC<PcChangeModalWindowPropsType> = ({
   };
 
   return (
-    <>
-      <CutomModalWindowUniversal
-        redaxStateKey={redaxStateKey}
-        title="Перенос выбранных ПК в другую комнату"
-        onSubmit={handleSubmit}
-        components={[
-          () => (
-            <CustomSelect
-              selectTitle="Выберите комнату"
-              customSelectData={roomTabsName}
-              mapDataToSelect={mapRoomTabsNameSelectData}
-              handleSelectId={handleRoomChange}
-            />
-          ),
-          () => (
-            <CustomDualButtonYesNo
-              isSubmit={true}
-              buttonRightText="Перенести"
-              redaxStateKey={redaxStateKey}
-            />
-          ),
-        ]}
+    <CutomModalWindowUniversal
+      redaxStateKey={redaxStateKey}
+      title="Перенос выбранных ПК в другую комнату"
+      onSubmit={handleSubmit}
+    >
+      <CustomSelect
+        selectTitle="Выберите комнату"
+        customSelectData={roomTabsName}
+        mapDataToSelect={mapRoomTabsNameSelectData}
+        handleSelectId={handleRoomChange}
       />
-    </>
+      <CustomDualButtonYesNo
+        isSubmit={true}
+        buttonRightText="Перенести"
+        redaxStateKey={redaxStateKey}
+      />
+    </CutomModalWindowUniversal>
   );
 };
 

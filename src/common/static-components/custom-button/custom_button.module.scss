@@ -3,16 +3,17 @@
   width: 100%;
   border: none;
   border-radius: 12px;
-  color: $light-color;
   padding: 0.5rem 0;
 }
 
 ._light {
-  background-color: $active-color;
+  background-color: $light_special_color;
+  color: $special_primary_color;
 }
 ._dark {
-  background-color: $tertiary-color;
+  background-color: $primary_color;
+  color: $light_color;
 }
 ._warning {
-  background-color: $warning-color;
+  background-color: $custom_red;
 }

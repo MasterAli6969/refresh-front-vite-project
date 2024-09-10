@@ -5,19 +5,20 @@ import CustomSelect from "../../../../../../../../common/static-components/custo
 
 import CustomDualButtonYesNo from "../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CustomInput from "../../../../../../../../common/static-components/custom-input/CustomInput";
 
 const selectData = [
   {
     id: 1,
-    selectItem: "Select1",
+    selectItem: "PC1",
   },
   {
     id: 2,
-    selectItem: "Select1",
+    selectItem: "PC92",
   },
   {
     id: 3,
-    selectItem: "Select1",
+    selectItem: "PC9222",
   },
 ];
 
@@ -29,24 +30,19 @@ const ChangeLocationModalWindow: FC<ChangeLocationModalWindowPropsType> = ({
   return (
     <CutomModalWindowUniversal
       redaxStateKey={redaxStateKey}
-      title="Смена места"
-      specialText="ПК 13"
-      components={[
-        () => (
-          <CustomSelect
-            title="Куда пересаживаемся?"
-            selectTitle="Выберите ПК для смены места"
-            customSelectData={selectData}
-          />
-        ),
-        () => (
-          <CustomDualButtonYesNo
-            redaxStateKey={redaxStateKey}
-            buttonRightText="Готово"
-          />
-        ),
-      ]}
-    />
+      title="Сменить место"
+    >
+      <CustomInput label="Новое место" placeholder="PC9" isReadOnly={true} />
+      <CustomSelect
+        title="Новое место"
+        selectTitle="Выберите ПК для смены места"
+        customSelectData={selectData}
+      />
+      <CustomDualButtonYesNo
+        redaxStateKey={redaxStateKey}
+        buttonRightText="Выполнить"
+      />
+    </CutomModalWindowUniversal>
   );
 };
 

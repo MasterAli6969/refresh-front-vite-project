@@ -1,20 +1,27 @@
 @import "/src/variables.scss";
 
 .div {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  .button {
+  > p {
+    margin-bottom: 1rem;
+  }
+  .subdiv {
     display: flex;
     align-items: center;
-    background-color: transparent;
-    color: $light_color;
-    border: none;
-    border-radius: $border_radius5;
-    padding: 0.5rem;
-  }
-
-  ._active {
-    background-color: $tertiary_color;
+    gap: 1rem;
+    .button {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      color: $seventh_color;
+      border: none;
+      border-radius: $border_radius5;
+      padding: 0.5rem;
+    }
+    ._active {
+      background-color: $tertiary_color;
+      color: $light_color;
+    }
   }
 }

@@ -3,11 +3,13 @@ import classNames from "classnames";
 import styles from "./custom_toggle_button.module.scss";
 
 export interface CustomToggleButtonPropsType {
+  label?: string;
   buttonsText: string[];
   onToggleChange?: (activeItem: string) => void; // Пропс для передачи наверх
 }
 
 const CustomToggleButton: FC<CustomToggleButtonPropsType> = ({
+  label,
   buttonsText,
   onToggleChange,
 }) => {
@@ -28,23 +30,26 @@ const CustomToggleButton: FC<CustomToggleButtonPropsType> = ({
 
   return (
     <div className={styles.div}>
-      {!buttonsText || buttonsText.length === 0 ? (
-        <span>Ожидание...</span>
-      ) : (
-        buttonsText.map((item, index) => {
-          return (
-            <button
-              key={index}
-              onClick={() => handleToggleClick(item)}
-              className={classNames(styles.button, {
-                [styles._active]: activeIndex === item,
-              })}
-            >
-              {item}
-            </button>
-          );
-        })
-      )}
+      {label && <p>{label}</p>}
+      <div className={styles.subdiv}>
+        {!buttonsText || buttonsText.length === 0 ? (
+          <span>Ожидание...</span>
+        ) : (
+          buttonsText.map((item, index) => {
+            return (
+              <button
+                key={index}
+                onClick={() => handleToggleClick(item)}
+                className={classNames(styles.button, {
+                  [styles._active]: activeIndex === item,
+                })}
+              >
+                {item}
+              </button>
+            );
+          })
+        )}
+      </div>
     </div>
   );
 };

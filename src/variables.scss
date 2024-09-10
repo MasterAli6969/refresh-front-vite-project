@@ -17,15 +17,17 @@ $close-color: #e6543f;
 $ok-color: #159900;
 
 //ЦВЕТА НОВГО МАКЕТА ИЛИ ПРОСТО НОВЫЕ
-
 $primary_color: #1b1c20;
 $special_primary_color: #141518;
 $secondary_color: #17181a;
 $tertiary_color: #383b41;
 $quartet_color: #1a1c21;
 $fifth_color: #1b1c1f;
+$sixth_color: #26282e;
+$seventh_color: #9c9da0;
 
 $light_color: #ffffff;
+$light_special_color: #e2e2e2;
 $dark_color: #6c7275;
 $faded_color: #a2a5ae;
 $hover_color: #2c3039;
@@ -35,7 +37,7 @@ $custom_red: #e6543f;
 $ok-color: #159900;
 
 //стили для границ
-$border_style: 1px solid $tertiary-color;
+$border_style: 1px solid $tertiary_color;
 $border_radius5: 5px;
 $border_radius10: 10px;
 $border_radius12: 12px;
@@ -99,13 +101,33 @@ $light_gradient: linear-gradient(
 }
 
 //стили для кастамных input and textarea элементов
-@mixin inputStyle {
+@mixin inputStyleCommon {
   width: 100%;
-  background-color: $secondary_color;
+  background-color: transparent;
   border: $border_style;
   border-radius: $border_radius12;
   color: $light-color;
   padding: 1rem;
+}
+
+@mixin inputStyleSpesialContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: $border_style;
+  border-radius: $border_radius12;
+  color: $light-color;
+  padding: 0.5rem;
+  > input {
+    width: 100%;
+    background-color: transparent;
+    color: $light_color;
+    border: none;
+  }
+  > img {
+    margin-right: 0.5rem;
+  }
 }
 
 @mixin twoButtonDivHorizont {

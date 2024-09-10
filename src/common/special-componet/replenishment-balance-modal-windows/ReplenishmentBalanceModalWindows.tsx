@@ -1,12 +1,16 @@
 import { FC, useState } from "react";
 import { RedaxStateProps } from "../../../commonTypes.interface";
-
-import CustomModalCloseHead from "../../smart-component/custom-modal-close-head/CustomModalCloseHead";
+//МОДУЛИ ДЛЯ РЕНДЕРА
 import CustomToggleButton from "../../static-components/custom-toggle-button/CustomToggleButton";
 import CustomInput from "../../static-components/custom-input/CustomInput";
+import CustomDualButtonYesNo from "../../static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CutomModalWindowUniversal from "../../smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
+//ИКОНКИ
+import MoneyIconMini from "../../../assets/icons/MoneyIconMini.svg";
+
+import CardsIconMini from "../../../assets/icons/CardsIconMini.svg";
 
 import styles from "./replenishment_balance_modal_windows.module.scss";
-import CustomDualButtonYesNo from "../../static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
 export interface ReplenishmentBalanceModalWindowsPropsType
   extends RedaxStateProps {}
@@ -20,15 +24,17 @@ const ReplenishmentBalanceModalWindows: FC<
     setSelectedToggle(activeItem);
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
-    <div className={styles.div}>
-      <div>
-        <CustomModalCloseHead
-          redaxStateKey={redaxStateKey}
-          text="Пополнение баланса"
-          specialText="GG.August"
-        />
-      </div>
+    <CutomModalWindowUniversal
+      redaxStateKey={redaxStateKey}
+      title="Пополнение баланса"
+      specialText="GG.August"
+      onSubmit={handleSubmit}
+    >
       <div>
         <p>Выберите тип пополнения</p>
         <CustomToggleButton
@@ -47,11 +53,11 @@ const ReplenishmentBalanceModalWindows: FC<
       </div>
       {selectedToggle === "Разделить" && (
         <div className={styles.mail_select_block}>
-          <CustomInput placeholder="Сумма наличных" />
+          <CustomInput icon={MoneyIconMini} placeholder="Сумма наличных" />
           <div>
             <p>50/50</p>
           </div>
-          <CustomInput placeholder="Сумма оплаты по БК" />
+          <CustomInput icon={CardsIconMini} placeholder="Сумма оплаты по БК" />
         </div>
       )}
 
@@ -67,7 +73,7 @@ const ReplenishmentBalanceModalWindows: FC<
           buttonRightText="Оплата"
         />
       </div>
-    </div>
+    </CutomModalWindowUniversal>
   );
 };
 

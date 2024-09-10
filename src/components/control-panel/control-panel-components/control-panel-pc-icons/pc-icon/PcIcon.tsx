@@ -1,11 +1,12 @@
 import { FC } from "react";
-
-import { CircularProgress } from "@mui/material";
 import classNames from "classnames";
 
-import PcIconModalWindow, {
-  PcIconMenuDataType,
-} from "./pc-icon-menu/PcIconMenu";
+import WarningIconSmall from "../../../../../assets/icons/WarningIconSmall.svg";
+import WindowsIconSmall from "../../../../../assets/icons/WindowsIconSmall.svg";
+
+import { CircularProgress } from "@mui/material";
+
+import PcIconMenu, { PcIconMenuDataType } from "./pc-icon-menu/PcIconMenu";
 
 import styles from "./pc_icon.module.scss";
 
@@ -28,31 +29,44 @@ const PcIcon: FC<PcIconPropsType> = ({ pcIconDataObjekt }) => {
   return (
     <div
       className={classNames(styles.div, {
-        [styles._active]: pcIconDataObjekt.status === "Active",
-        [styles._no_active]: pcIconDataObjekt.status === "No Active",
-        [styles._included]: pcIconDataObjekt.status === "Included",
-        [styles._servicing]: pcIconDataObjekt.status === "Servicing",
+        [styles._off_mode]: pcIconDataObjekt.status === "OffMode",
+        [styles._standby_mode]: pcIconDataObjekt.status === "StandbyMode",
+        [styles._active_mode]: pcIconDataObjekt.status === "ActiveMode",
+        [styles._service_mode]: pcIconDataObjekt.status === "ServiceMode",
+        [styles._administration_mode]:
+          pcIconDataObjekt.status === "AdministrationMode",
       })}
     >
-      <CircularProgress
-        sx={{
-          color:
-            valueProgress >= 70
-              ? " #010601"
-              : valueProgress >= 40
-              ? "#FAFF00"
-              : "#FF3D00",
-        }}
-        variant="determinate"
-        value={valueProgress}
-      />
-      <div className={styles.subdiv_number}>{pcIconDataObjekt.pcNumber}</div>
+      {pcIconDataObjekt.status === "ActiveMode" && (
+        <CircularProgress
+          sx={{
+            color:
+              valueProgress >= 70
+                ? " #159900"
+                : valueProgress >= 40
+                ? "#FAFF00"
+                : "#FF3D00",
+          }}
+          variant="determinate"
+          value={valueProgress}
+        />
+      )}
+
+      <div className={styles.subdiv_number}>
+        <p>{pcIconDataObjekt.pcNumber}</p>
+      </div>
       <div className={styles.subdiv_menu}>
-        <PcIconModalWindow
+        <PcIconMenu
           pcStatus={pcIconDataObjekt.status}
           pcIconModalWindowData={pcIconDataObjekt.pcIconModalWindowData}
         />
       </div>
+      {pcIconDataObjekt.status === "ServiceMode" && (
+        <img className={styles.subdiv_icon} src={WarningIconSmall} />
+      )}
+      {pcIconDataObjekt.status === "AdministrationMode" && (
+        <img className={styles.subdiv_icon} src={WindowsIconSmall} />
+      )}
     </div>
   );
 };

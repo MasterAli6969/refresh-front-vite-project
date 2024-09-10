@@ -23,6 +23,12 @@
       display: block;
     }
   }
+  .subdiv_icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.8rem;
+  }
   &:hover {
     border: 3px solid $light-color;
     .subdiv_menu {
@@ -31,18 +37,28 @@
   }
 }
 
-._active {
-  background-color: $active-color;
-}
-
-._no_active {
+._shutdown_mode {
   background-color: $bg-primary;
 }
 
-._included {
+._standby_mode {
   background-color: $ok-color;
 }
 
-._servicing {
-  background-color: $warning-color;
+._active_mode {
+  background-color: $active-color;
+}
+
+._service_mode {
+  .subdiv_number {
+    color: $custom_red;
+  }
+  background-color: $bg-primary;
+}
+
+._administration_mode {
+  .subdiv_number {
+    color: $custom_blue;
+  }
+  background-color: $bg-primary;
 }

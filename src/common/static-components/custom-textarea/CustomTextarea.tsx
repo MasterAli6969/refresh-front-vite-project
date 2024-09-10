@@ -3,7 +3,7 @@ import { FC } from "react";
 import styles from "./custom_textarea.module.scss";
 
 export interface CustomTextareaPropsType {
-  label: string;
+  label?: string;
   plaseholder: string;
 }
 

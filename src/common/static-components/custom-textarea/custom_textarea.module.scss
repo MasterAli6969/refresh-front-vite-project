@@ -6,5 +6,5 @@
 
 .textarea {
   min-height: 9.5rem;
-  @include inputStyle;
+  @include inputStyleCommon;
 }

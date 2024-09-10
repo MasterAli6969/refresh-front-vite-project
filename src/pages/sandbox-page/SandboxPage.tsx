@@ -19,6 +19,16 @@ import CustomInput from "../../common/static-components/custom-input/CustomInput
 import CustomIconButton from "../../common/static-components/custom-icon-button/CustomIconButton";
 import CustomMenuRightOpenWrapper from "../../common/smart-component/custom-menu-right-open-wrapper/CustomMenuRightOpenWrapper";
 
+//МОДАЛЬНЫЕ ОКНА
+import ReplenishmentBalanceModalWindows from "../../common/special-componet/replenishment-balance-modal-windows/ReplenishmentBalanceModalWindows";
+import ChangeLocationModalWindow from "../../components/control-panel/control-panel-components/control-panel-pc-icons/pc-icon/pc-icon-menu/pc-icon-menu-modal-windows/change-location-modal-window/ChangeLocationModalWindow";
+import CutomModalWindowType2 from "../../common/smart-component/cutom-modal-windows/cutom-modal-window-types/cutom-modal-window-type2/CutomModalWindowType2";
+import EditPcModalWindow from "../../components/control-panel/control-panel-components/control-panel-pc-icons/pc-icon/pc-icon-menu/pc-icon-menu-modal-windows/edit-pc-modal-window/EditPcModalWindow";
+import ScreenshotSavedModalWindows from "../../components/control-panel/control-panel-components/control-panel-pc-icons/pc-icon/pc-icon-menu/pc-icon-menu-modal-windows/screenshot-saved-modal-windows/ScreenshotSavedModalWindows";
+
+// ТЕСТОВЫЕ ДАННЫЕ ДЛЯ ПРОВЕРКИ РЕНДЕРА
+import MoneyIconMini from "../../assets/icons/MoneyIconMini.svg";
+
 const SandboxPage: FC = () => {
   return (
     <div
@@ -64,6 +74,7 @@ const SandboxPage: FC = () => {
       >
         <h2>CustomToggleButton</h2>
         <CustomToggleButton
+          label="vfnkfvlfdjkvfn"
           buttonsText={["CustomToggleButton1", "CustomToggleButton2"]}
         />
       </div>
@@ -306,6 +317,23 @@ const SandboxPage: FC = () => {
         <h2>CustomInput</h2>
         <CustomInput label="CustomInput" placeholder="CustomInput" />
       </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "2rem",
+          border: "1px solid red",
+          padding: "1rem",
+        }}
+      >
+        <h2>CustomIconInput</h2>
+        <CustomInput
+          icon={MoneyIconMini}
+          label="CustomInput"
+          placeholder="CustomInput"
+        />
+      </div>
       <div
         style={{
           display: "flex",
@@ -345,7 +373,7 @@ const SandboxPage: FC = () => {
           <h2 style={{ border: "1px solid green" }}>Custom</h2>
         </CustomMenuRightOpenWrapper>
       </div>
-
+      <h1>ТУТ У НАС ИДУТ СПЕЦИФИЧНЫЕ КОМПОНЕНТЫ И УМНЫЕ МОДАЛЬНЫЕ ОКНА</h1>
       <div
         style={{
           display: "flex",
@@ -355,7 +383,9 @@ const SandboxPage: FC = () => {
           padding: "1rem",
         }}
       >
-        <h2></h2>
+        <h2>ReplenishmentBalanceModalWindows</h2>
+
+        <ReplenishmentBalanceModalWindows redaxStateKey={"cdsncjdsnk"} />
       </div>
 
       <div
@@ -367,7 +397,50 @@ const SandboxPage: FC = () => {
           padding: "1rem",
         }}
       >
-        <h2></h2>
+        <h2>ChangeLocationModalWindow</h2>
+        <ChangeLocationModalWindow redaxStateKey={"cbhjdscbjhds"} />
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "2rem",
+          border: "1px solid red",
+          padding: "1rem",
+        }}
+      >
+        <h2>CutomModalWindowType2</h2>
+        <CutomModalWindowType2
+          redaxStateKey={"vjnkdfjkv"}
+          rightButton="vfdjkkvdfmvdl"
+          title="cjbhbdcjhb"
+        />
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "2rem",
+          border: "1px solid red",
+          padding: "1rem",
+        }}
+      >
+        <h2>EditPcModalWindow</h2>
+        <EditPcModalWindow redaxStateKey={"jnvkfdjvnkdfj"} />
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "2rem",
+          border: "1px solid red",
+          padding: "1rem",
+        }}
+      >
+        <h2>ScreenshotSavedModalWindows</h2>
+        <ScreenshotSavedModalWindows redaxStateKey={"cdkfvkfdlvndf"} />
       </div>
 
       <div

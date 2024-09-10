@@ -1,15 +1,19 @@
 import { FC, useState } from "react";
 
-import PlusIcon from "../../../assets/icons/PlusIcon.svg";
-import CounterMinus from "../../../assets/icons/CounterMinus.svg";
+import ArrowCheckUp from "../../../assets/icons/ArrowCheckUp.svg";
+import ArrowCheckDown from "../../../assets/icons/ArrowCheckDown.svg";
 
 import styles from "./custom_counter_input.module.scss";
 
 export interface CustomCounterInputPropsType {
-  label: string;
+  placeholder?: string;
+  label?: string;
 }
 
-const CustomCounterInput: FC<CustomCounterInputPropsType> = ({ label }) => {
+const CustomCounterInput: FC<CustomCounterInputPropsType> = ({
+  label,
+  placeholder,
+}) => {
   const [count, setCount] = useState<number>(0);
 
   const handleCountReduction = () => {
@@ -28,10 +32,16 @@ const CustomCounterInput: FC<CustomCounterInputPropsType> = ({ label }) => {
           type="number"
           value={count}
           onChange={(e) => setCount(Number(e.target.value))}
-          placeholder="Введите количество штрафных минут"
+          placeholder={placeholder}
         />
-        <img onClick={handleCountReduction} src={CounterMinus} alt="Decrease" />
-        <img onClick={handleCountEnlarge} src={PlusIcon} alt="Increase" />
+        <div>
+          <img onClick={handleCountEnlarge} src={ArrowCheckUp} alt="Increase" />
+          <img
+            onClick={handleCountReduction}
+            src={ArrowCheckDown}
+            alt="Decrease"
+          />
+        </div>
       </div>
     </div>
   );

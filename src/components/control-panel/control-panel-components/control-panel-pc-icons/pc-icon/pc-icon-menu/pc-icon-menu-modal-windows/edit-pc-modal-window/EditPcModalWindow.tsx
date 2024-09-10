@@ -36,30 +36,23 @@ const EditPcModalWindow: FC<EditPcModalWindowPropsType> = ({
       redaxStateKey={redaxStateKey}
       title="Редактирование"
       specialText="ПК-13"
-      components={[
-        () => <CustomCounterInput label="Номер компьютера" />,
-        () => (
-          <CustomSelect
-            customSelectData={dataSelect}
-            title="Группа ПК"
-            selectTitle="Выберите группу для данного ПК"
-          />
-        ),
-        () => (
-          <CustomSelect
-            customSelectData={dataSelect}
-            title="Отнести ПК к комнате"
-            selectTitle="Выберите комнату для данного ПК"
-          />
-        ),
-        () => (
-          <CustomDualButtonYesNo
-            redaxStateKey={redaxStateKey}
-            buttonRightText="Готово"
-          />
-        ),
-      ]}
-    />
+    >
+      <CustomCounterInput label="Номер компьютера" />
+      <CustomSelect
+        customSelectData={dataSelect}
+        title="Группа ПК"
+        selectTitle="Выберите группу для данного ПК"
+      />
+      <CustomSelect
+        customSelectData={dataSelect}
+        title="Отнести ПК к комнате"
+        selectTitle="Выберите комнату для данного ПК"
+      />
+      <CustomDualButtonYesNo
+        redaxStateKey={redaxStateKey}
+        buttonRightText="Готово"
+      />
+    </CutomModalWindowUniversal>
   );
 };
 
