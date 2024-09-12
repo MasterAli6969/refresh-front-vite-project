@@ -10,16 +10,17 @@ import {
   removeTab,
   RoomTabObjectTypes,
 } from "../../features/redux/reducers/special-reducers/control-panel-reducers/roomTabsEditReducer";
-import AddNewRoomsButton from "./control-panel-components/add-new-rooms-button/AddNewRoomsButton";
-import LayoutEdingButton from "./control-panel-components/layout-eding-button/LayoutEdingButton";
 import RoomTabs from "./control-panel-components/room-tabs/RoomTabs";
 import ControlPanelPcIcons from "./control-panel-components/control-panel-pc-icons/ControlPanelPcIcons";
 import { setDynamicInput } from "../../features/redux/reducers/common-reducers/inputDynamicReduser";
 import { setSaveDynamicNumber } from "../../features/redux/reducers/common-reducers/saveNumberDynamicReduser";
+import ControlPanelHeader from "./control-panel-components/control-panel-header/ControlPanelHeader";
+
 import { resetOnClickDynamic } from "../../features/redux/reducers/common-reducers/onClickDynamicReduser";
-import { pcIconData } from "./testData";
-import styles from "./control_panel.module.scss";
 import { addNewPcIcons } from "../../features/redux/reducers/special-reducers/control-panel-reducers/pcIconEditReducer";
+import { pcIconData } from "./testData";
+
+import styles from "./control_panel.module.scss";
 
 const ControlPanel: FC = () => {
   const [activePanelId, setActivePanelId] = useState<number | string>("");
@@ -136,16 +137,13 @@ const ControlPanel: FC = () => {
     <div className={styles.div}>
       <h2>Панель управления ПК</h2>
       <div className={styles.subdiv}>
+        <ControlPanelHeader />
         <div className={styles.rooms_tabs_container}>
           {roomTabs.map((item: RoomTabObjectTypes) => (
             <div key={item.id} onClick={() => handleRoomTabClick(item.id)}>
               <RoomTabs id={item.id} title={item.name} />
             </div>
           ))}
-        </div>
-        <div className={styles.subdiv_rooms_control}>
-          <LayoutEdingButton />
-          <AddNewRoomsButton />
         </div>
       </div>
       <div className={styles.pc_panel_container}>{renderActivePanel()}</div>

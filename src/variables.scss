@@ -52,14 +52,13 @@ $light_gradient: linear-gradient(
 //стили для мини кнопок с синей иконкой
 @mixin divStyle($bg-color, $hover-color) {
   cursor: pointer;
-  width: 2.5rem;
-  height: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: $bg-color;
   border: none;
   border-radius: $border_radius12;
+  padding: 0.5rem;
   &:hover {
     background-color: $hover-color;
     border: 1px solid $active-color;

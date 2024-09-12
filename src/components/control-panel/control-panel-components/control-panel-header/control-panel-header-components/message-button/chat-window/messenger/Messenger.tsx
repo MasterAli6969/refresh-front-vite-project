@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 
-import { messageOutgoingEmployeesData } from "../../../../data";
+import { messageOutgoingEmployeesData } from "../../../../../../../header/data";
 
 import styles from "./messenger.module.scss";
 

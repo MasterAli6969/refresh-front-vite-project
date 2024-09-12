@@ -4,6 +4,7 @@ import classNames from "classnames";
 import CustomSwitchButton from "../../static-components/custom-switch-button/CustomSwitchButton";
 
 import styles from "./custom_modal_open_button_switch.module.scss";
+import CustomButton from "../../static-components/custom-button/CustomButton";
 
 export interface CustomModalOpenButtonSwitchPropsType {
   icon: string;
@@ -46,9 +47,7 @@ const CustomModalOpenButtonSwitch: FC<CustomModalOpenButtonSwitchPropsType> = ({
 
   return (
     <div className={styles.div}>
-      <button onClick={handleClick} className={styles.button}>
-        <img src={icon} />
-      </button>
+      <CustomButton icon={icon} color="dark" onClick={handleClick} />
       <div
         ref={modalRef}
         className={classNames(styles.modal_icon, {

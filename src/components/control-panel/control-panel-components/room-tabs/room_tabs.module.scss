@@ -4,28 +4,16 @@
   position: relative;
   display: flex;
   align-items: center;
+  border: $border_style;
   border-radius: $border_radius5;
   padding: 0.5rem;
-  &:hover {
-    background-color: $quartet_color;
-    ._room_tab_menu_visible {
-      display: block;
-    }
-  }
   > p {
     margin-right: 1rem;
   }
-  > ul {
-    display: flex;
-    > li {
-      margin-right: 0.5rem;
-    }
-  }
   ._room_tab_menu_visible {
-    display: none;
     position: absolute;
     top: 25px;
-    left: 150px;
+    right: -7rem;
     z-index: 5;
   }
 }

@@ -1,7 +1,7 @@
 import { FC } from "react";
 
-import MessagesIcons from "../../../../assets/icons/MessagesIcons.svg";
-import CustomSwitchModalButton from "../../../../common/smart-component/custom-modal-open-button-switch/CustomModalOpenButtonSwitch";
+import MessagesIcons from "../../../../../../assets/icons/MessagesIcons.svg";
+import CustomSwitchModalButton from "../../../../../../common/smart-component/custom-modal-open-button-switch/CustomModalOpenButtonSwitch";
 import DialogWindow from "./chat-window/dialog-window/DialogWindow";
 import Messenger from "./chat-window/messenger/Messenger";
 

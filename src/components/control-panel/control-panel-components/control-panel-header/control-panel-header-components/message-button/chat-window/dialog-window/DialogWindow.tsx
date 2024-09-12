@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
-import OfflineIcon from "../../../../../../assets/icons/OfflineIcon.svg";
-import OflineIcon from "../../../../../../assets/icons/OflineIcon.svg";
-import { dialogData } from "../../../../data";
+import OfflineIcon from "../../../../../../../../assets/icons/OfflineIcon.svg";
+import OflineIcon from "../../../../../../../../assets/icons/OflineIcon.svg";
+import { dialogData } from "../../../../../../../header/data";
 import styles from "./dialog_window.module.scss";
 
 export interface DialogDataType {

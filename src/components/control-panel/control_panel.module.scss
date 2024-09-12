@@ -3,11 +3,9 @@
 .div {
   padding: 1rem;
   .subdiv {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     .rooms_tabs_container {
       display: flex;
+      gap: 0.5rem;
       margin: 1rem;
     }
   }
