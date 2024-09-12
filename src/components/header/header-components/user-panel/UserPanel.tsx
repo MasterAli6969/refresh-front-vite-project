@@ -107,7 +107,10 @@ const UserPanel: FC<UserPanelDataPropsTypes> = ({ userPanelData }) => {
                       </p>
                     </li>
                     <li>
-                      <p>Наличные: ₽ {userPanelData.dropData.shiftData.cash}</p>
+                      <p>
+                        Наличныеcdscsd: ₽{" "}
+                        {userPanelData.dropData.shiftData.cash}
+                      </p>
                     </li>
                     <li>
                       <p>
