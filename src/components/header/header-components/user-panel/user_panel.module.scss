@@ -8,10 +8,10 @@
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
-    color: $light-color;
+    color: $text_default;
     .avatar {
-      background-color: $primary-color;
-      border: 1px solid $secondary-color;
+      background-color: $background_no_active;
+      border: $border_style;
       border-radius: 100%;
       margin-right: 0.5rem;
       padding: 0.4rem;
@@ -27,23 +27,24 @@
       > div {
         display: flex;
         align-items: center;
-        color: $dark-color;
+        color: $text_inactive;
         > img {
           margin-right: 0.5rem;
         }
       }
     }
   }
+
   .dropdown_list {
     width: 21rem;
-    background-color: $bg-primary;
-    color: $dark-color;
-    border: 1px solid $primary-color;
+    background-color: $background_context_menus;
+    color: $text_inactive;
+    border: $border_style;
     padding: 1rem;
     .dropdown_list_header {
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px solid $dark-color;
+      border-bottom: $border_style;
       padding-bottom: 1rem;
       margin-bottom: 1rem;
       > div {
@@ -54,16 +55,16 @@
         }
       }
       > button {
-        color: $light-color;
+        color: $text_default;
         border: none;
         padding: 0.75rem 1.25rem;
         border-radius: $border_radius10;
       }
       ._active_shift {
-        background-color: $close-color;
+        background-color: $background_error;
       }
       ._disactive_shift {
-        background-color: $active-color;
+        background-color: $background_custom_blue;
       }
     }
     .dropdown_list_shift_data {
@@ -77,13 +78,13 @@
           margin-bottom: 0.3rem;
         }
         > li:nth-child(2) {
-          border-left-color: $ok-color;
+          border-left-color: $background_custom_green;
         }
         > li:nth-child(3) {
-          border-left-color: $active-color;
+          border-left-color: $background_custom_blue;
         }
         > li:nth-child(4) {
-          border-left-color: $warning-color;
+          border-left-color: $background_error;
         }
       }
       > div {
@@ -91,8 +92,8 @@
         justify-content: space-between;
         align-items: center;
         > button {
-          color: $light-color;
-          background-color: $primary-color;
+          color: $text_light;
+          background-color: $button_default;
           border: none;
           border-radius: $border_radius10;
           padding: 0.75rem 1.25rem;
@@ -104,7 +105,7 @@
         > a {
           display: flex;
           align-items: center;
-          color: $dark-color;
+          color: $text_inactive;
           padding: 1rem;
           > img {
             margin-right: 1rem;

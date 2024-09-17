@@ -4,7 +4,7 @@ import { RedaxStateProps } from "../../../commonTypes.interface";
 import CustomToggleButton from "../../static-components/custom-toggle-button/CustomToggleButton";
 import CustomInput from "../../static-components/custom-input/CustomInput";
 import CustomDualButtonYesNo from "../../static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
-import CutomModalWindowUniversal from "../../smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CutomModalWindowUniversal from "../../smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 //ИКОНКИ
 import MoneyIconMini from "../../../assets/icons/MoneyIconMini.svg";
 

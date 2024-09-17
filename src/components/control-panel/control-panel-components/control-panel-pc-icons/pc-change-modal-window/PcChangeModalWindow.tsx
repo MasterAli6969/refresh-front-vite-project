@@ -19,7 +19,7 @@ import {
   resetOnClickDynamic,
   setOnClickDynamic,
 } from "../../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
-import CutomModalWindowUniversal from "../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CutomModalWindowUniversal from "../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 
 interface PcChangeModalWindowPropsType extends RedaxStateProps {}
 

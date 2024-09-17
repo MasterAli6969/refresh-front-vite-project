@@ -13,15 +13,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: transparent;
-      color: $seventh_color;
-      border: none;
+      background-color: $button_transparent;
+      color: $text_inactive;
+      border: $border_style;
       border-radius: $border_radius5;
       padding: 0.5rem;
     }
     ._active {
-      background-color: $tertiary_color;
-      color: $light_color;
+      background-color: $button_active;
+      color: $text_light;
     }
   }
 }

@@ -6,15 +6,6 @@
   }
   > div {
     @include inputStyleSpesialContainer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem;
-    > input {
-      background-color: $primary-color;
-      border: none;
-      color: $light_color;
-    }
     > div {
       height: 1.5rem;
       display: flex;

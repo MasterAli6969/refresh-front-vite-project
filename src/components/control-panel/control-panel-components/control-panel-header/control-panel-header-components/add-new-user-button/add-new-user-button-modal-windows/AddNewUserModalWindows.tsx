@@ -1,5 +1,5 @@
 import { FC } from "react";
-import CutomModalWindowUniversal from "../../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CutomModalWindowUniversal from "../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 //ИКОНКИ
 import MaiIconSmall from "../../../../../../../assets/icons/MaiIconSmall.svg";
 //МОДУЛИ ДЛЯ РАБОТЫ
@@ -7,9 +7,9 @@ import { RedaxStateProps } from "../../../../../../../commonTypes.interface";
 import CustomInput from "../../../../../../../common/static-components/custom-input/CustomInput";
 import CustomDualButtonYesNo from "../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
-interface AddNewRoomsModalWindowsPropsType extends RedaxStateProps {}
+interface AddNewUserModalWindowsPropsType extends RedaxStateProps {}
 
-const AddNewRoomsModalWindows: FC<AddNewRoomsModalWindowsPropsType> = ({
+const AddNewUserModalWindows: FC<AddNewUserModalWindowsPropsType> = ({
   redaxStateKey,
 }) => {
   return (
@@ -29,4 +29,4 @@ const AddNewRoomsModalWindows: FC<AddNewRoomsModalWindowsPropsType> = ({
   );
 };
 
-export default AddNewRoomsModalWindows;
+export default AddNewUserModalWindows;

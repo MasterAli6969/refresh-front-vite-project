@@ -4,7 +4,7 @@ import { RedaxStateProps } from "../../../../../../../../commonTypes.interface";
 import CustomSelect from "../../../../../../../../common/static-components/custom-select/CustomSelect";
 
 import CustomDualButtonYesNo from "../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
-import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 import CustomInput from "../../../../../../../../common/static-components/custom-input/CustomInput";
 
 const selectData = [

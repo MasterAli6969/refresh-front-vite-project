@@ -1,30 +1,27 @@
 import { FC } from "react";
 import { RedaxStateProps } from "../../../../../commonTypes.interface";
 import { useAppDispatch } from "../../../../../features/redux/hooks/reduxRootHooks";
-
-import CustomDualButtonYesNo from "../../../../static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
-
+import { setOnClickDynamic } from "../../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
 import {
   resetModals,
   setToggleDynamic,
 } from "../../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
-import { setOnClickDynamic } from "../../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
-import CutomModalWindowUniversal from "../../cutom-modal-window-universal/CutomModalWindowUniversal";
+import CutomModalWindowUniversal from "../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CustomDualButtonYesNo from "../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+//ИКОНКИ
+//МОДУЛИ ДЛЯ РЕНДЕРА
+//СТИЛИ
 
-export interface CutomModalWindowType2PropsType extends RedaxStateProps {
+export interface LayoutEdingButtonModalWindowPropsType extends RedaxStateProps {
   title: string;
   specialText?: string;
   descritpion?: string;
   rightButton: string;
 }
 
-const CutomModalWindowType2: FC<CutomModalWindowType2PropsType> = ({
-  redaxStateKey,
-  title,
-  specialText,
-  descritpion,
-  rightButton,
-}) => {
+const LayoutEdingButtonModalWindow: FC<
+  LayoutEdingButtonModalWindowPropsType
+> = ({ redaxStateKey, title, specialText, descritpion, rightButton }) => {
   const dispatch = useAppDispatch();
 
   const handleRightClick = () => {
@@ -43,6 +40,7 @@ const CutomModalWindowType2: FC<CutomModalWindowType2PropsType> = ({
       resetModals()
     );
   };
+
   return (
     <CutomModalWindowUniversal
       redaxStateKey={redaxStateKey}
@@ -59,4 +57,4 @@ const CutomModalWindowType2: FC<CutomModalWindowType2PropsType> = ({
   );
 };
 
-export default CutomModalWindowType2;
+export default LayoutEdingButtonModalWindow;

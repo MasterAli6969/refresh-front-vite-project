@@ -6,8 +6,8 @@ import OnlineIcon from "../../../../assets/icons/OnlineIcon.svg";
 import CustomButton from "../../../../common/static-components/custom-button/CustomButton";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
-import CutomModalWindowType3 from "../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-types/cutom-modal-window-type3/CutomModalWindowType3";
 import CustomDynamicList from "../../../../common/smart-component/custom-dynamic-list/CustomDynamicList";
+import OpenShiftModalWindow from "./shift-panel-modal-windows/open-shift-modal-window/OpenShiftModalWindow";
 //СТИЛИ
 
 const ShiftPanel: FC = () => {
@@ -20,14 +20,13 @@ const ShiftPanel: FC = () => {
   const handleClickVisibleMenu = () => {
     setIsMenuVisible(!isMenuVisible);
   };
-
   return (
     <div>
       {!isShiftStatus ? (
         <CustomCenterModalOpenWrapper
           redaxStateKey="userPanelOpenShiftModalWindow"
           openComponents={() => (
-            <CutomModalWindowType3
+            <OpenShiftModalWindow
               redaxStateKey="userPanelOpenShiftModalWindow"
               redaxShiftState="isShiftStatus"
               shiftType={isShiftStatus}

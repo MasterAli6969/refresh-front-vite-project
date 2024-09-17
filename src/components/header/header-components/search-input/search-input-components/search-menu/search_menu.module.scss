@@ -1,7 +1,7 @@
 @import "/src/variables.scss";
 
 .ul {
-  background-color: $primary-color;
+  background-color: $background_context_menus;
   border: $border_style;
   border-radius: $border_radius12;
   padding: 0.5rem;
@@ -24,14 +24,14 @@
       top: 0;
       right: -180px;
       > ul {
-        background-color: $primary_color;
+        background-color: $background_context_menus;
         border: $border_style;
         border-radius: $border_radius5;
         > li {
           cursor: pointer;
           padding: 1rem;
           &:hover {
-            background-color: $tertiary_color;
+            background-color: $background_hover_menu_item;
           }
         }
       }

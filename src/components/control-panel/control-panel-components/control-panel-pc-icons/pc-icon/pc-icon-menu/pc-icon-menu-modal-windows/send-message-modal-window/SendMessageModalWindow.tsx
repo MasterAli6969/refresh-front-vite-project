@@ -4,7 +4,7 @@ import { RedaxStateProps } from "../../../../../../../../commonTypes.interface";
 import CustomTextarea from "../../../../../../../../common/static-components/custom-textarea/CustomTextarea";
 import CustomDualButtonYesNo from "../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
-import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 
 interface SendMessageModalWindowPropsType extends RedaxStateProps {}
 

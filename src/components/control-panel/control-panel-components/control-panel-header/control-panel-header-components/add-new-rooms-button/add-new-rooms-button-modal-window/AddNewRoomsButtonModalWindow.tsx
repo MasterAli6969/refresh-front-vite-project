@@ -1,35 +1,33 @@
 import { FC, useState } from "react";
-import { RedaxStateProps } from "../../../../../commonTypes.interface";
+import { RedaxStateProps } from "../../../../../../../commonTypes.interface";
 import {
   useAppDispatch,
   useAppSelector,
-} from "../../../../../features/redux/hooks/reduxRootHooks";
-
-import CustomInput from "../../../../static-components/custom-input/CustomInput";
-
-import { setDynamicInput } from "../../../../../features/redux/reducers/common-reducers/inputDynamicReduser";
-
-import {
-  resetModals,
-  setToggleDynamic,
-} from "../../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
+} from "../../../../../../../features/redux/hooks/reduxRootHooks";
+import { setDynamicInput } from "../../../../../../../features/redux/reducers/common-reducers/inputDynamicReduser";
 import {
   resetOnClickDynamic,
   setOnClickDynamic,
-} from "../../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
-import CustomDualButtonYesNo from "../../../../static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
-import CutomModalWindowUniversal from "../../cutom-modal-window-universal/CutomModalWindowUniversal";
+} from "../../../../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
+import {
+  resetModals,
+  setToggleDynamic,
+} from "../../../../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
+import CutomModalWindowUniversal from "../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CustomInput from "../../../../../../../common/static-components/custom-input/CustomInput";
+import CustomDualButtonYesNo from "../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+//ИКОНКИ
+//МОДУЛИ ДЛЯ РЕНДЕРА
+//СТИЛИ
 
-export interface CutomModalWindowType1PropsType extends RedaxStateProps {
+export interface AddNewRoomsButtonModalWindowPropsType extends RedaxStateProps {
   title: string;
   specialText?: string;
 }
 
-const CutomModalWindowType1: FC<CutomModalWindowType1PropsType> = ({
-  redaxStateKey,
-  title,
-  specialText,
-}) => {
+const AddNewRoomsButtonModalWindow: FC<
+  AddNewRoomsButtonModalWindowPropsType
+> = ({ redaxStateKey, title, specialText }) => {
   const stateAddInput = useAppSelector(
     (state) => state.inputDynamic.inputStatesDynamic[redaxStateKey]
   );
@@ -66,7 +64,6 @@ const CutomModalWindowType1: FC<CutomModalWindowType1PropsType> = ({
       resetModals()
     );
   };
-
   return (
     <CutomModalWindowUniversal
       redaxStateKey={redaxStateKey}
@@ -89,4 +86,4 @@ const CutomModalWindowType1: FC<CutomModalWindowType1PropsType> = ({
   );
 };
 
-export default CutomModalWindowType1;
+export default AddNewRoomsButtonModalWindow;

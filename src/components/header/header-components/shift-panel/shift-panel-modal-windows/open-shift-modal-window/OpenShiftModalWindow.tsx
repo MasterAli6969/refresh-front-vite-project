@@ -1,23 +1,24 @@
 import { FC } from "react";
-import { RedaxStateProps } from "../../../../../commonTypes.interface";
+import { RedaxStateProps } from "../../../../../../commonTypes.interface";
+import { useAppDispatch } from "../../../../../../features/redux/hooks/reduxRootHooks";
+import { setToggleDynamic } from "../../../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
+import CutomModalWindowUniversal from "../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CustomDualTextDisplay from "../../../../../../common/static-components/custom-dual-text-display/CustomDualTextDisplay";
+import CustomInput from "../../../../../../common/static-components/custom-input/CustomInput";
+import CustomTextarea from "../../../../../../common/static-components/custom-textarea/CustomTextarea";
+import CustomButton from "../../../../../../common/static-components/custom-button/CustomButton";
+//ИКОНКИ
+//МОДУЛИ ДЛЯ РЕНДЕРА
+//СТИЛИ
 
-import CustomInput from "../../../../static-components/custom-input/CustomInput";
-import CustomButton from "../../../../static-components/custom-button/CustomButton";
-import CustomTextarea from "../../../../static-components/custom-textarea/CustomTextarea";
-import CustomDualTextDisplay from "../../../../static-components/custom-dual-text-display/CustomDualTextDisplay";
-
-import { useAppDispatch } from "../../../../../features/redux/hooks/reduxRootHooks";
-import { setToggleDynamic } from "../../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
-import CutomModalWindowUniversal from "../../cutom-modal-window-universal/CutomModalWindowUniversal";
-
-export interface CutomModalWindowType3PropsType extends RedaxStateProps {
+export interface OpenShiftModalWindowPropsType extends RedaxStateProps {
   shiftType: boolean;
   redaxShiftState: string;
   title: string;
   rightButton: string;
 }
 
-const CutomModalWindowType3: FC<CutomModalWindowType3PropsType> = ({
+const OpenShiftModalWindow: FC<OpenShiftModalWindowPropsType> = ({
   shiftType,
   redaxStateKey,
   redaxShiftState,
@@ -64,7 +65,6 @@ const CutomModalWindowType3: FC<CutomModalWindowType3PropsType> = ({
       })
     );
   };
-
   return (
     <CutomModalWindowUniversal redaxStateKey={redaxStateKey} title={title}>
       {shiftType ? (
@@ -95,4 +95,4 @@ const CutomModalWindowType3: FC<CutomModalWindowType3PropsType> = ({
   );
 };
 
-export default CutomModalWindowType3;
+export default OpenShiftModalWindow;

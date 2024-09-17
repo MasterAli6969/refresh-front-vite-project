@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 
-import { RedaxStateProps } from "../../../../commonTypes.interface";
-import CustomModalCloseHead from "../../custom-modal-close-head/CustomModalCloseHead";
+import { RedaxStateProps } from "../../../commonTypes.interface";
+import CustomModalCloseHead from "../custom-modal-close-head/CustomModalCloseHead";
 
 import styles from "./cutom_modal_window_universal.module.scss";
 

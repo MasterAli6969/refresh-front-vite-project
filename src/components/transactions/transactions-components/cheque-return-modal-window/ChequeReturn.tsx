@@ -4,7 +4,7 @@ import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks"
 import { RedaxStateProps } from "../../../../commonTypes.interface";
 
 import styles from "./cheque_return.module.scss";
-import CutomModalWindowUniversal from "../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CutomModalWindowUniversal from "../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 import CartItem from "../../../shop/shop-common/cart-items/CartItems";
 import {
   reduxCartItemsReducerStateKeyTransactions,

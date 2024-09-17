@@ -5,8 +5,6 @@ import classNames from "classnames";
 import OnlineIcon from "../../../../assets/icons/OnlineIcon.svg";
 import OfflineIcon from "../../../../assets/icons/OfflineIcon.svg";
 
-import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
-import CutomModalWindowType3 from "../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-types/cutom-modal-window-type3/CutomModalWindowType3";
 import styles from "./user_panel.module.scss";
 
 export interface DropListItemTypes {
@@ -70,29 +68,14 @@ const UserPanel: FC<UserPanelDataPropsTypes> = ({ userPanelData }) => {
               <img src={!isShiftStatus ? OfflineIcon : OnlineIcon} />
               <p>{!isShiftStatus ? "Смена закрыта" : "Смена открыта "}</p>
             </div>
-            <CustomCenterModalOpenWrapper
-              redaxStateKey="userPanelOpenShiftModalWindow"
-              openComponents={() => (
-                <CutomModalWindowType3
-                  redaxStateKey="userPanelOpenShiftModalWindow"
-                  redaxShiftState="isShiftStatus"
-                  shiftType={isShiftStatus}
-                  title={!isShiftStatus ? "Открытие смены" : "Закрытие смены "}
-                  rightButton={
-                    !isShiftStatus ? "Открыть смену" : "Закрыть смену"
-                  }
-                />
-              )}
+            <button
+              className={classNames({
+                [styles._active_shift]: isShiftStatus,
+                [styles._disactive_shift]: !isShiftStatus,
+              })}
             >
-              <button
-                className={classNames({
-                  [styles._active_shift]: isShiftStatus,
-                  [styles._disactive_shift]: !isShiftStatus,
-                })}
-              >
-                <p>{!isShiftStatus ? "Открыть смену" : "Закрыть смену"}</p>
-              </button>
-            </CustomCenterModalOpenWrapper>
+              <p>{!isShiftStatus ? "Открыть смену" : "Закрыть смену"}</p>
+            </button>
           </div>
           {isShiftStatus && (
             <div className={styles.dropdown_list_shift_data}>

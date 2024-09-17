@@ -3,7 +3,7 @@
 .div {
   width: 100%;
   > h3 {
-    color: $dark-color;
+    color: $text_inactive;
     margin-bottom: 0.5rem;
   }
   .subdiv {
@@ -17,13 +17,13 @@
     > input {
       border: none;
       background-color: transparent;
-      color: $dark-color;
+      color: $text_inactive;
     }
   }
   > p {
-    color: $error-color;
+    color: $background_error;
   }
   ._error {
-    border: 1px solid $error-color;
+    border: 1px solid $background_error;
   }
 }

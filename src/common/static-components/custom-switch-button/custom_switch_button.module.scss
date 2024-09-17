@@ -3,7 +3,7 @@
   .subdiv_buttons {
     display: flex;
     align-items: center;
-    background-color: $secondary-color;
+    background-color: $button_default;
     border-radius: 12px;
     border: $border_style;
     padding: 0.3rem;
@@ -16,7 +16,7 @@
       border-radius: 12px;
     }
     ._active {
-      background-color: $primary-color;
+      background-color: $button_active;
     }
   }
 }

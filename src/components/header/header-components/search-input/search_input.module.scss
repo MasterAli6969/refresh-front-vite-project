@@ -3,9 +3,9 @@
   position: relative;
   width: 25.1rem;
   display: flex;
-  background-color: $primary-color;
+  background-color: transparent;
   border-radius: 10px;
-  border: 1px solid $tertiary-color;
+  border: 1px solid $border_style;
   padding: 0.75rem 1.25rem;
   > img {
     margin-right: 0.5rem;
@@ -13,7 +13,7 @@
   > input {
     width: 100%;
     background-color: transparent;
-    color: $light-color;
+    color: $text_light;
     border: none;
   }
   > .add_user_icon {
@@ -21,7 +21,7 @@
     border-radius: $border_radius5;
     padding: 0.3rem;
     &:hover {
-      background-color: $tertiary_color;
+      background-color: $button_active;
     }
   }
   .search_menu {

@@ -4,10 +4,10 @@ import { useAppSelector } from "../../../../../features/redux/hooks/reduxRootHoo
 
 import EditFill from "../../../../../assets/icons/EditFill.svg";
 import CustomCenterModalOpenWrapper from "../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
-import CutomModalWindowType1 from "../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-types/cutom-modal-window-type1/CutomModalWindowType1";
-import CutomModalWindowType2 from "../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-types/cutom-modal-window-type2/CutomModalWindowType2";
 
 import styles from "./room_tabs_menu.module.scss";
+import RenameRoomTabsModalWindow from "./room-tabs-menu-modal-winodws/rename-room-tabs-modal-window/RenameRoomTabsModalWindow";
+import DeleteRoomTabsModalWindow from "./room-tabs-menu-modal-winodws/delete-room-tabs-modal-window/DeleteRoomTabsModalWindow";
 
 interface RoomTabsMenu {
   title: string;
@@ -25,7 +25,7 @@ const RoomTabsMenu: FC<RoomTabsMenu> = ({ title, tabId }) => {
         <CustomCenterModalOpenWrapper
           redaxStateKey={`renameRoomTabs${isGetModalId}`}
           openComponents={() => (
-            <CutomModalWindowType1
+            <RenameRoomTabsModalWindow
               redaxStateKey={`renameRoomTabs${isGetModalId}`}
               title={title}
               specialText="Standart"
@@ -40,7 +40,7 @@ const RoomTabsMenu: FC<RoomTabsMenu> = ({ title, tabId }) => {
         <CustomCenterModalOpenWrapper
           redaxStateKey={`deleteRoomTab${isGetModalId}`}
           openComponents={() => (
-            <CutomModalWindowType2
+            <DeleteRoomTabsModalWindow
               redaxStateKey={`deleteRoomTab${isGetModalId}`}
               title="Удаление комнаты"
               specialText={title}

@@ -3,7 +3,7 @@
 .div {
   position: relative;
   .button {
-    @include divStyle($primary-color, $tertiary-color);
+    @include miniDivIconStyle($button_default, $button_active);
   }
   .modal_icon {
     position: absolute;
@@ -14,7 +14,7 @@
     .modal_div {
       width: 24.25rem;
       height: 42rem;
-      background-color: $bg-primary;
+      background-color: $background_modal_general;
       border: $border_style;
       border-radius: 16px;
       padding: 1rem;

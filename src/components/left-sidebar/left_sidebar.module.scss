@@ -2,7 +2,7 @@
 
 .div {
   height: 100%;
-  border-right: 1px solid $secondary-color;
+  border-right: $border_style;
   padding: 1rem;
   .subdiv_logo {
     margin-bottom: 1rem;

@@ -2,8 +2,8 @@ import { FC } from "react";
 
 import AddNewRoomIcon from "../../../../../../assets/icons/AddNewRoomIcon.svg";
 import CustomCenterModalOpenWrapper from "../../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
-import CutomModalWindowType1 from "../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-types/cutom-modal-window-type1/CutomModalWindowType1";
 import CustomButton from "../../../../../../common/static-components/custom-button/CustomButton";
+import AddNewRoomsButtonModalWindow from "./add-new-rooms-button-modal-window/AddNewRoomsButtonModalWindow";
 
 const AddNewRoomsButton: FC = () => {
   return (
@@ -11,7 +11,7 @@ const AddNewRoomsButton: FC = () => {
       <CustomCenterModalOpenWrapper
         redaxStateKey="addNewRoomsButtonModalWindow"
         openComponents={() => (
-          <CutomModalWindowType1
+          <AddNewRoomsButtonModalWindow
             redaxStateKey="addNewRoomsButtonModalWindow"
             title="Создать новую комнату"
           />

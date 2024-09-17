@@ -1,22 +1,27 @@
 import { FC } from "react";
 
-import CustomButton from "../custom-button/CustomButton";
+import CustomDualButtonYesNo from "../custom-dual-button-yes-no/CustomDualButtonYesNo";
+
+import { RedaxStateProps } from "../../../commonTypes.interface";
 
 import styles from "./custom_confirmation_modal_window.module.scss";
 
-export interface CustomConfirmationModalWindowPropType {
+export interface CustomConfirmationModalWindowPropType extends RedaxStateProps {
   text: string;
 }
 
 const CustomConfirmationModalWindow: FC<
   CustomConfirmationModalWindowPropType
-> = ({ text }) => {
+> = ({ text, redaxStateKey }) => {
   return (
     <div className={styles.div}>
       <h3>{text}</h3>
       <div>
-        <CustomButton color="light" text="Да" />
-        <CustomButton color="dark" text="Нет" />
+        <CustomDualButtonYesNo
+          buttonRightText="Да"
+          buttonLeftText="Нет"
+          redaxStateKey={redaxStateKey}
+        />
       </div>
     </div>
   );

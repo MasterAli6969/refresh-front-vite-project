@@ -1,7 +1,7 @@
 @import "/src/variables.scss";
 
 .ul {
-  background-color: $bg-primary;
+  background-color: $background_context_menus;
   color: white;
   border: $border_style;
   border-radius: $border_radius10;
@@ -10,7 +10,7 @@
   > li {
     padding: 0.5rem;
     &:hover {
-      background: $light_gradient;
+      background: $background_hover_menu_item;
       border-radius: $border_radius5;
     }
   }

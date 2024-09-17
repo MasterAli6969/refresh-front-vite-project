@@ -2,27 +2,29 @@
 .button {
   display: flex;
   align-items: center;
+  justify-content: center;
   border: $border_style;
-  border-radius: 12px;
-  padding: 0.5rem;
-  > p {
-    margin-left: 0.5rem;
+  border-radius: $border_radius5;
+  padding: 1rem;
+  > img {
+    margin-right: 0.5rem;
   }
 }
 
 ._light {
-  background-color: $light_special_color;
-  color: $special_primary_color;
+  background-color: $button_special;
+  color: $text_dark;
+  border: none;
 }
 ._dark {
-  background-color: $primary_color;
-  color: $light_color;
+  background-color: $button_default;
+  color: $text_light;
 }
 ._warning {
-  background-color: $custom_red;
+  background-color: $background_error;
 }
 
 ._transparent {
-  background-color: transparent;
-  color: $light_color;
+  background-color: $button_transparent;
+  color: $text_light;
 }

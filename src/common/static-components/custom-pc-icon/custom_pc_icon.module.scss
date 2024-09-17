@@ -10,19 +10,19 @@
     border-radius: 100%;
   }
   ._active {
-    background-color: $active-color;
+    background-color: $background_custom_blue;
   }
 
   ._no_active {
-    background-color: $bg-primary;
+    background-color: $background_general;
     border: $border_style;
   }
 
   ._included {
-    background-color: $ok-color;
+    background-color: $background_custom_green;
   }
 
   ._servicing {
-    background-color: $warning-color;
+    background-color: $background_error;
   }
 }

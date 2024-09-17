@@ -30,7 +30,7 @@
     width: 0.8rem;
   }
   &:hover {
-    border: 3px solid $light-color;
+    border: 3px solid $text_default;
     .subdiv_menu {
       display: block;
     }
@@ -38,27 +38,27 @@
 }
 
 ._shutdown_mode {
-  background-color: $bg-primary;
+  background-color: background_no_active;
 }
 
 ._standby_mode {
-  background-color: $ok-color;
+  background-color: $background_custom_green;
 }
 
 ._active_mode {
-  background-color: $active-color;
+  background-color: $background_custom_blue;
 }
 
 ._service_mode {
   .subdiv_number {
-    color: $custom_red;
+    color: $background_error;
   }
-  background-color: $bg-primary;
+  background-color: $background_no_active;
 }
 
 ._administration_mode {
   .subdiv_number {
-    color: $custom_blue;
+    color: $background_custom_blue;
   }
-  background-color: $bg-primary;
+  background-color: $background_no_active;
 }

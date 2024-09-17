@@ -2,11 +2,11 @@
 
 .div {
   width: 14.8rem;
-  @include PopoverMenuUl;
+  @include PopoverContextMenuUl;
   z-index: 1;
   .subdiv {
     .drop_menu {
-      background-color: $active-color;
+      background-color: $background_custom_blue;
       border-radius: 10px 10px 0 0;
       padding: 1rem;
       > div {
@@ -24,21 +24,21 @@
         }
         > ul {
           width: 14.8rem;
-          background-color: $primary_color;
-          color: $light_color;
+          background-color: $background_context_menus;
+          color: $text_light;
           border: $border_style;
           padding: 1rem;
           li {
             padding: 0.3rem;
             &:hover {
-              background-color: $tertiary_color;
+              background-color: $background_hover_menu_item;
             }
           }
         }
       }
     }
     .pc_title {
-      background-color: $sixth_color;
+      background-color: $button_active;
       padding: 1rem;
     }
     > ul {

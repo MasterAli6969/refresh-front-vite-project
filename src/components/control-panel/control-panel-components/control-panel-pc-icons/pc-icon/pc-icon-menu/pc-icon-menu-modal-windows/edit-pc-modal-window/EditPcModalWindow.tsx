@@ -5,7 +5,7 @@ import CustomCounterInput from "../../../../../../../../common/static-components
 import CustomSelect from "../../../../../../../../common/static-components/custom-select/CustomSelect";
 import CustomDualButtonYesNo from "../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
-import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 
 interface EditPcModalWindowPropsType extends RedaxStateProps {}
 

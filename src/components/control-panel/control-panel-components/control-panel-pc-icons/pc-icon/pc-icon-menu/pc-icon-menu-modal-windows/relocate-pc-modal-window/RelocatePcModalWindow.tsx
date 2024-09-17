@@ -3,7 +3,7 @@ import { RedaxStateProps } from "../../../../../../../../commonTypes.interface";
 
 import CustomDualButtonYesNo from "../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
-import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 import CustomSelect from "../../../../../../../../common/static-components/custom-select/CustomSelect";
 
 interface RelocatePcModalWindowPropsType extends RedaxStateProps {}

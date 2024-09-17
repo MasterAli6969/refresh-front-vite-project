@@ -1,7 +1,7 @@
 @import "/src/variables.scss";
 
 .div {
-  @include modalDivV1(20.8rem);
+  @include modalUniversal1Style;
   > h3 {
     text-align: center;
   }

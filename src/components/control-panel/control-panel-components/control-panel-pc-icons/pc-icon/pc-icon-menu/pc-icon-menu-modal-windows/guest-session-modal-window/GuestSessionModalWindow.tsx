@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 // МОДУЛИ ДЛЯ РЕНДЕРА
-import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-windows/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 import CustomToggleButton from "../../../../../../../../common/static-components/custom-toggle-button/CustomToggleButton";
 import CustomCounterInput from "../../../../../../../../common/static-components/custom-counter-input/CustomCounterInput";
 import CustomInput from "../../../../../../../../common/static-components/custom-input/CustomInput";
@@ -101,7 +101,6 @@ const GuestSessionModalWindow: FC<GuestSessionModalWindowPropsType> = ({
           />
         </>
       )}
-
       <CustomDualButtonYesNo
         redaxStateKey={redaxStateKey}
         buttonRightText="Оплата"

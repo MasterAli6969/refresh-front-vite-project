@@ -4,13 +4,13 @@
     width: 100%;
     background-color: transparent;
     border: none;
-    color: $light-color;
+    color: $text_default;
   }
   .ul {
     > li {
       cursor: pointer;
       padding: 0.5rem;
-      color: $light-color;
+      color: $text_default;
       padding: 1rem;
       &:hover {
         background-image: $light_gradient;

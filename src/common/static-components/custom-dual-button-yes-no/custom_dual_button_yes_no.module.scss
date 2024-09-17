@@ -3,11 +3,13 @@
 .div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
-  > button:first-child {
-    margin-right: 0.5rem;
+  justify-content: flex-end;
+  > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
   > button:last-child {
     margin-left: 0.5rem;
   }

@@ -15,7 +15,7 @@ import MessageButton from "./control-panel-header-components/message-button/Mess
 import NoticeButton from "./control-panel-header-components/notice-button/NoticeButton";
 //СТИЛИ
 import styles from "./control_panel_header.module.scss";
-import AddNewUserBottom from "./control-panel-header-components/add-new-user-bottom/AddNewUserBottom";
+import AddNewUserButton from "./control-panel-header-components/add-new-user-button/AddNewUserButton";
 import AddNewRoomsButton from "./control-panel-header-components/add-new-rooms-button/AddNewRoomsButton";
 
 const ControlPanelHeader: FC = () => {
@@ -30,7 +30,7 @@ const ControlPanelHeader: FC = () => {
         />
         <MessageButton />
         <NoticeButton />
-        <AddNewUserBottom />
+        <AddNewUserButton />
         <AddNewRoomsButton />
       </div>
       <div>

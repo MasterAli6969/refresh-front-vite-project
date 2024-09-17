@@ -11,6 +11,7 @@ import styles from "./custom_dual_button_yes_no.module.scss";
 interface CustomDualButtonYesNoPropsType {
   redaxStateKey: string | number;
   buttonRightText: string;
+  buttonLeftText?: string;
   isSubmit?: boolean;
   onClickRightButton?: () => void;
 }
@@ -18,6 +19,7 @@ interface CustomDualButtonYesNoPropsType {
 const CustomDualButtonYesNo: FC<CustomDualButtonYesNoPropsType> = ({
   redaxStateKey,
   buttonRightText,
+  buttonLeftText,
   isSubmit,
   onClickRightButton,
 }) => {
@@ -34,7 +36,11 @@ const CustomDualButtonYesNo: FC<CustomDualButtonYesNoPropsType> = ({
 
   return (
     <div className={styles.div}>
-      <CustomButton onClick={handleClose} color="dark" text="Отмена" />
+      <CustomButton
+        onClick={handleClose}
+        color="dark"
+        text={`${buttonLeftText ? buttonLeftText : "Отмена"}`}
+      />
       <CustomButton
         type={isSubmit ? "submit" : "button"}
         onClick={onClickRightButton}
