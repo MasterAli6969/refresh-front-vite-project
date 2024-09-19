@@ -1,25 +1,42 @@
-import { FC } from "react";
+import {
+  FC,
+  PropsWithChildren,
+  ReactNode,
+  cloneElement,
+  ReactElement,
+  Children,
+  isValidElement,
+} from "react";
 import classNames from "classnames";
-
 import styles from "./custom_button.module.scss";
 
 export interface CustomButtonPropsType {
-  text?: string;
-  icon?: string;
-  iconSize?: string;
   color: "light" | "dark" | "warning" | "transparent";
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
+  imgSize?: string; // Добавляем необязательный пропс для размера изображения
 }
 
-const CustomButton: FC<CustomButtonPropsType> = ({
-  text,
-  icon,
-  iconSize,
+const CustomButton: FC<PropsWithChildren<CustomButtonPropsType>> = ({
+  children,
   color,
   type,
   onClick,
+  imgSize,
 }) => {
+  // Функция для изменения размеров img элементов внутри children
+  const modifyChildren = (children: ReactNode): ReactNode => {
+    return Children.map(children, (child) => {
+      if (isValidElement(child) && child.type === "img") {
+        // Если это элемент img, клонируем его с новым стилем размера
+        return cloneElement(child as ReactElement, {
+          style: { width: imgSize, height: imgSize },
+        });
+      }
+      return child;
+    });
+  };
+
   return (
     <button
       onClick={onClick}
@@ -31,8 +48,7 @@ const CustomButton: FC<CustomButtonPropsType> = ({
       })}
       type={type ? type : "button"}
     >
-      {icon && <img style={{ width: `${iconSize}rem` }} src={icon} />}
-      {text && <p>{text}</p>}
+      {modifyChildren(children)}
     </button>
   );
 };

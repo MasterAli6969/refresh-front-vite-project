@@ -2,35 +2,35 @@
 
 .div {
   height: 100%;
-  border-right: $border_style;
+  border-right: $border_style_default;
   padding: 1rem;
   .subdiv_logo {
     margin-bottom: 1rem;
   }
-  .subdiv_list {
+  > ul {
     position: relative;
     margin-top: 1.8rem;
-    .main_list {
+    > li {
       cursor: pointer;
       border-radius: 10px;
-      padding: 0.8rem;
+      padding: 0.5rem;
       margin-bottom: 1rem;
+      &:hover {
+        background-color: $background_hover_menu_item;
+      }
       > a,
       > div > button {
         display: flex;
         align-items: center;
+        color: $text_light;
+        border: none;
+        > div {
+          margin-right: 1rem;
+        }
       }
     }
     .active {
-      background: $light_gradient;
+      background: $background_hover_menu_item;
     }
-  }
-  .right_list {
-    position: absolute;
-    top: 0;
-    right: -295px;
-    height: 100%;
-    width: 280px;
-    z-index: 999;
   }
 }

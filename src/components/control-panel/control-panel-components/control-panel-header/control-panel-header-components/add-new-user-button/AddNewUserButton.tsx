@@ -15,7 +15,9 @@ const AddNewUserButton: FC = () => {
           <AddNewUserModalWindows redaxStateKey="AddNewUserModalWindows" />
         )}
       >
-        <CustomButton icon={AddNewUserIcon} color="dark" />
+        <CustomButton imgSize="1rem" color="dark">
+          <img src={AddNewUserIcon} />
+        </CustomButton>
       </CustomCenterModalOpenWrapper>
     </div>
   );

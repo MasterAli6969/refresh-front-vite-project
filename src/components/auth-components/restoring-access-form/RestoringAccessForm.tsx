@@ -50,11 +50,9 @@ const RestoringAccessForm: FC = () => {
             />
           </div>
           <div>
-            <CustomButton
-              color="light"
-              text="Отправить ссылку для восстановления"
-              type="submit"
-            />
+            <CustomButton color="light" type="submit">
+              Отправить ссылку для восстановления
+            </CustomButton>
           </div>
         </form>
       ) : (

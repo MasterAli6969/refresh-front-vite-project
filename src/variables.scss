@@ -50,7 +50,7 @@ $background_modal_button_toggle_active: #1c1f25;
 $background_modal_button_toggle_no_active: transparent;
 $background_modal_select: transparent;
 //ховеры
-$background_hover_menu_item: #1c1f25;
+$background_hover_menu_item: #2c3039;
 $background_hover_button_toggle: #1c1f25;
 
 //------------------------
@@ -63,7 +63,8 @@ $background_hover_button_toggle: #1c1f25;
 //------------------------
 
 //стили для границ
-$border_style: 1px solid $border_default;
+$border_style_default: 1px solid $border_default;
+$border_style_active: 1px solid $border_active;
 $border_radius5: 5px;
 $border_radius10: 10px;
 $border_radius12: 12px;
@@ -79,7 +80,7 @@ $light_gradient: linear-gradient(
 @mixin inputStyleCommon {
   width: 100%;
   background-color: transparent;
-  border: $border_style;
+  border: $border_style_default;
   border-radius: $border_radius12;
   color: $text_default;
   padding: 1rem;
@@ -90,7 +91,7 @@ $light_gradient: linear-gradient(
   display: flex;
   align-items: center;
   background-color: $background_modal_input;
-  border: $border_style;
+  border: $border_style_default;
   border-radius: $border_radius12;
   color: $text_default;
   padding: 0.5rem;
@@ -125,7 +126,7 @@ $light_gradient: linear-gradient(
   display: flex;
   flex-direction: column;
   background-color: $background_modal_general;
-  border: $border_style;
+  border: $border_style_default;
   border-radius: $border_radius10;
   padding: 1rem;
   gap: 1rem;
@@ -134,7 +135,7 @@ $light_gradient: linear-gradient(
 // СТИЛИ ДЛЯ КОНТЕКСТНЫХ МЕНЮ
 @mixin PopoverContextMenuUl {
   background-color: $background_context_menus;
-  border: $border_style;
+  border: $border_style_default;
   border-radius: $border_radius10;
   display: inline-block;
   max-width: 100%;
@@ -163,7 +164,7 @@ $light_gradient: linear-gradient(
   flex-direction: column;
   gap: 1.5rem;
   background-color: $background_modal_general;
-  border: $border_style;
+  border: $border_style_default;
   border-radius: $border_radius16;
   padding: 1rem;
 }

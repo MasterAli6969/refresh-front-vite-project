@@ -2,7 +2,7 @@
 
 .ul {
   background-color: $background_context_menus;
-  border: $border_style;
+  border: $border_style_default;
   border-radius: $border_radius12;
   padding: 0.5rem;
   margin-top: 0.5rem;
@@ -25,7 +25,7 @@
       right: -180px;
       > ul {
         background-color: $background_context_menus;
-        border: $border_style;
+        border: $border_style_default;
         border-radius: $border_radius5;
         > li {
           cursor: pointer;

@@ -1,20 +1,17 @@
 @import "/src//variables.scss";
 .div {
-  .button {
+  > button {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: transparent;
-    border: none;
-    color: $text_default;
+    color: $text_light;
+    border: 1px solid red;
   }
-  .ul {
-    > li {
-      cursor: pointer;
-      padding: 0.5rem;
-      color: $text_default;
-      padding: 1rem;
-      &:hover {
-        background-image: $light_gradient;
-      }
-    }
+  .div_menu {
+    border-left: $border_style_default;
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
   }
 }

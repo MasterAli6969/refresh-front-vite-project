@@ -32,11 +32,9 @@ const CustomDoneAuthWindow: FC<CustomDoneAuthWindowPropsType> = ({
         <img src={CheckBlueMask} />
       </div>
       <div>
-        <CustomButton
-          onClick={handleRedirect}
-          color="light"
-          text={buttonText}
-        />
+        <CustomButton onClick={handleRedirect} color="light">
+          {buttonText}
+        </CustomButton>
       </div>
     </div>
   );

@@ -17,7 +17,9 @@ const AddNewRoomsButton: FC = () => {
           />
         )}
       >
-        <CustomButton icon={AddNewRoomIcon} color="dark" />
+        <CustomButton color="dark">
+          <img src={AddNewRoomIcon} />
+        </CustomButton>
       </CustomCenterModalOpenWrapper>
     </div>
   );

@@ -74,7 +74,7 @@ const SandboxPage: FC = () => {
         <h2>CustomToggleButton</h2>
         <CustomToggleButton
           label="vfnkfvlfdjkvfn"
-          buttonsText={["CustomToggleButton1", "CustomToggleButton2"]}
+          buttonsItems={["CustomToggleButton1", "CustomToggleButton2"]}
         />
       </div>
       <div
@@ -87,7 +87,7 @@ const SandboxPage: FC = () => {
         }}
       >
         <h2>CustomButton</h2>
-        <CustomButton color="transparent" text="CustomButton" />
+        <CustomButton color="transparent">CustomButton</CustomButton>
       </div>
       <div
         style={{

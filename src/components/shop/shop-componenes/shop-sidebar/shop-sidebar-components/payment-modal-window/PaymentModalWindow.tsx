@@ -51,7 +51,7 @@ const PaymentModalWindow: FC<PaymentModalWindowPropsType> = ({
             <p>Способ оплаты</p>
             <div>
               <CustomToggleButton
-                buttonsText={["Наличные", "Карта", "Разделить"]}
+                buttonsItems={["Наличные", "Карта", "Разделить"]}
                 onToggleChange={handleToggleChange}
               />
             </div>
@@ -66,7 +66,7 @@ const PaymentModalWindow: FC<PaymentModalWindowPropsType> = ({
             <p>Чек</p>
             <div>
               <CustomToggleButton
-                buttonsText={["Печатать", "Отправить на почту"]}
+                buttonsItems={["Печатать", "Отправить на почту"]}
               />
             </div>
           </div>

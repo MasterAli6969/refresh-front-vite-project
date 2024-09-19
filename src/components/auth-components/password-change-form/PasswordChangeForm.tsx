@@ -71,7 +71,9 @@ const PasswordChangeForm: FC = () => {
             />
           </div>
           <div>
-            <CustomButton type="submit" color="light" text="Сменить пароль" />
+            <CustomButton type="submit" color="light">
+              Сменить пароль
+            </CustomButton>
           </div>
         </form>
       ) : (

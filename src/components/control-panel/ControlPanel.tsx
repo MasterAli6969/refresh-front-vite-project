@@ -141,7 +141,11 @@ const ControlPanel: FC = () => {
         <div className={styles.rooms_tabs_container}>
           {roomTabs.map((item: RoomTabObjectTypes) => (
             <div key={item.id} onClick={() => handleRoomTabClick(item.id)}>
-              <RoomTabs id={item.id} title={item.name} />
+              <RoomTabs
+                activeId={activePanelId}
+                id={item.id}
+                title={item.name}
+              />
             </div>
           ))}
         </div>

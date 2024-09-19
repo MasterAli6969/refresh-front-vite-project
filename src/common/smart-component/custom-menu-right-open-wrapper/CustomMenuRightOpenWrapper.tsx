@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useEffect, useRef, useState } from "react";
+import { FC, PropsWithChildren, useState } from "react";
 import styles from "./custom_menu_right_open_wrapper.module.scss";
 
 interface CustomMenuRightOpenWrapperPropsType {

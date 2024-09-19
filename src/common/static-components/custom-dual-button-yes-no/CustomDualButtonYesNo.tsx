@@ -36,17 +36,16 @@ const CustomDualButtonYesNo: FC<CustomDualButtonYesNoPropsType> = ({
 
   return (
     <div className={styles.div}>
-      <CustomButton
-        onClick={handleClose}
-        color="dark"
-        text={`${buttonLeftText ? buttonLeftText : "Отмена"}`}
-      />
+      <CustomButton onClick={handleClose} color="dark">
+        {buttonLeftText ? buttonLeftText : "Отмена"}
+      </CustomButton>
       <CustomButton
         type={isSubmit ? "submit" : "button"}
         onClick={onClickRightButton}
         color="light"
-        text={buttonRightText}
-      />
+      >
+        {buttonRightText}
+      </CustomButton>
     </div>
   );
 };

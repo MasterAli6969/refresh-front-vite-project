@@ -33,15 +33,11 @@ const SearchMenu: FC<SearchMenuPropsType> = ({ focused, inputState }) => {
         <ul className={styles.ul}>
           {inputState === "" ? (
             <li>
-              <p>Впишите логин поиска</p>
+              <p>Начните ввод...</p>
             </li>
           ) : !filteredUsers || filteredUsers.length === 0 ? (
             <div>
-              <p>Что-то не так... </p>
-              <p>Мы не смогли найти этого пользователя в базе данных центра.</p>
-              <p>
-                Попробуйте воспользоваться <a href="#"> расширенным поиском.</a>
-              </p>
+              <p>Ничего не найдено {"=("} </p>
             </div>
           ) : (
             filteredUsers.map((item: SearchMenuDataType) => {
@@ -49,18 +45,13 @@ const SearchMenu: FC<SearchMenuPropsType> = ({ focused, inputState }) => {
                 <li key={item.id}>
                   <p>{item.name}</p>
                   <div>
-                    <p>₽</p>
-                    <p>{item.paymentAmount}</p>
-                  </div>
-                  <div>
-                    <img src={ClockTimeIcon} />
-                    <p>{item.timeLeft}</p>
-                  </div>
-                  <div>
                     <ArrowChekRight color="#FEFEFE" />
                   </div>
                   <div className={styles.hover_submenu}>
                     <ul>
+                      <li>
+                        <p>Профиль клиента</p>
+                      </li>
                       <li>
                         <CustomCenterModalOpenWrapper
                           redaxStateKey="replenishmentBalanceModalWindow"
@@ -68,11 +59,8 @@ const SearchMenu: FC<SearchMenuPropsType> = ({ focused, inputState }) => {
                             <ReplenishmentBalanceModalWindows redaxStateKey="replenishmentBalanceModalWindow" />
                           )}
                         >
-                          <p>Профиль клиента</p>
+                          <p>Пополнение</p>
                         </CustomCenterModalOpenWrapper>
-                      </li>
-                      <li>
-                        <p>Пополнение баланса</p>
                       </li>
                       <li>
                         <p>Перейти к покупкам</p>

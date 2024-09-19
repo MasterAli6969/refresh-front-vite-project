@@ -1,46 +1,38 @@
 import { FC, PropsWithChildren } from "react";
+import classNames from "classnames";
 
 import ArrowChekRight from "../../../../assets/icons-svg-components/ArrowChekRight";
 
 import styles from "./drop_list_wrapper.module.scss";
-import { ListType } from "../../../../commonTypes.interface";
-import classNames from "classnames";
 
 interface DropListWrapperPropsType {
-  dropMenuRender?: ListType[];
+  id: number;
+  dropMenuComponents: FC;
 }
 
 const DropListWrapper: FC<PropsWithChildren<DropListWrapperPropsType>> = ({
   children,
-  dropMenuRender,
+  id,
+  dropMenuComponents: DropMenuComponents,
 }) => {
   return (
     <div className={styles.div}>
       <button
-        className={styles.button}
+        className="p-0"
         data-bs-toggle="collapse"
-        data-bs-target={`#multiCollapseExample1`}
+        data-bs-target={`#multiCollapseExample${id}`}
         aria-expanded="false"
-        aria-controls={`multiCollapseExample1`}
+        aria-controls={`multiCollapseExample${id}`}
       >
         {children}
         <ArrowChekRight color="#6C7275" />
       </button>
-      <ul
-        className={classNames("collapse multi-collapse", styles.ul)}
-        id={`multiCollapseExample1`}
+      <div
+        className={classNames("collapse multi-collapse", styles.div_menu)}
+        id={`multiCollapseExample${id}`}
       >
-        {dropMenuRender &&
-          dropMenuRender.map((item: ListType) => {
-            return (
-              <li key={item.id}>
-                <a href={item.url}>
-                  <h4>{item.title}</h4>
-                </a>
-              </li>
-            );
-          })}
-      </ul>
+        <DropMenuComponents />
+      </div>
     </div>
   );
 };

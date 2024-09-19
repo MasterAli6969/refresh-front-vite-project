@@ -91,11 +91,13 @@ const AuthorizationForm: FC = () => {
         <h3 onClick={handleRedirectRestoringAccess}>Забыли пароль?</h3>
       </div>
       <div>
-        <CustomButton type="submit" color="light" text="Выполнить вход" />
+        <CustomButton type="submit" color="light">
+          Выполнить вход
+        </CustomButton>
       </div>
       <hr />
       <div>
-        <CustomButton color="dark" text="Запросить демо" />
+        <CustomButton color="dark">Запросить демо</CustomButton>
       </div>
     </form>
   );

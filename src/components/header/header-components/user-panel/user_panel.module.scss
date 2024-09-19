@@ -11,7 +11,7 @@
     color: $text_default;
     .avatar {
       background-color: $background_no_active;
-      border: $border_style;
+      border: $border_style_default;
       border-radius: 100%;
       margin-right: 0.5rem;
       padding: 0.4rem;
@@ -39,12 +39,12 @@
     width: 21rem;
     background-color: $background_context_menus;
     color: $text_inactive;
-    border: $border_style;
+    border: $border_style_default;
     padding: 1rem;
     .dropdown_list_header {
       display: flex;
       justify-content: space-between;
-      border-bottom: $border_style;
+      border-bottom: $border_style_default;
       padding-bottom: 1rem;
       margin-bottom: 1rem;
       > div {

@@ -9,41 +9,57 @@ import WarningIconSmall from "../../../../assets/icons/WarningIconSmall.svg";
 import WindowsLogoMiniIcons from "../../../../assets/icons/WindowsLogoMiniIcons.svg";
 import SandTimerIcon from "../../../../assets/icons/SandTimerIcon.svg";
 
-//МОДУЛИ ДЛЯ РАБОТЫ
+//МОДУЛИ ДЛЯ РЕНДЕРА
 import CustomButton from "../../../../common/static-components/custom-button/CustomButton";
 import MessageButton from "./control-panel-header-components/message-button/MessageButton";
 import NoticeButton from "./control-panel-header-components/notice-button/NoticeButton";
-//СТИЛИ
-import styles from "./control_panel_header.module.scss";
 import AddNewUserButton from "./control-panel-header-components/add-new-user-button/AddNewUserButton";
 import AddNewRoomsButton from "./control-panel-header-components/add-new-rooms-button/AddNewRoomsButton";
+//СТИЛИ
+import styles from "./control_panel_header.module.scss";
 
 const ControlPanelHeader: FC = () => {
   return (
     <div className={styles.div}>
       <div>
-        <CustomButton icon={MapIcon} text="Карта клуба" color="dark" />
-        <CustomButton
-          icon={ListIconMini}
-          text="Вид списком"
-          color="transparent"
-        />
+        <CustomButton color="dark">
+          <img src={MapIcon} />
+          <p>Карта клуба</p>
+        </CustomButton>
+        <CustomButton color="transparent">
+          <img src={ListIconMini} />
+          <p>Вид списком</p>
+        </CustomButton>
         <MessageButton />
         <NoticeButton />
         <AddNewUserButton />
         <AddNewRoomsButton />
       </div>
       <div>
-        <CustomButton color="transparent" icon={OffModeStatus} text="9" />
-        <CustomButton color="transparent" icon={ActiveModeStatus} text="9" />
-        <CustomButton color="transparent" icon={StandbyModeSatus} text="9" />
-        <CustomButton color="transparent" icon={WarningIconSmall} text="9" />
-        <CustomButton
-          color="transparent"
-          icon={WindowsLogoMiniIcons}
-          text="9"
-        />
-        <CustomButton color="transparent" icon={SandTimerIcon} text="9" />
+        <CustomButton imgSize="1rem" color="transparent">
+          <img src={OffModeStatus} />
+          <p>9</p>
+        </CustomButton>
+        <CustomButton imgSize="1rem" color="transparent">
+          <img src={ActiveModeStatus} />
+          <p>9</p>
+        </CustomButton>
+        <CustomButton imgSize="1rem" color="transparent">
+          <img src={StandbyModeSatus} />
+          <p>9</p>
+        </CustomButton>
+        <CustomButton imgSize="0.6rem" color="transparent">
+          <img src={WarningIconSmall} />
+          <p>9</p>
+        </CustomButton>
+        <CustomButton imgSize="0.6rem" color="transparent">
+          <img src={WindowsLogoMiniIcons} />
+          <p>9</p>
+        </CustomButton>
+        <CustomButton imgSize="0.6rem" color="transparent">
+          <img src={SandTimerIcon} />
+          <p>9</p>
+        </CustomButton>
       </div>
     </div>
   );

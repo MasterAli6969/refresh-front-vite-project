@@ -81,16 +81,12 @@ const OpenShiftModalWindow: FC<OpenShiftModalWindowPropsType> = ({
         label="Комментарий к смене"
         plaseholder="Введите комментарий"
       />
-      <CustomButton
-        onClick={handleClickCancelisShiftStatus}
-        color="dark"
-        text="Отмена"
-      />
-      <CustomButton
-        onClick={handleClickOpenisShiftStatus}
-        color="light"
-        text={rightButton}
-      />
+      <CustomButton onClick={handleClickCancelisShiftStatus} color="dark">
+        <p>Отмена</p>
+      </CustomButton>
+      <CustomButton onClick={handleClickOpenisShiftStatus} color="light">
+        <p>{rightButton}</p>
+      </CustomButton>
     </CutomModalWindowUniversal>
   );
 };

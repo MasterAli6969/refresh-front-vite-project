@@ -4,9 +4,10 @@ import SearchIcon from "../../../../assets/icons/SearchIcon.svg";
 import AddUserLight from "../../../../assets/icons/AddUserLight.svg";
 import SearchMenu from "./search-input-components/search-menu/SearchMenu";
 import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
+import AddUserModalWindow from "./search-input-components/add-user-modal-window/AddUserModalWindow";
 
 import styles from "./search_input.module.scss";
-import AddUserModalWindow from "./search-input-components/add-user-modal-window/AddUserModalWindow";
+import classNames from "classnames";
 
 const SearchInput: FC = () => {
   const [search, setSearch] = useState<string>("");
@@ -37,7 +38,9 @@ const SearchInput: FC = () => {
 
   return (
     <div ref={inputRef}>
-      <div className={styles.div}>
+      <div
+        className={classNames(styles.div, { [styles.div_focuse]: isFocused })}
+      >
         <img src={SearchIcon} />
         <input
           value={search}

@@ -3,12 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: $border_style;
+  border: $border_style_default;
   border-radius: $border_radius5;
-  padding: 1rem;
-  > img {
-    margin-right: 0.5rem;
-  }
+  padding: 0.5rem;
 }
 
 ._light {

@@ -35,26 +35,34 @@ const ShiftPanel: FC = () => {
             />
           )}
         >
-          <CustomButton icon={OfflineIcon} color="dark" text="Смена закрыта" />
+          <CustomButton color="dark">
+            <img src={OfflineIcon} />
+            <p>Смена закрыта</p>
+          </CustomButton>
         </CustomCenterModalOpenWrapper>
       ) : (
         <>
-          <CustomButton
-            onClick={handleClickVisibleMenu}
-            icon={OnlineIcon}
-            color="dark"
-            text="Смена открыта"
-          />
+          <CustomButton onClick={handleClickVisibleMenu} color="dark">
+            <img src={OnlineIcon} />
+            <p>Смена открыта</p>
+          </CustomButton>
           {isMenuVisible && (
             <CustomDynamicList
               listItem={[
-                () => <CustomButton text="Закрыть смену" color="dark" />,
-                () => <CustomButton text="Расходы кассы" color="dark" />,
                 () => (
-                  <CustomButton
-                    text="Промежуточный отчет"
-                    color="transparent"
-                  />
+                  <CustomButton color="dark">
+                    <p>Закрыть смену</p>
+                  </CustomButton>
+                ),
+                () => (
+                  <CustomButton color="dark">
+                    <p>Расходы кассы</p>
+                  </CustomButton>
+                ),
+                () => (
+                  <CustomButton color="transparent">
+                    <p>Промежуточный отчет</p>
+                  </CustomButton>
                 ),
               ]}
             />

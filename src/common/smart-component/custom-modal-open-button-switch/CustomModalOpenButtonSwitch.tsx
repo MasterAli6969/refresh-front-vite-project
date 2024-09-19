@@ -47,7 +47,9 @@ const CustomModalOpenButtonSwitch: FC<CustomModalOpenButtonSwitchPropsType> = ({
 
   return (
     <div className={styles.div}>
-      <CustomButton icon={icon} color="dark" onClick={handleClick} />
+      <CustomButton imgSize="1rem" color="dark" onClick={handleClick}>
+        <img src={icon} />
+      </CustomButton>
       <div
         ref={modalRef}
         className={classNames(styles.modal_icon, {

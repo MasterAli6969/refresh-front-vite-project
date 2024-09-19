@@ -1,6 +1,7 @@
 .div {
   position: relative;
   width: 100%;
+  z-index: 9;
   .subdiv_menu {
     position: absolute;
     top: 0;

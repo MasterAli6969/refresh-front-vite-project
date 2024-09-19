@@ -57,7 +57,9 @@ const ShopSidebar: FC = () => {
           redaxStateKey="PaymentModalWindow"
           openComponents={openPaymentModalWindow}
         >
-          <CustomButton color="light" text="Перейти к выбору способа оплаты" />
+          <CustomButton color="light">
+            <p>Перейти к выбору способа оплаты</p>
+          </CustomButton>
         </CustomCenterModalOpenWrapper>
       </div>
     </div>
