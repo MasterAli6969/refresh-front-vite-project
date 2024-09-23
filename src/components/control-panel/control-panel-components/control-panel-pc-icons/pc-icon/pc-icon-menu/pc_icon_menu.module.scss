@@ -4,9 +4,34 @@
   width: 14.8rem;
   @include PopoverContextMenuUl;
   z-index: 1;
-  .subdiv {
-    .subdiv_active_mode {
-      background-color: red;
+}
+
+.subdiv_active_mode {
+  border-radius: $border_radius10 $border_radius10 0 0;
+  background-color: $background_custom_blue;
+  padding: 1rem;
+}
+
+.active_mode_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pc_icon_menu_item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  > div {
+    display: flex;
+    align-items: center;
+    > img {
+      margin-right: 0.5rem;
     }
+  }
+  &:hover {
+    background-color: $background_hover_menu_item;
   }
 }

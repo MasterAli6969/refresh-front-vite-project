@@ -1,6 +1,7 @@
 import { FC } from "react";
-import styles from "./choose_colour_room.module.scss";
 import classNames from "classnames";
+//СТИЛИ
+import styles from "./choose_colour_room.module.scss";
 
 interface ChooseColourRoomPropsType {
   chooseColor: string;

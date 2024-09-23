@@ -1,7 +1,4 @@
 import { FC } from "react";
-import { ListType } from "../../../../../../commonTypes.interface";
-//МОДУЛИ ДЛЯ РАБОТЫ
-import CustomCenterModalOpenWrapper from "../../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 //ИКОНКИ
 import UserMiniIcon from "../../../../../../assets/icons/UserMiniIcon.svg";
 import RemoteSvgrepoMini from "../../../../../../assets/icons/RemoteSvgrepoMini.svg";
@@ -9,8 +6,10 @@ import ServiceIconMini from "../../../../../../assets/icons/ServiceIconMini.svg"
 import EditIconMini from "../../../../../../assets/icons/EditIconMini.svg";
 import PowerIconMini from "../../../../../../assets/icons/PowerIconMini.svg";
 import ArrowChekRight from "../../../../../../assets/icons-svg-components/ArrowChekRight";
-
-import styles from "./pc_icon_menu.module.scss";
+//МОДУЛИ ДЛЯ РАБОТЫ
+import { ListType } from "../../../../../../commonTypes.interface";
+//МОДУЛИ ДЛЯ РЕНДЕРА
+import CustomCenterModalOpenWrapper from "../../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 import ReplenishmentBalanceModalWindows from "../../../../../../common/special-componet/replenishment-balance-modal-windows/ReplenishmentBalanceModalWindows";
 import UserPenaltyModalWindow from "./pc-icon-menu-modal-windows/user-penalty-modal-window/UserPenaltyModalWindow";
 import SendMessageModalWindow from "./pc-icon-menu-modal-windows/send-message-modal-window/SendMessageModalWindow";
@@ -20,6 +19,9 @@ import GuestSessionModalWindow from "./pc-icon-menu-modal-windows/guest-session-
 import AddTimeModalWindow from "./pc-icon-menu-modal-windows/add-time-modal-window/AddTimeModalWindow";
 import CustomContexMenuOpenUniversalWrapper from "../../../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
 import RelocatePcModalWindow from "./pc-icon-menu-modal-windows/relocate-pc-modal-window/RelocatePcModalWindow";
+//СТИЛИ
+import styles from "./pc_icon_menu.module.scss";
+import CustomDynamicList from "../../../../../../common/smart-component/custom-dynamic-list/CustomDynamicList";
 
 export interface DropDataObjectType {
   client: string;
@@ -114,7 +116,7 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
                 () => <p>История транзакций</p>,
               ]}
             >
-              <div>
+              <div className={styles.active_mode_header}>
                 <div>
                   <p>
                     Клиент:
@@ -130,7 +132,8 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
             </CustomContexMenuOpenUniversalWrapper>
           </div>
         )}
-        <div className={styles.pc_title}>
+
+        <div className={styles.pc_icon_menu_item}>
           <p>Устройство: PC9</p>
         </div>
         <div>
@@ -143,9 +146,11 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
                 />
               )}
             >
-              <div>
-                <img src={UserMiniIcon} />
-                <p>Гостевой сеанс</p>
+              <div className={styles.pc_icon_menu_item}>
+                <div>
+                  <img src={UserMiniIcon} />
+                  <p>Гостевой сеанс</p>
+                </div>
               </div>
             </CustomCenterModalOpenWrapper>
           </div>
@@ -158,12 +163,16 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
                 () => <p>Запуск диспетчера</p>,
               ]}
             >
-              <img src={RemoteSvgrepoMini} />
-              <p>Управление</p>
-              <ArrowChekRight color="#949496" />
+              <div className={styles.pc_icon_menu_item}>
+                <div>
+                  <img src={RemoteSvgrepoMini} />
+                  <p>Управление</p>
+                </div>
+                <ArrowChekRight color="#949496" />
+              </div>
             </CustomContexMenuOpenUniversalWrapper>
           </div>
-          <div>
+          <div className={styles.pc_icon_menu_item}>
             <div>
               <img src={ServiceIconMini} />
               <p>Режим ремонта</p>
@@ -186,11 +195,13 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
                 () => <p>Удалить</p>,
               ]}
             >
-              <div>
-                <img src={EditIconMini} />
-                <p>Редактирование</p>
+              <div className={styles.pc_icon_menu_item}>
+                <div>
+                  <img src={EditIconMini} />
+                  <p>Редактирование</p>
+                </div>
+                <ArrowChekRight color="#949496" />
               </div>
-              <ArrowChekRight color="#949496" />
             </CustomContexMenuOpenUniversalWrapper>
           </div>
           <div>
@@ -201,9 +212,12 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
                 () => <p>Перезагрузить</p>,
               ]}
             >
-              <div>
-                <img src={PowerIconMini} />
-                <p>Питание</p>
+              <div className={styles.pc_icon_menu_item}>
+                <div>
+                  <img src={PowerIconMini} />
+                  <p>Питание</p>
+                </div>
+                <ArrowChekRight color="#949496" />
               </div>
             </CustomContexMenuOpenUniversalWrapper>
           </div>
