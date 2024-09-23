@@ -31,13 +31,17 @@
     width: 0.8rem;
   }
   .pc_icon_border {
+    display: none;
     position: absolute;
     top: -14px;
     left: -14px;
     width: 70px;
   }
   &:hover {
-    border: 3px dashed $text_default;
+    // border: 3px dashed $text_default;
+    .pc_icon_border {
+      display: block;
+    }
     .subdiv_menu {
       display: block;
     }

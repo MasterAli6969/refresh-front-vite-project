@@ -3,6 +3,7 @@ import classNames from "classnames";
 //ИКОНКИ
 import WarningIconSmall from "../../../../../assets/icons/WarningIconSmall.svg";
 import WindowsIconSmall from "../../../../../assets/icons/WindowsIconSmall.svg";
+import PcIconBorder from "../../../../../assets/icons/PcIconBorder.svg";
 //МОДУЛИ ДЛЯ РАБОТЫ
 import PcIconMenu, { PcIconMenuDataType } from "./pc-icon-menu/PcIconMenu";
 //МОДУЛИ ДЛЯ РЕНДЕРА
@@ -68,7 +69,11 @@ const PcIcon: FC<PcIconPropsType> = ({ pcIconDataObjekt }) => {
       {pcIconDataObjekt.status === "AdministrationMode" && (
         <img className={styles.subdiv_icon} src={WindowsIconSmall} />
       )}
-      {/* <img className={styles.pc_icon_border} src={PcIconBorder} /> */}
+      <img
+        draggable="false"
+        className={styles.pc_icon_border}
+        src={PcIconBorder}
+      />
     </div>
   );
 };
