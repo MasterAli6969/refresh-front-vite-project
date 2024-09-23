@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 export interface RoomTabObjectTypes {
   id: number | string;
   name: string;
+  color: string;
 }
 
 export interface RoomTabsEditInitionalStateType {
@@ -14,6 +15,7 @@ const roomTabsEditInitionalState: RoomTabsEditInitionalStateType = {
     {
       id: 1,
       name: "Все",
+      color: "#D9D9D9",
     },
   ],
 };

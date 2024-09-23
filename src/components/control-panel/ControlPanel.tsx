@@ -12,7 +12,7 @@ import {
 } from "../../features/redux/reducers/special-reducers/control-panel-reducers/roomTabsEditReducer";
 import RoomTabs from "./control-panel-components/room-tabs/RoomTabs";
 import ControlPanelPcIcons from "./control-panel-components/control-panel-pc-icons/ControlPanelPcIcons";
-import { setDynamicInput } from "../../features/redux/reducers/common-reducers/inputDynamicReduser";
+import { setStringDynamic } from "../../features/redux/reducers/common-reducers/stringDynamicReduser";
 import { setSaveDynamicNumber } from "../../features/redux/reducers/common-reducers/saveNumberDynamicReduser";
 import ControlPanelHeader from "./control-panel-components/control-panel-header/ControlPanelHeader";
 
@@ -44,14 +44,9 @@ const ControlPanel: FC = () => {
       state.onClickDynamic.onClickStates[`deleteRoomTab${isGetModalId}`]
   );
 
-  const newTabsName = useAppSelector(
-    (state) =>
-      state.inputDynamic.inputStatesDynamic["addNewRoomsButtonModalWindow"]
-  );
-
   const remaneTabName = useAppSelector(
     (state) =>
-      state.inputDynamic.inputStatesDynamic[`renameRoomTabs${activePanelId}`]
+      state.stringDynamic.stringStatesDynamic[`renameRoomTabs${activePanelId}`]
   );
 
   const isReneme = useAppSelector(
@@ -74,16 +69,15 @@ const ControlPanel: FC = () => {
 
   const handleAddNewTab = useCallback(() => {
     if (isClickAdd) {
-      dispatch(addNewTab({ id: newId, name: newTabsName }));
       dispatch(addNewPcIcons({ key: `pcIconsData${newId}`, icons: [] }));
       dispatch(resetOnClickDynamic());
       dispatch(
-        setDynamicInput({ key: "addNewRoomsButtonModalWindow", value: "" })
+        setStringDynamic({ key: "addNewRoomsButtonModalWindow", value: "" })
       );
       dispatch(setSaveDynamicNumber({ key: newId, value: newId }));
       setActivePanelId(newId);
     }
-  }, [isClickAdd, newTabsName, dispatch, newId]);
+  }, [isClickAdd, dispatch, newId]);
 
   const handleDeleteTab = useCallback(() => {
     if (isDelete) {
@@ -141,11 +135,7 @@ const ControlPanel: FC = () => {
         <div className={styles.rooms_tabs_container}>
           {roomTabs.map((item: RoomTabObjectTypes) => (
             <div key={item.id} onClick={() => handleRoomTabClick(item.id)}>
-              <RoomTabs
-                activeId={activePanelId}
-                id={item.id}
-                title={item.name}
-              />
+              <RoomTabs id={item.id} title={item.name} color={item.color} />
             </div>
           ))}
         </div>

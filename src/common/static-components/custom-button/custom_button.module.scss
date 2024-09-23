@@ -6,6 +6,9 @@
   border: $border_style_default;
   border-radius: $border_radius5;
   padding: 0.5rem;
+  &:hover {
+    background-color: $hover_default;
+  }
 }
 
 ._light {

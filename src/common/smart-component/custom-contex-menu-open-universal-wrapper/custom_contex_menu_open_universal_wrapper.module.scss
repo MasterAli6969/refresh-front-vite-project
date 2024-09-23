@@ -1,0 +1,12 @@
+@import "/src/variables.scss";
+
+.dropdown_button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drop_ul {
+  @include PopoverContextMenuUl;
+}

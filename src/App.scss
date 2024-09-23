@@ -192,3 +192,11 @@ p {
   font-size: 0.75rem; /* 12px */
   line-height: 0.9rem; /* 14.4px */
 }
+
+// ТУТ БУДУТ СБРАСЫВАТЬСЯ НЕКОТОРЫЕ СТИЛИ БУТСТРАПА
+.dropdown-menu {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  min-width: auto;
+}

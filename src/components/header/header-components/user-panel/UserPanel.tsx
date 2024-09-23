@@ -1,147 +1,56 @@
 import { FC } from "react";
-import { useAppSelector } from "../../../../features/redux/hooks/reduxRootHooks";
-import classNames from "classnames";
-
-import OnlineIcon from "../../../../assets/icons/OnlineIcon.svg";
-import OfflineIcon from "../../../../assets/icons/OfflineIcon.svg";
-
+//МОДУЛИ ДЛЯ РАБОТЫ
+//ИКОНКИ И ИЗОБРАЖЕНИЯ
+import TestAvatarProfice from "../../../../assets/img/TestAvatarProfice.png";
+import UserIcon from "../../../../assets/icons/UserIcon.svg";
+import ProfileNotiseIcon from "../../../../assets/icons/ProfileNotiseIcon.svg";
+import ProfileCalendarIcon from "../../../../assets/icons/ProfileCalendarIcon.svg";
+import ProfileLogoutIcon from "../../../../assets/icons/ProfileLogoutIcon.svg";
+//МОДУЛИ ДЛЯ РЕНДЕРА
+import CustomContexMenuOpenUniversalWrapper from "../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
+//СТИЛИ
 import styles from "./user_panel.module.scss";
 
-export interface DropListItemTypes {
-  id: number;
-  url: string;
-  icon: string;
-  text: string;
-}
-
-export interface ShiftDataTypes {
-  generalSales: string;
-  cash: string;
-  bankCard: string;
-  refunds: string;
-}
-
-export interface DropDataTypes {
-  shiftData: ShiftDataTypes;
-  dropListItem: DropListItemTypes[];
-}
-
-export interface UserPanelDataTypes {
-  id: number;
-  avatar: string;
-  name: string;
-  dropData: DropDataTypes;
-}
-
-export interface UserPanelDataPropsTypes {
-  userPanelData: UserPanelDataTypes;
-}
-
-const UserPanel: FC<UserPanelDataPropsTypes> = ({ userPanelData }) => {
-  const isShiftStatus = useAppSelector(
-    (state) => state.toggleDynamic.modalStates["isShiftStatus"]
-  );
-
+const UserPanel: FC = () => {
   return (
     <div className={styles.div}>
-      <div className="dropdown">
-        <button
-          className={classNames("btn dropdown-toggle", styles.dropbutton)}
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <div className={styles.avatar}>
-            <h1>{userPanelData.avatar}</h1>
-          </div>
+      <CustomContexMenuOpenUniversalWrapper
+        dropMenuItems={[
+          () => (
+            <>
+              <img src={UserIcon} />
+              <p>Мой профиль</p>
+            </>
+          ),
+          () => (
+            <>
+              <img src={ProfileNotiseIcon} />
+              <p>Задачи</p>
+            </>
+          ),
+          () => (
+            <>
+              <img src={ProfileCalendarIcon} />
+              <p>Календарь смен</p>
+            </>
+          ),
+          () => (
+            <>
+              <img src={ProfileLogoutIcon} />
+              <p>Выход</p>
+            </>
+          ),
+        ]}
+        dropPosition="bottom"
+      >
+        <div className={styles.div}>
+          <img src={TestAvatarProfice} />
           <div>
-            <h3>{userPanelData.name}</h3>
-            <div>
-              <img src={!isShiftStatus ? OfflineIcon : OnlineIcon} />
-              <p>{!isShiftStatus ? "Не на смене" : "На смене"}</p>
-            </div>
+            <p>Василий Петров</p>
+            <p>Администратор</p>
           </div>
-        </button>
-        <div className={classNames("dropdown-menu", styles.dropdown_list)}>
-          <div className={styles.dropdown_list_header}>
-            <div>
-              <img src={!isShiftStatus ? OfflineIcon : OnlineIcon} />
-              <p>{!isShiftStatus ? "Смена закрыта" : "Смена открыта "}</p>
-            </div>
-            <button
-              className={classNames({
-                [styles._active_shift]: isShiftStatus,
-                [styles._disactive_shift]: !isShiftStatus,
-              })}
-            >
-              <p>{!isShiftStatus ? "Открыть смену" : "Закрыть смену"}</p>
-            </button>
-          </div>
-          {isShiftStatus && (
-            <div className={styles.dropdown_list_shift_data}>
-              <p>Текущая смена</p>
-              <ul>
-                {userPanelData.dropData.shiftData ? (
-                  <>
-                    <li>
-                      <p>
-                        Общие продажи: ₽{" "}
-                        {userPanelData.dropData.shiftData.generalSales}
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Наличныеcdscsd: ₽{" "}
-                        {userPanelData.dropData.shiftData.cash}
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Банковская карта: ₽{" "}
-                        {userPanelData.dropData.shiftData.bankCard}
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Возвраты средств: ₽{" "}
-                        {userPanelData.dropData.shiftData.refunds}
-                      </p>
-                    </li>
-                  </>
-                ) : (
-                  <p>Ooops, server error, please wait...</p>
-                )}
-              </ul>
-              <div>
-                <button>X-Отчет</button>
-                <button>Расходы кассы </button>
-              </div>
-            </div>
-          )}
-
-          <ul className={styles.dropdown_list_options}>
-            {!userPanelData.dropData.dropListItem ||
-            userPanelData.dropData.dropListItem.length === 0 ? (
-              <h1>Ooops, server error, please wait...</h1>
-            ) : (
-              userPanelData.dropData.dropListItem.map(
-                (item: DropListItemTypes) => (
-                  <li key={item.id}>
-                    <a className="" href={item.url}>
-                      <img
-                        src={item.icon}
-                        alt={item.text}
-                        className={styles.icon}
-                      />
-                      {item.text}
-                    </a>
-                  </li>
-                )
-              )
-            )}
-          </ul>
         </div>
-      </div>
+      </CustomContexMenuOpenUniversalWrapper>
     </div>
   );
 };

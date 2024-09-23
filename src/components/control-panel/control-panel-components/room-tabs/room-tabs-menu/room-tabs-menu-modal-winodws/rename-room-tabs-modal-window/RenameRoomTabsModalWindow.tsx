@@ -4,7 +4,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../../../../../../features/redux/hooks/reduxRootHooks";
-import { setDynamicInput } from "../../../../../../../features/redux/reducers/common-reducers/inputDynamicReduser";
+import { setStringDynamic } from "../../../../../../../features/redux/reducers/common-reducers/stringDynamicReduser";
 import {
   resetOnClickDynamic,
   setOnClickDynamic,
@@ -31,7 +31,7 @@ const RenameRoomTabsModalWindow: FC<RenameRoomTabsModalWindowPropsType> = ({
   specialText,
 }) => {
   const stateAddInput = useAppSelector(
-    (state) => state.inputDynamic.inputStatesDynamic[redaxStateKey]
+    (state) => state.stringDynamic.stringStatesDynamic[redaxStateKey]
   );
   const dispatch = useAppDispatch();
 
@@ -44,7 +44,7 @@ const RenameRoomTabsModalWindow: FC<RenameRoomTabsModalWindowPropsType> = ({
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     dispatch(
-      setDynamicInput({
+      setStringDynamic({
         key: redaxStateKey,
         value: localInputValue,
       })

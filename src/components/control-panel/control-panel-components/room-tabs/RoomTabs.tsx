@@ -9,11 +9,11 @@ import styles from "./room_tabs.module.scss";
 
 interface RoomTabsPropsType {
   id: number | string;
-  activeId: number | string;
   title: string;
+  color: string;
 }
 
-const RoomTabs: FC<RoomTabsPropsType> = ({ title, id }) => {
+const RoomTabs: FC<RoomTabsPropsType> = ({ id, title, color }) => {
   const [isActiveRoomTabsMenu, setIsActiveRoomTabsMenu] =
     useState<boolean>(false);
 
@@ -23,7 +23,7 @@ const RoomTabs: FC<RoomTabsPropsType> = ({ title, id }) => {
 
   return (
     <div className={classNames(styles.subdiv_rooms_tabs)}>
-      <p>{title}</p>
+      <p style={{ color: `${color}` }}>{title}</p>
       {id != 1 && (
         <>
           <img onClick={handleClickMenuVisble} src={GetContextMenuIcon} />

@@ -18,6 +18,7 @@ $background_cusom_dark: #141518;
 $background_error: #f35746;
 $background_custom_blue: #339aff;
 $background_custom_green: #159900;
+$background_custom_indigo: #17181a;
 
 // обводка
 $border_default: #23252a;
@@ -33,7 +34,7 @@ $button_special: #e2e2e2;
 $button_active: #26282e;
 $button_transparent: transparent;
 // кнопки наведения
-$hover_default: #0056b3;
+$hover_default: #2c3039;
 $hover_special: #ff9933;
 
 // текст
@@ -65,6 +66,7 @@ $background_hover_button_toggle: #1c1f25;
 //стили для границ
 $border_style_default: 1px solid $border_default;
 $border_style_active: 1px solid $border_active;
+$border_style_error: 1px solid $border_error;
 $border_radius5: 5px;
 $border_radius10: 10px;
 $border_radius12: 12px;
@@ -135,6 +137,7 @@ $light_gradient: linear-gradient(
 // СТИЛИ ДЛЯ КОНТЕКСТНЫХ МЕНЮ
 @mixin PopoverContextMenuUl {
   background-color: $background_context_menus;
+  color: $text_default;
   border: $border_style_default;
   border-radius: $border_radius10;
   display: inline-block;
@@ -143,8 +146,14 @@ $light_gradient: linear-gradient(
     cursor: pointer;
     padding: 0.5rem 1rem;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
     &:hover {
       background-color: $background_hover_menu_item;
+    }
+    > img {
+      width: 1rem;
+      margin-right: 0.5rem;
     }
   }
 }

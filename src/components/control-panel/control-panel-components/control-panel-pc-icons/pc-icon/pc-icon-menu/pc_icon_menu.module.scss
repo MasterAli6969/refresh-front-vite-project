@@ -5,67 +5,8 @@
   @include PopoverContextMenuUl;
   z-index: 1;
   .subdiv {
-    .drop_menu {
-      background-color: $background_custom_blue;
-      border-radius: 10px 10px 0 0;
-      padding: 1rem;
-      > div {
-        width: 100%;
-        > div {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          > div {
-            > p:first-child {
-              margin-bottom: 0.5rem;
-            }
-          }
-        }
-        > ul {
-          width: 14.8rem;
-          background-color: $background_context_menus;
-          color: $text_light;
-          border: $border_style_default;
-          padding: 1rem;
-          li {
-            padding: 0.3rem;
-            &:hover {
-              background-color: $background_hover_menu_item;
-            }
-          }
-        }
-      }
-    }
-    .pc_title {
-      background-color: $button_active;
-      padding: 1rem;
-    }
-    > ul {
-      padding: 0.3rem;
-      > li {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.5rem;
-        margin-right: 0.5rem;
-        &:hover {
-          background: $light_gradient;
-          border-radius: $border_radius5;
-        }
-        > div {
-          display: flex;
-          > div {
-            justify-content: space-between;
-            display: flex;
-          }
-        }
-      }
-      ._disable {
-        opacity: 0.5;
-        cursor: default;
-        pointer-events: none;
-      }
+    .subdiv_active_mode {
+      background-color: red;
     }
   }
 }

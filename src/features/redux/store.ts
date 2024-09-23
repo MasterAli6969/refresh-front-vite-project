@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import inputDynamic from "./reducers/common-reducers/inputDynamicReduser";
+import stringDynamic from "./reducers/common-reducers/stringDynamicReduser";
 import saveDynamicNumber from "./reducers/common-reducers/saveNumberDynamicReduser";
 import toggleDynamic from "./reducers/common-reducers/toggleDynamicReduser";
 import onClickDynamic from "./reducers/common-reducers/onClickDynamicReduser";
@@ -9,7 +9,7 @@ import pcIconEdit from "./reducers/special-reducers/control-panel-reducers/pcIco
 import cartItems from "./reducers/special-reducers/shop-reducers/cartItemsReducer";
 
 const rootReducer = combineReducers({
-  inputDynamic: inputDynamic,
+  stringDynamic: stringDynamic,
   saveDynamicNumber: saveDynamicNumber,
   toggleDynamic: toggleDynamic,
   onClickDynamic: onClickDynamic,

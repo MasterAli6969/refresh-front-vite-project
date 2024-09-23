@@ -4,7 +4,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../../../../../../features/redux/hooks/reduxRootHooks";
-import { setDynamicInput } from "../../../../../../../features/redux/reducers/common-reducers/inputDynamicReduser";
+import { setStringDynamic } from "../../../../../../../features/redux/reducers/common-reducers/stringDynamicReduser";
 import {
   resetOnClickDynamic,
   setOnClickDynamic,
@@ -16,6 +16,9 @@ import {
 import CutomModalWindowUniversal from "../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 import CustomInput from "../../../../../../../common/static-components/custom-input/CustomInput";
 import CustomDualButtonYesNo from "../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import ChooseColourRoom from "../../../../../../../common/special-componet/choose-colour-room/ChooseColourRoom";
+import { getNewId } from "../../../../../../../features/utils/arrayUtils";
+import { addNewTab } from "../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/roomTabsEditReducer";
 //ИКОНКИ
 //МОДУЛИ ДЛЯ РЕНДЕРА
 //СТИЛИ
@@ -29,11 +32,16 @@ const AddNewRoomsButtonModalWindow: FC<
   AddNewRoomsButtonModalWindowPropsType
 > = ({ redaxStateKey, title, specialText }) => {
   const stateAddInput = useAppSelector(
-    (state) => state.inputDynamic.inputStatesDynamic[redaxStateKey]
+    (state) => state.stringDynamic.stringStatesDynamic[redaxStateKey]
   );
   const dispatch = useAppDispatch();
 
+  const roomTabs = useAppSelector((state) => state.roomTabsEdit.roomTabs);
+
+  const newId = getNewId(roomTabs);
+
   const [localInputValue, setLocalInputValue] = useState<string>(stateAddInput);
+  const [chooseColor, setChooseColor] = useState<string>("");
 
   const handleInputChange = (value: string) => {
     setLocalInputValue(value);
@@ -41,8 +49,13 @@ const AddNewRoomsButtonModalWindow: FC<
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+
     dispatch(
-      setDynamicInput({
+      addNewTab({ id: newId, name: localInputValue, color: chooseColor })
+    );
+
+    dispatch(
+      setStringDynamic({
         key: redaxStateKey,
         value: localInputValue,
       })
@@ -76,6 +89,10 @@ const AddNewRoomsButtonModalWindow: FC<
         placeholder="Введите новое название комнаты"
         value={localInputValue || ""}
         onChange={handleInputChange}
+      />
+      <ChooseColourRoom
+        chooseColor={chooseColor}
+        setChooseColor={setChooseColor}
       />
       <CustomDualButtonYesNo
         redaxStateKey={redaxStateKey}

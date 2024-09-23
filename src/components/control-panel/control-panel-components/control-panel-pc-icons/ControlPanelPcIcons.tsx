@@ -10,6 +10,8 @@ import PcChangeModalWindow from "./pc-change-modal-window/PcChangeModalWindow";
 import { setToggleDynamic } from "../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
 import { addNewPcIcons } from "../../../../features/redux/reducers/special-reducers/control-panel-reducers/pcIconEditReducer";
 import { resetOnClickDynamic } from "../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
+//СТИЛИ
+import styles from "./control_panel_pc_icons.module.scss";
 
 export interface PcIconDataType {
   id: number | string;
@@ -99,14 +101,13 @@ const ControlPanelPcIcons: FC<ControlPanelPcIconsPropsType> = ({
   }, [handleClickOn, handleClickOff]);
 
   return (
-    <div style={{ zIndex: "1", height: "100vh" }}>
+    <div className={styles.div}>
       {pcIconData.map((item: PcIconDataType) => {
         return (
           <Draggable key={item.id} bounds="parent" grid={[50, 50]}>
             <div
+              className={styles.pc_icon}
               style={{
-                width: "50px",
-                height: "50px",
                 filter: selectedIcons.some(
                   (selectedItem) => selectedItem.id === item.id
                 )

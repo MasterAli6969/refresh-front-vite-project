@@ -1,0 +1,18 @@
+@import "/src/variables.scss";
+
+.ul {
+  width: 100%;
+  background-color: $background_custom_indigo;
+  border: $border_style_default;
+  border-radius: $border_radius5;
+  padding: 0.5rem;
+  > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  > li:first-child {
+    border-bottom: $border_style_default;
+  }
+}

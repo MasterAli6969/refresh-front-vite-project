@@ -15,7 +15,6 @@ const CustomMenuRightOpenWrapper: FC<
   const handleClick = () => {
     setIsOpen((prev) => !prev); // Переключение состояния
   };
-
   return (
     <div onClick={handleClick} className={styles.div}>
       {children}

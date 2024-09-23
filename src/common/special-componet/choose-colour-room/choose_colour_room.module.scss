@@ -1,0 +1,50 @@
+@import "/src/variables.scss";
+
+.div {
+  .subdiv_colors {
+    display: flex;
+    > div {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      margin: 0.5rem;
+      cursor: pointer;
+    }
+    .light {
+      background-color: #d9d9d9;
+    }
+    .orange_brown {
+      background-color: #df8925;
+    }
+    .blue {
+      background-color: #0047ff;
+    }
+    .violet {
+      background-color: #6b15f7;
+    }
+    .purple {
+      background-color: #a600e0;
+    }
+    .red {
+      background-color: #780000;
+    }
+    .yellow {
+      background-color: #ffe500;
+    }
+    .aqua {
+      background-color: #0effe2;
+    }
+    .orange {
+      background-color: #f94b00;
+    }
+    .light_green {
+      background-color: #97e87b;
+    }
+    .neon_pink {
+      background-color: #ff00d6;
+    }
+  }
+  ._subdiv_colors_active {
+    border: 2px solid white;
+  }
+}

@@ -21,7 +21,6 @@ import CustomMenuRightOpenWrapper from "../../common/smart-component/custom-menu
 //МОДАЛЬНЫЕ ОКНА
 import ReplenishmentBalanceModalWindows from "../../common/special-componet/replenishment-balance-modal-windows/ReplenishmentBalanceModalWindows";
 import ChangeLocationModalWindow from "../../components/control-panel/control-panel-components/control-panel-pc-icons/pc-icon/pc-icon-menu/pc-icon-menu-modal-windows/change-location-modal-window/ChangeLocationModalWindow";
-import CutomModalWindowType2 from "../../common/smart-component/cutom-modal-windows/cutom-modal-window-types/cutom-modal-window-type2/CutomModalWindowType2";
 import EditPcModalWindow from "../../components/control-panel/control-panel-components/control-panel-pc-icons/pc-icon/pc-icon-menu/pc-icon-menu-modal-windows/edit-pc-modal-window/EditPcModalWindow";
 import ScreenshotSavedModalWindows from "../../components/control-panel/control-panel-components/control-panel-pc-icons/pc-icon/pc-icon-menu/pc-icon-menu-modal-windows/screenshot-saved-modal-windows/ScreenshotSavedModalWindows";
 // ТЕСТОВЫЕ ДАННЫЕ ДЛЯ ПРОВЕРКИ РЕНДЕРА
@@ -74,7 +73,7 @@ const SandboxPage: FC = () => {
         <h2>CustomToggleButton</h2>
         <CustomToggleButton
           label="vfnkfvlfdjkvfn"
-          buttonsItems={["CustomToggleButton1", "CustomToggleButton2"]}
+          buttonsText={["CustomToggleButton1", "CustomToggleButton2"]}
         />
       </div>
       <div
@@ -159,7 +158,11 @@ const SandboxPage: FC = () => {
         <CustomSwitchButton
           buttonLeft="CustomSwitchButton1"
           buttonRight="CustomSwitchButton2"
-          componentLeft={() => <CustomButton color="dark" text="CDSSDCSDS" />}
+          componentLeft={() => (
+            <CustomButton color="dark">
+              <p>CDSSDCSDS</p>
+            </CustomButton>
+          )}
           componentRight={() => (
             <CustomDualButtonYesNo
               buttonRightText="CustomDualButtonYesNo"

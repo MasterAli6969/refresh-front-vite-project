@@ -6,7 +6,23 @@
   align-items: center;
   border-bottom: $border_style_default;
   padding: 2rem;
-  .subdiv {
+  .subdiv_left {
+    display: flex;
+    align-items: center;
+    > div:first-child {
+      display: flex;
+      align-items: center;
+      margin-right: 1rem;
+      > img {
+        margin-right: 1rem;
+      }
+    }
+    > div:last-child {
+      padding-left: 1rem;
+      border-left: $border_style_default;
+    }
+  }
+  .subdiv_right {
     display: flex;
     > div {
       margin-right: 1rem;

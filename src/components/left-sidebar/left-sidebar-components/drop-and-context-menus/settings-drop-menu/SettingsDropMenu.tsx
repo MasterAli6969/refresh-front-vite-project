@@ -2,39 +2,67 @@ import { FC } from "react";
 //ИКОНКИ
 import ArrowChekRight from "../../../../../assets/icons/ArrowChekRight.svg";
 //МОДУЛИ ДЛЯ РЕНДЕРА
-import CustomMenuRightOpenWrapper from "../../../../../common/smart-component/custom-menu-right-open-wrapper/CustomMenuRightOpenWrapper";
-import WebAdministratorContextMenu from "./settings-context-menus/WebAdministratorContextMenu";
+import CustomContexMenuOpenUniversalWrapper from "../../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
 //СТИЛИ
 import styles from "./settings_drop_menu.module.scss";
-import ClientContextMenu from "./settings-context-menus/ClientContextMenu";
-import ContentContextMenu from "./settings-context-menus/ContentContextMenu";
-import LoyaltyContextMenu from "./settings-context-menus/LoyaltyContextMenu";
 const SettingsDropMenu: FC = () => {
   return (
     <ul className={styles.ul}>
       <li>
-        <CustomMenuRightOpenWrapper openMenu={WebAdministratorContextMenu}>
+        <CustomContexMenuOpenUniversalWrapper
+          dropPosition="right"
+          dropMenuItems={[
+            () => <p>Общие настройки</p>,
+            () => <p>Конфигурация отчетов</p>,
+            () => <p>Конфигурация бронирования</p>,
+            () => <p>Склад</p>,
+            () => <p>Конфигурация кассы</p>,
+            () => <p>Сотрудники и роли</p>,
+            () => <p>Продукты и подписки</p>,
+          ]}
+        >
           <p>Веб-администратор</p>
           <img src={ArrowChekRight} />
-        </CustomMenuRightOpenWrapper>
+        </CustomContexMenuOpenUniversalWrapper>
       </li>
       <li>
-        <CustomMenuRightOpenWrapper openMenu={ClientContextMenu}>
+        <CustomContexMenuOpenUniversalWrapper
+          dropPosition="right"
+          dropMenuItems={[
+            () => <p>Конфигурация клиента</p>,
+            () => <p>Дизайн</p>,
+            () => <p>Консоли</p>,
+          ]}
+        >
           <p>Клиент</p>
           <img src={ArrowChekRight} />
-        </CustomMenuRightOpenWrapper>
+        </CustomContexMenuOpenUniversalWrapper>
       </li>
       <li>
-        <CustomMenuRightOpenWrapper openMenu={ContentContextMenu}>
+        <CustomContexMenuOpenUniversalWrapper
+          dropPosition="right"
+          dropMenuItems={[
+            () => <p>Игры и приложения</p>,
+            () => <p>Лицензии</p>,
+          ]}
+        >
           <p>Контент</p>
           <img src={ArrowChekRight} />
-        </CustomMenuRightOpenWrapper>
+        </CustomContexMenuOpenUniversalWrapper>
       </li>
       <li>
-        <CustomMenuRightOpenWrapper openMenu={LoyaltyContextMenu}>
+        <CustomContexMenuOpenUniversalWrapper
+          dropPosition="right"
+          dropMenuItems={[
+            () => <p>Рейтинг участников</p>,
+            () => <p>Достижения</p>,
+            () => <p>Ежедневные награды</p>,
+            () => <p>Промокоды</p>,
+          ]}
+        >
           <p>Лояльность</p>
           <img src={ArrowChekRight} />
-        </CustomMenuRightOpenWrapper>
+        </CustomContexMenuOpenUniversalWrapper>
       </li>
     </ul>
   );
