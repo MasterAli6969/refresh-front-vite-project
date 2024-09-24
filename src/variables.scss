@@ -142,7 +142,8 @@ $light_gradient: linear-gradient(
   border-radius: $border_radius10;
   display: inline-block;
   max-width: 100%;
-  > li {
+  > li,
+  li > a {
     cursor: pointer;
     padding: 0.5rem 1rem;
     white-space: nowrap;

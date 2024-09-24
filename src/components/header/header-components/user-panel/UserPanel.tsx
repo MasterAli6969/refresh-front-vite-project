@@ -35,10 +35,10 @@ const UserPanel: FC = () => {
             </>
           ),
           () => (
-            <>
+            <a href="/authorization">
               <img src={ProfileLogoutIcon} />
               <p>Выход</p>
-            </>
+            </a>
           ),
         ]}
         dropPosition="bottom"
