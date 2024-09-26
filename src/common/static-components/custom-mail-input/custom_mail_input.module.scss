@@ -24,6 +24,6 @@
     color: $background_error;
   }
   ._error {
-    border: 1px solid $background_error;
+    border: $border_style_error;
   }
 }

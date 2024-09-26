@@ -6,13 +6,10 @@ import "./App.scss";
 function App() {
   const location = useLocation();
 
-  const isAuthRoute = location.pathname.startsWith("/authorization");
-  const isRestoringAccessRoute =
-    location.pathname.startsWith("/restoring-access");
-  const isPasswordChange = location.pathname.startsWith("/password-change");
+  const isAuthRoute = location.pathname.startsWith("/auth");
+  const isPasswordRecovery = location.pathname.startsWith("/password-recovery");
 
-  const isAuthOrRestoringAccessRoute =
-    isAuthRoute || isRestoringAccessRoute || isPasswordChange;
+  const isAuthOrRestoringAccessRoute = isAuthRoute || isPasswordRecovery;
 
   return (
     <div>{isAuthOrRestoringAccessRoute ? <AuthRoutes /> : <PageRoutes />}</div>

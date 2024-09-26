@@ -24,7 +24,7 @@ const CustomMailInput: FC<AuthInputPropsType> = ({
       >
         <img src={UserIcon} />
         <input
-          placeholder="Введите почту"
+          placeholder="Введите адрес электронной почты"
           type="email"
           name={name}
           value={value}

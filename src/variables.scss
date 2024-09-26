@@ -19,6 +19,7 @@ $background_error: #f35746;
 $background_custom_blue: #339aff;
 $background_custom_green: #159900;
 $background_custom_indigo: #17181a;
+$background_custom_auth: #0f1011;
 
 // обводка
 $border_default: #23252a;
@@ -161,12 +162,17 @@ $light_gradient: linear-gradient(
 
 // СТИЛИ ДЛЯ ФОРМ СТРАНИЦЫ РЕГИСТРАЦИИ
 //-------------------------------------
-@mixin formsPageDiv {
+@mixin authFormsPageDiv {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  // background-image: url("/src/assets/img/AuthBackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  gap: 2rem;
 }
 @mixin forms {
   width: 26rem;

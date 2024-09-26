@@ -1,0 +1,17 @@
+@import "/src/variables.scss";
+
+.pass_requ_subdiv {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: $background_custom_blue;
+  gap: 1rem;
+}
+
+.qr_subdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}

@@ -35,7 +35,7 @@ const UserPanel: FC = () => {
             </>
           ),
           () => (
-            <a href="/authorization">
+            <a href="/auth">
               <img src={ProfileLogoutIcon} />
               <p>Выход</p>
             </a>

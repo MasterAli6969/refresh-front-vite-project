@@ -1,3 +1,5 @@
+import { ChangeEvent } from "react";
+
 //ЭТО ИНТЕРЕФЕЙС ОБЩЕГО ПОЛЬЗОВАНИЯ БЛЯ ОПИСАНИЯ РАБОТЫ СПИСКА ССЫЛОК и доп меню
 export interface ListType {
   id: number;
@@ -10,10 +12,11 @@ export interface ListType {
 
 export interface AuthInputPropsType {
   label: string;
+  placeholder?: string;
   error?: boolean;
   name: string;
-  value: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 // ЭТО ОБЩИЙ ИГНТЕРФЕЙС ДЛЯ ТИПИЗАЦИИ СОСТОЯНИЯ КЛЮЧЕЙ REDAX

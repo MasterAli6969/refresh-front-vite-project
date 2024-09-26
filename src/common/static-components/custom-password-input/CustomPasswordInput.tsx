@@ -40,7 +40,7 @@ const CustomPasswordInput: FC<AuthInputPropsType> = ({
         </div>
         <img onClick={togglePasswordVisibility} src={EyeBlueIcon} />
       </div>
-      {error && <p>Неверно введен адрес эл. почты</p>}
+      {error && <p>Пароль не совпал</p>}
     </div>
   );
 };

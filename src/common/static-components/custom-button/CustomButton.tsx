@@ -11,6 +11,7 @@ import {
 import classNames from "classnames";
 //СТИЛИ
 import styles from "./custom_button.module.scss";
+
 export interface CustomButtonPropsType {
   color: "light" | "dark" | "warning" | "transparent";
   type?: "button" | "submit" | "reset";

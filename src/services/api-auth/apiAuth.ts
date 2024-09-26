@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { AuthPostDataTypes } from "../../components/auth-components/authorization-form/AuthorizationForm";
+import { AuthPostDataTypes } from "../../components/auth/auth-components/authorization-form/AuthorizationForm";
 
 export const postAuthorizationData = async (params: AuthPostDataTypes) => {
   const authPostDataJson = JSON.stringify(params);
