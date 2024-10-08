@@ -17,6 +17,11 @@
   color: $text_dark;
   border: none;
 }
+._special_light {
+  background-color: $button_special_blue;
+  color: $text_dark;
+  border: none;
+}
 ._dark {
   background-color: $button_default;
   color: $text_light;

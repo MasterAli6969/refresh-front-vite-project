@@ -1,3 +1,4 @@
 export interface PropsIcon {
-  color: string;
+  color?: string;
+  active?: boolean | string;
 }

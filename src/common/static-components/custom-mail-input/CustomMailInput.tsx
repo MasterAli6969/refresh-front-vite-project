@@ -1,7 +1,5 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import classNames from "classnames";
-
-import UserIcon from "../../../assets/icons/UserIcon.svg";
 
 import { AuthInputPropsType } from "../../../commonTypes.interface";
 
@@ -14,20 +12,32 @@ const CustomMailInput: FC<AuthInputPropsType> = ({
   name,
   onChange,
 }) => {
+  const [focus, setFocus] = useState<boolean>(false);
+
+  const handleFocus = () => {
+    setFocus(true);
+  };
+
+  const handleBlur = () => {
+    setFocus(false);
+  };
+
   return (
     <div className={styles.div}>
       <h3>{label}</h3>
       <div
         className={classNames(styles.subdiv, {
-          [styles._error]: error === true,
+          [styles._error]: error,
+          [styles._active]: focus,
         })}
       >
-        <img src={UserIcon} />
         <input
           placeholder="Введите адрес электронной почты"
           type="email"
           name={name}
           value={value}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           onChange={onChange}
         />
       </div>

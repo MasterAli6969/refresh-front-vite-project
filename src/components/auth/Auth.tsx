@@ -6,7 +6,7 @@ import AuthorizationForm from "./auth-components/authorization-form/Authorizatio
 import AccessRestorationForm from "./auth-components/access-restoration-form/AccessRestorationForm";
 //СТИЛИ
 import styles from "./auth.module.scss";
-import NewPasswordForm from "../password-recovery/password-recovery-components/new-password-form/NewPasswordForm";
+import AuthLodingSpinnerWindow from "./auth-components/auth-loding-spinner-window/AuthLodingSpinnerWindow";
 
 const Auth: FC = () => {
   const [activeForm, setActiveForm] = useState<
@@ -28,11 +28,14 @@ const Auth: FC = () => {
   return (
     <div className={styles.div}>
       {activeForm === "authorization" && (
-        <AuthorizationForm
-          handleClickAccessRestorationFormActive={
-            handleClickAccessRestorationFormActive
-          }
-        />
+        <>
+          <AuthorizationForm
+            handleClickAccessRestorationFormActive={
+              handleClickAccessRestorationFormActive
+            }
+          />
+          {/* <AuthLodingSpinnerWindow /> */}
+        </>
       )}
       {activeForm === "accessRestorationForm" && (
         <AccessRestorationForm

@@ -1,0 +1,6 @@
+@import "/src/variables.scss";
+
+.lodaing_spinner {
+  @include rotate();
+  width: 5rem;
+}

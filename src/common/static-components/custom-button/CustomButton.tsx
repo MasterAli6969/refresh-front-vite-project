@@ -13,7 +13,7 @@ import classNames from "classnames";
 import styles from "./custom_button.module.scss";
 
 export interface CustomButtonPropsType {
-  color: "light" | "dark" | "warning" | "transparent";
+  color: "light" | "dark" | "warning" | "transparent" | "special";
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
   imgSize?: string; // Добавляем необязательный пропс для размера изображения
@@ -44,6 +44,7 @@ const CustomButton: FC<PropsWithChildren<CustomButtonPropsType>> = ({
       onClick={onClick}
       className={classNames(styles.button, {
         [styles._light]: color === "light",
+        [styles._special_light]: color === "special",
         [styles._dark]: color === "dark",
         [styles._warning]: color === "warning",
         [styles._transparent]: color === "transparent",

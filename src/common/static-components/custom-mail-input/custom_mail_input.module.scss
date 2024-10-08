@@ -3,7 +3,7 @@
 .div {
   width: 100%;
   > h3 {
-    color: $text_inactive;
+    color: $text_default;
     margin-bottom: 0.5rem;
   }
   .subdiv {
@@ -15,9 +15,10 @@
       margin-right: 0.5rem;
     }
     > input {
+      width: 100%;
       border: none;
       background-color: transparent;
-      color: $text_inactive;
+      color: $text_default;
     }
   }
   > p {
@@ -25,5 +26,8 @@
   }
   ._error {
     border: $border_style_error;
+  }
+  ._active {
+    border: $border_style_special_active;
   }
 }

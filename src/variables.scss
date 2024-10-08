@@ -32,6 +32,7 @@ $border_active: #adadad;
 // кнопки
 $button_default: #1e2025;
 $button_special: #e2e2e2;
+$button_special_blue: #339aff;
 $button_active: #26282e;
 $button_transparent: transparent;
 // кнопки наведения
@@ -67,6 +68,7 @@ $background_hover_button_toggle: #1c1f25;
 //стили для границ
 $border_style_default: 1px solid $border_default;
 $border_style_active: 1px solid $border_active;
+$border_style_special_active: 1px solid $border_hover_click;
 $border_style_error: 1px solid $border_error;
 $border_radius5: 5px;
 $border_radius10: 10px;
@@ -88,6 +90,7 @@ $light_gradient: linear-gradient(
   color: $text_default;
   padding: 1rem;
 }
+
 //СПЕЦИАЛЬНЫЙ СТИЛИ ДЛЯ БЛОКА DIV В КОТОРЫХ МОГУТ НАХОДИТЬСЯ ИНПУТ ЭЛЕМЕНТЫ И ИХ ИКОНКИ ДОПОМ
 @mixin inputStyleSpesialContainer {
   width: 100%;
@@ -174,14 +177,22 @@ $light_gradient: linear-gradient(
   background-repeat: no-repeat;
   gap: 2rem;
 }
-@mixin forms {
-  width: 26rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  background-color: $background_modal_general;
-  border: $border_style_default;
-  border-radius: $border_radius16;
-  padding: 1rem;
-}
+
 //-------------------------------------
+
+// ТУТ БУДЕТ ДИНАМИЧЕСКИЕ МИКСИНЫ АНИМАЦИИ
+
+@mixin rotate($direction: clockwise) {
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  animation: rotate 3s linear infinite;
+  @if $direction == counterclockwise {
+    transform: scaleX(-1);
+  }
+}

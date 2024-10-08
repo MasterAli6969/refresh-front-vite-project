@@ -7,8 +7,8 @@ import RefreshNewLogo from "../../../../assets/img/RefreshNewLogo.png";
 import styles from "./auth_form_wrapper.module.scss";
 
 interface AuthFormWrapperPropsType {
-  title: string;
-  handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  title?: string;
+  handleSubmit?: (event: FormEvent<HTMLFormElement>) => void;
 }
 
 const AuthFormWrapper: FC<PropsWithChildren<AuthFormWrapperPropsType>> = ({
@@ -20,7 +20,7 @@ const AuthFormWrapper: FC<PropsWithChildren<AuthFormWrapperPropsType>> = ({
     <form onSubmit={handleSubmit} className={styles.form}>
       <div className={styles.subdiv_header}>
         <img src={RefreshNewLogo} />
-        <h2>{title}</h2>
+        {title && <h2>{title}</h2>}
       </div>
       <div className={styles.subdiv_items}>{children}</div>
     </form>
