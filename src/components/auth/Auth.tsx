@@ -28,14 +28,11 @@ const Auth: FC = () => {
   return (
     <div className={styles.div}>
       {activeForm === "authorization" && (
-        <>
-          <AuthorizationForm
-            handleClickAccessRestorationFormActive={
-              handleClickAccessRestorationFormActive
-            }
-          />
-          {/* <AuthLodingSpinnerWindow /> */}
-        </>
+        <AuthorizationForm
+          handleClickAccessRestorationFormActive={
+            handleClickAccessRestorationFormActive
+          }
+        />
       )}
       {activeForm === "accessRestorationForm" && (
         <AccessRestorationForm

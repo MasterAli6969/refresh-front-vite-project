@@ -18,7 +18,6 @@ const AccessRestorationForm: FC<AccessRestorationFormPropsType> = ({
   const navigate = useNavigate();
 
   const [mailInputValue, setMailInputValue] = useState<string>("");
-
   const [errorMail, setErrorMail] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isModalLoading, setIsModalLoading] = useState<boolean>(false);
@@ -26,32 +25,32 @@ const AccessRestorationForm: FC<AccessRestorationFormPropsType> = ({
 
   const handleMailInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setMailInputValue(event.target.value);
+    setErrorMail(false);
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setIsLoading(true);
-    // Имитация задержки только для обработки формы
-    setTimeout(async () => {
-      if (mailInputValue === "") {
-        setErrorMail(true);
-        alert("Укажите почту корректно");
-        setIsLoading(false);
-        setIsSuccess(false);
-      } else {
+    if (mailInputValue === "") {
+      alert("Укажите почту корректно");
+      setErrorMail(true);
+      setIsLoading(false);
+    } else {
+      setIsLoading(true);
+      // Имитация задержки только для обработки формы
+      setTimeout(async () => {
         setErrorMail(false);
         setIsSuccess(true);
         alert("Перейди на почту");
-      }
-    }, 3000);
-    console.log("handleSubmit ОТРАБОТАЛ УСПЕШНО");
+      }, 3000);
+    }
   };
 
   const handleClickRedirect = () => {
     setIsModalLoading(true);
+    // Имитация задержки только для обработки формы
     setTimeout(async () => {
-      navigate("/password-recovery");
       setIsModalLoading(false);
+      navigate("/password-recovery");
     }, 3000);
   };
 
