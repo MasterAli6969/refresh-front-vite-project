@@ -35,9 +35,18 @@ export interface leftSidebarDataType {
 
 const LeftSidebar: FC = () => {
   const [activeItemId, setActiveItemId] = useState<number | null>(null);
+  const [isHovered, setIsHovered] = useState<number | null>(null);
 
   const handleLiClick = (itemId: number) => {
     setActiveItemId((prevItemId) => (prevItemId === itemId ? null : itemId));
+  };
+
+  const handleMouseEnter = (itemId: number) => {
+    setIsHovered(itemId);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(null);
   };
 
   useEffect(() => {
@@ -54,93 +63,199 @@ const LeftSidebar: FC = () => {
       <div>
         <SearchInput />
       </div>
+      <div className={styles.subdiv_title}>
+        <h5>Меню</h5>
+      </div>
       <ul className={styles.subdiv_list}>
-        <li className={classNames(styles.main_list)}>
+        <li
+          onMouseEnter={() => handleMouseEnter(1)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => handleLiClick(1)}
+          className={classNames({ [styles.active]: activeItemId === 1 })}
+        >
           <a href="#">
             <div>
-              <ControlPanelIcon color="#fff" />
+              <ControlPanelIcon
+                color={
+                  isHovered === 1 || activeItemId === 1 ? "#FFF" : "#949496"
+                }
+              />
             </div>
-            <h4>Панель управления</h4>
+            <h3>Панель управления</h3>
           </a>
         </li>
-        <li className={classNames(styles.main_list)}>
+        <li
+          onMouseEnter={() => handleMouseEnter(2)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => handleLiClick(2)}
+          className={classNames({ [styles.active]: activeItemId === 2 })}
+        >
           <a href="#">
             <div>
-              <ShopIcon color="#fff" />
+              <ShopIcon
+                color={`${
+                  isHovered === 2 || activeItemId === 2 ? "#FFF" : "#949496"
+                }`}
+              />
             </div>
-            <h4>Магазин</h4>
+            <h3>Магазин</h3>
           </a>
         </li>
-        <li className={classNames(styles.main_list)}>
+        <li
+          onMouseEnter={() => handleMouseEnter(3)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => handleLiClick(3)}
+          className={classNames({ [styles.active]: activeItemId === 3 })}
+        >
           <a href="#">
             <div>
-              <TransactionsIcon color="#fff" />
+              <TransactionsIcon
+                color={`${
+                  isHovered === 3 || activeItemId === 3 ? "#FFF" : "#949496"
+                }`}
+              />
             </div>
-            <h4>Транзакции</h4>
+            <h3>Транзакции</h3>
           </a>
         </li>
-        <li className={classNames(styles.main_list)}>
+        <li
+          onMouseEnter={() => handleMouseEnter(4)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => handleLiClick(4)}
+          className={classNames({ [styles.active]: activeItemId === 4 })}
+        >
           <a href="#">
             <div>
-              <UsersIcon color="#fff" />
+              <UsersIcon
+                color={`${
+                  isHovered === 4 || activeItemId === 4 ? "#FFF" : "#949496"
+                }`}
+              />
             </div>
-            <h4>Пользователи</h4>
+            <h3>Пользователи</h3>
           </a>
         </li>
-        <li className={classNames(styles.main_list)}>
+        <li
+          onMouseEnter={() => handleMouseEnter(5)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => handleLiClick(5)}
+          className={classNames({ [styles.active]: activeItemId === 5 })}
+        >
           <a href="#">
             <div>
-              <ReservationsIcon color="#fff" />
+              <ReservationsIcon
+                color={`${
+                  isHovered === 5 || activeItemId === 5 ? "#FFF" : "#949496"
+                }`}
+              />
             </div>
-            <h4>Бронирования</h4>
+            <h3>Бронирования</h3>
           </a>
         </li>
-        <li className={classNames(styles.main_list)}>
+        <li
+          onMouseEnter={() => handleMouseEnter(6)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => handleLiClick(6)}
+          className={classNames({ [styles.active]: activeItemId === 6 })}
+        >
           <DropListWrapper id={1} dropMenuComponents={SettingsDropMenu}>
             <div>
-              <HistoryIcon color="#fff" />
+              <div>
+                <HistoryIcon
+                  color={`${
+                    isHovered === 6 || activeItemId === 6 ? "#FFF" : "#949496"
+                  }`}
+                />
+              </div>
+              <h3>История</h3>
             </div>
-            <h4>История</h4>
           </DropListWrapper>
         </li>
-        <li className={classNames(styles.main_list)}>
+        <li
+          onMouseEnter={() => handleMouseEnter(7)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => handleLiClick(7)}
+          className={classNames({ [styles.active]: activeItemId === 7 })}
+        >
           <a href="#">
             <div>
-              <StatisticsIcon color="#fff" />
+              <StatisticsIcon
+                color={`${
+                  isHovered === 7 || activeItemId === 7 ? "#FFF" : "#949496"
+                }`}
+              />
             </div>
-            <h4>Статистика</h4>
+            <h3>Статистика</h3>
           </a>
         </li>
-        <li className={classNames(styles.main_list)}>
+        <li
+          onMouseEnter={() => handleMouseEnter(8)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => handleLiClick(8)}
+          className={classNames({ [styles.active]: activeItemId === 8 })}
+        >
           <DropListWrapper id={2} dropMenuComponents={SettingsDropMenu}>
             <div>
-              <SettingsIcon color="#fff" />
+              <div>
+                <SettingsIcon
+                  color={`${
+                    isHovered === 8 || activeItemId === 8 ? "#FFF" : "#949496"
+                  }`}
+                />
+              </div>
+              <h3>Настройки</h3>
             </div>
-            <h4>Настройки</h4>
           </DropListWrapper>
         </li>
-        <li className={classNames(styles.main_list)}>
+        <li
+          onMouseEnter={() => handleMouseEnter(9)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => handleLiClick(9)}
+          className={classNames({ [styles.active]: activeItemId === 9 })}
+        >
           <a href="#">
             <div>
-              <MessagesIcon color="#fff" />
+              <MessagesIcon
+                color={`${
+                  isHovered === 9 || activeItemId === 9 ? "#FFF" : "#949496"
+                }`}
+              />
             </div>
-            <h4>Сообщения</h4>
+            <h3>Сообщения</h3>
           </a>
         </li>
-        <li className={classNames(styles.main_list)}>
+        <li
+          onMouseEnter={() => handleMouseEnter(10)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => handleLiClick(10)}
+          className={classNames({ [styles.active]: activeItemId === 10 })}
+        >
           <a href="#">
             <div>
-              <NotificationsIcons color="#fff" />
+              <NotificationsIcons
+                color={`${
+                  isHovered === 10 || activeItemId === 10 ? "#FFF" : "#949496"
+                }`}
+              />
             </div>
-            <h4>Уведомления</h4>
+            <h3>Уведомления</h3>
           </a>
         </li>
-        <li className={classNames(styles.main_list)}>
+        <li
+          onMouseEnter={() => handleMouseEnter(11)}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => handleLiClick(11)}
+          className={classNames({ [styles.active]: activeItemId === 11 })}
+        >
           <a href="#">
             <div>
-              <KnowledgeBaseIcon color="#fff" />
+              <KnowledgeBaseIcon
+                color={`${
+                  isHovered === 11 || activeItemId === 11 ? "#FFF" : "#949496"
+                }`}
+              />
             </div>
-            <h4>База знаний</h4>
+            <h3>База знаний</h3>
           </a>
         </li>
       </ul>

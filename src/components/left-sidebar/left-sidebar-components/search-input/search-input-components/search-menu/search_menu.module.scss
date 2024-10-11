@@ -1,46 +1,19 @@
 @import "/src/variables.scss";
 
-.ul {
+.div {
+  display: flex;
+  flex-direction: column;
   background-color: $background_context_menus;
   border: $border_style_default;
   border-radius: $border_radius12;
   padding: 0.5rem;
   margin-top: 0.5rem;
-  > li {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: $border_radius12;
-    padding: 1rem;
-    > div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .hover_submenu {
-      display: none;
-      position: absolute;
-      top: 0;
-      right: -180px;
-      > ul {
-        background-color: $background_context_menus;
-        border: $border_style_default;
-        border-radius: $border_radius5;
-        > li {
-          cursor: pointer;
-          padding: 1rem;
-          &:hover {
-            background-color: $background_hover_menu_item;
-          }
-        }
-      }
-    }
+  gap: 1rem;
+  > div {
+    border-radius: $border_radius10;
+    padding: 0.5rem;
     &:hover {
-      background: $light_gradient;
-      .hover_submenu {
-        display: block;
-      }
+      background-color: $background_hover_menu_item;
     }
   }
 }

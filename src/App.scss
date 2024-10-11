@@ -172,26 +172,29 @@ textarea:focus {
   outline: none;
 }
 
-h1 {
-  font-size: 1.5rem; /* 24px */
-  line-height: 1.8125rem; /* 29px */
-}
 h2 {
-  font-size: 1.25rem; /* 20px */
-  line-height: 2.5rem; /* 40px */
+  font-size: 0.974rem; /* 16px */
+  line-height: 1.21rem;
 }
+
 h3 {
-  font-size: 0.9rem; /* 14.4px */
-  line-height: 1.125rem; /* 18px */
+  font-size: 0.853rem; /* 14px */
+  line-height: 1.21rem;
 }
+
 h4 {
-  font-size: 0.8rem; /* 12.8px */
-  line-height: 1rem; /* 16px */
+  font-size: 0.792rem; /* 13px */
+  line-height: 1.21rem;
+}
+
+h5 {
+  font-size: 0.731rem; /* 12px */
+  line-height: 1.21rem;
 }
 
 p {
-  font-size: 0.75rem; /* 12px */
-  line-height: 0.9rem; /* 14.4px */
+  font-size: 0.609rem; /* 10px */
+  line-height: 1.21rem;
 }
 
 // ТУТ БУДУТ СБРАСЫВАТЬСЯ НЕКОТОРЫЕ СТИЛИ БУТСТРАПА

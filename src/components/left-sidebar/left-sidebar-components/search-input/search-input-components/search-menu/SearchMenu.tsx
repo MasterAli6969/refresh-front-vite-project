@@ -1,14 +1,14 @@
 import { FC } from "react";
+//МОДУЛИ ДЛЯ РАБОТЫ
 import { ListType } from "../../../../../../commonTypes.interface";
-
-import ClockTimeIcon from "../../../../../../assets/icons/ClockTimeIcon.svg";
+import { searchMenuData } from "../../data";
+//МОДУЛИ ДЛЯ РЕНДЕРА
 import ArrowChekRight from "../../../../../../assets/icons-svg-components/ArrowChekRight";
 import CustomCenterModalOpenWrapper from "../../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 import ReplenishmentBalanceModalWindows from "../../../../../../common/special-componet/replenishment-balance-modal-windows/ReplenishmentBalanceModalWindows";
-
-import { searchMenuData } from "../../data";
-
+//СТИЛИ
 import styles from "./search_menu.module.scss";
+import CustomContexMenuOpenUniversalWrapper from "../../../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
 
 export interface SearchMenuDataType {
   id: number;
@@ -30,51 +30,47 @@ const SearchMenu: FC<SearchMenuPropsType> = ({ focused, inputState }) => {
   return (
     <>
       {focused ? (
-        <ul className={styles.ul}>
+        <div className={styles.div}>
           {inputState === "" ? (
-            <li>
-              <p>Начните ввод...</p>
-            </li>
+            <div className={styles.subdiv_start}>
+              <h5>Начните ввод...</h5>
+            </div>
           ) : !filteredUsers || filteredUsers.length === 0 ? (
-            <div>
-              <p>Ничего не найдено {"=("} </p>
+            <div className={styles.subdiv_none}>
+              <h5>Ничего не найдено {"=("} </h5>
             </div>
           ) : (
             filteredUsers.map((item: SearchMenuDataType) => {
               return (
-                <li key={item.id}>
-                  <p>{item.name}</p>
-                  <div>
-                    <ArrowChekRight color="#FEFEFE" />
-                  </div>
-                  <div className={styles.hover_submenu}>
-                    <ul>
-                      <li>
-                        <p>Профиль клиента</p>
-                      </li>
-                      <li>
+                <div key={item.id}>
+                  <CustomContexMenuOpenUniversalWrapper
+                    dropPosition="right"
+                    dropMenuItems={[
+                      () => <h4>Профиль клиента</h4>,
+                      () => (
                         <CustomCenterModalOpenWrapper
                           redaxStateKey="replenishmentBalanceModalWindow"
                           openComponents={() => (
                             <ReplenishmentBalanceModalWindows redaxStateKey="replenishmentBalanceModalWindow" />
                           )}
                         >
-                          <p>Пополнение</p>
+                          <h4>Пополнение</h4>
                         </CustomCenterModalOpenWrapper>
-                      </li>
-                      <li>
-                        <p>Перейти к покупкам</p>
-                      </li>
-                      <li>
-                        <p>Сбросить пароль на email</p>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
+                      ),
+                      () => <h4>Перейти к покупкам</h4>,
+                      () => <h4>Сбросить пароль на email</h4>,
+                    ]}
+                  >
+                    <h5>{item.name}</h5>
+                    <div>
+                      <ArrowChekRight color="#FEFEFE" />
+                    </div>
+                  </CustomContexMenuOpenUniversalWrapper>
+                </div>
               );
             })
           )}
-        </ul>
+        </div>
       ) : (
         ""
       )}

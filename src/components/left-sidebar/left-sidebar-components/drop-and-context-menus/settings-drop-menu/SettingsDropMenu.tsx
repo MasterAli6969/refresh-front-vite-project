@@ -1,67 +1,97 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 //ИКОНКИ
-import ArrowChekRight from "../../../../../assets/icons/ArrowChekRight.svg";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import CustomContexMenuOpenUniversalWrapper from "../../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
 //СТИЛИ
 import styles from "./settings_drop_menu.module.scss";
+import ArrowChekRight from "../../../../../assets/icons-svg-components/ArrowChekRight";
+import classNames from "classnames";
 const SettingsDropMenu: FC = () => {
+  const [active, setActive] = useState<number | null>(null);
+
+  const handleClick = (id: number) => {
+    setActive(id);
+  };
   return (
     <ul className={styles.ul}>
-      <li>
+      <li onClick={() => handleClick(1)}>
         <CustomContexMenuOpenUniversalWrapper
           dropPosition="right"
           dropMenuItems={[
-            () => <p>Общие настройки</p>,
-            () => <p>Конфигурация отчетов</p>,
-            () => <p>Конфигурация бронирования</p>,
-            () => <p>Склад</p>,
-            () => <p>Конфигурация кассы</p>,
-            () => <p>Сотрудники и роли</p>,
-            () => <p>Продукты и подписки</p>,
+            () => <h3>Общие настройки</h3>,
+            () => <h3>Конфигурация отчетов</h3>,
+            () => <h3>Конфигурация бронирования</h3>,
+            () => <h3>Склад</h3>,
+            () => <h3>Конфигурация кассы</h3>,
+            () => <h3>Сотрудники и роли</h3>,
+            () => <h3>Продукты и подписки</h3>,
           ]}
         >
-          <p>Веб-администратор</p>
-          <img src={ArrowChekRight} />
+          <h3>Веб-администратор</h3>
+          <div
+            className={classNames(styles.arrow, {
+              [styles._active_arrow]: active === 1,
+            })}
+          >
+            <ArrowChekRight color="#fff" />
+          </div>
         </CustomContexMenuOpenUniversalWrapper>
       </li>
-      <li>
+      <li onClick={() => handleClick(2)}>
         <CustomContexMenuOpenUniversalWrapper
           dropPosition="right"
           dropMenuItems={[
-            () => <p>Конфигурация клиента</p>,
-            () => <p>Дизайн</p>,
-            () => <p>Консоли</p>,
+            () => <h3>Конфигурация клиента</h3>,
+            () => <h3>Дизайн</h3>,
+            () => <h3>Консоли</h3>,
           ]}
         >
-          <p>Клиент</p>
-          <img src={ArrowChekRight} />
+          <h3>Клиент</h3>
+          <div
+            className={classNames(styles.arrow, {
+              [styles._active_arrow]: active === 2,
+            })}
+          >
+            <ArrowChekRight color="#fff" />
+          </div>
         </CustomContexMenuOpenUniversalWrapper>
       </li>
-      <li>
+      <li onClick={() => handleClick(3)}>
         <CustomContexMenuOpenUniversalWrapper
           dropPosition="right"
           dropMenuItems={[
-            () => <p>Игры и приложения</p>,
-            () => <p>Лицензии</p>,
+            () => <h3>Игры и приложения</h3>,
+            () => <h3>Лицензии</h3>,
           ]}
         >
-          <p>Контент</p>
-          <img src={ArrowChekRight} />
+          <h3>Контент</h3>
+          <div
+            className={classNames(styles.arrow, {
+              [styles._active_arrow]: active === 3,
+            })}
+          >
+            <ArrowChekRight color="#fff" />
+          </div>
         </CustomContexMenuOpenUniversalWrapper>
       </li>
-      <li>
+      <li onClick={() => handleClick(4)}>
         <CustomContexMenuOpenUniversalWrapper
           dropPosition="right"
           dropMenuItems={[
-            () => <p>Рейтинг участников</p>,
-            () => <p>Достижения</p>,
-            () => <p>Ежедневные награды</p>,
-            () => <p>Промокоды</p>,
+            () => <h3>Рейтинг участников</h3>,
+            () => <h3>Достижения</h3>,
+            () => <h3>Ежедневные награды</h3>,
+            () => <h3>Промокоды</h3>,
           ]}
         >
-          <p>Лояльность</p>
-          <img src={ArrowChekRight} />
+          <h3>Лояльность</h3>
+          <div
+            className={classNames(styles.arrow, {
+              [styles._active_arrow]: active === 4,
+            })}
+          >
+            <ArrowChekRight color="#fff" />
+          </div>
         </CustomContexMenuOpenUniversalWrapper>
       </li>
     </ul>

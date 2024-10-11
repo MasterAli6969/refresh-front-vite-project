@@ -1,13 +1,13 @@
 import { FC, useState, useEffect, useRef } from "react";
-
-import SearchIcon from "../../../../assets/icons/SearchIcon.svg";
-import AddUserLight from "../../../../assets/icons/AddUserLight.svg";
-import SearchMenu from "./search-input-components/search-menu/SearchMenu";
-import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
-import AddUserModalWindow from "./search-input-components/add-user-modal-window/AddUserModalWindow";
-
-import styles from "./search_input.module.scss";
+//МОДУЛИ ДЛЯ РАБОТЫ
 import classNames from "classnames";
+//МОДУЛИ ДЛЯ РЕНДЕРА
+import SearchIcon from "../../../../assets/icons/SearchIcon.svg";
+import SearchMenu from "./search-input-components/search-menu/SearchMenu";
+//ИНОКНКИ
+import CloseIcon from "../../../../assets/icons/CloseIcon.svg";
+//СТИЛИ
+import styles from "./search_input.module.scss";
 
 const SearchInput: FC = () => {
   const [search, setSearch] = useState<string>("");
@@ -29,6 +29,10 @@ const SearchInput: FC = () => {
     }
   };
 
+  const handleSearchClear = () => {
+    setSearch("");
+  };
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -45,20 +49,11 @@ const SearchInput: FC = () => {
         <input
           value={search}
           onChange={handleChange}
-          placeholder="Поиск пользователя"
-          type="search"
+          placeholder="Быстрый поиск..."
+          type="text"
           onFocus={handleFocus}
         />
-        {!isFocused && (
-          <CustomCenterModalOpenWrapper
-            redaxStateKey="addUserModalWindow"
-            openComponents={() => (
-              <AddUserModalWindow redaxStateKey="addUserModalWindow" />
-            )}
-          >
-            <img className={styles.add_user_icon} src={AddUserLight} />
-          </CustomCenterModalOpenWrapper>
-        )}
+        {isFocused && <img onClick={handleSearchClear} src={CloseIcon} />}
         <div className={styles.search_menu}>
           <SearchMenu focused={isFocused} inputState={search} />
         </div>

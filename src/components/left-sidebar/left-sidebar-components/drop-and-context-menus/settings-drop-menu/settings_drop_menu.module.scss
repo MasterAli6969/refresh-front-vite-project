@@ -1,14 +1,14 @@
 @import "/src/variables.scss";
 
 .ul {
-  > li > div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: $border_radius5;
+  > li > div > div {
     padding: 1rem;
-    &:hover {
-      background-color: $background_cusom_dark;
+    .arrow {
+      transform: rotate(0deg);
+    }
+    ._active_arrow {
+      transition: transform 0.5s ease;
+      transform: rotate(180deg);
     }
   }
 }

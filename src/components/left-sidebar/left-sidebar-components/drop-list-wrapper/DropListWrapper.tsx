@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren, useState } from "react";
 import classNames from "classnames";
 
 import ArrowChekRight from "../../../../assets/icons-svg-components/ArrowChekRight";
@@ -15,8 +15,14 @@ const DropListWrapper: FC<PropsWithChildren<DropListWrapperPropsType>> = ({
   id,
   dropMenuComponents: DropMenuComponents,
 }) => {
+  const [active, setActive] = useState<boolean>(false);
+
+  const handleClick = () => {
+    setActive(!active);
+  };
+
   return (
-    <div className={styles.div}>
+    <div onClick={handleClick} className={styles.div}>
       <button
         className="p-0"
         data-bs-toggle="collapse"
@@ -25,7 +31,13 @@ const DropListWrapper: FC<PropsWithChildren<DropListWrapperPropsType>> = ({
         aria-controls={`multiCollapseExample${id}`}
       >
         {children}
-        <ArrowChekRight color="#6C7275" />
+        <div
+          className={classNames(styles.arrow, {
+            [styles._active_arrow]: active,
+          })}
+        >
+          <ArrowChekRight color="#fff" />
+        </div>
       </button>
       <div
         className={classNames("collapse multi-collapse", styles.div_menu)}

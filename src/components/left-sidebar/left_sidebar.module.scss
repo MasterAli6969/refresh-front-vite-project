@@ -7,19 +7,23 @@
   .subdiv_logo {
     margin-bottom: 1rem;
   }
-  > ul {
-    position: relative;
+  .subdiv_title {
     margin-top: 1.8rem;
+    > h5 {
+      color: $text_inactive;
+      margin-bottom: 0.5rem;
+    }
+  }
+  > ul {
     > li {
       cursor: pointer;
-      border-radius: 10px;
-      padding: 0.5rem;
+      border-radius: $border_radius5;
+      padding: 1rem;
       margin-bottom: 1rem;
       &:hover {
-        background-color: $background_hover_menu_item;
+        background-color: $background_custom_dark;
       }
-      > a,
-      > div > button {
+      > a {
         display: flex;
         align-items: center;
         color: $text_light;
@@ -30,7 +34,7 @@
       }
     }
     .active {
-      background: $background_hover_menu_item;
+      background: $background_modal_button_toggle_active;
     }
   }
 }

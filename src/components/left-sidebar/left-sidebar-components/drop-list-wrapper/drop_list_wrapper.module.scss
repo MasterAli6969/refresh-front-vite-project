@@ -7,7 +7,21 @@
     align-items: center;
     background-color: transparent;
     color: $text_light;
-    border: 1px solid red;
+    border: none;
+    > div:first-child {
+      display: flex;
+      align-items: center;
+      > div {
+        margin-right: 1rem;
+      }
+    }
+    .arrow {
+      transform: rotate(-90deg);
+    }
+    ._active_arrow {
+      transition: transform 0.5s ease;
+      transform: rotate(90deg);
+    }
   }
   .div_menu {
     border-left: $border_style_default;

@@ -1,6 +1,7 @@
 @import "/src/variables.scss";
 
 .dropdown_button {
+  cursor: pointer;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -9,4 +10,8 @@
 
 .drop_ul {
   @include PopoverContextMenuUl;
+}
+
+.dropdown-menu {
+  // transform: translate(16rem, 0px) !important;
 }
