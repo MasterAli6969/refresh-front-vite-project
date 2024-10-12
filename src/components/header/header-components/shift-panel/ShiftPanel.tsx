@@ -12,7 +12,6 @@ import CustomContexMenuOpenUniversalWrapper from "../../../../common/smart-compo
 import OpenShiftModalWindow from "./shift-panel-modal-windows/OpenShiftModalWindow";
 import CloseShiftModalWindow from "./shift-panel-modal-windows/close-shift-modal-window/CloseShiftModalWindow";
 import ExpensesCashModalWindow from "./shift-panel-modal-windows/ExpensesCashModalWindow";
-
 //СТИЛИ
 import styles from "./shift_panel.module.scss";
 
@@ -22,24 +21,22 @@ const ShiftPanel: FC = () => {
   );
 
   return (
-    <div className={styles.div}>
+    <div className={styles.div_cmjdsn_vkjfn_vjlgnb_jkbgfbn}>
       {!isShiftStatus ? (
-        <div className={styles.subdiv_open_shift_button}>
-          <CustomCenterModalOpenWrapper
-            redaxStateKey="userPanelOpenShiftModalWindow"
-            openComponents={() => (
-              <OpenShiftModalWindow
-                redaxStateKey="userPanelOpenShiftModalWindow"
-                redaxShiftState="isShiftStatus"
-              />
-            )}
-          >
-            <CustomButton color="dark">
-              <img src={OfflineIcon} />
-              <p>Смена закрыта</p>
-            </CustomButton>
-          </CustomCenterModalOpenWrapper>
-        </div>
+        <CustomCenterModalOpenWrapper
+          redaxStateKey="userPanelOpenShiftModalWindow"
+          openComponents={() => (
+            <OpenShiftModalWindow
+              redaxStateKey="userPanelOpenShiftModalWindow"
+              redaxShiftState="isShiftStatus"
+            />
+          )}
+        >
+          <CustomButton color="dark">
+            <img className={styles.shift_icon} src={OfflineIcon} />
+            <h4>Смена закрыта</h4>
+          </CustomButton>
+        </CustomCenterModalOpenWrapper>
       ) : (
         <CustomContexMenuOpenUniversalWrapper
           dropPosition="bottom"
@@ -54,9 +51,9 @@ const ShiftPanel: FC = () => {
                   />
                 )}
               >
-                <CustomButton color="dark">
-                  <p>Закрыть смену</p>
-                </CustomButton>
+                <div className={styles.context_shift_menu_button}>
+                  <h4>Закрыть смену</h4>
+                </div>
               </CustomCenterModalOpenWrapper>
             ),
             () => (
@@ -66,23 +63,22 @@ const ShiftPanel: FC = () => {
                   <ExpensesCashModalWindow redaxStateKey="ExpensesCashModalWindow" />
                 )}
               >
-                <CustomButton color="dark">
-                  <p>Расходы кассы </p>
-                </CustomButton>
+                <div className={styles.context_shift_menu_button}>
+                  <h4>Расходы кассы </h4>
+                </div>
               </CustomCenterModalOpenWrapper>
             ),
             () => (
-              <CustomButton color="transparent">
-                <p>Промежуточный отчет</p>
-              </CustomButton>
+              <div className={styles.context_shift_menu_button}>
+                <h4>Промежуточный отчет</h4>
+              </div>
             ),
           ]}
         >
           <CustomButton color="dark">
-            <img src={OnlineIcon} />
-            <p>Смена открыта</p>
+            <img className={styles.shift_icon} src={OnlineIcon} />
+            <h4>Смена открыта</h4>
           </CustomButton>
-          <div className={classNames(styles.close_shift_drop_menu)}></div>
         </CustomContexMenuOpenUniversalWrapper>
       )}
     </div>

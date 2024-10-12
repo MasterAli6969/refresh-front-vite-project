@@ -1,6 +1,4 @@
 import { FC } from "react";
-//МОДУЛИ ДЛЯ РАБОТЫ
-import { userPanelData } from "./data";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import UserPanel from "./header-components/user-panel/UserPanel";
 import ShiftPanel from "./header-components/shift-panel/ShiftPanel";
@@ -17,7 +15,7 @@ const Header: FC = () => {
           <img src={CalendarIcon} />
           <div>
             <h4>Вторник</h4>
-            <h4>19 июля, 11:00</h4>
+            <h5>19 июля, 11:00</h5>
           </div>
         </div>
         <div>
@@ -26,7 +24,7 @@ const Header: FC = () => {
       </div>
       <div className={styles.subdiv_right}>
         <ShiftPanel />
-        <UserPanel userPanelData={userPanelData} />
+        <UserPanel />
       </div>
     </div>
   );

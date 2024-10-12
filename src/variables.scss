@@ -147,12 +147,10 @@ $light_gradient: linear-gradient(
   display: inline-block;
   max-width: 100%;
   > li,
-  li > a {
+  > li > a {
     cursor: pointer;
-    padding: 0.5rem 1rem;
+    margin: 0.5rem 1rem;
     white-space: nowrap;
-    display: flex;
-    align-items: center;
     &:hover {
       background-color: $background_hover_menu_item;
     }
@@ -161,6 +159,12 @@ $light_gradient: linear-gradient(
       margin-right: 0.5rem;
     }
   }
+  // > li:nth-child(1) {
+  //   border-radius: $border_radius10 $border_radius10 0 0;
+  // }
+  // > li:last-child {
+  //   border-radius: 0 0 $border_radius10 $border_radius10;
+  // }
 }
 
 // СТИЛИ ДЛЯ ФОРМ СТРАНИЦЫ РЕГИСТРАЦИИ
