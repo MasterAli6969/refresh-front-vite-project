@@ -7,11 +7,19 @@ import styles from "./custom_contex_menu_open_universal_wrapper.module.scss";
 interface CustomContexMenuOpenUniversalWrapperPropsType {
   dropMenuItems: FC[];
   dropPosition: "top" | "left" | "bottom" | "right";
+  isPaddingAndHover?: boolean;
+  isListItemFlex?: boolean;
 }
 
 const CustomContexMenuOpenUniversalWrapper: FC<
   PropsWithChildren<CustomContexMenuOpenUniversalWrapperPropsType>
-> = ({ children, dropMenuItems, dropPosition }) => {
+> = ({
+  children,
+  dropMenuItems,
+  dropPosition,
+  isPaddingAndHover,
+  isListItemFlex,
+}) => {
   // Условное классифицирование для переключения между позициями меню
   const dropdownClass = classNames({
     dropdown: true,
@@ -31,7 +39,12 @@ const CustomContexMenuOpenUniversalWrapper: FC<
         {children}
       </div>
       <div className="dropdown-menu">
-        <ul className={classNames(styles.drop_ul)}>
+        <ul
+          className={classNames(styles.drop_ul, {
+            [styles._padding_and_hover_none_drop_ul]: isPaddingAndHover,
+            [styles.list_item_flex]: isListItemFlex,
+          })}
+        >
           {dropMenuItems.map((MenuItemComponent, index) => (
             <li key={index}>
               <MenuItemComponent />

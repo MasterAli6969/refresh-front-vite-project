@@ -5,7 +5,6 @@ import {
 } from "../../features/redux/hooks/reduxRootHooks";
 import { getNewId } from "../../features/utils/arrayUtils";
 import {
-  addNewTab,
   nameTab,
   removeTab,
   RoomTabObjectTypes,
@@ -129,7 +128,6 @@ const ControlPanel: FC = () => {
 
   return (
     <div className={styles.div}>
-      <h2>Панель управления ПК</h2>
       <div className={styles.subdiv}>
         <ControlPanelHeader />
         <div className={styles.rooms_tabs_container}>

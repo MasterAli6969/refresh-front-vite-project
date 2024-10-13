@@ -56,6 +56,10 @@ const CustomCenterModalOpenWrapper: FC<
           "& .MuiPaper-root": {
             backgroundColor: "transparent",
             color: "white",
+            maxWidth: "none",
+          },
+          "& .MuiDialogContent-root": {
+            overflowY: "hidden !impotent",
           },
         }}
       >

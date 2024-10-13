@@ -65,15 +65,15 @@ $background_hover_button_toggle: #1c1f25;
 //------------------------
 //------------------------
 
-//стили для границ
-$border_style_default: 1px solid $border_default;
-$border_style_active: 1px solid $border_active;
-$border_style_special_active: 1px solid $border_hover_click;
-$border_style_error: 1px solid $border_error;
-$border_radius5: 5px;
-$border_radius10: 10px;
-$border_radius12: 12px;
-$border_radius16: 16px;
+// стили для границ
+$border_style_default: 0.06rem solid $border_default;
+$border_style_active: 0.06rem solid $border_active;
+$border_style_special_active: 0.06rem solid $border_hover_click;
+$border_style_error: 0.06rem solid $border_error;
+$border_radius5: 0.3rem;
+$border_radius8: 0.49rem;
+$border_radius12: 0.73rem;
+$border_radius16: 0.98rem;
 
 $light_gradient: linear-gradient(
   to right,
@@ -129,11 +129,12 @@ $light_gradient: linear-gradient(
 }
 //СПЕЦИАЛЬНЫЕ СТИЛИ ДЛЯ КОМПОНЕНТА УНИВЕРСАЛЬНОГО МОДАЛЬНОГО ОКНА
 @mixin modalUniversal1Style {
+  width: 25.4rem;
   display: flex;
   flex-direction: column;
   background-color: $background_modal_general;
   border: $border_style_default;
-  border-radius: $border_radius10;
+  border-radius: $border_radius8;
   padding: 1rem;
   gap: 1rem;
 }
@@ -143,13 +144,14 @@ $light_gradient: linear-gradient(
   background-color: $background_context_menus;
   color: $text_default;
   border: $border_style_default;
-  border-radius: $border_radius10;
-  display: inline-block;
+  border-radius: $border_radius8;
   max-width: 100%;
+  > li {
+    padding: 0.5rem 1rem;
+  }
   > li,
   > li > a {
     cursor: pointer;
-    margin: 0.5rem 1rem;
     white-space: nowrap;
     &:hover {
       background-color: $background_hover_menu_item;
@@ -159,12 +161,12 @@ $light_gradient: linear-gradient(
       margin-right: 0.5rem;
     }
   }
-  // > li:nth-child(1) {
-  //   border-radius: $border_radius10 $border_radius10 0 0;
-  // }
-  // > li:last-child {
-  //   border-radius: 0 0 $border_radius10 $border_radius10;
-  // }
+  > li:nth-child(1) {
+    border-radius: $border_radius8 $border_radius8 0 0;
+  }
+  > li:last-child {
+    border-radius: 0 0 $border_radius8 $border_radius8;
+  }
 }
 
 // СТИЛИ ДЛЯ ФОРМ СТРАНИЦЫ РЕГИСТРАЦИИ

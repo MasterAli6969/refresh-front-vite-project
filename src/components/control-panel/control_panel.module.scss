@@ -1,12 +1,14 @@
 @import "/src/variables.scss";
 
 .div {
-  padding: 1rem;
   .subdiv {
     .rooms_tabs_container {
       display: flex;
       gap: 0.5rem;
-      margin: 1rem;
+      padding: 1rem;
     }
+  }
+  .pc_panel_container {
+    padding: 1rem;
   }
 }

@@ -10,6 +10,10 @@
     background-color: $hover_default;
     color: $text_light;
   }
+  > img {
+    width: 1rem;
+    height: 1rem;
+  }
 }
 
 ._light {

@@ -21,7 +21,7 @@ const ShiftPanel: FC = () => {
   );
 
   return (
-    <div className={styles.div_cmjdsn_vkjfn_vjlgnb_jkbgfbn}>
+    <div className={styles.div}>
       {!isShiftStatus ? (
         <CustomCenterModalOpenWrapper
           redaxStateKey="userPanelOpenShiftModalWindow"
@@ -40,6 +40,7 @@ const ShiftPanel: FC = () => {
       ) : (
         <CustomContexMenuOpenUniversalWrapper
           dropPosition="bottom"
+          isPaddingAndHover={true}
           dropMenuItems={[
             () => (
               <CustomCenterModalOpenWrapper
@@ -51,7 +52,12 @@ const ShiftPanel: FC = () => {
                   />
                 )}
               >
-                <div className={styles.context_shift_menu_button}>
+                <div
+                  className={classNames(
+                    styles.context_shift_menu_button,
+                    styles.context_shift_menu_button_red
+                  )}
+                >
                   <h4>Закрыть смену</h4>
                 </div>
               </CustomCenterModalOpenWrapper>

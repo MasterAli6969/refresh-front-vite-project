@@ -15,29 +15,30 @@ const UserPanel: FC = () => {
   return (
     <div className={styles.div}>
       <CustomContexMenuOpenUniversalWrapper
+        isListItemFlex={true}
         dropMenuItems={[
           () => (
             <>
               <img src={UserIcon} />
-              <p>Мой профиль</p>
+              <h4>Мой профиль</h4>
             </>
           ),
           () => (
             <>
               <img src={ProfileNotiseIcon} />
-              <p>Задачи</p>
+              <h4>Задачи</h4>
             </>
           ),
           () => (
             <>
               <img src={ProfileCalendarIcon} />
-              <p>Календарь смен</p>
+              <h4>Календарь смен</h4>
             </>
           ),
           () => (
             <a href="auth">
               <img src={ProfileLogoutIcon} />
-              <p>Выход</p>
+              <h4>Выход</h4>
             </a>
           ),
         ]}
@@ -46,8 +47,8 @@ const UserPanel: FC = () => {
         <div className={styles.div}>
           <img src={TestAvatarProfice} />
           <div>
-            <p>Василий Петров</p>
-            <p>Администратор</p>
+            <h4>Василий Петров</h4>
+            <h5>Администратор</h5>
           </div>
         </div>
       </CustomContexMenuOpenUniversalWrapper>

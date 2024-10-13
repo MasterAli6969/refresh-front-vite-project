@@ -17,7 +17,6 @@ import CustomLogo from "../../common/static-components/custom-logo/CustomLogo";
 //МОДУЛИ ДЛЯ РАБОТЫ
 import { ListType } from "../../commonTypes.interface";
 import { PropsIcon } from "../../assets/icons-svg-components/props.interface";
-import { leftSidebarData } from "./data";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import SearchInput from "./left-sidebar-components/search-input/SearchInput";
 import DropListWrapper from "./left-sidebar-components/drop-list-wrapper/DropListWrapper";
@@ -50,10 +49,8 @@ const LeftSidebar: FC = () => {
   };
 
   useEffect(() => {
-    if (leftSidebarData.length > 0 && activeItemId === null) {
-      setActiveItemId(leftSidebarData[0].id);
-    }
-  }, [activeItemId]);
+    setActiveItemId(1);
+  }, []);
 
   return (
     <div className={styles.div}>

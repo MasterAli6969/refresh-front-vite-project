@@ -1,0 +1,8 @@
+@import "/src/variables.scss";
+
+.def_div {
+  background-color: $background_custom_auth;
+  border: $border_style_default;
+  border-radius: $border_radius8;
+  margin: 0.5rem;
+}

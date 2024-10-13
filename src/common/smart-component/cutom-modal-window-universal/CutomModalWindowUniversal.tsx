@@ -23,11 +23,7 @@ const CutomModalWindowUniversal: FC<
   children,
 }) => {
   return (
-    <form
-      style={{ width }} // Используем `width` напрямую
-      onSubmit={onSubmit}
-      className={styles.form}
-    >
+    <form onSubmit={onSubmit} className={styles.form}>
       <CustomModalCloseHead
         redaxStateKey={redaxStateKey}
         text={title}

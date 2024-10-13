@@ -12,6 +12,19 @@
   @include PopoverContextMenuUl;
 }
 
-.dropdown-menu {
-  // transform: translate(16rem, 0px) !important;
+._padding_and_hover_none_drop_ul {
+  > li {
+    padding: 0;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.list_item_flex {
+  > li,
+  > li > a {
+    display: flex;
+    align-items: center;
+  }
 }

@@ -24,11 +24,11 @@ const ControlPanelHeader: FC = () => {
       <div>
         <CustomButton color="dark">
           <img src={MapIcon} />
-          <p>Карта клуба</p>
+          <h4>Карта клуба</h4>
         </CustomButton>
         <CustomButton color="transparent">
           <img src={ListIconMini} />
-          <p>Вид списком</p>
+          <h4>Вид списком</h4>
         </CustomButton>
         <MessageButton />
         <NoticeButton />
@@ -36,30 +36,30 @@ const ControlPanelHeader: FC = () => {
         <AddNewRoomsButton />
       </div>
       <div>
-        <CustomButton imgSize="1rem" color="transparent">
+        <div>
           <img src={OffModeStatus} />
-          <p>9</p>
-        </CustomButton>
-        <CustomButton imgSize="1rem" color="transparent">
+          <h5>9</h5>
+        </div>
+        <div>
           <img src={ActiveModeStatus} />
-          <p>9</p>
-        </CustomButton>
-        <CustomButton imgSize="1rem" color="transparent">
+          <h5>9</h5>
+        </div>
+        <div>
           <img src={StandbyModeSatus} />
-          <p>9</p>
-        </CustomButton>
-        <CustomButton imgSize="0.6rem" color="transparent">
+          <h5>9</h5>
+        </div>
+        <div>
           <img src={WarningIconSmall} />
-          <p>9</p>
-        </CustomButton>
-        <CustomButton imgSize="0.6rem" color="transparent">
+          <h5>9</h5>
+        </div>
+        <div>
           <img src={WindowsLogoMiniIcons} />
-          <p>9</p>
-        </CustomButton>
-        <CustomButton imgSize="0.6rem" color="transparent">
+          <h5>9</h5>
+        </div>
+        <div>
           <img src={SandTimerIcon} />
-          <p>9</p>
-        </CustomButton>
+          <h5>9</h5>
+        </div>
       </div>
     </div>
   );

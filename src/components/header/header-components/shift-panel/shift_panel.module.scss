@@ -7,6 +7,18 @@
 }
 
 .context_shift_menu_button {
+  cursor: pointer;
   display: flex;
   justify-content: center;
+  background-color: $button_default;
+  border: $border_style_default;
+  border-radius: $border_radius5;
+  padding: 0.5rem;
+  margin: 0.3rem;
+  &:hover {
+    background-color: $background_hover_menu_item;
+  }
+}
+.context_shift_menu_button_red {
+  border: $border_style_error; // Применяется только к первому элементу
 }
