@@ -1,13 +1,13 @@
 import { FC } from "react";
-import { RedaxStateProps } from "../../../../../../../commonTypes.interface";
-import { useAppDispatch } from "../../../../../../../features/redux/hooks/reduxRootHooks";
-import { setOnClickDynamic } from "../../../../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
+import { RedaxStateProps } from "../../../../../../commonTypes.interface";
+import { useAppDispatch } from "../../../../../../features/redux/hooks/reduxRootHooks";
+import { setOnClickDynamic } from "../../../../../../features/redux/reducers/common-reducers/onClickDynamicReduser";
 import {
   resetModals,
   setToggleDynamic,
-} from "../../../../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
-import CutomModalWindowUniversal from "../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
-import CustomDualButtonYesNo from "../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+} from "../../../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
+import CutomModalWindowUniversal from "../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
+import CustomDualButtonYesNo from "../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 //ИКОНКИ
 //МОДУЛИ ДЛЯ РЕНДЕРА
 //СТИЛИ

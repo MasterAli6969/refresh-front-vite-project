@@ -1,10 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { PcIconDataType } from "../../../../../components/control-panel/control-panel-components/control-panel-pc-icons/ControlPanelPcIcons";
 
-export interface PcIconObjectTypes extends PcIconDataType {}
-
 export interface PcIconEditInitialStateType {
-  pcIcons: { [key: number | string]: PcIconObjectTypes[] };
+  pcIcons: { [key: number | string]: PcIconDataType[] };
 }
 
 const pcIconEditInitialState: PcIconEditInitialStateType = {
@@ -19,7 +17,7 @@ const pcIconEditSlice = createSlice({
       state,
       action: PayloadAction<{
         key: number | string;
-        icons: PcIconObjectTypes[];
+        icons: PcIconDataType[];
       }>
     ) => {
       const { key, icons } = action.payload;

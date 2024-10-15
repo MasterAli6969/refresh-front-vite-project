@@ -87,7 +87,7 @@ const LeftSidebar: FC = () => {
           onClick={() => handleLiClick(2)}
           className={classNames({ [styles.active]: activeItemId === 2 })}
         >
-          <a href="#">
+          <a href="shop">
             <div>
               <ShopIcon
                 color={`${
@@ -104,7 +104,7 @@ const LeftSidebar: FC = () => {
           onClick={() => handleLiClick(3)}
           className={classNames({ [styles.active]: activeItemId === 3 })}
         >
-          <a href="#">
+          <a href="transactions">
             <div>
               <TransactionsIcon
                 color={`${

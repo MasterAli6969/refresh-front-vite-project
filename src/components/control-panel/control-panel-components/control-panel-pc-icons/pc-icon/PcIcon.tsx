@@ -17,7 +17,7 @@ export interface PcIconDataObjektType {
   status: string;
   pcNumber: number;
   timeLeftPcent: number;
-  pcIconModalWindowData: PcIconMenuDataType;
+  pcIconModalWindowData?: PcIconMenuDataType;
 }
 
 // Тип для основного массива данных

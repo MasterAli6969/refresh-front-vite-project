@@ -49,9 +49,9 @@ const SearchMenu: FC<SearchMenuPropsType> = ({ focused, inputState }) => {
                       () => <h4>Профиль клиента</h4>,
                       () => (
                         <CustomCenterModalOpenWrapper
-                          redaxStateKey="replenishmentBalanceModalWindow"
+                          redaxStateKey="replenishmentBalanceModalWindowSearchMenu"
                           openComponents={() => (
-                            <ReplenishmentBalanceModalWindows redaxStateKey="replenishmentBalanceModalWindow" />
+                            <ReplenishmentBalanceModalWindows redaxStateKey="replenishmentBalanceModalWindowSearchMenu" />
                           )}
                         >
                           <h4>Пополнение</h4>

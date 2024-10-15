@@ -21,22 +21,21 @@ import CustomContexMenuOpenUniversalWrapper from "../../../../../../common/smart
 import RelocatePcModalWindow from "./pc-icon-menu-modal-windows/relocate-pc-modal-window/RelocatePcModalWindow";
 //СТИЛИ
 import styles from "./pc_icon_menu.module.scss";
-import CustomDynamicList from "../../../../../../common/smart-component/custom-dynamic-list/CustomDynamicList";
 
 export interface DropDataObjectType {
   client: string;
   timeLeft: string;
-  dropDataItem: ListType[];
+  dropDataItem?: ListType[];
 }
 
 // Тип для pcIconModalWindowData
 export interface PcIconMenuDataType {
   dropData?: DropDataObjectType;
-  modalListItem: ListType[];
+  modalListItem?: ListType[];
 }
 
 export interface PcIconMenuPropsData {
-  pcIconModalWindowData: PcIconMenuDataType;
+  pcIconModalWindowData?: PcIconMenuDataType;
   pcStatus: string;
 }
 
@@ -54,9 +53,9 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
               dropMenuItems={[
                 () => (
                   <CustomCenterModalOpenWrapper
-                    redaxStateKey="replenishmentBalanceModalWindow"
+                    redaxStateKey="replenishmentBalanceModalWindowPcIcon"
                     openComponents={() => (
-                      <ReplenishmentBalanceModalWindows redaxStateKey="replenishmentBalanceModalWindow" />
+                      <ReplenishmentBalanceModalWindows redaxStateKey="replenishmentBalanceModalWindowPcIcon" />
                     )}
                   >
                     <p>Пополнение</p>
@@ -120,11 +119,17 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
                 <div>
                   <p>
                     Клиент:
-                    <span>{pcIconModalWindowData.dropData?.client}</span>
+                    <span>
+                      {pcIconModalWindowData &&
+                        pcIconModalWindowData.dropData?.client}
+                    </span>
                   </p>
                   <p>
                     Осталось:
-                    <span>{pcIconModalWindowData.dropData?.timeLeft}</span>
+                    <span>
+                      {pcIconModalWindowData &&
+                        pcIconModalWindowData.dropData?.timeLeft}
+                    </span>
                   </p>
                 </div>
                 <ArrowChekRight color="#ffff" />
@@ -132,7 +137,6 @@ const PcIconMenu: FC<PcIconMenuPropsData> = ({
             </CustomContexMenuOpenUniversalWrapper>
           </div>
         )}
-
         <div className={styles.pc_icon_menu_item}>
           <p>Устройство: PC9</p>
         </div>
