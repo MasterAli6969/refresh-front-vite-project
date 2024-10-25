@@ -1,0 +1,21 @@
+@import "/src/variables.scss";
+
+.div {
+  position: relative; /* Важно для правильной работы bounds="parent" */
+  width: 100%; /* или фиксированная ширина, например 1200px */
+  height: 75vh; /* Или задай конкретную высоту, например 600px */
+  background-color: $background_custom_dark;
+  background-image: url("/src/assets/img/CPBackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: $border_default;
+  border-radius: $border_radius8;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.pc_icon {
+  width: 50px;
+  height: 50px;
+}

@@ -46,3 +46,18 @@ export const pcIconData = [
     },
   },
 ];
+
+export const testMapPcEndpoint = [
+  {
+    pos_x: 310,
+    pos_y: 550,
+    zone: 4,
+    comp_id: 15,
+  },
+  {
+    pos_x: 560,
+    pos_y: 630,
+    zone: 1,
+    comp_id: 2,
+  },
+];

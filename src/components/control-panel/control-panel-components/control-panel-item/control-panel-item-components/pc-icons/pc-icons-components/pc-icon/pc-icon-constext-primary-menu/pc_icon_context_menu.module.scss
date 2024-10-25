@@ -1,0 +1,40 @@
+@import "/src/variables.scss";
+
+.div {
+  width: 13.17rem;
+  background-color: $background_context_menus;
+  border: $border_style_default;
+  border-radius: $border_radius8;
+}
+
+.user_data {
+  background-color: $background_custom_blue;
+}
+
+.list_item_start {
+  background-color: $button_active;
+  color: $text_light;
+  &:hover {
+    background-color: $button_active;
+  }
+}
+.list_item_start,
+.list_item,
+.list_item_special {
+  width: 100%;
+  display: flex;
+  padding: 0.7rem;
+  align-items: center;
+  color: $text_default;
+  > img {
+    width: 0.6rem;
+  }
+  > h5 {
+    margin-left: 1rem;
+  }
+  &:hover {
+    background-color: $hover_default;
+  }
+}
+._active {
+}

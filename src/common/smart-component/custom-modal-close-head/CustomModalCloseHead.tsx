@@ -1,5 +1,8 @@
 import { FC } from "react";
-import { useAppDispatch } from "../../../features/redux/hooks/reduxRootHooks";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../../features/redux/hooks/reduxRootHooks";
 
 import CloseIcon from "../../../assets/icons-svg-components/CloseIcon";
 
@@ -10,6 +13,7 @@ import {
 } from "../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
 
 import styles from "./custom_modal_close_head.module.scss";
+import { pcRoomsSaveColor } from "../../../features/redux/reducers/special-reducers/pc-rooms-reducers/pcRoomsSaveColorReducer";
 
 export interface CustomModalCloseHeadPropsType extends RedaxStateProps {
   text: string;
@@ -23,7 +27,13 @@ const CustomModalCloseHead: FC<CustomModalCloseHeadPropsType> = ({
 }) => {
   const dispatch = useAppDispatch();
 
+  //ЭТОТ ВЫЗОВ У НАС ИДЁТ ИСКЛЮЧИТЕЛЬНО НА ЦВЕТ ВЫБРАННОГО НАЗВАНИЯ КОМНАТ ПК
+  const pcRoomColor = useAppSelector(
+    (state) => state.pcRoomsSaveColor.currentColor
+  );
+
   const handleClose = () => {
+    // СБРОС СОСТОЯНИЯ ОТКРЫТИЯ ОКНА
     dispatch(
       setToggleDynamic({
         id: redaxStateKey,
@@ -36,8 +46,12 @@ const CustomModalCloseHead: FC<CustomModalCloseHeadPropsType> = ({
   return (
     <div className={styles.div}>
       <h3>
-        {text}
-        {specialText && <span> {specialText} </span>}
+        {text}{" "}
+        {specialText && (
+          <span style={{ color: `${pcRoomColor != "#fff" && pcRoomColor}` }}>
+            {specialText}
+          </span>
+        )}
       </h3>
       <div onClick={handleClose}>
         <CloseIcon />

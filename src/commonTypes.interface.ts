@@ -23,3 +23,11 @@ export interface AuthInputPropsType {
 export interface RedaxStateProps {
   redaxStateKey: string | number;
 }
+
+// ЭТО ОБЩИЙ ИНТЕРФЕЙС ДЛЯ БАЗОВЫХ ВХОДНЫХ ПАРАМЕТРОВ ПРИ СОЗДАНИИ ЛЮБОГО МОДАЛЬНОГО ОКНА ЧЕРЕЗ <CutomModalWindowUniversal>
+
+export interface CutomModalWindowUniversalDefaultPropsType
+  extends RedaxStateProps {
+  title: string;
+  specialText?: string;
+}

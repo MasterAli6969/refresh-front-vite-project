@@ -1,31 +1,46 @@
 import { FC } from "react";
-import CustomAvatarName from "../../common/static-components/custom-avatar-name/CustomAvatarName";
-import CustomButton from "../../common/static-components/custom-button/CustomButton";
-import CustomConfirmationModalWindow from "../../common/static-components/custom-confirmation-modal-window/CustomConfirmationModalWindow";
-import CustomUserName from "../../common/static-components/custom-user-name/CustomUserName";
-import CustomCounterInput from "../../common/static-components/custom-counter-input/CustomCounterInput";
-import CustomDualButtonYesNo from "../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
-import CustomIconButton from "../../common/static-components/custom-icon-button/CustomIconButton";
-import CustomInput from "../../common/static-components/custom-input/CustomInput";
-import CustomToggleButton from "../../common/static-components/custom-toggle-button/CustomToggleButton";
-import CustomTextarea from "../../common/static-components/custom-textarea/CustomTextarea";
-import CustomSwitchButton from "../../common/static-components/custom-switch-button/CustomSwitchButton";
-import CustomStatickList from "../../common/static-components/custom-statick-list/CustomStatickList";
-import CustomSelect from "../../common/static-components/custom-select/CustomSelect";
-import CustomRadioButton from "../../common/static-components/custom-radio-button/CustomRadioButton";
-import CustomPcIcon from "../../common/static-components/custom-pc-icon/CustomPcIcon";
-import CustomPasswordInput from "../../common/static-components/custom-password-input/CustomPasswordInput";
-import CustomMailInput from "../../common/static-components/custom-mail-input/CustomMailInput";
-import CustomLogo from "../../common/static-components/custom-logo/CustomLogo";
-import CustomMenuRightOpenWrapper from "../../common/smart-component/custom-menu-right-open-wrapper/CustomMenuRightOpenWrapper";
-//МОДАЛЬНЫЕ ОКНА
-import ReplenishmentBalanceModalWindows from "../../common/special-componet/replenishment-balance-modal-windows/ReplenishmentBalanceModalWindows";
-import ChangeLocationModalWindow from "../../components/control-panel/control-panel-components/control-panel-pc-icons/pc-icon/pc-icon-menu/pc-icon-menu-modal-windows/change-location-modal-window/ChangeLocationModalWindow";
-import EditPcModalWindow from "../../components/control-panel/control-panel-components/control-panel-pc-icons/pc-icon/pc-icon-menu/pc-icon-menu-modal-windows/edit-pc-modal-window/EditPcModalWindow";
-import ScreenshotSavedModalWindows from "../../components/control-panel/control-panel-components/control-panel-pc-icons/pc-icon/pc-icon-menu/pc-icon-menu-modal-windows/screenshot-saved-modal-windows/ScreenshotSavedModalWindows";
-// ТЕСТОВЫЕ ДАННЫЕ ДЛЯ ПРОВЕРКИ РЕНДЕРА
-import MoneyIconMini from "../../assets/icons/MoneyIconMini.svg";
-import GuestSessionModalWindow from "../../components/control-panel/control-panel-components/control-panel-pc-icons/pc-icon/pc-icon-menu/pc-icon-menu-modal-windows/guest-session-modal-window/GuestSessionModalWindow";
+//ИКОНКИ
+import ControlPanelIcon from "../../assets/icons-svg-components/left-sidebar-icons/ControlPanelIcon";
+import HistoryIcon from "../../assets/icons-svg-components/left-sidebar-icons/HistoryIcon";
+import KnowledgeBaseIcon from "../../assets/icons-svg-components/left-sidebar-icons/KnowledgeBaseIcon";
+import MessagesIcon from "../../assets/icons-svg-components/left-sidebar-icons/MessagesIcon";
+import NotificationsIcons from "../../assets/icons-svg-components/left-sidebar-icons/NotificationsIcons";
+import ReservationsIcon from "../../assets/icons-svg-components/left-sidebar-icons/ReservationsIcon";
+import SettingsIcon from "../../assets/icons-svg-components/left-sidebar-icons/SettingsIcon";
+import ShopIcon from "../../assets/icons-svg-components/left-sidebar-icons/ShopIcon";
+import StatisticsIcon from "../../assets/icons-svg-components/left-sidebar-icons/StatisticsIcon";
+import TransactionsIcon from "../../assets/icons-svg-components/left-sidebar-icons/TransactionsIcon";
+import ArrowChekRight from "../../assets/icons-svg-components/ArrowChekRight";
+import UsersIcon from "../../assets/icons-svg-components/left-sidebar-icons/UsersIcon";
+import CloseIcon from "../../assets/icons-svg-components/CloseIcon";
+import DangerIcon from "../../assets/icons-svg-components/pcIcon-context-menu/DangerIcon";
+import EditIcon from "../../assets/icons-svg-components/pcIcon-context-menu/EditIcon";
+import GuestIcon from "../../assets/icons-svg-components/pcIcon-context-menu/GuestIcon";
+import ManagementIcon from "../../assets/icons-svg-components/pcIcon-context-menu/ManagementIcon";
+import OffIcon from "../../assets/icons-svg-components/pcIcon-context-menu/OffIcon";
+// import CustomAvatarName from "../../common/static-components/custom-avatar-name/CustomAvatarName";
+// import CustomButton from "../../common/static-components/custom-button/CustomButton";
+// import CustomConfirmationModalWindow from "../../common/static-components/custom-confirmation-modal-window/CustomConfirmationModalWindow";
+// import CustomUserName from "../../common/static-components/custom-user-name/CustomUserName";
+// import CustomCounterInput from "../../common/static-components/custom-counter-input/CustomCounterInput";
+// import CustomDualButtonYesNo from "../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+// import CustomIconButton from "../../common/static-components/custom-icon-button/CustomIconButton";
+// import CustomInput from "../../common/static-components/custom-input/CustomInput";
+// import CustomToggleButton from "../../common/static-components/custom-toggle-button/CustomToggleButton";
+// import CustomTextarea from "../../common/static-components/custom-textarea/CustomTextarea";
+// import CustomSwitchButton from "../../common/static-components/custom-switch-button/CustomSwitchButton";
+// import CustomStatickList from "../../common/static-components/custom-statick-list/CustomStatickList";
+// import CustomSelect from "../../common/static-components/custom-select/CustomSelect";
+// import CustomRadioButton from "../../common/static-components/custom-radio-button/CustomRadioButton";
+// import CustomPcIcon from "../../common/static-components/custom-pc-icon/CustomPcIcon";
+// import CustomPasswordInput from "../../common/static-components/custom-password-input/CustomPasswordInput";
+// import CustomMailInput from "../../common/static-components/custom-mail-input/CustomMailInput";
+// import CustomLogo from "../../common/static-components/custom-logo/CustomLogo";
+// import CustomMenuRightOpenWrapper from "../../common/smart-component/custom-menu-right-open-wrapper/CustomMenuRightOpenWrapper";
+// //МОДАЛЬНЫЕ ОКНА
+// import ReplenishmentBalanceModalWindows from "../../common/special-componet/replenishment-balance-modal-windows/ReplenishmentBalanceModalWindows";
+// // ТЕСТОВЫЕ ДАННЫЕ ДЛЯ ПРОВЕРКИ РЕНДЕРА
+// import MoneyIconMini from "../../assets/icons/MoneyIconMini.svg";
 
 const SandboxPage: FC = () => {
   return (
@@ -37,6 +52,7 @@ const SandboxPage: FC = () => {
         maxWidth: "35rem",
       }}
     >
+      {/* // РЕНДЕР КОМПОНЕТОВ ДИНАМИЧНЫХ ИКОНОК */}
       <div
         style={{
           display: "flex",
@@ -46,9 +62,28 @@ const SandboxPage: FC = () => {
           padding: "1rem",
         }}
       >
-        <h2>CustomAvatarName</h2>
-        <CustomAvatarName name="CA" />
+        {/* // ЭТО ИКОНКИ ЛЕВОГО САЙДБАРА */}
+        <ControlPanelIcon color="#fff" />
+        <HistoryIcon color="#fff" />
+        <KnowledgeBaseIcon color="#fff" />
+        <MessagesIcon color="#fff" />
+        <NotificationsIcons color="#fff" />
+        <ReservationsIcon color="#fff" />
+        <SettingsIcon color="#fff" />
+        <ShopIcon color="#fff" />
+        <StatisticsIcon color="#fff" />
+        <TransactionsIcon color="#fff" />
+        <UsersIcon color="#fff" />
+        <ArrowChekRight color="#fff" />
+        <CloseIcon />
+        {/* // КОНТЕКСТНОГО МЕНЮ ИКОНОК ПК */}
+        <DangerIcon color="#fff" />
+        <EditIcon color="#fff" />
+        <GuestIcon color="#fff" />
+        <ManagementIcon color="#fff" />
+        <OffIcon color="#fff" />
       </div>
+      {/*
       <div
         style={{
           display: "flex",
@@ -391,58 +426,7 @@ const SandboxPage: FC = () => {
         <h2>ReplenishmentBalanceModalWindows</h2>
 
         <ReplenishmentBalanceModalWindows redaxStateKey={"cdsncjdsnk"} />
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "2rem",
-          border: "1px solid red",
-          padding: "1rem",
-        }}
-      >
-        <h2>ChangeLocationModalWindow</h2>
-        <ChangeLocationModalWindow redaxStateKey={"cbhjdscbjhds"} />
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "2rem",
-          border: "1px solid red",
-          padding: "1rem",
-        }}
-      >
-        <h2>EditPcModalWindow</h2>
-        <EditPcModalWindow redaxStateKey={"jnvkfdjvnkdfj"} />
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "2rem",
-          border: "1px solid red",
-          padding: "1rem",
-        }}
-      >
-        <h2>ScreenshotSavedModalWindows</h2>
-        <ScreenshotSavedModalWindows redaxStateKey={"cdkfvkfdlvndf"} />
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "2rem",
-          border: "1px solid red",
-          padding: "1rem",
-        }}
-      >
-        <h2>GuestSessionModalWindow</h2>
-        <GuestSessionModalWindow redaxStateKey="CustomInputIconsSpesial" />
-      </div>
+      </div> */}
     </div>
   );
 };

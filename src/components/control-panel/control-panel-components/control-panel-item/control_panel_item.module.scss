@@ -1,0 +1,25 @@
+@import "/src/variables.scss";
+.div {
+  .subdiv_rooms {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    .room {
+      cursor: pointer;
+      min-width: 2.13rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: $border_style_default;
+      border-radius: $border_radius5;
+      padding: 0.45rem 0.73rem;
+    }
+    ._active_room {
+      background-color: $background_hover_menu_item;
+    }
+  }
+  .pc_icons_container {
+    padding: 1rem;
+  }
+}

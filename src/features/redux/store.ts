@@ -4,18 +4,24 @@ import saveDynamicNumber from "./reducers/common-reducers/saveNumberDynamicRedus
 import toggleDynamic from "./reducers/common-reducers/toggleDynamicReduser";
 import onClickDynamic from "./reducers/common-reducers/onClickDynamicReduser";
 import selectorDataReduscer from "./reducers/common-reducers/selectorDataReduscer";
-import roomTabsEdit from "./reducers/special-reducers/control-panel-reducers/roomTabsEditReducer";
+import pcRoomsEdit from "./reducers/special-reducers/pc-rooms-reducers/pcRoomsEditReducer";
 import pcIconEdit from "./reducers/special-reducers/control-panel-reducers/pcIconEditReducer";
 import cartItems from "./reducers/special-reducers/shop-reducers/cartItemsReducer";
+import pcRoomsSaveColor from "./reducers/special-reducers/pc-rooms-reducers/pcRoomsSaveColorReducer";
 
 const rootReducer = combineReducers({
+  //МНОГОЦЕЛЕВЫЕ РЕДУКТОРЫ С КЛЮЧАМИ
   stringDynamic: stringDynamic,
   saveDynamicNumber: saveDynamicNumber,
   toggleDynamic: toggleDynamic,
   onClickDynamic: onClickDynamic,
   selectorDataReduscer: selectorDataReduscer,
-  roomTabsEdit: roomTabsEdit,
+  //РЕДКУТОРЫ ДЛЯ РАБОТЫ С ИКОНКАМИИ ДЛЯ ПК
   pcIconEdit: pcIconEdit,
+  //РЕДКУТОРЫ ДЛЯ РАБОТЫ С КОМНАТАМИ ДЛЯ ПК
+  pcRoomsEdit: pcRoomsEdit,
+  pcRoomsSaveColor: pcRoomsSaveColor,
+  ////РЕДКУТОРЫ ДЛЯ РАБОТЫ ШОПОМ
   cartItems: cartItems,
 });
 

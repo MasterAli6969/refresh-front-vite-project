@@ -1,0 +1,55 @@
+@import "/src/variables.scss";
+
+.pc_icon {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $background_no_active;
+  border: $border_style_default;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+  .pc_number {
+    position: absolute;
+  }
+  .context_menu {
+    display: none;
+    position: absolute;
+    top: 0rem;
+    right: -13.5rem;
+  }
+  &:hover {
+    .context_menu {
+      display: block;
+    }
+  }
+}
+
+// ._off_mode {
+//   background-color: $background_no_active;
+// }
+
+// ._standby_mode {
+//   background-color: $background_custom_green;
+// }
+
+// ._active_mode {
+//   background-color: $background_custom_blue;
+// }
+
+// ._service_mode {
+//   .subdiv_number {
+//     color: $background_error;
+//   }
+//   background-color: $background_no_active;
+// }
+
+// ._administration_mode {
+//   .subdiv_number {
+//     color: $background_custom_blue;
+//   }
+//   background-color: $background_no_active;
+// }
