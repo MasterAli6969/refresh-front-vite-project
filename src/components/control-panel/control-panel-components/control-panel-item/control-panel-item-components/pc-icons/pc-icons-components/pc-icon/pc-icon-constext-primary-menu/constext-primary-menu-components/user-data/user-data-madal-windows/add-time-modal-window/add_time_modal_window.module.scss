@@ -1,0 +1,12 @@
+@import "/src/variables.scss";
+
+.subdiv_time {
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.down_label {
+  color: $text_inactive;
+}

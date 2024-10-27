@@ -25,7 +25,7 @@ const ExpensesCashModalWindow: FC<ExpensesCashModalWindowPropsType> = ({
       </div>
       <CustomTextarea
         label="Комментарий к смене"
-        plaseholder="Укажите необходимые сведения..."
+        placeholder="Укажите необходимые сведения..."
       />
       <CustomDualButtonYesNo
         redaxStateKey={"redaxStateKey"}

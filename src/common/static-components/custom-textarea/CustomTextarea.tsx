@@ -4,17 +4,17 @@ import styles from "./custom_textarea.module.scss";
 
 export interface CustomTextareaPropsType {
   label?: string;
-  plaseholder: string;
+  placeholder: string;
 }
 
 const CustomTextarea: FC<CustomTextareaPropsType> = ({
   label,
-  plaseholder,
+  placeholder,
 }) => {
   return (
     <>
       <h3 className={styles.label}>{label}</h3>
-      <textarea className={styles.textarea} placeholder={plaseholder} />
+      <textarea className={styles.textarea} placeholder={placeholder} />
     </>
   );
 };

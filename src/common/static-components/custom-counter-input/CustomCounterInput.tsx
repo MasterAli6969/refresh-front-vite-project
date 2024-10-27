@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 import ArrowCheckUp from "../../../assets/icons/ArrowCheckUp.svg";
 import ArrowCheckDown from "../../../assets/icons/ArrowCheckDown.svg";
@@ -14,15 +14,23 @@ const CustomCounterInput: FC<CustomCounterInputPropsType> = ({
   label,
   placeholder,
 }) => {
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<number | string>("");
 
   const handleCountReduction = () => {
-    setCount((prevCount) => Math.max(prevCount - 1, 0));
+    setCount((prevCount) =>
+      prevCount === "" ? 0 : Math.max(Number(prevCount) - 1, 0)
+    );
   };
 
   const handleCountEnlarge = () => {
-    setCount((prevCount) => prevCount + 1);
+    setCount((prevCount) => (prevCount === "" ? 1 : Number(prevCount) + 1));
   };
+
+  useEffect(() => {
+    if (count === 0) {
+      setCount("");
+    }
+  }, [count]);
 
   return (
     <div className={styles.div}>
@@ -31,7 +39,9 @@ const CustomCounterInput: FC<CustomCounterInputPropsType> = ({
         <input
           type="number"
           value={count}
-          onChange={(e) => setCount(Number(e.target.value))}
+          onChange={(e) =>
+            setCount(e.target.value === "" ? "" : Number(e.target.value))
+          }
           placeholder={placeholder}
         />
         <div>

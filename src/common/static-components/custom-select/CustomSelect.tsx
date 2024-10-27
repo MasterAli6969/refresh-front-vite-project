@@ -46,7 +46,7 @@ const CustomSelect = <T,>({
           ) : (
             mappedData.map((item) => (
               <option key={item.id} value={item.id}>
-                {item.selectItem}
+                <h4>{item.selectItem}</h4>
               </option>
             ))
           )}

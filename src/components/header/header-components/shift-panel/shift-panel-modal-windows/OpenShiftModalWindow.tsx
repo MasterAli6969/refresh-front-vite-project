@@ -47,7 +47,7 @@ const OpenShiftModalWindow: FC<OpenShiftModalWindowPropsType> = ({
       </div>
       <CustomTextarea
         label="Комментарий к смене"
-        plaseholder="Укажите необходимые сведения, если требуется..."
+        placeholder="Укажите необходимые сведения, если требуется..."
       />
       <CustomDualButtonYesNo
         redaxStateKey={redaxShiftState}

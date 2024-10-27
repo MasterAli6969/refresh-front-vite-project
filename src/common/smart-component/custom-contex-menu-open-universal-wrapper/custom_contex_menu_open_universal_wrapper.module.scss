@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.dropdown_button > * {
+  flex: 1; /* Это заставит все дочерние элементы растягиваться по ширине */
+}
+
 .drop_ul {
   @include PopoverContextMenuUl;
 }
@@ -24,6 +28,7 @@
 .list_item_flex {
   > li,
   > li > a {
+    width: 100%;
     display: flex;
     align-items: center;
   }

@@ -1,6 +1,7 @@
 import { FC } from "react";
+import { PropsIcon } from "./props.interface";
 
-const CloseIcon: FC = () => {
+const CloseIcon: FC<PropsIcon> = ({ color }) => {
   return (
     <svg
       width="1rem"
@@ -11,14 +12,14 @@ const CloseIcon: FC = () => {
     >
       <path
         d="M18.75 5.25L5.25 18.75"
-        stroke="#939393"
+        stroke={color}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M18.75 18.75L5.25 5.25"
-        stroke="#939393"
+        stroke={color}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

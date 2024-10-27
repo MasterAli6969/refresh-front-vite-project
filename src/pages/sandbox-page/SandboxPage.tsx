@@ -177,7 +177,7 @@ const SandboxPage: FC = () => {
         <h2>CustomTextarea</h2>
         <CustomTextarea
           label="CustomTextarea"
-          plaseholder="CustomTextarea plaseholder"
+          placeholder="CustomTextarea placeholder"
         />
       </div>
       <div

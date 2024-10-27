@@ -1,0 +1,23 @@
+@import "/src/variables.scss";
+.div,
+.subdiv > div {
+  display: flex;
+  align-items: center;
+}
+
+.div {
+  justify-content: space-between;
+  background-color: $background_custom_blue;
+  border-radius: $border_radius8 $border_radius8 0 0;
+  padding: 0.5rem 1rem;
+  .subdiv {
+    > div {
+      > img {
+        margin-right: 0.5rem;
+      }
+    }
+    > div:first-child {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

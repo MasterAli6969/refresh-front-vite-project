@@ -5,7 +5,7 @@ import styles from "./custom_input.module.scss";
 export interface CustomInputPropsType {
   label?: string;
   icon?: string;
-  placeholder: string;
+  placeholder?: string;
   value?: string;
   onChange?: (value: string) => void;
   isReadOnly?: boolean;

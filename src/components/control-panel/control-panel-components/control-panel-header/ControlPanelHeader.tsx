@@ -17,6 +17,7 @@ import AddNewUserButton from "./control-panel-header-components/add-new-user-but
 import AddNewRoomsButton from "./control-panel-header-components/add-new-rooms-button/AddNewRoomsButton";
 //СТИЛИ
 import styles from "./control_panel_header.module.scss";
+import CustomToggleButton from "../../../../common/static-components/custom-toggle-button/CustomToggleButton";
 
 const ControlPanelHeader: FC = () => {
   return (

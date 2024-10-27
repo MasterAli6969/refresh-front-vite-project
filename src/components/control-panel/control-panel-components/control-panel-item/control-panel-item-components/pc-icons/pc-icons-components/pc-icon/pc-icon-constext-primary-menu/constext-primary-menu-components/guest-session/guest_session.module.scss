@@ -1,0 +1,19 @@
+@import "/src/variables.scss";
+
+// КАСТАМНЫЕ СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА
+.subdiv_time {
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.down_label {
+  color: $text_inactive;
+}
+
+//СТИЛИ ДЛЯ ОСНОВНОГО КОМПОНЕНТА РЕНДЕРА
+
+.div {
+  @include constext_primary_menu_components_item;
+}

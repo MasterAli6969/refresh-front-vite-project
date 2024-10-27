@@ -30,7 +30,7 @@ const CustomToggleButton: FC<CustomToggleButtonPropsType> = ({
 
   return (
     <div className={styles.div}>
-      {label && <p>{label}</p>}
+      {label && <h5>{label}</h5>}
       <div className={styles.subdiv}>
         {!buttonsText || buttonsText.length === 0 ? (
           <span>Ожидание...</span>

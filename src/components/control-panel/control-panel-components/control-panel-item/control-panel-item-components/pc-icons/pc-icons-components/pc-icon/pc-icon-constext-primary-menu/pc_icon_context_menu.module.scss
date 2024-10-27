@@ -5,36 +5,19 @@
   background-color: $background_context_menus;
   border: $border_style_default;
   border-radius: $border_radius8;
-}
-
-.user_data {
-  background-color: $background_custom_blue;
-}
-
-.list_item_start {
-  background-color: $button_active;
-  color: $text_light;
-  &:hover {
+  > div {
+    &:hover {
+      background-color: $button_active;
+    }
+  }
+  .subdiv_title {
+    @include constext_primary_menu_components_item;
+    > img {
+      width: 1rem;
+    }
     background-color: $button_active;
+    &:hover {
+      background-color: $button_active;
+    }
   }
-}
-.list_item_start,
-.list_item,
-.list_item_special {
-  width: 100%;
-  display: flex;
-  padding: 0.7rem;
-  align-items: center;
-  color: $text_default;
-  > img {
-    width: 0.6rem;
-  }
-  > h5 {
-    margin-left: 1rem;
-  }
-  &:hover {
-    background-color: $hover_default;
-  }
-}
-._active {
 }

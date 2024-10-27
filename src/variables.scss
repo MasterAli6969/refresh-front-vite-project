@@ -127,9 +127,10 @@ $light_gradient: linear-gradient(
     border: 1px solid $background_custom_blue;
   }
 }
+
 //СПЕЦИАЛЬНЫЕ СТИЛИ ДЛЯ КОМПОНЕНТА УНИВЕРСАЛЬНОГО МОДАЛЬНОГО ОКНА
 @mixin modalUniversal1Style {
-  width: 25.4rem;
+  width: 30.4rem;
   display: flex;
   flex-direction: column;
   background-color: $background_modal_general;
@@ -167,9 +168,9 @@ $light_gradient: linear-gradient(
     border-radius: 0 0 $border_radius8 $border_radius8;
   }
 }
+//-------------------------------------
 
 // СТИЛИ ДЛЯ ФОРМ СТРАНИЦЫ РЕГИСТРАЦИИ
-//-------------------------------------
 @mixin authFormsPageDiv {
   height: 100vh;
   display: flex;
@@ -182,11 +183,20 @@ $light_gradient: linear-gradient(
   background-repeat: no-repeat;
   gap: 2rem;
 }
+//-------------------------------------
 
+// ТУТ БУДЕТ ИКЛЮЧИТЕЛЬНО КАСТАМНЫЙ СТИЛЬ ДЛЯ ОСНОВГО КОНТЕКСТНОГО МЕНЮ ИКОНОК ПК, ДЛЯ КОМПОНЕНТОВ КНОПОК
+@mixin constext_primary_menu_components_item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  > h5 {
+    margin-left: 0.5rem;
+  }
+}
 //-------------------------------------
 
 // ТУТ БУДЕТ ДИНАМИЧЕСКИЕ МИКСИНЫ АНИМАЦИИ
-
 @mixin rotate($direction: clockwise) {
   @keyframes rotate {
     from {
