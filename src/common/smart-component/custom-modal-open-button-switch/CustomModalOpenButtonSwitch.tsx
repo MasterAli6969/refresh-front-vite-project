@@ -7,8 +7,8 @@ import styles from "./custom_modal_open_button_switch.module.scss";
 import CustomButton from "../../static-components/custom-button/CustomButton";
 
 export interface CustomModalOpenButtonSwitchPropsType {
-  icon: string;
-  title: string;
+  icon?: string;
+  title?: string;
   buttonLeft: FC;
   buttonRight: FC;
 }

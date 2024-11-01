@@ -1,0 +1,39 @@
+.div {
+  height: 100% !important;
+  padding: 1rem;
+  border: 1px solid gree;
+}
+
+.subdiv_left,
+.subdiv_center,
+.subdiv_right {
+  display: flex;
+  flex-direction: column !important;
+  border: 1px solid red;
+  padding: 1rem;
+  gap: 2rem;
+  > h1 {
+    font-size: 1.5rem;
+    color: rgb(130, 130, 130);
+  }
+  > div {
+    display: flex;
+  }
+}
+
+.subdiv_left {
+  > div {
+    justify-content: space-between;
+    max-width: 50%;
+  }
+}
+
+.subdiv_center,
+.subdiv_right {
+  > div {
+    flex-direction: column;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 1rem;
+    gap: 1rem;
+  }
+}

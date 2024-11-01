@@ -6,7 +6,7 @@ import RefreshNewLogo from "../../../assets/img/RefreshNewLogo.png";
 import styles from "./custom_logo.module.scss";
 
 export interface CustomLogoPropsType {
-  display: string;
+  display: "flex" | "block";
   isLabale?: string;
 }
 
