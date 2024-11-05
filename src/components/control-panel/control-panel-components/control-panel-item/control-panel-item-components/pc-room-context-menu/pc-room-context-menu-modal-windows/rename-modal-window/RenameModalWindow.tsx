@@ -3,7 +3,7 @@ import { FC, useState } from "react";
 //МОДУЛИ ДЛЯ РАБОТЫ
 import { useAppDispatch } from "../../../../../../../../features/redux/hooks/reduxRootHooks";
 import { RedaxStateProps } from "../../../../../../../../commonTypes.interface";
-import { renameRoom } from "../../../../../../../../features/redux/reducers/special-reducers/pc-rooms-reducers/pcRoomsEditReducer";
+import { renameRoom } from "../../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-rooms-reducers/pcRoomsEditReducer";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 import CustomInput from "../../../../../../../../common/static-components/custom-input/CustomInput";
@@ -13,7 +13,7 @@ import {
   resetModals,
   setToggleDynamic,
 } from "../../../../../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
-import { pcRoomsSaveColor } from "../../../../../../../../features/redux/reducers/special-reducers/pc-rooms-reducers/pcRoomsSaveColorReducer";
+import { pcRoomsSaveColor } from "../../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-rooms-reducers/pcRoomsSaveColorReducer";
 
 export interface RenameModalWindowPropsType extends RedaxStateProps {
   pcRoomId: number;

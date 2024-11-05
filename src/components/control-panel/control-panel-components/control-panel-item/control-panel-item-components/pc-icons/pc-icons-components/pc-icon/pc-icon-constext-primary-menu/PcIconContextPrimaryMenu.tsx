@@ -1,7 +1,12 @@
-import { FC } from "react";
+import { FC, useCallback } from "react";
 //ИКОНКИ
 import Checkmark from "../../../../../../../../../assets/icons/Checkmark.svg";
 //МОДУЛИ ДЛЯ РАБОТЫ
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../../../../../../../../features/redux/hooks/reduxRootHooks";
+import { setPcStatus } from "../../../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-icon-reducers/pcIconStatusEditReducer";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import UserData from "./constext-primary-menu-components/user-data/UserData";
 import GuestSession from "./constext-primary-menu-components/guest-session/GuestSession";
@@ -19,6 +24,23 @@ interface PcIconContextPrimaryMenuPropsType {
 const PcIconContextPrimaryMenu: FC<PcIconContextPrimaryMenuPropsType> = ({
   comp_id,
 }) => {
+  const isRepairModeStatus = useAppSelector(
+    (state) =>
+      state.pcIconStatusEdit.pcStatus[comp_id]?.isRepairModeStatus ?? false
+  );
+
+  const dispatch = useAppDispatch();
+
+  const handleClickChangeRepairModeStatus = useCallback(() => {
+    dispatch(
+      setPcStatus({
+        key: comp_id,
+        field: "isRepairModeStatus",
+        status: !isRepairModeStatus,
+      })
+    );
+  }, [dispatch, isRepairModeStatus, comp_id]);
+
   return (
     <div className={styles.div}>
       <span>
@@ -32,16 +54,16 @@ const PcIconContextPrimaryMenu: FC<PcIconContextPrimaryMenuPropsType> = ({
         <GuestSession comp_id={comp_id} />
       </div>
       <div>
-        <Management comp_id={0} />
+        <Management comp_id={comp_id} />
       </div>
-      <div>
-        <RepairMode comp_id={0} />
+      <div onClick={handleClickChangeRepairModeStatus}>
+        <RepairMode comp_id={comp_id} />
       </div>
       <div>
         <Editing comp_id={0} />
       </div>
       <div>
-        <Power comp_id={0} />
+        <Power comp_id={comp_id} />
       </div>
     </div>
   );

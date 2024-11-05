@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { ChangeEvent, FC, useEffect, useState } from "react";
 
 import ArrowCheckUp from "../../../assets/icons/ArrowCheckUp.svg";
 import ArrowCheckDown from "../../../assets/icons/ArrowCheckDown.svg";
@@ -8,29 +8,42 @@ import styles from "./custom_counter_input.module.scss";
 export interface CustomCounterInputPropsType {
   placeholder?: string;
   label?: string;
+  onChange?: (value: number | string) => void;
+  value?: number | string; // Добавляем пропс value
 }
 
 const CustomCounterInput: FC<CustomCounterInputPropsType> = ({
   label,
   placeholder,
+  onChange,
+  value = "",
 }) => {
-  const [count, setCount] = useState<number | string>("");
-
-  const handleCountReduction = () => {
-    setCount((prevCount) =>
-      prevCount === "" ? 0 : Math.max(Number(prevCount) - 1, 0)
-    );
-  };
+  const [count, setCount] = useState<number | string>(value);
 
   const handleCountEnlarge = () => {
-    setCount((prevCount) => (prevCount === "" ? 1 : Number(prevCount) + 1));
+    const newCount = count === "" ? 1 : Number(count) + 1;
+    setCount(newCount);
+    onChange && onChange(newCount);
+  };
+
+  const handleCountReduction = () => {
+    const newCount = count === "" ? 0 : Math.max(Number(count) - 1, 0);
+    setCount(newCount);
+    onChange && onChange(newCount);
+  };
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const newValue =
+      event.target.value === "" || event.target.value === "0"
+        ? ""
+        : Number(event.target.value);
+    setCount(newValue);
+    onChange && onChange(newValue);
   };
 
   useEffect(() => {
-    if (count === 0) {
-      setCount("");
-    }
-  }, [count]);
+    setCount(value);
+  }, [value]);
 
   return (
     <div className={styles.div}>
@@ -39,9 +52,7 @@ const CustomCounterInput: FC<CustomCounterInputPropsType> = ({
         <input
           type="number"
           value={count}
-          onChange={(e) =>
-            setCount(e.target.value === "" ? "" : Number(e.target.value))
-          }
+          onChange={handleChange}
           placeholder={placeholder}
         />
         <div>

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { PcIconType } from "../../../../../components/control-panel/control-panel-components/control-panel-item/control-panel-item-components/pc-icons/PcIcons";
+import { PcIconType } from "../../../../../../components/control-panel/control-panel-components/control-panel-item/control-panel-item-components/pc-icons/PcIcons";
 
 export interface PcIconEditInitialStateType {
   pcIcons: { [key: number]: PcIconType[] };

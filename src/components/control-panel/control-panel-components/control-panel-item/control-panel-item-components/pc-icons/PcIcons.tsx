@@ -24,7 +24,12 @@ const PcIcons: FC<PcIconsPropsType> = ({ pcIconData }) => {
       ) : (
         pcIconData.map((item: PcIconType) => {
           return (
-            <Draggable key={item.comp_id} bounds="parent" grid={[50, 50]}>
+            <Draggable
+              defaultClassName={styles.Draggable}
+              key={item.comp_id}
+              bounds="parent"
+              grid={[28, 28]}
+            >
               <div
                 className={styles.pc_icon}
                 // style={{

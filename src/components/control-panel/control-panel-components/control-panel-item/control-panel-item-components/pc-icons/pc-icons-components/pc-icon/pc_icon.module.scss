@@ -2,8 +2,8 @@
 
 .pc_icon {
   position: relative;
-  width: 45px;
-  height: 45px;
+  width: 90%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,6 +12,12 @@
   border-radius: 50%;
   z-index: 1;
   cursor: pointer;
+  .staus_icon {
+    position: absolute;
+    top: -0.3rem;
+    right: -0.3rem;
+    width: 9.34px;
+  }
   .pc_number {
     position: absolute;
   }
@@ -28,12 +34,12 @@
   }
 }
 
+.on_status {
+  background-color: $background_custom_green;
+}
+
 // ._off_mode {
 //   background-color: $background_no_active;
-// }
-
-// ._standby_mode {
-//   background-color: $background_custom_green;
 // }
 
 // ._active_mode {

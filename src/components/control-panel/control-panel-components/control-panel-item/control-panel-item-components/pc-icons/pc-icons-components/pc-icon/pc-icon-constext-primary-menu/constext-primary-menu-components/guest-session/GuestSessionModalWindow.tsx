@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 //МОДУЛИ ДЛЯ РАБОТЫ
 import useToggleString from "../../../../../../../../../../../features/custom-hooks/common-hooks/useToggleString";
 
@@ -21,7 +21,13 @@ const GuestSessionModalWindow: FC<GuestSessionModalWindowPropsType> = ({
   redaxStateKey,
   title,
 }) => {
+  const [hoursValue, setHoursValue] = useState("");
+
   const { activeElement, handleChange } = useToggleString("Предоплата");
+
+  const handleChangeHoursValue = () => {};
+
+  const handleChangeMinutesValue = () => {};
 
   return (
     <CutomModalWindowUniversal redaxStateKey={redaxStateKey} title={title}>

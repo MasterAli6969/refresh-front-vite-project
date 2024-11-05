@@ -1,7 +1,10 @@
 import { FC } from "react";
 import classNames from "classnames";
 //ИКОНКИ
+import WarningIconSmall from "../../../../../../../../assets/icons/WarningIconSmall.svg";
+import WindowsIconSmall from "../../../../../../../../assets/icons/WindowsIconSmall.svg";
 //МОДУЛИ ДЛЯ РАБОТЫ
+import { useAppSelector } from "../../../../../../../../features/redux/hooks/reduxRootHooks";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import PcIconContextPrimaryMenu from "./pc-icon-constext-primary-menu/PcIconContextPrimaryMenu";
 //СТИЛИ
@@ -12,8 +15,32 @@ export interface PcIconPropsType {
 }
 
 const PcIcon: FC<PcIconPropsType> = ({ comp_id }) => {
+  const isWinActiveStatus = useAppSelector(
+    (state) =>
+      state.pcIconStatusEdit.pcStatus[comp_id]?.isWinActiveStatus ?? false
+  );
+
+  const isRepairModeStatus = useAppSelector(
+    (state) =>
+      state.pcIconStatusEdit.pcStatus[comp_id]?.isRepairModeStatus ?? false
+  );
+
+  const isOnStatus = useAppSelector(
+    (state) => state.pcIconStatusEdit.pcStatus[comp_id]?.isOnStatus ?? false
+  );
+
   return (
-    <div className={classNames(styles.pc_icon)}>
+    <div
+      className={classNames(styles.pc_icon, {
+        [styles.on_status]: isOnStatus,
+      })}
+    >
+      {isRepairModeStatus && (
+        <img src={WarningIconSmall} className={styles.staus_icon} />
+      )}
+      {isWinActiveStatus && (
+        <img src={WindowsIconSmall} className={styles.staus_icon} />
+      )}
       <div className={styles.pc_number}>
         <p>{comp_id}</p>
       </div>

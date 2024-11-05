@@ -7,7 +7,7 @@ import { useAppDispatch } from "../../../../../../features/redux/hooks/reduxRoot
 import CustomContexMenuOpenUniversalWrapper from "../../../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
 import CustomCenterModalOpenWrapper from "../../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 import DeleteModalWindow from "./pc-room-context-menu-modal-windows/delete-modal-window/DeleteModalWindow";
-import { pcRoomsSaveColor } from "../../../../../../features/redux/reducers/special-reducers/pc-rooms-reducers/pcRoomsSaveColorReducer";
+import { pcRoomsSaveColor } from "../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-rooms-reducers/pcRoomsSaveColorReducer";
 import RenameModalWindow from "./pc-room-context-menu-modal-windows/rename-modal-window/RenameModalWindow";
 
 interface PcRoomContextMenuPropsType {

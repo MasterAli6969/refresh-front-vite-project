@@ -11,7 +11,7 @@ import {
   resetModals,
   setToggleDynamic,
 } from "../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
-import { pcRoomsSaveColor } from "../../../features/redux/reducers/special-reducers/pc-rooms-reducers/pcRoomsSaveColorReducer";
+import { pcRoomsSaveColor } from "../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-rooms-reducers/pcRoomsSaveColorReducer";
 //СТИЛИ
 import styles from "./custom_modal_close_head.module.scss";
 import useHover from "../../../features/custom-hooks/common-hooks/useHover";

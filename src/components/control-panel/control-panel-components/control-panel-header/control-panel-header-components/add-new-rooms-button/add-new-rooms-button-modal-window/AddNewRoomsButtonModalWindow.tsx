@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 //МОДУЛИ ДЛЯ РАБОТЫ
 import { RedaxStateProps } from "../../../../../../../commonTypes.interface";
 import { getNewId } from "../../../../../../../features/utils/arrayUtils";
-import { addNewRoom } from "../../../../../../../features/redux/reducers/special-reducers/pc-rooms-reducers/pcRoomsEditReducer";
+import { addNewRoom } from "../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-rooms-reducers/pcRoomsEditReducer";
 import {
   useAppDispatch,
   useAppSelector,
@@ -16,7 +16,7 @@ import CutomModalWindowUniversal from "../../../../../../../common/smart-compone
 import CustomInput from "../../../../../../../common/static-components/custom-input/CustomInput";
 import CustomDualButtonYesNo from "../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 import ChooseColourRoom from "../../../../../../../common/special-componet/choose-colour-room/ChooseColourRoom";
-import { addNewPcIcons } from "../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pcIconEditReducer";
+import { addNewPcIcons } from "../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-icon-reducers/pcIconEditReducer";
 
 export interface AddNewRoomsButtonModalWindowPropsType extends RedaxStateProps {
   title: string;

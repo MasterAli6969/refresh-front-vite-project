@@ -4,10 +4,11 @@ import saveDynamicNumber from "./reducers/common-reducers/saveNumberDynamicRedus
 import toggleDynamic from "./reducers/common-reducers/toggleDynamicReduser";
 import onClickDynamic from "./reducers/common-reducers/onClickDynamicReduser";
 import selectorDataReduscer from "./reducers/common-reducers/selectorDataReduscer";
-import pcRoomsEdit from "./reducers/special-reducers/pc-rooms-reducers/pcRoomsEditReducer";
-import pcIconEdit from "./reducers/special-reducers/control-panel-reducers/pcIconEditReducer";
+import pcRoomsEdit from "./reducers/special-reducers/control-panel-reducers/pc-rooms-reducers/pcRoomsEditReducer";
+import pcIconEdit from "./reducers/special-reducers/control-panel-reducers/pc-icon-reducers/pcIconEditReducer";
+import pcIconStatusEdit from "./reducers/special-reducers/control-panel-reducers/pc-icon-reducers/pcIconStatusEditReducer";
 import cartItems from "./reducers/special-reducers/shop-reducers/cartItemsReducer";
-import pcRoomsSaveColor from "./reducers/special-reducers/pc-rooms-reducers/pcRoomsSaveColorReducer";
+import pcRoomsSaveColor from "./reducers/special-reducers/control-panel-reducers/pc-rooms-reducers/pcRoomsSaveColorReducer";
 
 const rootReducer = combineReducers({
   //МНОГОЦЕЛЕВЫЕ РЕДУКТОРЫ С КЛЮЧАМИ
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   pcIconEdit: pcIconEdit,
   //РЕДКУТОРЫ ДЛЯ РАБОТЫ С КОМНАТАМИ ДЛЯ ПК
   pcRoomsEdit: pcRoomsEdit,
+  pcIconStatusEdit: pcIconStatusEdit,
   pcRoomsSaveColor: pcRoomsSaveColor,
   ////РЕДКУТОРЫ ДЛЯ РАБОТЫ ШОПОМ
   cartItems: cartItems,
