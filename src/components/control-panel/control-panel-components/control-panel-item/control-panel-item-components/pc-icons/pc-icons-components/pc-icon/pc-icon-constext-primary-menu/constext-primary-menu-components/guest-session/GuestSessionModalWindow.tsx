@@ -1,8 +1,6 @@
 import { FC, useCallback, useEffect, useState } from "react";
-//МОДУЛИ ДЛЯ РАБОТЫ
 import useToggleString from "../../../../../../../../../../../features/custom-hooks/common-hooks/useToggleString";
 
-//МОДУЛИ ДЛЯ РЕНДЕРА
 import CutomModalWindowUniversal from "../../../../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 import { CutomModalWindowUniversalDefaultPropsType } from "../../../../../../../../../../../commonTypes.interface";
 import CustomToggleButton from "../../../../../../../../../../../common/static-components/custom-toggle-button/CustomToggleButton";
@@ -11,7 +9,6 @@ import CustomDualButtonYesNo from "../../../../../../../../../../../common/stati
 import CustomCounterInput from "../../../../../../../../../../../common/static-components/custom-counter-input/CustomCounterInput";
 import CustomInput from "../../../../../../../../../../../common/static-components/custom-input/CustomInput";
 
-//СТИЛИ
 import styles from "./guest_session.module.scss";
 
 export interface GuestSessionModalWindowPropsType
@@ -21,12 +18,13 @@ const GuestSessionModalWindow: FC<GuestSessionModalWindowPropsType> = ({
   redaxStateKey,
   title,
 }) => {
-  const [hoursValue, setHoursValue] = useState<number>(0);
-  const [minutesValue, setMinutesValue] = useState<number>(0);
-  const [timeInSum, setTimeInSum] = useState<number | string>(0);
+  const [hoursValue, setHoursValue] = useState<number>();
+  const [minutesValue, setMinutesValue] = useState<number>();
+  const [timeInSum, setTimeInSum] = useState<number | string>();
 
   const { activeElement, handleChange } = useToggleString("Предоплата");
 
+  // Обработчик для обновления времени
   const handleChangeHoursValue = (value: number) => {
     setHoursValue(value);
   };
@@ -35,23 +33,35 @@ const GuestSessionModalWindow: FC<GuestSessionModalWindowPropsType> = ({
     setMinutesValue(value);
   };
 
-  const handlePaymentAmount = (value: number | string) => {
-    setTimeInSum(value);
+  // Функция для обработки изменения суммы платежа
+  const handlePaymentAmount = (value: string | number | undefined) => {
+    setTimeInSum(value ?? "");
   };
 
+  // Расчет суммы на основе времени
   const handleTimeInSum = useCallback(() => {
     const minutePrice = 1; // Стоимость одной минуты
-    if (hoursValue && minutesValue) {
+    if (hoursValue !== undefined && minutesValue !== undefined) {
       setTimeInSum((hoursValue * 60 + minutesValue) * minutePrice);
-    } else if (hoursValue) {
-      setTimeInSum(hoursValue * 60 * minutePrice);
-    } else if (minutesValue) {
-      setTimeInSum(minutesValue * minutePrice);
-    } else {
-      setTimeInSum(0);
     }
   }, [hoursValue, minutesValue]);
 
+  // Конвертация суммы обратно в часы и минуты
+  const handleInSumTime = useCallback(() => {
+    if (typeof timeInSum === "number") {
+      const calculatedHours = Math.floor(timeInSum / 60);
+      const calculatedMinutes = timeInSum % 60;
+      setHoursValue(calculatedHours);
+      setMinutesValue(calculatedMinutes);
+    }
+  }, [timeInSum]);
+
+  // Вызов функции для обновления времени при изменении `timeInSum`
+  useEffect(() => {
+    handleInSumTime();
+  }, [handleInSumTime]);
+
+  // Вызов функции для обновления суммы при изменении `hoursValue` и `minutesValue`
   useEffect(() => {
     handleTimeInSum();
   }, [handleTimeInSum]);

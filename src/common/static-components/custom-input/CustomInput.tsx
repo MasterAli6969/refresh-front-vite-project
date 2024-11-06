@@ -8,7 +8,7 @@ export interface CustomInputPropsType {
   placeholder?: string;
   type?: "text" | "number";
   value?: string | number;
-  onChange?: (value: string | number) => void;
+  onChange?: (value: string | number | undefined) => void;
   isReadOnly?: boolean;
 }
 
@@ -21,11 +21,15 @@ const CustomInput: FC<CustomInputPropsType> = ({
   onChange,
   isReadOnly = false,
 }) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue =
-      type === "number" ? Number(e.target.value) : e.target.value;
-    if (!isReadOnly && onChange) {
-      onChange(inputValue);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const eventData = event.target.value;
+    if (type === "number") {
+      const inputValue = Number(eventData);
+      if (type === "number" && (inputValue <= 0 || isNaN(inputValue))) {
+        onChange && onChange(undefined);
+      } else if (!isReadOnly && onChange) {
+        onChange(inputValue);
+      }
     }
   };
 
