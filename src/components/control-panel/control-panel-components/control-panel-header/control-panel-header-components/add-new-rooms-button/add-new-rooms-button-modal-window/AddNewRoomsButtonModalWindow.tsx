@@ -27,7 +27,7 @@ const AddNewRoomsButtonModalWindow: FC<
   AddNewRoomsButtonModalWindowPropsType
 > = ({ redaxStateKey, title, specialText }) => {
   //ИНИЦИАЛИЗАЦИЯ ЛОКАЛЬНЫХ СОСТОЯНИЙ ДЛЯ СБОРА ДАННЫХ С ФОРМЫ
-  const [localInputValue, setLocalInputValue] = useState<string>("");
+  const [localInputValue, setLocalInputValue] = useState<string | number>("");
   const [chooseColor, setChooseColor] = useState<string>("");
   //ИНИЦИАЛИЗАЦИЯ РЕДАКС ДИСПАТЧА
   const dispatch = useAppDispatch();
@@ -36,7 +36,7 @@ const AddNewRoomsButtonModalWindow: FC<
   //СОЗДАНИЕ УНИКАЛЬНОГО АЙДИ ДЛЯ КОМНАТЫ НА ОСНОВЕ МАССИВА КОМНАТ
   const newRoomId = getNewId(pcRooms);
   //СБОР ДАННЫХ ИЗ ФОРМЫ ИМЕНИ КОМНАТЫ
-  const handleInputChange = (value: string) => {
+  const handleInputChange = (value: string | number) => {
     setLocalInputValue(value);
   };
   // ОТПРАВКА ДАННЫХ ПОСЛЕ ОТРБОТКИ САБМИТА ФОРМЫ
@@ -44,7 +44,11 @@ const AddNewRoomsButtonModalWindow: FC<
     event.preventDefault();
     //ОТПРАВКА ДАННЫХ ОБЪЕКТОМ В МАССИВ КОММНАТ ПОД ЭКШЕНУ СРЕЗА
     dispatch(
-      addNewRoom({ id: newRoomId, name: localInputValue, color: chooseColor })
+      addNewRoom({
+        id: newRoomId,
+        name: String(localInputValue),
+        color: chooseColor,
+      })
     );
     //ИНИЦИАЛИЗАЦИЯ ОТПРАВКА ПУСТОГО МАССИВА ИКОНОК ПУ ПО УНИКАЛЬНОМУ АЙДИ ДЛЯ КАЖДОЙ ОТДЕЛЬНОЙ КОМНАТЫ
     dispatch(addNewPcIcons({ key: newRoomId, icons: [] }));

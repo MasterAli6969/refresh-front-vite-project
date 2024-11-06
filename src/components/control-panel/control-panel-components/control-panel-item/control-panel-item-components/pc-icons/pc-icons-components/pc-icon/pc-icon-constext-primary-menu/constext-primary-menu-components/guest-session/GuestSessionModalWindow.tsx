@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 //МОДУЛИ ДЛЯ РАБОТЫ
 import useToggleString from "../../../../../../../../../../../features/custom-hooks/common-hooks/useToggleString";
 
@@ -21,13 +21,40 @@ const GuestSessionModalWindow: FC<GuestSessionModalWindowPropsType> = ({
   redaxStateKey,
   title,
 }) => {
-  const [hoursValue, setHoursValue] = useState("");
+  const [hoursValue, setHoursValue] = useState<number>(0);
+  const [minutesValue, setMinutesValue] = useState<number>(0);
+  const [timeInSum, setTimeInSum] = useState<number | string>(0);
 
   const { activeElement, handleChange } = useToggleString("Предоплата");
 
-  const handleChangeHoursValue = () => {};
+  const handleChangeHoursValue = (value: number) => {
+    setHoursValue(value);
+  };
 
-  const handleChangeMinutesValue = () => {};
+  const handleChangeMinutesValue = (value: number) => {
+    setMinutesValue(value);
+  };
+
+  const handlePaymentAmount = (value: number | string) => {
+    setTimeInSum(value);
+  };
+
+  const handleTimeInSum = useCallback(() => {
+    const minutePrice = 1; // Стоимость одной минуты
+    if (hoursValue && minutesValue) {
+      setTimeInSum((hoursValue * 60 + minutesValue) * minutePrice);
+    } else if (hoursValue) {
+      setTimeInSum(hoursValue * 60 * minutePrice);
+    } else if (minutesValue) {
+      setTimeInSum(minutesValue * minutePrice);
+    } else {
+      setTimeInSum(0);
+    }
+  }, [hoursValue, minutesValue]);
+
+  useEffect(() => {
+    handleTimeInSum();
+  }, [handleTimeInSum]);
 
   return (
     <CutomModalWindowUniversal redaxStateKey={redaxStateKey} title={title}>
@@ -39,8 +66,16 @@ const GuestSessionModalWindow: FC<GuestSessionModalWindowPropsType> = ({
       <div className={styles.subdiv_time}>
         <h5>Время</h5>
         <div>
-          <CustomCounterInput placeholder="Количество часов" />
-          <CustomCounterInput placeholder="Количество минут" />
+          <CustomCounterInput
+            value={hoursValue}
+            onChange={handleChangeHoursValue}
+            placeholder="Количество часов"
+          />
+          <CustomCounterInput
+            value={minutesValue}
+            onChange={handleChangeMinutesValue}
+            placeholder="Количество минут"
+          />
         </div>
         {activeElement === "Предоплата" && (
           <p className={styles.down_label}>
@@ -51,8 +86,11 @@ const GuestSessionModalWindow: FC<GuestSessionModalWindowPropsType> = ({
       {activeElement === "Предоплата" && (
         <>
           <CustomInput
+            type="number"
+            value={timeInSum}
             label="Сумма платежа"
             placeholder="Введите сумму для расчета времени"
+            onChange={handlePaymentAmount}
           />
           <p className={styles.down_label}>
             Введите сумму платежа для автоматического расчета времени
