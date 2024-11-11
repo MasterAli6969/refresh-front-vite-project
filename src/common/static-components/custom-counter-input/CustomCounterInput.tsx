@@ -8,8 +8,8 @@ import styles from "./custom_counter_input.module.scss";
 export interface CustomCounterInputPropsType {
   placeholder?: string;
   label?: string;
-  onChange?: (value: number) => void;
-  value?: number;
+  onChange?: (value: number | null) => void;
+  value?: number | null;
 }
 
 const CustomCounterInput: FC<CustomCounterInputPropsType> = ({
@@ -18,9 +18,9 @@ const CustomCounterInput: FC<CustomCounterInputPropsType> = ({
   onChange,
   value,
 }) => {
-  const [count, setCount] = useState<number | undefined>(value);
+  const [count, setCount] = useState<number | null>(null);
 
-  const updateCount = (newCount: number | undefined) => {
+  const updateCount = (newCount: number | null) => {
     setCount(newCount);
     onChange && onChange(newCount ?? 0); // Передаем 0, если newCount undefined
   };
@@ -33,21 +33,23 @@ const CustomCounterInput: FC<CustomCounterInputPropsType> = ({
     if (count && count !== 0) {
       updateCount(count - 1);
     } else {
-      updateCount(undefined); // Очищаем поле, если достигли 0
+      updateCount(null); // Очищаем поле, если достигли 0
     }
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newValue = Number(event.target.value);
     if (isNaN(newValue) || newValue <= 0) {
-      updateCount(undefined); // Очищаем поле, если значение некорректно или <= 0
+      updateCount(null); // Очищаем поле, если значение некорректно или <= 0
     } else {
       updateCount(newValue);
     }
   };
 
   useEffect(() => {
-    setCount(value);
+    if (value) {
+      setCount(value);
+    }
   }, [value]);
 
   return (
@@ -56,7 +58,7 @@ const CustomCounterInput: FC<CustomCounterInputPropsType> = ({
       <div>
         <input
           type="number"
-          value={count ?? ""} // Очищаем input, если count undefined
+          value={count === null ? "" : count}
           onChange={handleChange}
           placeholder={placeholder}
         />

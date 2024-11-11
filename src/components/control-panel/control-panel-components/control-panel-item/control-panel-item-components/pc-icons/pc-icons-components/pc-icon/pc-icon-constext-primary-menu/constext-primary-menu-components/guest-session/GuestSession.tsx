@@ -18,6 +18,7 @@ const GuestSession: FC<GuestSessionPropsType> = ({ comp_id }) => {
       redaxStateKey={`GuestSessionModalWindow${comp_id}`}
       openComponents={() => (
         <GuestSessionModalWindow
+          comp_id={comp_id}
           redaxStateKey={`GuestSessionModalWindow${comp_id}`}
           title="Гостевой сеанс"
         />

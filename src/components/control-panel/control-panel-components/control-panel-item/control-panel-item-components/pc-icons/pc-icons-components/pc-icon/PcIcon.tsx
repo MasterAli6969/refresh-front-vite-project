@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import classNames from "classnames";
 //ИКОНКИ
 import WarningIconSmall from "../../../../../../../../assets/icons/WarningIconSmall.svg";
@@ -15,6 +15,8 @@ export interface PcIconPropsType {
 }
 
 const PcIcon: FC<PcIconPropsType> = ({ comp_id }) => {
+  const [timeActive, setTimeActive] = useState<number>(0);
+
   const isWinActiveStatus = useAppSelector(
     (state) =>
       state.pcIconStatusEdit.pcStatus[comp_id]?.isWinActiveStatus ?? false
@@ -27,6 +29,10 @@ const PcIcon: FC<PcIconPropsType> = ({ comp_id }) => {
 
   const isOnStatus = useAppSelector(
     (state) => state.pcIconStatusEdit.pcStatus[comp_id]?.isOnStatus ?? false
+  );
+
+  const pcStatusActive = useAppSelector(
+    (state) => state.pcIconStatusEdit.pcStatusActive[comp_id] ?? false
   );
 
   return (
@@ -42,6 +48,9 @@ const PcIcon: FC<PcIconPropsType> = ({ comp_id }) => {
         <img src={WindowsIconSmall} className={styles.staus_icon} />
       )}
       <div className={styles.pc_number}>
+        <p>{pcStatusActive.activeTime}</p>
+        {pcStatusActive.statusActive && <p>СТАТУС АКТИВЕН</p>}
+
         <p>{comp_id}</p>
       </div>
       <div className={styles.context_menu}>

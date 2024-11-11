@@ -1,6 +1,8 @@
 import { FC, useCallback, useEffect, useState } from "react";
+//МОДУЛИ ДЛЯ РАБОТЫ
 import useToggleString from "../../../../../../../../../../../features/custom-hooks/common-hooks/useToggleString";
-
+import { useAppDispatch } from "../../../../../../../../../../../features/redux/hooks/reduxRootHooks";
+//МОДУЛИ ДЛЯ РЕНДЕРА
 import CutomModalWindowUniversal from "../../../../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 import { CutomModalWindowUniversalDefaultPropsType } from "../../../../../../../../../../../commonTypes.interface";
 import CustomToggleButton from "../../../../../../../../../../../common/static-components/custom-toggle-button/CustomToggleButton";
@@ -8,40 +10,46 @@ import PaymentMethod from "../../../../../../../../../../../common/special-compo
 import CustomDualButtonYesNo from "../../../../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
 import CustomCounterInput from "../../../../../../../../../../../common/static-components/custom-counter-input/CustomCounterInput";
 import CustomInput from "../../../../../../../../../../../common/static-components/custom-input/CustomInput";
-
+//СТИЛИ
 import styles from "./guest_session.module.scss";
+import { setPcStatusActive } from "../../../../../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-icon-reducers/pcIconStatusEditReducer";
 
 export interface GuestSessionModalWindowPropsType
-  extends CutomModalWindowUniversalDefaultPropsType {}
+  extends CutomModalWindowUniversalDefaultPropsType {
+  comp_id: number;
+}
 
 const GuestSessionModalWindow: FC<GuestSessionModalWindowPropsType> = ({
   redaxStateKey,
+  comp_id,
   title,
 }) => {
-  const [hoursValue, setHoursValue] = useState<number>();
-  const [minutesValue, setMinutesValue] = useState<number>();
+  const dispatch = useAppDispatch();
+
+  const [hoursValue, setHoursValue] = useState<number | null>(null);
+  const [minutesValue, setMinutesValue] = useState<number | null>(null);
   const [timeInSum, setTimeInSum] = useState<number | string>();
 
   const { activeElement, handleChange } = useToggleString("Предоплата");
 
   // Обработчик для обновления времени
-  const handleChangeHoursValue = (value: number) => {
+  const handleChangeHoursValue = (value: number | null) => {
     setHoursValue(value);
   };
 
-  const handleChangeMinutesValue = (value: number) => {
+  const handleChangeMinutesValue = (value: number | null) => {
     setMinutesValue(value);
   };
 
   // Функция для обработки изменения суммы платежа
-  const handlePaymentAmount = (value: string | number | undefined) => {
+  const handlePaymentAmount = (value: string | number | null) => {
     setTimeInSum(value ?? "");
   };
 
   // Расчет суммы на основе времени
   const handleTimeInSum = useCallback(() => {
     const minutePrice = 1; // Стоимость одной минуты
-    if (hoursValue !== undefined && minutesValue !== undefined) {
+    if (hoursValue !== null && minutesValue !== null) {
       setTimeInSum((hoursValue * 60 + minutesValue) * minutePrice);
     }
   }, [hoursValue, minutesValue]);
@@ -66,8 +74,21 @@ const GuestSessionModalWindow: FC<GuestSessionModalWindowPropsType> = ({
     handleTimeInSum();
   }, [handleTimeInSum]);
 
+  const handleSubmit = () => {
+    dispatch(
+      setPcStatusActive({
+        key: comp_id,
+        statusData: { activeTime: Number(timeInSum), statusActive: true },
+      })
+    );
+  };
+
   return (
-    <CutomModalWindowUniversal redaxStateKey={redaxStateKey} title={title}>
+    <CutomModalWindowUniversal
+      onSubmit={handleSubmit}
+      redaxStateKey={redaxStateKey}
+      title={title}
+    >
       <CustomToggleButton
         label="Выберите тип сеанса"
         buttonsText={["Предоплата", "Бесплатный сеанс"]}
@@ -109,6 +130,7 @@ const GuestSessionModalWindow: FC<GuestSessionModalWindowPropsType> = ({
         </>
       )}
       <CustomDualButtonYesNo
+        isSubmit={true}
         redaxStateKey={redaxStateKey}
         buttonRightText="Пополнение"
       />
