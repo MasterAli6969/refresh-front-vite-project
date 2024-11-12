@@ -155,18 +155,16 @@ const LeftSidebar: FC = () => {
           onClick={() => handleLiClick(6)}
           className={classNames({ [styles.active]: activeItemId === 6 })}
         >
-          <DropListWrapper id={1} dropMenuComponents={SettingsDropMenu}>
+          <a href="#">
             <div>
-              <div>
-                <HistoryIcon
-                  color={`${
-                    isHovered === 6 || activeItemId === 6 ? "#FFF" : "#949496"
-                  }`}
-                />
-              </div>
-              <h3>История</h3>
+              <HistoryIcon
+                color={`${
+                  isHovered === 6 || activeItemId === 5 ? "#FFF" : "#949496"
+                }`}
+              />
             </div>
-          </DropListWrapper>
+            <h3>История</h3>
+          </a>
         </li>
         <li
           onMouseEnter={() => handleMouseEnter(7)}
@@ -191,18 +189,16 @@ const LeftSidebar: FC = () => {
           onClick={() => handleLiClick(8)}
           className={classNames({ [styles.active]: activeItemId === 8 })}
         >
-          <DropListWrapper id={2} dropMenuComponents={SettingsDropMenu}>
+          <a href="settings">
             <div>
-              <div>
-                <SettingsIcon
-                  color={`${
-                    isHovered === 8 || activeItemId === 8 ? "#FFF" : "#949496"
-                  }`}
-                />
-              </div>
-              <h3>Настройки</h3>
+              <SettingsIcon
+                color={`${
+                  isHovered === 8 || activeItemId === 8 ? "#FFF" : "#949496"
+                }`}
+              />
             </div>
-          </DropListWrapper>
+            <h3>Настройки</h3>
+          </a>
         </li>
         <li
           onMouseEnter={() => handleMouseEnter(9)}

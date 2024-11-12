@@ -35,6 +35,8 @@ const PcIcon: FC<PcIconPropsType> = ({ comp_id }) => {
     (state) => state.pcIconStatusEdit.pcStatusActive[comp_id] ?? false
   );
 
+  const handlerСonvertToPercentage = () => {};
+
   return (
     <div
       className={classNames(styles.pc_icon, {
