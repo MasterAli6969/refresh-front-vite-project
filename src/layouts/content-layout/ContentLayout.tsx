@@ -16,7 +16,7 @@ const ContentLayout: FC<PropsWithChildren> = ({ children }) => {
       <Grid item md={10} sx={{ margin: "0", padding: "0" }}>
         <div className={styles.def_div}>
           <Header />
-          {children}
+          <div className={styles.page_item}>{children}</div>
         </div>
       </Grid>
     </Grid>

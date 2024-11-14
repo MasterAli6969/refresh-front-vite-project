@@ -70,7 +70,7 @@ const LeftSidebar: FC = () => {
           onClick={() => handleLiClick(1)}
           className={classNames({ [styles.active]: activeItemId === 1 })}
         >
-          <a href="#">
+          <a href="/">
             <div>
               <ControlPanelIcon
                 color={

@@ -1,7 +1,6 @@
 @import "/src/variables.scss";
 
 .div {
-  height: 100%;
   padding: 1rem;
   .subdiv_logo {
     margin-bottom: 1rem;
@@ -17,8 +16,8 @@
     > li {
       cursor: pointer;
       border-radius: $border_radius5;
-      padding: 1rem;
-      margin-bottom: 1rem;
+      padding: 0.7rem;
+      margin-bottom: 0.2rem;
       &:hover {
         background-color: $background_custom_dark;
       }
