@@ -2,11 +2,7 @@ import { FC } from "react";
 import Settings from "../../components/settings/Settings";
 
 const SettingsPage: FC = () => {
-  return (
-    <div>
-      <Settings />
-    </div>
-  );
+  return <Settings />;
 };
 
 export default SettingsPage;

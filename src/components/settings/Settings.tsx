@@ -4,10 +4,11 @@ import { FC } from "react";
 import SettingsSidebar from "./settings-components/settings-sidebar/SettingsSidebar";
 import GeneralSettings from "./settings-components/general-settings/GeneralSettings";
 //СТИЛИ
+import styles from "./settings.module.scss";
 
 const Settings: FC = () => {
   return (
-    <div>
+    <div className={styles.div}>
       <div>
         <SettingsSidebar />
       </div>

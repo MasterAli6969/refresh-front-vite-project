@@ -6,11 +6,7 @@ import Reservation from "../../components/reservation/Reservation";
 //СТИЛИ
 
 const ReservationPage: FC = () => {
-  return (
-    <div>
-      <Reservation />
-    </div>
-  );
+  return <Reservation />;
 };
 
 export default ReservationPage;

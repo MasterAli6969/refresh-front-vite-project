@@ -3,7 +3,7 @@ import { FC } from "react";
 import styles from "./custom_radio_button.module.scss";
 
 export interface CustomRadioButtonPropsType {
-  title: string;
+  title?: string;
   radioLeft: string;
   redioRight: string;
 }
@@ -17,6 +17,7 @@ const CustomRadioButton: FC<CustomRadioButtonPropsType> = ({
     <div className={styles.div}>
       <h3>{title}</h3>
       <div className={styles.subdiv}>
+        <h4>{radioLeft}</h4>
         <div className="form-check">
           <input
             className="form-check-input"
@@ -24,10 +25,8 @@ const CustomRadioButton: FC<CustomRadioButtonPropsType> = ({
             name="flexRadioDefault"
             id="flexRadioDefault1"
           />
-          <label className="form-check-label" htmlFor="flexRadioDefault1">
-            {radioLeft}
-          </label>
         </div>
+        <h4>{redioRight}</h4>
         <div className="form-check">
           <input
             className="form-check-input"
@@ -36,9 +35,6 @@ const CustomRadioButton: FC<CustomRadioButtonPropsType> = ({
             id="flexRadioDefault2"
             checked
           />
-          <label className="form-check-label" htmlFor="flexRadioDefault2">
-            {redioRight}
-          </label>
         </div>
       </div>
     </div>

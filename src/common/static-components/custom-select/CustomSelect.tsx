@@ -1,3 +1,4 @@
+import { FC, useState, useEffect } from "react";
 import styles from "./custom_select.module.scss";
 
 export interface CustomSelectDataType {
@@ -5,48 +6,56 @@ export interface CustomSelectDataType {
   selectItem: string;
 }
 
-export interface CustomSelectPropsType<T> {
+export interface CustomSelectPropsType {
   title?: string;
   selectTitle: string;
-  customSelectData: T[];
-  mapDataToSelect?: (data: T) => CustomSelectDataType; // Сделано необязательным
+  customSelectData: CustomSelectDataType[];
   handleSelectId?: (key: string | number) => void;
 }
 
-const CustomSelect = <T,>({
+const CustomSelect: FC<CustomSelectPropsType> = ({
   title,
   selectTitle,
   customSelectData,
-  mapDataToSelect,
   handleSelectId,
-}: CustomSelectPropsType<T>) => {
-  // Если mapDataToSelect не передан, используем данные напрямую
-  const mappedData = mapDataToSelect
-    ? customSelectData.map(mapDataToSelect)
-    : (customSelectData as unknown as CustomSelectDataType[]); // Приводим тип данных к нужному интерфейсу
+}) => {
+  const [selectedValue, setSelectedValue] = useState<string | number>("");
+
+  // Устанавливаем первый элемент как значение по умолчанию
+  useEffect(() => {
+    if (customSelectData.length > 0) {
+      const defaultValue = customSelectData[0].id;
+      setSelectedValue(defaultValue);
+      if (handleSelectId) {
+        handleSelectId(defaultValue);
+      }
+    }
+  }, [customSelectData, handleSelectId]);
 
   const handlerSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = event.target.value;
+    setSelectedValue(value);
     if (handleSelectId) {
-      handleSelectId(event.target.value);
+      handleSelectId(value);
     }
   };
 
   return (
     <div className={styles.div}>
-      <h3>{title}</h3>
+      {title && <h3>{title}</h3>}
       <div className="form-floating">
         <select
           className="form-select bg-dark text-white"
           id="floatingSelectGrid"
+          value={selectedValue}
           onChange={handlerSelect}
         >
-          <option>{selectTitle}</option>
-          {!customSelectData || customSelectData.length === 0 ? (
-            <h1>Ooops, server error, please wait...</h1>
+          {customSelectData.length === 0 ? (
+            <option disabled>Ooops, server error, please wait...</option>
           ) : (
-            mappedData.map((item) => (
+            customSelectData.map((item) => (
               <option key={item.id} value={item.id}>
-                <h4>{item.selectItem}</h4>
+                {item.selectItem}
               </option>
             ))
           )}

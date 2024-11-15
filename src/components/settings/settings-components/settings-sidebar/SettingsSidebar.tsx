@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from "react";
 //ИКОНКИ
 //МОДУЛИ ДЛЯ РАБОТЫ
+import useToggleString from "../../../../features/custom-hooks/common-hooks/useToggleString";
+import classNames from "classnames";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 //СТИЛИ
 import styles from "./settings_sidebar.module.scss";
-import useToggleString from "../../../../features/custom-hooks/common-hooks/useToggleString";
-import classNames from "classnames";
 
 const SettingsSidebar: FC = () => {
   const { activeElement, handleChange } = useToggleString("Общие настройки");
@@ -122,14 +122,14 @@ const SettingsSidebar: FC = () => {
           </div>
           <ul className={styles.subdiv_list}>
             <li
-              onClick={() => handleLiClick(10)}
-              className={classNames({ [styles.active]: activeItemId === 10 })}
+              onClick={() => handleLiClick(12)}
+              className={classNames({ [styles.active]: activeItemId === 12 })}
             >
               <h3>Игры и приложения</h3>
             </li>
             <li
-              onClick={() => handleLiClick(11)}
-              className={classNames({ [styles.active]: activeItemId === 11 })}
+              onClick={() => handleLiClick(13)}
+              className={classNames({ [styles.active]: activeItemId === 13 })}
             >
               <h3>Лицензии</h3>
             </li>

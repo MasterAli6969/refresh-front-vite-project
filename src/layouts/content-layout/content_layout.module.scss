@@ -1,19 +1,17 @@
 @import "/src/variables.scss";
 
 .def_div {
-  height: 100vh;
+  height: 98vh;
   background-color: $background_custom_auth;
   border: $border_style_default;
   border-radius: $border_radius8;
   overflow: hidden; // Отключаем скролл у родителя
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
-
+  margin: 0.5rem;
   .page_item {
     max-height: 100%; // Ограничиваем высоту дочернего элемента высотой родителя
     overflow-y: auto; // Включаем вертикальный скролл у дочернего элемента
-    border: 1px solid green;
     flex-grow: 1; // Растягиваем элемент на всю доступную высоту внутри flex-контейнера
   }
 }

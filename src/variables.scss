@@ -93,14 +93,14 @@ $light_gradient: linear-gradient(
 
 //СПЕЦИАЛЬНЫЙ СТИЛИ ДЛЯ БЛОКА DIV В КОТОРЫХ МОГУТ НАХОДИТЬСЯ ИНПУТ ЭЛЕМЕНТЫ И ИХ ИКОНКИ ДОПОМ
 @mixin inputStyleSpesialContainer {
-  width: 100%;
+  width: 14.19rem;
   display: flex;
   align-items: center;
   background-color: $background_modal_input;
   border: $border_style_default;
-  border-radius: $border_radius12;
+  border-radius: $border_radius5;
   color: $text_default;
-  padding: 0.5rem;
+  padding: 0.46rem 0.75rem;
   > input {
     width: 100%;
     background-color: $background_modal_input;
@@ -212,3 +212,5 @@ $light_gradient: linear-gradient(
     transform: scaleX(-1);
   }
 }
+
+// ДЕФОЛТНЫЕ КЛАССОВЫЕ СТИЛИ ДЛЯ СТРАНИЦ

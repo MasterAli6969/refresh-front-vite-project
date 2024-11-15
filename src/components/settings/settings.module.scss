@@ -1,0 +1,10 @@
+@import "/src/variables.scss";
+
+.div {
+  height: 100%;
+  display: flex;
+  > div:last-child {
+    width: 55%;
+    border-left: $border_style_default;
+  }
+}
