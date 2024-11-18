@@ -4,8 +4,8 @@ import { FC } from "react";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import { CutomModalWindowUniversalDefaultPropsType } from "../../../../../../../../../../../../../commonTypes.interface";
 import CutomModalWindowUniversal from "../../../../../../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
-import CustomCounterInput from "../../../../../../../../../../../../../common/static-components/custom-counter-input/CustomCounterInput";
-import CustomTextarea from "../../../../../../../../../../../../../common/static-components/custom-textarea/CustomTextarea";
+import CustomCounterInput from "../../../../../../../../../../../../../common/static-components/inputs/custom-counter-input/CustomCounterInput";
+import CustomTextarea from "../../../../../../../../../../../../../common/static-components/inputs/custom-textarea/CustomTextarea";
 
 export interface PenaltyModalWindowPropsType
   extends CutomModalWindowUniversalDefaultPropsType {}

@@ -1,10 +1,10 @@
 import { FC, useState, useEffect, useRef, useCallback } from "react";
 import classNames from "classnames";
 
-import CustomSwitchButton from "../../static-components/custom-switch-button/CustomSwitchButton";
+import CustomSwitchButton from "../../static-components/buttons/custom-switch-button/CustomSwitchButton";
 
 import styles from "./custom_modal_open_button_switch.module.scss";
-import CustomButton from "../../static-components/custom-button/CustomButton";
+import CustomButton from "../../static-components/buttons/custom-button/CustomButton";
 
 export interface CustomModalOpenButtonSwitchPropsType {
   icon?: string;

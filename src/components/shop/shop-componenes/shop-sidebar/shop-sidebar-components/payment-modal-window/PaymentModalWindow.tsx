@@ -3,9 +3,9 @@ import { FC, useState } from "react";
 import CustomModalCloseHead from "../../../../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
 import CartItem from "../../../../shop-common/cart-items/CartItems";
 import TotalPurchase from "../../../../shop-common/total-purchase/TotalPurchase";
-import CustomToggleButton from "../../../../../../common/static-components/custom-toggle-button/CustomToggleButton";
-import CustomInput from "../../../../../../common/static-components/custom-input/CustomInput";
-import CustomDualButtonYesNo from "../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomToggleButton from "../../../../../../common/static-components/buttons/custom-toggle-button/CustomToggleButton";
+import CustomInput from "../../../../../../common/static-components/inputs/custom-input/CustomInput";
+import CustomDualButtonYesNo from "../../../../../../common/static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
 import { RedaxStateProps } from "../../../../../../commonTypes.interface";
 

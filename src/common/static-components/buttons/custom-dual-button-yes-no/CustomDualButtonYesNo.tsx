@@ -2,9 +2,9 @@ import { FC } from "react";
 
 import CustomButton from "../custom-button/CustomButton";
 
-import { useAppDispatch } from "../../../features/redux/hooks/reduxRootHooks";
+import { useAppDispatch } from "../../../../features/redux/hooks/reduxRootHooks";
 
-import { setToggleDynamic } from "../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
+import { setToggleDynamic } from "../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
 
 import styles from "./custom_dual_button_yes_no.module.scss";
 

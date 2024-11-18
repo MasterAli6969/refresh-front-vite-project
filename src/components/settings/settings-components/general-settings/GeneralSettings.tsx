@@ -4,11 +4,11 @@ import { FC } from "react";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 //СТИЛИ
 import styles from "./general_settings.module.scss";
-import CustomInput from "../../../../common/static-components/custom-input/CustomInput";
+import CustomInput from "../../../../common/static-components/inputs/custom-input/CustomInput";
 import CustomSelect from "../../../../common/static-components/custom-select/CustomSelect";
 import CustomMaterialSwitch from "../../../../common/static-components/custom-material-switch/CustomMaterialSwitch";
-import CustomCounterInput from "../../../../common/static-components/custom-counter-input/CustomCounterInput";
-import CustomRadioButton from "../../../../common/static-components/custom-radio-button/CustomRadioButton";
+import CustomCounterInput from "../../../../common/static-components/inputs/custom-counter-input/CustomCounterInput";
+import CustomRadioButton from "../../../../common/static-components/buttons/custom-radio-button/CustomRadioButton";
 
 const GeneralSettings: FC = () => {
   return (

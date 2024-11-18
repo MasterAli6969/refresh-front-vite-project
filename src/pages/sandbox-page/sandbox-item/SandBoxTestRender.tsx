@@ -3,10 +3,10 @@ import { FC } from "react";
 import CutomModalWindowUniversal from "../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 import { CutomModalWindowUniversalDefaultPropsType } from "../../../commonTypes.interface";
 //МОДУЛИ ДЛЯ РЕНДЕРА
-import CustomInput from "../../../common/static-components/custom-input/CustomInput";
-import CustomCounterInput from "../../../common/static-components/custom-counter-input/CustomCounterInput";
+import CustomInput from "../../../common/static-components/inputs/custom-input/CustomInput";
+import CustomCounterInput from "../../../common/static-components/inputs/custom-counter-input/CustomCounterInput";
 import PaymentMethod from "../../../common/special-componet/payment-method/PaymentMethod";
-import CustomDualButtonYesNo from "../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomDualButtonYesNo from "../../../common/static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
 interface TestMoalWindowSandboxPropsType
   extends CutomModalWindowUniversalDefaultPropsType {}

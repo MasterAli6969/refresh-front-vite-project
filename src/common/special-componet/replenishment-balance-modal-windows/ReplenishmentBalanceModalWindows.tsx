@@ -1,9 +1,9 @@
 import { FC, useState } from "react";
 import { RedaxStateProps } from "../../../commonTypes.interface";
 //МОДУЛИ ДЛЯ РЕНДЕРА
-import CustomToggleButton from "../../static-components/custom-toggle-button/CustomToggleButton";
-import CustomInput from "../../static-components/custom-input/CustomInput";
-import CustomDualButtonYesNo from "../../static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomToggleButton from "../../static-components/buttons/custom-toggle-button/CustomToggleButton";
+import CustomInput from "../../static-components/inputs/custom-input/CustomInput";
+import CustomDualButtonYesNo from "../../static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
 import CutomModalWindowUniversal from "../../smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 //ИКОНКИ
 import MoneyIconMini from "../../../assets/icons/MoneyIconMini.svg";

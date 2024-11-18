@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 
-import CustomToggleButton from "../../../../common/static-components/custom-toggle-button/CustomToggleButton";
-import CustomInput from "../../../../common/static-components/custom-input/CustomInput";
+import CustomToggleButton from "../../../../common/static-components/buttons/custom-toggle-button/CustomToggleButton";
+import CustomInput from "../../../../common/static-components/inputs/custom-input/CustomInput";
 
 import styles from "./shop_cenral_panel.module.scss";
 import ProductItemList from "./shop-cenral-panel-components/product-item-list/ProductItemList";

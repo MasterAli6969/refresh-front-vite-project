@@ -10,14 +10,14 @@ import WindowsLogoMiniIcons from "../../../../assets/icons/WindowsLogoMiniIcons.
 import SandTimerIcon from "../../../../assets/icons/SandTimerIcon.svg";
 
 //МОДУЛИ ДЛЯ РЕНДЕРА
-import CustomButton from "../../../../common/static-components/custom-button/CustomButton";
+import CustomButton from "../../../../common/static-components/buttons/custom-button/CustomButton";
 import MessageButton from "./control-panel-header-components/message-button/MessageButton";
 import NoticeButton from "./control-panel-header-components/notice-button/NoticeButton";
 import AddNewUserButton from "./control-panel-header-components/add-new-user-button/AddNewUserButton";
 import AddNewRoomsButton from "./control-panel-header-components/add-new-rooms-button/AddNewRoomsButton";
 //СТИЛИ
 import styles from "./control_panel_header.module.scss";
-import CustomToggleButton from "../../../../common/static-components/custom-toggle-button/CustomToggleButton";
+import CustomToggleButton from "../../../../common/static-components/buttons/custom-toggle-button/CustomToggleButton";
 
 const ControlPanelHeader: FC = () => {
   return (

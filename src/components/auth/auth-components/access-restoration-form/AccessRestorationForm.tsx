@@ -3,8 +3,8 @@ import { FC, useState, FormEvent, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import AuthFormWrapper from "../auth-form-wrapper/AuthFormWrapper";
-import CustomMailInput from "../../../../common/static-components/custom-mail-input/CustomMailInput";
-import CustomButton from "../../../../common/static-components/custom-button/CustomButton";
+import CustomMailInput from "../../../../common/static-components/inputs/custom-mail-input/CustomMailInput";
+import CustomButton from "../../../../common/static-components/buttons/custom-button/CustomButton";
 import CustomMiniSpinner from "../../../../common/static-components/custom-mini-spinner/CustomMiniSpinner";
 import AuthLodingSpinnerWindow from "../auth-loding-spinner-window/AuthLodingSpinnerWindow";
 

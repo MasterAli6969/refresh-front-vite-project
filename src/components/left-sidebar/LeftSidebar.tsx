@@ -19,8 +19,6 @@ import { ListType } from "../../commonTypes.interface";
 import { PropsIcon } from "../../assets/icons-svg-components/props.interface";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import SearchInput from "./left-sidebar-components/search-input/SearchInput";
-import DropListWrapper from "./left-sidebar-components/drop-list-wrapper/DropListWrapper";
-import SettingsDropMenu from "./left-sidebar-components/drop-and-context-menus/settings-drop-menu/SettingsDropMenu";
 //СТИЛИ
 import styles from "./left_sidebar.module.scss";
 
@@ -155,7 +153,7 @@ const LeftSidebar: FC = () => {
           onClick={() => handleLiClick(6)}
           className={classNames({ [styles.active]: activeItemId === 6 })}
         >
-          <a href="#">
+          <a href="history">
             <div>
               <HistoryIcon
                 color={`${

@@ -6,11 +6,11 @@ import useToggleString from "../../../../../../../../../../../../../features/cus
 import CutomModalWindowUniversal from "../../../../../../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 
 //МОДУЛИ ДЛЯ РЕНДЕРА
-import CustomToggleButton from "../../../../../../../../../../../../../common/static-components/custom-toggle-button/CustomToggleButton";
-import CustomCounterInput from "../../../../../../../../../../../../../common/static-components/custom-counter-input/CustomCounterInput";
-import CustomInput from "../../../../../../../../../../../../../common/static-components/custom-input/CustomInput";
+import CustomToggleButton from "../../../../../../../../../../../../../common/static-components/buttons/custom-toggle-button/CustomToggleButton";
+import CustomCounterInput from "../../../../../../../../../../../../../common/static-components/inputs/custom-counter-input/CustomCounterInput";
+import CustomInput from "../../../../../../../../../../../../../common/static-components/inputs/custom-input/CustomInput";
 import PaymentMethod from "../../../../../../../../../../../../../common/special-componet/payment-method/PaymentMethod";
-import CustomDualButtonYesNo from "../../../../../../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomDualButtonYesNo from "../../../../../../../../../../../../../common/static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
 //СТИЛИ
 import styles from "./add_time_modal_window.module.scss";

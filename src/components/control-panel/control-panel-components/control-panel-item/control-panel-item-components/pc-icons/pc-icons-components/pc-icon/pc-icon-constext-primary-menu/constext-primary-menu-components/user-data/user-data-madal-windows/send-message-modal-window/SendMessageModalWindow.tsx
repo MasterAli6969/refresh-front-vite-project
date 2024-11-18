@@ -4,8 +4,8 @@ import { FC } from "react";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import { CutomModalWindowUniversalDefaultPropsType } from "../../../../../../../../../../../../../commonTypes.interface";
 import CutomModalWindowUniversal from "../../../../../../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
-import CustomTextarea from "../../../../../../../../../../../../../common/static-components/custom-textarea/CustomTextarea";
-import CustomDualButtonYesNo from "../../../../../../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomDualButtonYesNo from "../../../../../../../../../../../../../common/static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomTextarea from "../../../../../../../../../../../../../common/static-components/inputs/custom-textarea/CustomTextarea";
 
 export interface SendMessageModalWindowPropsType
   extends CutomModalWindowUniversalDefaultPropsType {}

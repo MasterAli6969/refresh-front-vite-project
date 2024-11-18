@@ -13,8 +13,8 @@ import {
 } from "../../../../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import CutomModalWindowUniversal from "../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
-import CustomInput from "../../../../../../../common/static-components/custom-input/CustomInput";
-import CustomDualButtonYesNo from "../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomInput from "../../../../../../../common/static-components/inputs/custom-input/CustomInput";
+import CustomDualButtonYesNo from "../../../../../../../common/static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
 import ChooseColourRoom from "../../../../../../../common/special-componet/choose-colour-room/ChooseColourRoom";
 import { addNewPcIcons } from "../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-icon-reducers/pcIconEditReducer";
 

@@ -6,7 +6,7 @@ import { RedaxStateProps } from "../../../../../../../../commonTypes.interface";
 import { removeRoom } from "../../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-rooms-reducers/pcRoomsEditReducer";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import CutomModalWindowUniversal from "../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
-import CustomDualButtonYesNo from "../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomDualButtonYesNo from "../../../../../../../../common/static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
 import {
   resetModals,
   setToggleDynamic,

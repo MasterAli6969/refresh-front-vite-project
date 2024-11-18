@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import classNames from "classnames";
 
-import { AuthInputPropsType } from "../../../commonTypes.interface";
+import { AuthInputPropsType } from "../../../../commonTypes.interface";
 
 import styles from "./custom_mail_input.module.scss";
 

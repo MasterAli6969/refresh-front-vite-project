@@ -3,8 +3,8 @@ import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import AuthFormWrapper from "../../../auth/auth-components/auth-form-wrapper/AuthFormWrapper";
-import CustomPasswordInput from "../../../../common/static-components/custom-password-input/CustomPasswordInput";
-import CustomButton from "../../../../common/static-components/custom-button/CustomButton";
+import CustomPasswordInput from "../../../../common/static-components/inputs/custom-password-input/CustomPasswordInput";
+import CustomButton from "../../../../common/static-components/buttons/custom-button/CustomButton";
 import CustomMiniSpinner from "../../../../common/static-components/custom-mini-spinner/CustomMiniSpinner";
 import AuthLodingSpinnerWindow from "../../../auth/auth-components/auth-loding-spinner-window/AuthLodingSpinnerWindow";
 //СТИЛИ

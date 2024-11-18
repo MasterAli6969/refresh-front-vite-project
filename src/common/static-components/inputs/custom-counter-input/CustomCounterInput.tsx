@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, useEffect, useState } from "react";
 
-import ArrowCheckUp from "../../../assets/icons/ArrowCheckUp.svg";
-import ArrowCheckDown from "../../../assets/icons/ArrowCheckDown.svg";
+import ArrowCheckUp from "../../../../assets/icons/ArrowCheckUp.svg";
+import ArrowCheckDown from "../../../../assets/icons/ArrowCheckDown.svg";
 
 import styles from "./custom_counter_input.module.scss";
 

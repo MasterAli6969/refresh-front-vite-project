@@ -32,7 +32,6 @@ const CustomInput: FC<CustomInputPropsType> = ({
       }
     }
   };
-
   return (
     <div className={styles.div}>
       {label && <h3 className={styles.label}>{label}</h3>}

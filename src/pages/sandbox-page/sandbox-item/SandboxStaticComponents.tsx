@@ -3,20 +3,20 @@ import { FC } from "react";
 import ClockTimeIcon from "../../../assets/icons/ClockTimeIcon.svg";
 //КОМПОНЕНТЫ ДЛЯ РЕНДНРА
 import CustomAvatarName from "../../../common/static-components/custom-avatar-name/CustomAvatarName";
-import CustomButton from "../../../common/static-components/custom-button/CustomButton";
-import CustomCounterInput from "../../../common/static-components/custom-counter-input/CustomCounterInput";
-import CustomDualButtonYesNo from "../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
-import CustomInput from "../../../common/static-components/custom-input/CustomInput";
+import CustomButton from "../../../common/static-components/buttons/custom-button/CustomButton";
+import CustomCounterInput from "../../../common/static-components/inputs/custom-counter-input/CustomCounterInput";
+import CustomDualButtonYesNo from "../../../common/static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomInput from "../../../common/static-components/inputs/custom-input/CustomInput";
 import CustomLogo from "../../../common/static-components/custom-logo/CustomLogo";
-import CustomMailInput from "../../../common/static-components/custom-mail-input/CustomMailInput";
+import CustomMailInput from "../../../common/static-components/inputs/custom-mail-input/CustomMailInput";
 import CustomMiniSpinner from "../../../common/static-components/custom-mini-spinner/CustomMiniSpinner";
-import CustomPasswordInput from "../../../common/static-components/custom-password-input/CustomPasswordInput";
-import CustomRadioButton from "../../../common/static-components/custom-radio-button/CustomRadioButton";
+import CustomPasswordInput from "../../../common/static-components/inputs/custom-password-input/CustomPasswordInput";
+import CustomRadioButton from "../../../common/static-components/buttons/custom-radio-button/CustomRadioButton";
 import CustomSelect from "../../../common/static-components/custom-select/CustomSelect";
 import CustomSpinner from "../../../common/static-components/custom-spinner/CustomSpinner";
-import CustomSwitchButton from "../../../common/static-components/custom-switch-button/CustomSwitchButton";
-import CustomTextarea from "../../../common/static-components/custom-textarea/CustomTextarea";
-import CustomToggleButton from "../../../common/static-components/custom-toggle-button/CustomToggleButton";
+import CustomSwitchButton from "../../../common/static-components/buttons/custom-switch-button/CustomSwitchButton";
+import CustomToggleButton from "../../../common/static-components/buttons/custom-toggle-button/CustomToggleButton";
+import CustomTextarea from "../../../common/static-components/inputs/custom-textarea/CustomTextarea";
 
 const SandboxStaticComponents: FC = () => {
   return (
@@ -93,7 +93,11 @@ const SandboxStaticComponents: FC = () => {
         <CustomSelect
           title="title"
           selectTitle="selectTitle"
-          customSelectData={["Select1", "Select2", "Select12"]}
+          customSelectData={[
+            { id: 1, selectItem: "Select1" },
+            { id: 2, selectItem: "Select2" },
+            { id: 3, selectItem: "Select12" },
+          ]}
         />
       </div>
       <div>
@@ -111,7 +115,11 @@ const SandboxStaticComponents: FC = () => {
               <CustomSelect
                 title="title"
                 selectTitle="selectTitle"
-                customSelectData={["Select1", "Select2", "Select12"]}
+                customSelectData={[
+                  { id: 1, selectItem: "Select1" },
+                  { id: 2, selectItem: "Select2" },
+                  { id: 3, selectItem: "Select12" },
+                ]}
               />
             </div>
           )}

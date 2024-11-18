@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 import { RedaxStateProps } from "../../../../../../commonTypes.interface";
-import CustomDualButtonYesNo from "../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
-import CustomInput from "../../../../../../common/static-components/custom-input/CustomInput";
+import CustomDualButtonYesNo from "../../../../../../common/static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomInput from "../../../../../../common/static-components/inputs/custom-input/CustomInput";
 
 import CutomModalWindowUniversal from "../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 

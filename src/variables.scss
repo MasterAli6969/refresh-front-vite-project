@@ -103,7 +103,7 @@ $light_gradient: linear-gradient(
   padding: 0.46rem 0.75rem;
   > input {
     width: 100%;
-    background-color: $background_modal_input;
+    background-color: transparent;
     color: $text_light;
     border: none;
   }

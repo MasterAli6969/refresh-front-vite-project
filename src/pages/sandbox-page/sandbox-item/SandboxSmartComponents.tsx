@@ -3,14 +3,14 @@ import { FC } from "react";
 import ClockTimeIcon from "../../../assets/icons/ClockTimeIcon.svg";
 //КОМПОНЕНТЫ ДЛЯ РЕНДНРА
 import CustomCenterModalOpenWrapper from "../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
-import CustomButton from "../../../common/static-components/custom-button/CustomButton";
+import CustomButton from "../../../common/static-components/buttons/custom-button/CustomButton";
 import CustomContexMenuOpenUniversalWrapper from "../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
 import CustomModalCloseHead from "../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
 import CustomModalOpenButtonSwitch from "../../../common/smart-component/custom-modal-open-button-switch/CustomModalOpenButtonSwitch";
 import CutomModalWindowUniversal from "../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
-import CustomDualButtonYesNo from "../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
-import CustomInput from "../../../common/static-components/custom-input/CustomInput";
-import CustomCounterInput from "../../../common/static-components/custom-counter-input/CustomCounterInput";
+import CustomDualButtonYesNo from "../../../common/static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomInput from "../../../common/static-components/inputs/custom-input/CustomInput";
+import CustomCounterInput from "../../../common/static-components/inputs/custom-counter-input/CustomCounterInput";
 import PaymentMethod from "../../../common/special-componet/payment-method/PaymentMethod";
 import { TestMoalWindowSandbox } from "./SandBoxTestRender";
 

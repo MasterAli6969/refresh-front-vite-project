@@ -4,7 +4,7 @@ import AddNewUserIcon from "../../../../../../assets/icons/AddNewUserIcon.svg";
 //МОДУЛИ ДЛЯ РАБОТЫ
 import AddNewUserModalWindows from "./add-new-user-button-modal-windows/AddNewUserModalWindows";
 import CustomCenterModalOpenWrapper from "../../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
-import CustomButton from "../../../../../../common/static-components/custom-button/CustomButton";
+import CustomButton from "../../../../../../common/static-components/buttons/custom-button/CustomButton";
 
 const AddNewUserButton: FC = () => {
   return (

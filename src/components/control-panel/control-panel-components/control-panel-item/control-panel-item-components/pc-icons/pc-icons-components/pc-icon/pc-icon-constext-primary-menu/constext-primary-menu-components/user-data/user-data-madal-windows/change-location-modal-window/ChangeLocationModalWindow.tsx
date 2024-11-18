@@ -5,9 +5,9 @@ import { CutomModalWindowUniversalDefaultPropsType } from "../../../../../../../
 import { useAppSelector } from "../../../../../../../../../../../../../features/redux/hooks/reduxRootHooks";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import CutomModalWindowUniversal from "../../../../../../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
-import CustomInput from "../../../../../../../../../../../../../common/static-components/custom-input/CustomInput";
+import CustomInput from "../../../../../../../../../../../../../common/static-components/inputs/custom-input/CustomInput";
 import CustomSelect from "../../../../../../../../../../../../../common/static-components/custom-select/CustomSelect";
-import CustomDualButtonYesNo from "../../../../../../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomDualButtonYesNo from "../../../../../../../../../../../../../common/static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
 
 export interface ChangeLocationModalWindowPropsType
   extends CutomModalWindowUniversalDefaultPropsType {

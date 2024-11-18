@@ -1,8 +1,8 @@
 import { FC, useState } from "react";
 import classNames from "classnames";
 
-import { AuthInputPropsType } from "../../../commonTypes.interface";
-import PassVisibleIcon from "../../../assets/icons-svg-components/auth-dynamic-icon/PassVisibleIcon";
+import { AuthInputPropsType } from "../../../../commonTypes.interface";
+import PassVisibleIcon from "../../../../assets/icons-svg-components/auth-dynamic-icon/PassVisibleIcon";
 
 import styles from "./custom_password_input.module.scss";
 

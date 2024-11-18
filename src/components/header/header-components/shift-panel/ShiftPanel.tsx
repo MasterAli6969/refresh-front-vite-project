@@ -5,7 +5,7 @@ import classNames from "classnames";
 //ИКОНКИ
 import OfflineIcon from "../../../../assets/icons/OfflineIcon.svg";
 import OnlineIcon from "../../../../assets/icons/OnlineIcon.svg";
-import CustomButton from "../../../../common/static-components/custom-button/CustomButton";
+import CustomButton from "../../../../common/static-components/buttons/custom-button/CustomButton";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 import CustomContexMenuOpenUniversalWrapper from "../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";

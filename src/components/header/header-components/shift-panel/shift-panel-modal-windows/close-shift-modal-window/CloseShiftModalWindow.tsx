@@ -5,7 +5,7 @@ import { useAppDispatch } from "../../../../../../features/redux/hooks/reduxRoot
 import { setToggleDynamic } from "../../../../../../features/redux/reducers/common-reducers/toggleDynamicReduser";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import CutomModalWindowUniversal from "../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
-import CustomDualButtonYesNo from "../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomDualButtonYesNo from "../../../../../../common/static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
 //СТИЛИ
 import styles from "./close_shift_modal_window.module.scss";
 

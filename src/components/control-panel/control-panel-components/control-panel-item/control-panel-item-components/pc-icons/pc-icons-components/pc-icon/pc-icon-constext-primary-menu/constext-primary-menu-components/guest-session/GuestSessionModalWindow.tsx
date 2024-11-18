@@ -5,11 +5,11 @@ import { useAppDispatch } from "../../../../../../../../../../../features/redux/
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import CutomModalWindowUniversal from "../../../../../../../../../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
 import { CutomModalWindowUniversalDefaultPropsType } from "../../../../../../../../../../../commonTypes.interface";
-import CustomToggleButton from "../../../../../../../../../../../common/static-components/custom-toggle-button/CustomToggleButton";
+import CustomToggleButton from "../../../../../../../../../../../common/static-components/buttons/custom-toggle-button/CustomToggleButton";
 import PaymentMethod from "../../../../../../../../../../../common/special-componet/payment-method/PaymentMethod";
-import CustomDualButtonYesNo from "../../../../../../../../../../../common/static-components/custom-dual-button-yes-no/CustomDualButtonYesNo";
-import CustomCounterInput from "../../../../../../../../../../../common/static-components/custom-counter-input/CustomCounterInput";
-import CustomInput from "../../../../../../../../../../../common/static-components/custom-input/CustomInput";
+import CustomDualButtonYesNo from "../../../../../../../../../../../common/static-components/buttons/custom-dual-button-yes-no/CustomDualButtonYesNo";
+import CustomCounterInput from "../../../../../../../../../../../common/static-components/inputs/custom-counter-input/CustomCounterInput";
+import CustomInput from "../../../../../../../../../../../common/static-components/inputs/custom-input/CustomInput";
 //СТИЛИ
 import styles from "./guest_session.module.scss";
 import { setPcStatusActive } from "../../../../../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-icon-reducers/pcIconStatusEditReducer";
