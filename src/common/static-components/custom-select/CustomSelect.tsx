@@ -8,14 +8,12 @@ export interface CustomSelectDataType {
 
 export interface CustomSelectPropsType {
   title?: string;
-  selectTitle: string;
   customSelectData: CustomSelectDataType[];
   handleSelectId?: (key: string | number) => void;
 }
 
 const CustomSelect: FC<CustomSelectPropsType> = ({
   title,
-  selectTitle,
   customSelectData,
   handleSelectId,
 }) => {
@@ -45,7 +43,7 @@ const CustomSelect: FC<CustomSelectPropsType> = ({
       {title && <h3>{title}</h3>}
       <div className="form-floating">
         <select
-          className="form-select bg-dark text-white"
+          className="form-select"
           id="floatingSelectGrid"
           value={selectedValue}
           onChange={handlerSelect}

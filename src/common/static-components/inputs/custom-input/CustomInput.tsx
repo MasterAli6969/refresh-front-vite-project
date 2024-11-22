@@ -4,8 +4,10 @@ import styles from "./custom_input.module.scss";
 
 export interface CustomInputPropsType {
   label?: string;
+  width?: string;
   icon?: string;
   placeholder?: string;
+  downLabel?: string;
   type?: "text" | "number";
   value?: string | number;
   onChange?: (value: string | number | null) => void;
@@ -14,6 +16,8 @@ export interface CustomInputPropsType {
 
 const CustomInput: FC<CustomInputPropsType> = ({
   label,
+  downLabel,
+  width,
   icon,
   placeholder,
   type = "text",
@@ -33,7 +37,7 @@ const CustomInput: FC<CustomInputPropsType> = ({
     }
   };
   return (
-    <div className={styles.div}>
+    <div style={{ width: `${width ? width : "100%"}` }} className={styles.div}>
       {label && <h3 className={styles.label}>{label}</h3>}
       <div>
         {icon && <img src={icon} alt="icon" />}
@@ -46,6 +50,7 @@ const CustomInput: FC<CustomInputPropsType> = ({
           readOnly={isReadOnly}
         />
       </div>
+      {downLabel && <p>{downLabel}</p>}
     </div>
   );
 };

@@ -5,6 +5,25 @@
     margin-bottom: 0.5rem;
   }
   > div {
-    @include inputStyleSpesialContainer;
+    display: flex;
+    align-items: center;
+    background-color: #17181a;
+    border: 0.06rem solid #33353c;
+    border-radius: 0.3rem;
+    color: #ffffff;
+    padding: 0.46rem 0.75rem;
+    > input {
+      width: 100%;
+      background-color: transparent;
+      color: #ffffff;
+      border: none;
+    }
+    > img {
+      width: 1rem;
+      margin-right: 0.5rem;
+    }
+    > p {
+      color: #9c9da0;
+    }
   }
 }

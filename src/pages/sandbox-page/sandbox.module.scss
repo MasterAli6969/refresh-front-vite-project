@@ -9,7 +9,7 @@
 .subdiv_right {
   display: flex;
   flex-direction: column !important;
-  border: 1px solid red;
+  border: 1px solid #32ade6;
   padding: 1rem;
   gap: 2rem;
   > h1 {
@@ -32,8 +32,11 @@
 .subdiv_right {
   > div {
     flex-direction: column;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid #383b41;
     padding: 1rem;
     gap: 1rem;
+  }
+  > h2 {
+    color: #32ade6;
   }
 }

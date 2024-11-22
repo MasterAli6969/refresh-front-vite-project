@@ -22,34 +22,10 @@ const SandboxStaticComponents: FC = () => {
   return (
     <>
       <h1>СТАТИЧЕСКИЕ КОМПОНЕНТЫ РЕНДЕРА И ИСПОЛЬЗОВАНИЯ</h1>
-      <div>
-        <h1>CustomAvatarName</h1>
-        <CustomAvatarName name="Ali" />
-      </div>
-      <div>
-        <h1>CustomButton</h1>
-        <CustomButton color="light">
-          <h6>Button name</h6>
-        </CustomButton>
-      </div>
-      <div>
-        <h1>CustomButton + icon</h1>
-        <CustomButton color="light">
-          <img src={ClockTimeIcon} />
-          <h6>Button name</h6>
-        </CustomButton>
-      </div>
-      <div>
-        <h1>CustomCounterInput</h1>
-        <CustomCounterInput label="label" placeholder="placeholder" />
-      </div>
-      <div>
-        <h1>CustomDualButtonYesNo</h1>
-        <CustomDualButtonYesNo
-          buttonRightText="buttonRightText"
-          redaxStateKey={"redaxStateKey"}
-        />
-      </div>
+
+      <h2>КОНТЕЙНЕРЫ--------------------------------------------</h2>
+
+      <h2>ПОЛЯ ВВОДА ДАННЫХ--------------------------------------------</h2>
       <div>
         <h1>CustomInput</h1>
         <CustomInput label="label" placeholder="placeholder" />
@@ -58,27 +34,48 @@ const SandboxStaticComponents: FC = () => {
         <h1>CustomInput + icon</h1>
         <CustomInput
           label="label"
+          downLabel="Введите сумму платежа для автоматического расчета времени"
           icon={ClockTimeIcon}
           placeholder="placeholder"
         />
       </div>
       <div>
-        <h1>CustomLogo + display:block</h1>
-        <CustomLogo display="block" />
+        <h1>CustomCounterInput</h1>
+        <CustomCounterInput label="label" placeholder="placeholder" />
       </div>
       <div>
         <h1>CustomMailInput</h1>
         <CustomMailInput label="label" name="name" placeholder="placeholder" />
       </div>
       <div>
-        <h1>CustomMiniSpinner</h1>
-        <div style={{ width: "5rem" }}>
-          <CustomMiniSpinner />
-        </div>
+        <h1>CustomTextarea</h1>
+        <CustomTextarea label="label" placeholder="placeholder" />
       </div>
       <div>
         <h1>CustomPasswordInput</h1>
         <CustomPasswordInput label="CustomPasswordInput" name="name" />
+      </div>
+
+      <h2>КНОПКИ--------------------------------------------</h2>
+      <div>
+        <h1>CustomButton</h1>
+        <CustomButton color="light">
+          <h6>Button name</h6>
+        </CustomButton>
+      </div>
+      <div>
+        <h1>CustomButton + icon</h1>
+        <CustomButton color="transparent">
+          <img src={ClockTimeIcon} />
+          <h6>Button name</h6>
+        </CustomButton>
+      </div>
+      <div>
+        <h1>CustomDualButtonYesNo</h1>
+        <CustomDualButtonYesNo
+          buttonRightText="buttonRightText"
+          redaxStateKey={"redaxStateKey"}
+        />
       </div>
       <div>
         <h1>CustomRadioButton</h1>
@@ -89,23 +86,17 @@ const SandboxStaticComponents: FC = () => {
         />
       </div>
       <div>
-        <h1>CustomSelect</h1>
-        <CustomSelect
-          title="title"
-          selectTitle="selectTitle"
-          customSelectData={[
-            { id: 1, selectItem: "Select1" },
-            { id: 2, selectItem: "Select2" },
-            { id: 3, selectItem: "Select12" },
-          ]}
+        <h1>CustomToggleButton + 3</h1>
+        <CustomToggleButton
+          buttonsText={["buttonsText1", "buttonsText2", "buttonsText3"]}
         />
       </div>
       <div>
-        <h1>CustomSpinner</h1>
-        <CustomSpinner />
+        <h1>CustomToggleButton + 2</h1>
+        <CustomToggleButton buttonsText={["buttonsText1", "buttonsText2"]} />
       </div>
       <div>
-        <h1></h1>
+        <h1>CustomSwitchButton</h1>
         <CustomSwitchButton
           buttonLeft="buttonLeft"
           buttonRight="buttonRight"
@@ -114,7 +105,6 @@ const SandboxStaticComponents: FC = () => {
               <h1>CustomSelect</h1>
               <CustomSelect
                 title="title"
-                selectTitle="selectTitle"
                 customSelectData={[
                   { id: 1, selectItem: "Select1" },
                   { id: 2, selectItem: "Select2" },
@@ -135,19 +125,39 @@ const SandboxStaticComponents: FC = () => {
           )}
         />
       </div>
+
+      <h2>СЕЛЕКТОРЫ--------------------------------------------</h2>
       <div>
-        <h1>CustomTextarea</h1>
-        <CustomTextarea label="label" placeholder="placeholder" />
-      </div>
-      <div>
-        <h1>CustomToggleButton + 3</h1>
-        <CustomToggleButton
-          buttonsText={["buttonsText1", "buttonsText2", "buttonsText3"]}
+        <h1>CustomSelect</h1>
+        <CustomSelect
+          title="title"
+          customSelectData={[
+            { id: 1, selectItem: "Select1" },
+            { id: 2, selectItem: "Select2" },
+            { id: 3, selectItem: "Select12" },
+          ]}
         />
       </div>
       <div>
-        <h1>CustomToggleButton + 2</h1>
-        <CustomToggleButton buttonsText={["buttonsText1", "buttonsText2"]} />
+        <h1>CustomAvatarName</h1>
+        <CustomAvatarName name="Ali" />
+      </div>
+
+      <div>
+        <h1>CustomLogo + display:block</h1>
+        <CustomLogo display="block" />
+      </div>
+
+      <div>
+        <h1>CustomMiniSpinner</h1>
+        <div style={{ width: "5rem" }}>
+          <CustomMiniSpinner />
+        </div>
+      </div>
+
+      <div>
+        <h1>CustomSpinner</h1>
+        <CustomSpinner />
       </div>
     </>
   );
