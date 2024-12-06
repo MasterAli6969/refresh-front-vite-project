@@ -6,17 +6,19 @@ import ArrowCheckDown from "../../../../assets/icons/ArrowCheckDown.svg";
 import styles from "./custom_counter_input.module.scss";
 
 export interface CustomCounterInputPropsType {
+  width?: string;
   placeholder?: string;
   label?: string;
-  onChange?: (value: number | null) => void;
   value?: number | null;
+  onChange?: (value: number | null) => void;
 }
 
 const CustomCounterInput: FC<CustomCounterInputPropsType> = ({
-  label,
+  width = "100%",
   placeholder,
-  onChange,
+  label,
   value,
+  onChange,
 }) => {
   const [count, setCount] = useState<number | null>(null);
 
@@ -55,7 +57,7 @@ const CustomCounterInput: FC<CustomCounterInputPropsType> = ({
   return (
     <div className={styles.div}>
       <h3>{label}</h3>
-      <div>
+      <div style={{ width: `${width}` }}>
         <input
           type="number"
           value={count === null ? "" : count}

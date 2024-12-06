@@ -4,7 +4,6 @@ import { FC, useCallback } from "react";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 //СТИЛИ
 import styles from "./management.module.scss";
-import CustomContexMenuOpenUniversalWrapper from "../../../../../../../../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
 import EditIcon from "../../../../../../../../../../../assets/icons-svg-components/pcIcon-context-menu/EditIcon";
 import ArrowChekRight from "../../../../../../../../../../../assets/icons-svg-components/ArrowChekRight";
 import {
@@ -12,6 +11,7 @@ import {
   useAppSelector,
 } from "../../../../../../../../../../../features/redux/hooks/reduxRootHooks";
 import { setPcStatus } from "../../../../../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-icon-reducers/pcIconStatusEditReducer";
+import CustomContexMenuOpenClickCloseWrapper from "../../../../../../../../../../../common/smart-component/custom-contex-menu-open-click-close-wrapper/CustomContexMenuOpenClickCloseWrapper";
 
 interface ManagementPropsType {
   comp_id: number;
@@ -36,7 +36,7 @@ const Management: FC<ManagementPropsType> = ({ comp_id }) => {
   }, [dispatch, isWinActiveStatus, comp_id]);
 
   return (
-    <CustomContexMenuOpenUniversalWrapper
+    <CustomContexMenuOpenClickCloseWrapper
       dropPosition="right"
       dropMenuItems={[
         () => <h3>Удаленный контроль</h3>,
@@ -51,7 +51,7 @@ const Management: FC<ManagementPropsType> = ({ comp_id }) => {
         <h5>Управление</h5>
         <ArrowChekRight color="#fff" />
       </div>
-    </CustomContexMenuOpenUniversalWrapper>
+    </CustomContexMenuOpenClickCloseWrapper>
   );
 };
 

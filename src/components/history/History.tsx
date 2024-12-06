@@ -3,7 +3,7 @@ import { FC } from "react";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import CustomSearchInput from "../../common/static-components/inputs/custom-search-input/CustomSearchInput";
 import HistoryItem from "./history-components/history-item/HistoryItem";
-import HistoryFilterButton from "./history-filter-button/HistoryFilterButton";
+import HistoryFilterButton from "./history-components/history-filter-button/HistoryFilterButton";
 //СТИЛИ
 import styles from "./history.module.scss";
 

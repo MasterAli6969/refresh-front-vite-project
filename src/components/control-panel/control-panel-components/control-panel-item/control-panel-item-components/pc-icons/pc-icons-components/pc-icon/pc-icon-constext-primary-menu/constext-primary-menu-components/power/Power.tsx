@@ -2,7 +2,6 @@ import { FC, useCallback } from "react";
 //ИКОНКИ
 //МОДУЛИ ДЛЯ РАБОТЫ
 //МОДУЛИ ДЛЯ РЕНДЕРА
-import CustomContexMenuOpenUniversalWrapper from "../../../../../../../../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
 import OffIcon from "../../../../../../../../../../../assets/icons-svg-components/pcIcon-context-menu/OffIcon";
 import ArrowChekRight from "../../../../../../../../../../../assets/icons-svg-components/ArrowChekRight";
 //СТИЛИ
@@ -12,6 +11,7 @@ import {
   useAppSelector,
 } from "../../../../../../../../../../../features/redux/hooks/reduxRootHooks";
 import { setPcStatus } from "../../../../../../../../../../../features/redux/reducers/special-reducers/control-panel-reducers/pc-icon-reducers/pcIconStatusEditReducer";
+import CustomContexMenuOpenClickCloseWrapper from "../../../../../../../../../../../common/smart-component/custom-contex-menu-open-click-close-wrapper/CustomContexMenuOpenClickCloseWrapper";
 
 interface PowerPropsType {
   comp_id: number;
@@ -35,7 +35,7 @@ const Power: FC<PowerPropsType> = ({ comp_id }) => {
   }, [dispatch, isOnStatus, comp_id]);
 
   return (
-    <CustomContexMenuOpenUniversalWrapper
+    <CustomContexMenuOpenClickCloseWrapper
       dropPosition="right"
       dropMenuItems={[
         () => (
@@ -51,7 +51,7 @@ const Power: FC<PowerPropsType> = ({ comp_id }) => {
         <h5>Питание</h5>
         <ArrowChekRight color="#fff" />
       </div>
-    </CustomContexMenuOpenUniversalWrapper>
+    </CustomContexMenuOpenClickCloseWrapper>
   );
 };
 

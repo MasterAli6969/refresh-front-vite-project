@@ -5,7 +5,24 @@
     margin-bottom: 0.5rem;
   }
   > div {
-    @include inputStyleSpesialContainer;
+    display: flex;
+    align-items: center;
+    background-color: #17181a;
+    border: 0.06rem solid #23252a;
+    border-radius: 0.31rem;
+    color: #e2e2e2;
+    padding: 0.46rem 0.75rem;
+    > input {
+      width: 100%;
+      background-color: transparent;
+      color: #ffff;
+      border: none;
+    }
+    > img {
+      cursor: pointer;
+      width: 1rem;
+      margin-right: 0.5rem;
+    }
     > div {
       height: 1.5rem;
       display: flex;

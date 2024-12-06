@@ -9,6 +9,7 @@ import ContentLayout from "../layouts/content-layout/ContentLayout";
 import ReservationPage from "../pages/reservation-page/ReservationPage";
 import SettingsPage from "../pages/settings-page/SettingsPage";
 import HistoryPage from "../pages/history-page/HistoryPage";
+import Users from "../components/users/Users";
 
 const PageRoutes: FC = () => {
   return (
@@ -20,6 +21,7 @@ const PageRoutes: FC = () => {
         <Route path="/reservation" element={<ReservationPage />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/users" element={<Users />} />
         <Route path="/sandbox" element={<SandboxPage />} />
       </Routes>
     </ContentLayout>

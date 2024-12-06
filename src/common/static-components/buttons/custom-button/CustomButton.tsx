@@ -13,18 +13,22 @@ import classNames from "classnames";
 import styles from "./custom_button.module.scss";
 
 export interface CustomButtonPropsType {
-  color: "light" | "dark" | "warning" | "transparent" | "special";
+  width?: string;
+  color?: "light" | "dark" | "warning" | "transparent" | "special";
   type?: "button" | "submit" | "reset";
-  onClick?: () => void;
   imgSize?: string; // Добавляем необязательный пропс для размера изображения
+  isActive?: boolean;
+  onClick?: () => void;
 }
 
 const CustomButton: FC<PropsWithChildren<CustomButtonPropsType>> = ({
   children,
-  color,
+  width = "auto",
+  color = "transparent",
   type,
-  onClick,
   imgSize,
+  isActive,
+  onClick,
 }) => {
   // Функция для изменения размеров img элементов внутри children
   const modifyChildren = (children: ReactNode): ReactNode => {
@@ -41,6 +45,7 @@ const CustomButton: FC<PropsWithChildren<CustomButtonPropsType>> = ({
 
   return (
     <button
+      style={{ width: `${width}` }}
       onClick={onClick}
       className={classNames(styles.button, {
         [styles._light]: color === "light",
@@ -48,6 +53,7 @@ const CustomButton: FC<PropsWithChildren<CustomButtonPropsType>> = ({
         [styles._dark]: color === "dark",
         [styles._warning]: color === "warning",
         [styles._transparent]: color === "transparent",
+        [styles._active]: isActive === true,
       })}
       type={type ? type : "button"}
     >

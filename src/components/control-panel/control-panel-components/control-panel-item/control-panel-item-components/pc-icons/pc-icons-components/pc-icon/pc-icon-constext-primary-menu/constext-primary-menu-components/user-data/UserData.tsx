@@ -4,7 +4,6 @@ import UserIconLight from "../../../../../../../../../../../assets/icons/UserIco
 import ClockBudLight from "../../../../../../../../../../../assets/icons/ClockBudLight.svg";
 import ArrowChekRight from "../../../../../../../../../../../assets/icons-svg-components/ArrowChekRight";
 //МОДУЛИ ДЛЯ РАБОТЫ
-import CustomContexMenuOpenUniversalWrapper from "../../../../../../../../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
 import CustomCenterModalOpenWrapper from "../../../../../../../../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import ChangeLocationModalWindow from "./user-data-madal-windows/change-location-modal-window/ChangeLocationModalWindow";
@@ -15,6 +14,7 @@ import ReplenishmentModalWindow from "./user-data-madal-windows/replenishment-mo
 import SendMessageModalWindow from "./user-data-madal-windows/send-message-modal-window/SendMessageModalWindow";
 //СТИЛИ
 import styles from "./user_data.module.scss";
+import CustomContexMenuOpenClickCloseWrapper from "../../../../../../../../../../../common/smart-component/custom-contex-menu-open-click-close-wrapper/CustomContexMenuOpenClickCloseWrapper";
 
 interface UserDataPropsType {
   comp_id: number;
@@ -24,7 +24,7 @@ const UserData: FC<UserDataPropsType> = ({ comp_id }) => {
   const userName = "GG.August";
 
   return (
-    <CustomContexMenuOpenUniversalWrapper
+    <CustomContexMenuOpenClickCloseWrapper
       isListItemFlex={false}
       dropPosition="right"
       dropMenuItems={[
@@ -130,7 +130,7 @@ const UserData: FC<UserDataPropsType> = ({ comp_id }) => {
         </div>
         <ArrowChekRight color="#fff" />
       </div>
-    </CustomContexMenuOpenUniversalWrapper>
+    </CustomContexMenuOpenClickCloseWrapper>
   );
 };
 

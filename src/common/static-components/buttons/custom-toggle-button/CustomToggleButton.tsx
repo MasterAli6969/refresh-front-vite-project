@@ -1,5 +1,6 @@
 import { FC, useState, useEffect } from "react";
-import classNames from "classnames";
+import CustomButton from "../custom-button/CustomButton";
+//СТИЛИ
 import styles from "./custom_toggle_button.module.scss";
 
 export interface CustomToggleButtonPropsType {
@@ -37,15 +38,14 @@ const CustomToggleButton: FC<CustomToggleButtonPropsType> = ({
         ) : (
           buttonsText.map((item, index) => {
             return (
-              <button
+              <CustomButton
                 key={index}
+                isActive={activeIndex === item}
+                color={activeIndex !== item ? "transparent" : undefined}
                 onClick={() => handleToggleClick(item)}
-                className={classNames(styles.button, {
-                  [styles._active]: activeIndex === item,
-                })}
               >
                 {item}
-              </button>
+              </CustomButton>
             );
           })
         )}

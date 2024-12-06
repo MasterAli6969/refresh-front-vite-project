@@ -8,7 +8,7 @@ import CustomCenterModalOpenWrapper from "../../../../../../common/smart-compone
 import ReplenishmentBalanceModalWindows from "../../../../../../common/special-componet/replenishment-balance-modal-windows/ReplenishmentBalanceModalWindows";
 //СТИЛИ
 import styles from "./search_menu.module.scss";
-import CustomContexMenuOpenUniversalWrapper from "../../../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
+import CustomContexMenuOpenClickCloseWrapper from "../../../../../../common/smart-component/custom-contex-menu-open-click-close-wrapper/CustomContexMenuOpenClickCloseWrapper";
 
 export interface SearchMenuDataType {
   id: number;
@@ -43,7 +43,7 @@ const SearchMenu: FC<SearchMenuPropsType> = ({ focused, inputState }) => {
             filteredUsers.map((item: SearchMenuDataType) => {
               return (
                 <div key={item.id}>
-                  <CustomContexMenuOpenUniversalWrapper
+                  <CustomContexMenuOpenClickCloseWrapper
                     dropPosition="right"
                     dropMenuItems={[
                       () => <h4>Профиль клиента</h4>,
@@ -65,7 +65,7 @@ const SearchMenu: FC<SearchMenuPropsType> = ({ focused, inputState }) => {
                     <div>
                       <ArrowChekRight color="#FEFEFE" />
                     </div>
-                  </CustomContexMenuOpenUniversalWrapper>
+                  </CustomContexMenuOpenClickCloseWrapper>
                 </div>
               );
             })

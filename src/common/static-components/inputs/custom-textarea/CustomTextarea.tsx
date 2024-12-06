@@ -12,10 +12,10 @@ const CustomTextarea: FC<CustomTextareaPropsType> = ({
   placeholder,
 }) => {
   return (
-    <>
-      <h3 className={styles.label}>{label}</h3>
-      <textarea className={styles.textarea} placeholder={placeholder} />
-    </>
+    <div className={styles.div}>
+      <h3>{label}</h3>
+      <textarea placeholder={placeholder} />
+    </div>
   );
 };
 

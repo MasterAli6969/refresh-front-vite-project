@@ -8,20 +8,5 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    .button {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: $button_transparent;
-      color: $text_inactive;
-      border: $border_style_default;
-      border-radius: $border_radius5;
-      padding: 0.5rem;
-    }
-    ._active {
-      background-color: $button_active;
-      color: $text_light;
-    }
   }
 }

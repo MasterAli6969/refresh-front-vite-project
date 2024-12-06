@@ -2,13 +2,15 @@
 
 .div {
   position: relative;
+  height: 2.1rem;
   display: flex;
+  align-items: center;
   background-color: transparent;
-  border-radius: 10px;
-  border: $border_style_default;
-  padding: 0.75rem 1.25rem;
+  border-radius: 0.37rem;
+  border: 0.06rem solid #23252a;
+  padding: 0 0.75rem;
   > img {
-    width: 2rem;
+    width: 1rem;
     margin-right: 0.5rem;
   }
   > input {

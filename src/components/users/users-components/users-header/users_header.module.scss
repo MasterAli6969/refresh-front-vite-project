@@ -1,0 +1,13 @@
+@import "/src/variables.scss";
+
+.div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $border_color_primary;
+  padding: 0.93rem;
+  > div:last-child {
+    display: flex;
+    gap: 0.5rem;
+  }
+}

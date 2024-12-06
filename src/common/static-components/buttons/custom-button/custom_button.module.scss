@@ -1,14 +1,15 @@
 @import "/src/variables.scss";
 .button {
+  height: 2.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: $border_style_default;
-  border-radius: $border_radius5;
-  padding: 0.5rem;
+  border: 0.06rem solid #23252a;
+  border-radius: 0.3rem;
+  padding: 0rem 0.75rem;
   &:hover {
-    background-color: $hover_default;
-    color: $text_light;
+    background-color: #2c3039;
+    color: #ffff;
   }
   > img {
     width: 1rem;
@@ -17,24 +18,29 @@
 }
 
 ._light {
-  background-color: $button_special;
-  color: $text_dark;
+  background-color: #e2e2e2;
+  color: #141718;
   border: none;
 }
 ._special_light {
-  background-color: $button_special_blue;
-  color: $text_dark;
+  background-color: #339aff;
+  color: #141718;
   border: none;
 }
 ._dark {
-  background-color: $button_default;
-  color: $text_light;
+  background-color: #1e2025;
+  color: #ffff;
 }
 ._warning {
-  background-color: $background_error;
+  background-color: #f35746;
 }
 
 ._transparent {
-  background-color: $button_transparent;
-  color: $text_light;
+  background-color: transparent;
+  color: #999b9e;
+}
+
+._active {
+  background-color: #26282e;
+  color: #ffff;
 }

@@ -9,7 +9,7 @@ export interface CustomInputPropsType {
   placeholder?: string;
   downLabel?: string;
   type?: "text" | "number";
-  value?: string | number;
+  value?: string | number | null;
   onChange?: (value: string | number | null) => void;
   isReadOnly?: boolean;
 }
@@ -17,7 +17,7 @@ export interface CustomInputPropsType {
 const CustomInput: FC<CustomInputPropsType> = ({
   label,
   downLabel,
-  width,
+  width = "100%",
   icon,
   placeholder,
   type = "text",
@@ -27,17 +27,22 @@ const CustomInput: FC<CustomInputPropsType> = ({
 }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const eventData = event.target.value;
+
     if (type === "number") {
       const inputValue = Number(eventData);
-      if (type === "number" && (inputValue <= 0 || isNaN(inputValue))) {
-        onChange && onChange(null);
-      } else if (!isReadOnly && onChange) {
-        onChange(inputValue);
+      if (!isReadOnly && onChange) {
+        // Устанавливаем только положительные числа или `null`
+        onChange(inputValue > 0 ? inputValue : null);
+      }
+    } else {
+      if (!isReadOnly && onChange) {
+        onChange(eventData); // Для текста передаем строку напрямую
       }
     }
   };
+
   return (
-    <div style={{ width: `${width ? width : "100%"}` }} className={styles.div}>
+    <div style={{ width: `${width}` }} className={styles.div}>
       {label && <h3 className={styles.label}>{label}</h3>}
       <div>
         {icon && <img src={icon} alt="icon" />}

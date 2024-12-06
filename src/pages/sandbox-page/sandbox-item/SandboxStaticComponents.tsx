@@ -17,6 +17,7 @@ import CustomSpinner from "../../../common/static-components/custom-spinner/Cust
 import CustomSwitchButton from "../../../common/static-components/buttons/custom-switch-button/CustomSwitchButton";
 import CustomToggleButton from "../../../common/static-components/buttons/custom-toggle-button/CustomToggleButton";
 import CustomTextarea from "../../../common/static-components/inputs/custom-textarea/CustomTextarea";
+import CustomUniversalDiv from "../../../common/static-components/containers/custom-universal-div/CustomUniversalDiv";
 
 const SandboxStaticComponents: FC = () => {
   return (
@@ -25,8 +26,21 @@ const SandboxStaticComponents: FC = () => {
 
       <h2>КОНТЕЙНЕРЫ--------------------------------------------</h2>
 
+      <div>
+        ++
+        <CustomUniversalDiv>
+          <h2>КОНТЕЙНЕРЫ--------------------------------------------</h2>{" "}
+          <h2>КОНТЕЙНЕРЫ--------------------------------------------</h2>{" "}
+          <h2>КОНТЕЙНЕРЫ--------------------------------------------</h2>{" "}
+          <h2>КОНТЕЙНЕРЫ--------------------------------------------</h2>
+          <h2>КОНТЕЙНЕРЫ--------------------------------------------</h2>{" "}
+          <h2>КОНТЕЙНЕРЫ--------------------------------------------</h2>
+        </CustomUniversalDiv>
+      </div>
+
       <h2>ПОЛЯ ВВОДА ДАННЫХ--------------------------------------------</h2>
       <div>
+        ++
         <h1>CustomInput</h1>
         <CustomInput label="label" placeholder="placeholder" />
       </div>
@@ -65,7 +79,7 @@ const SandboxStaticComponents: FC = () => {
       </div>
       <div>
         <h1>CustomButton + icon</h1>
-        <CustomButton color="transparent">
+        <CustomButton width="14rem" color="transparent">
           <img src={ClockTimeIcon} />
           <h6>Button name</h6>
         </CustomButton>

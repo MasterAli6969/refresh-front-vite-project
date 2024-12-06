@@ -4,7 +4,6 @@ import ClockTimeIcon from "../../../assets/icons/ClockTimeIcon.svg";
 //КОМПОНЕНТЫ ДЛЯ РЕНДНРА
 import CustomCenterModalOpenWrapper from "../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
 import CustomButton from "../../../common/static-components/buttons/custom-button/CustomButton";
-import CustomContexMenuOpenUniversalWrapper from "../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
 import CustomModalCloseHead from "../../../common/smart-component/custom-modal-close-head/CustomModalCloseHead";
 import CustomModalOpenButtonSwitch from "../../../common/smart-component/custom-modal-open-button-switch/CustomModalOpenButtonSwitch";
 import CutomModalWindowUniversal from "../../../common/smart-component/cutom-modal-window-universal/CutomModalWindowUniversal";
@@ -13,6 +12,7 @@ import CustomInput from "../../../common/static-components/inputs/custom-input/C
 import CustomCounterInput from "../../../common/static-components/inputs/custom-counter-input/CustomCounterInput";
 import PaymentMethod from "../../../common/special-componet/payment-method/PaymentMethod";
 import { TestMoalWindowSandbox } from "./SandBoxTestRender";
+import CustomContexMenuOpenClickCloseWrapper from "../../../common/smart-component/custom-contex-menu-open-click-close-wrapper/CustomContexMenuOpenClickCloseWrapper";
 
 const SandboxSmartComponents: FC = () => {
   return (
@@ -35,8 +35,8 @@ const SandboxSmartComponents: FC = () => {
         </CustomCenterModalOpenWrapper>
       </div>
       <div>
-        <h1>CustomContexMenuOpenUniversalWrapper</h1>
-        <CustomContexMenuOpenUniversalWrapper
+        <h1>CustomContexMenuOpenClickCloseWrapper</h1>
+        <CustomContexMenuOpenClickCloseWrapper
           dropPosition="bottom"
           dropMenuItems={[
             () => <h6>dropMenuItems1</h6>,
@@ -48,7 +48,7 @@ const SandboxSmartComponents: FC = () => {
           <CustomButton color="light">
             <h6>Click contex menu</h6>
           </CustomButton>
-        </CustomContexMenuOpenUniversalWrapper>
+        </CustomContexMenuOpenClickCloseWrapper>
       </div>
       <div>
         <h1>CustomModalCloseHead</h1>

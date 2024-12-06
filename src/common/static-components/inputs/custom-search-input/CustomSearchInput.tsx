@@ -16,7 +16,7 @@ interface CustomSearchInputPropsTypes {
 }
 
 const CustomSearchInput: FC<CustomSearchInputPropsTypes> = ({
-  customWidth,
+  customWidth = "100%",
   placeholder,
   value,
   onChange,
@@ -59,7 +59,7 @@ const CustomSearchInput: FC<CustomSearchInputPropsTypes> = ({
 
   return (
     <div
-      style={{ width: `${customWidth ? customWidth : "100%"}` }}
+      style={{ width: `${customWidth}` }}
       ref={inputRef}
       className={classNames(styles.div, {
         [styles.div_focuse]: isActive,

@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 //ИКОНКИ
 //МОДУЛИ ДЛЯ РЕНДЕРА
-import CustomContexMenuOpenUniversalWrapper from "../../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
+import CustomContexMenuOpenClickCloseWrapper from "../../../../../common/smart-component/context-menus/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenClickCloseWrapper";
 //СТИЛИ
 import styles from "./settings_drop_menu.module.scss";
 import ArrowChekRight from "../../../../../assets/icons-svg-components/ArrowChekRight";
@@ -15,7 +15,7 @@ const SettingsDropMenu: FC = () => {
   return (
     <ul className={styles.ul}>
       <li onClick={() => handleClick(1)}>
-        <CustomContexMenuOpenUniversalWrapper
+        <CustomContexMenuOpenClickCloseWrapper
           dropPosition="right"
           dropMenuItems={[
             () => <h3>Общие настройки</h3>,
@@ -35,10 +35,10 @@ const SettingsDropMenu: FC = () => {
           >
             <ArrowChekRight color="#fff" />
           </div>
-        </CustomContexMenuOpenUniversalWrapper>
+        </CustomContexMenuOpenClickCloseWrapper>
       </li>
       <li onClick={() => handleClick(2)}>
-        <CustomContexMenuOpenUniversalWrapper
+        <CustomContexMenuOpenClickCloseWrapper
           dropPosition="right"
           dropMenuItems={[
             () => <h3>Конфигурация клиента</h3>,
@@ -54,10 +54,10 @@ const SettingsDropMenu: FC = () => {
           >
             <ArrowChekRight color="#fff" />
           </div>
-        </CustomContexMenuOpenUniversalWrapper>
+        </CustomContexMenuOpenClickCloseWrapper>
       </li>
       <li onClick={() => handleClick(3)}>
-        <CustomContexMenuOpenUniversalWrapper
+        <CustomContexMenuOpenClickCloseWrapper
           dropPosition="right"
           dropMenuItems={[
             () => <h3>Игры и приложения</h3>,
@@ -72,10 +72,10 @@ const SettingsDropMenu: FC = () => {
           >
             <ArrowChekRight color="#fff" />
           </div>
-        </CustomContexMenuOpenUniversalWrapper>
+        </CustomContexMenuOpenClickCloseWrapper>
       </li>
       <li onClick={() => handleClick(4)}>
-        <CustomContexMenuOpenUniversalWrapper
+        <CustomContexMenuOpenClickCloseWrapper
           dropPosition="right"
           dropMenuItems={[
             () => <h3>Рейтинг участников</h3>,
@@ -92,7 +92,7 @@ const SettingsDropMenu: FC = () => {
           >
             <ArrowChekRight color="#fff" />
           </div>
-        </CustomContexMenuOpenUniversalWrapper>
+        </CustomContexMenuOpenClickCloseWrapper>
       </li>
     </ul>
   );

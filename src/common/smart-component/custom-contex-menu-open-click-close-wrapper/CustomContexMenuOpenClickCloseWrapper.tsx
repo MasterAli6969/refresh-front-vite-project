@@ -1,18 +1,16 @@
 import { FC, PropsWithChildren } from "react";
-//МОДУЛИ ДЛЯ РАБОТЫ
 import classNames from "classnames";
-//СТИЛИ
-import styles from "./custom_contex_menu_open_universal_wrapper.module.scss";
+import styles from "./custom_contex_menu_open_click_close_wrapper.module.scss";
 
-interface CustomContexMenuOpenUniversalWrapperPropsType {
+interface CustomContexMenuOpenClickCloseWrapperPropsType {
   dropMenuItems: FC[];
   dropPosition: "top" | "left" | "bottom" | "right";
   isPaddingAndHover?: boolean;
   isListItemFlex?: boolean;
 }
 
-const CustomContexMenuOpenUniversalWrapper: FC<
-  PropsWithChildren<CustomContexMenuOpenUniversalWrapperPropsType>
+const CustomContexMenuOpenClickCloseWrapper: FC<
+  PropsWithChildren<CustomContexMenuOpenClickCloseWrapperPropsType>
 > = ({
   children,
   dropMenuItems,
@@ -20,13 +18,11 @@ const CustomContexMenuOpenUniversalWrapper: FC<
   isPaddingAndHover,
   isListItemFlex,
 }) => {
-  // Условное классифицирование для переключения между позициями меню
   const dropdownClass = classNames({
     dropdown: true,
     dropup: dropPosition === "top",
     dropend: dropPosition === "right",
     dropstart: dropPosition === "left",
-    // если "bottom", то класс не нужен, так как это поведение по умолчанию
   });
 
   return (
@@ -56,4 +52,4 @@ const CustomContexMenuOpenUniversalWrapper: FC<
   );
 };
 
-export default CustomContexMenuOpenUniversalWrapper;
+export default CustomContexMenuOpenClickCloseWrapper;

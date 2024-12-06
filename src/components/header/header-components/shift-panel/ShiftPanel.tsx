@@ -8,12 +8,12 @@ import OnlineIcon from "../../../../assets/icons/OnlineIcon.svg";
 import CustomButton from "../../../../common/static-components/buttons/custom-button/CustomButton";
 //МОДУЛИ ДЛЯ РЕНДЕРА
 import CustomCenterModalOpenWrapper from "../../../../common/smart-component/custom-center-modal-open-wrapper/CustomCenterModalOpenWrapper";
-import CustomContexMenuOpenUniversalWrapper from "../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
 import OpenShiftModalWindow from "./shift-panel-modal-windows/OpenShiftModalWindow";
 import CloseShiftModalWindow from "./shift-panel-modal-windows/close-shift-modal-window/CloseShiftModalWindow";
 import ExpensesCashModalWindow from "./shift-panel-modal-windows/ExpensesCashModalWindow";
 //СТИЛИ
 import styles from "./shift_panel.module.scss";
+import CustomContexMenuOpenClickCloseWrapper from "../../../../common/smart-component/custom-contex-menu-open-click-close-wrapper/CustomContexMenuOpenClickCloseWrapper";
 
 const ShiftPanel: FC = () => {
   const isShiftStatus = useAppSelector(
@@ -38,7 +38,7 @@ const ShiftPanel: FC = () => {
           </CustomButton>
         </CustomCenterModalOpenWrapper>
       ) : (
-        <CustomContexMenuOpenUniversalWrapper
+        <CustomContexMenuOpenClickCloseWrapper
           dropPosition="bottom"
           isPaddingAndHover={true}
           dropMenuItems={[
@@ -85,7 +85,7 @@ const ShiftPanel: FC = () => {
             <img className={styles.shift_icon} src={OnlineIcon} />
             <h4>Смена открыта</h4>
           </CustomButton>
-        </CustomContexMenuOpenUniversalWrapper>
+        </CustomContexMenuOpenClickCloseWrapper>
       )}
     </div>
   );

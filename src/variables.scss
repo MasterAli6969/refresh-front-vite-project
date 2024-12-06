@@ -65,6 +65,17 @@ $background_hover_button_toggle: #1c1f25;
 //------------------------
 //------------------------
 
+//НОВАЯ МИНИМАЛИСТИЧНАЯ ПАЛИТРА ИМЕННО ЦВЕТОВ
+
+//ЗАДНИКИ
+$background_color_primary: #23252a;
+$background_color_secondary: #141518;
+$background_color_tertiary: #1c1f25;
+$background_color_quadruple: #1b1c20;
+//ГРАНИЦЫ
+$border_color_primary: #23252a;
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // стили для границ
 $border_style_default: 0.06rem solid $border_default;
 $border_style_active: 0.06rem solid $border_active;
@@ -83,34 +94,10 @@ $light_gradient: linear-gradient(
 
 //ОБЩИЙ стили для кастамных input and textarea элементов
 @mixin inputStyleCommon {
-  width: 100%;
-  background-color: transparent;
-  border: $border_style_default;
-  border-radius: $border_radius12;
-  color: $text_default;
-  padding: 1rem;
 }
 
 //СПЕЦИАЛЬНЫЙ СТИЛИ ДЛЯ БЛОКА DIV В КОТОРЫХ МОГУТ НАХОДИТЬСЯ ИНПУТ ЭЛЕМЕНТЫ И ИХ ИКОНКИ ДОПОМ
 @mixin inputStyleSpesialContainer {
-  width: 14.19rem;
-  display: flex;
-  align-items: center;
-  background-color: $background_modal_input;
-  border: $border_style_default;
-  border-radius: $border_radius5;
-  color: $text_default;
-  padding: 0.46rem 0.75rem;
-  > input {
-    width: 100%;
-    background-color: transparent;
-    color: $text_light;
-    border: none;
-  }
-  > img {
-    width: 1rem;
-    margin-right: 0.5rem;
-  }
 }
 
 //СПЕЦИАЛЬНЫЕ СТИЛИ ДЛЯ КОНТЕЙНЕРОВ ДЛЯ КНОПОК ИКОНОЕ

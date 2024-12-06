@@ -7,14 +7,14 @@ import ProfileNotiseIcon from "../../../../assets/icons/ProfileNotiseIcon.svg";
 import ProfileCalendarIcon from "../../../../assets/icons/ProfileCalendarIcon.svg";
 import ProfileLogoutIcon from "../../../../assets/icons/ProfileLogoutIcon.svg";
 //МОДУЛИ ДЛЯ РЕНДЕРА
-import CustomContexMenuOpenUniversalWrapper from "../../../../common/smart-component/custom-contex-menu-open-universal-wrapper/CustomContexMenuOpenUniversalWrapper";
 //СТИЛИ
 import styles from "./user_panel.module.scss";
+import CustomContexMenuOpenClickCloseWrapper from "../../../../common/smart-component/custom-contex-menu-open-click-close-wrapper/CustomContexMenuOpenClickCloseWrapper";
 
 const UserPanel: FC = () => {
   return (
     <div className={styles.div}>
-      <CustomContexMenuOpenUniversalWrapper
+      <CustomContexMenuOpenClickCloseWrapper
         isListItemFlex={true}
         dropMenuItems={[
           () => (
@@ -51,7 +51,7 @@ const UserPanel: FC = () => {
             <h5>Администратор</h5>
           </div>
         </div>
-      </CustomContexMenuOpenUniversalWrapper>
+      </CustomContexMenuOpenClickCloseWrapper>
     </div>
   );
 };

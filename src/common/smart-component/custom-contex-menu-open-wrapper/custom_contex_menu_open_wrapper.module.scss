@@ -1,0 +1,22 @@
+@import "/src/variables.scss";
+
+.div {
+  position: relative;
+
+  .subdiv {
+    position: absolute;
+    top: 3rem;
+    right: 0rem;
+    z-index: 9;
+
+    > ul {
+      @include PopoverContextMenuUl;
+
+      > li {
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

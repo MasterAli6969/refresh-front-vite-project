@@ -1,10 +1,8 @@
 import { FC } from "react";
 // МОДУЛИ ДЛЯ РЕНДЕРА
 import { Grid } from "@mui/material";
-
 //ДИНАМИЧНЫЕ ИКОНКИ КАК ОТДЕЛЬНЫЕ КОМПОНЕНТЫ С ВШИТОЙ ЛОГИКОЙ ПРИЁМА ЦВЕТА ИКОНКИ НА ВХОД
 import SandboxIcon from "./sandbox-item/SandboxIcon";
-
 // КОМПОНЕТНЫ UI ДЛЯ СТАТИЧНОГО РЕНДЕРА
 import SandboxStaticComponents from "./sandbox-item/SandboxStaticComponents";
 

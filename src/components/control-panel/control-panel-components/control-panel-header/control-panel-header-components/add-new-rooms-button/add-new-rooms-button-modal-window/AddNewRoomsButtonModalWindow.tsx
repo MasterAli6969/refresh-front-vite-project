@@ -27,7 +27,9 @@ const AddNewRoomsButtonModalWindow: FC<
   AddNewRoomsButtonModalWindowPropsType
 > = ({ redaxStateKey, title, specialText }) => {
   //ИНИЦИАЛИЗАЦИЯ ЛОКАЛЬНЫХ СОСТОЯНИЙ ДЛЯ СБОРА ДАННЫХ С ФОРМЫ
-  const [localInputValue, setLocalInputValue] = useState<string | number>("");
+  const [localInputValue, setLocalInputValue] = useState<
+    string | number | null
+  >(null);
   const [chooseColor, setChooseColor] = useState<string>("");
   //ИНИЦИАЛИЗАЦИЯ РЕДАКС ДИСПАТЧА
   const dispatch = useAppDispatch();
@@ -36,7 +38,7 @@ const AddNewRoomsButtonModalWindow: FC<
   //СОЗДАНИЕ УНИКАЛЬНОГО АЙДИ ДЛЯ КОМНАТЫ НА ОСНОВЕ МАССИВА КОМНАТ
   const newRoomId = getNewId(pcRooms);
   //СБОР ДАННЫХ ИЗ ФОРМЫ ИМЕНИ КОМНАТЫ
-  const handleInputChange = (value: string | number) => {
+  const handleInputChange = (value: string | number | null) => {
     setLocalInputValue(value);
   };
   // ОТПРАВКА ДАННЫХ ПОСЛЕ ОТРБОТКИ САБМИТА ФОРМЫ
@@ -72,7 +74,7 @@ const AddNewRoomsButtonModalWindow: FC<
       <CustomInput
         label="Название комнаты"
         placeholder="Введите новое название комнаты"
-        value={localInputValue || ""}
+        value={localInputValue || null}
         onChange={handleInputChange}
       />
       <ChooseColourRoom

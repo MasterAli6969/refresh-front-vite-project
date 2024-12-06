@@ -119,7 +119,7 @@ const LeftSidebar: FC = () => {
           onClick={() => handleLiClick(4)}
           className={classNames({ [styles.active]: activeItemId === 4 })}
         >
-          <a href="#">
+          <a href="users">
             <div>
               <UsersIcon
                 color={`${

@@ -3,4 +3,27 @@
   > h3 {
     margin-bottom: 1rem;
   }
+  > div {
+    > select {
+      padding: 10px;
+      border: 1px solid #3e4044;
+      border-radius: 5px;
+      background-color: #24272e;
+      color: #e2e2e2;
+      font-size: 16px;
+      appearance: none; /* Убирает стандартный треугольник браузера */
+      cursor: pointer;
+    }
+
+    > select:focus {
+      border-color: transparent;
+      outline: none;
+    }
+
+    > option {
+      background: #ffffff;
+      color: #e2e2e2;
+      padding: 10px;
+    }
+  }
 }

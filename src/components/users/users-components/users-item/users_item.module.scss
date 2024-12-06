@@ -1,0 +1,53 @@
+@import "/src/variables.scss";
+
+.div {
+  .subdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  padding: 0.93rem;
+  .table {
+    width: 100%;
+    background-color: #141518;
+    border-collapse: separate; // Убедитесь, что границы не слипаются.
+    border-spacing: 0; // Установите нулевое пространство, чтобы избежать разделения на углах.
+    border: 1px solid border_color_primary;
+    border-radius: 0.37rem;
+    overflow: hidden; // Убедитесь, что overshoot контента обрезается.
+  }
+
+  .thead {
+    > tr {
+      background-color: $background_color_quadruple;
+    }
+    > tr:first-child > th:first-child {
+      border-top-left-radius: 6px; // Скругление верхнего левого угла
+    }
+    > tr:first-child > th:last-child {
+      border-top-right-radius: 6px; // Скругление верхнего правого угла
+    }
+  }
+
+  .tbody {
+    > tr {
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        background-color: #1c1f25;
+      }
+      &:last-child > td:first-child {
+        border-bottom-left-radius: 6px; // Скругление нижнего левого угла
+      }
+      &:last-child > td:last-child {
+        border-bottom-right-radius: 6px; // Скругление нижнего правого угла
+      }
+    }
+  }
+
+  .thead > tr > th,
+  .tbody > tr > td {
+    padding: 0.75rem;
+  }
+}
